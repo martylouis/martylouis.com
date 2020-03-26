@@ -1,6 +1,10 @@
 {
-  "extends": "react-app",
+  "extends": [
+    "react-app",
+    "plugin: prettier/prettier"
+  ],
   "rules": {
+    "prettier/prettier": "error",
     "quotes": [
       "error",
       "backtick"
