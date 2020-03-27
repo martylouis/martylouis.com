@@ -2,7 +2,7 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: `1.5rem`
+      padding: `1.5rem`,
     },
     extend: {
       colors: {
@@ -35,12 +35,13 @@ module.exports = {
         'gray-900': `#141415`,
       },
       fontFamily: {
-        'sans': [`Inter`,`sans-serif`]
-      }
-    }
+        sans: [`Inter`, `sans-serif`],
+        serif: [`matrix-ii`, `serif;`],
+      },
+    },
   },
   variants: {
-    backgroundColor: [`responsive`, `hover`, `focus`, `active`]
+    backgroundColor: [`responsive`, `hover`, `focus`, `active`],
   },
   // plugins: []
 };

@@ -1,5 +1,25 @@
 {
   "extends": [
-    "stylelint-prettier/recommended"
-  ]
+    "stylelint-config-recommended",
+    "stylelint-config-rational-order"
+  ],
+  "plugins": [
+    "stylelint-prettier"
+  ],
+  "rules": {
+    "prettier/prettier": true,
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "extends",
+          "tailwind",
+          "apply",
+          "variants",
+          "screen",
+          "responsive"
+        ]
+      }
+    ]
+  }
 }
