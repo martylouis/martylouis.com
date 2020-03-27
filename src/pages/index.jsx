@@ -12,7 +12,23 @@ const HomePage = () => (
           Design & Code.
         </h1>
         <p className="max-w-lg text-lg">
-          Hey! <span aria-label="hand wave" role="img">👋</span> I’m Marty Louis, a UX Designer and Front-End Web Developer. Check out what I've been working on, writing, or <Link className="inline-block text-green-600 border-b-2 border-green-600" to="/contact">get in touch</Link>.
+          Hey!{` `}
+          <span aria-label="hand wave" role="img">
+            👋
+          </span>
+          {` `}
+          I’m Marty Louis, a UX Designer and Front-End Web Developer. Check out
+          what I've been working on, writing, or{` `}
+          <Link
+            className="inline-block text-green-600 border-b-2 border-green-600"
+            to="/contact"
+          >
+            get in touch
+          </Link>
+          .
+        </p>
+        <p>
+          <Link to="/hello-world/">Hello World</Link>
         </p>
       </div>
     </section>
