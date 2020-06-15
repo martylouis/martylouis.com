@@ -1,16 +1,11 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import SEO from '../components/Seo';
 
 const ContactPage = () => (
-  <Layout>
-    <SEO title="Contact" />
+  <>
     <section className="py-16 bg-brand-900">
-      <div className="container max-w-3xl mx-auto">
-
-      </div>
+      <div className="container max-w-3xl mx-auto">Contact</div>
     </section>
-  </Layout>
+  </>
 );
 
 export default ContactPage;
