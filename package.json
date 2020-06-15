@@ -29,11 +29,14 @@
   "homepage": "https://github.com/martylouis/martylouis-gatsby#readme",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "@mdx-js/mdx": "^1.5.7",
     "@mdx-js/react": "^1.5.7",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
     "gatsby": "^2.20.2",
+    "gatsby-plugin-emotion": "^4.2.1",
     "gatsby-plugin-manifest": "^2.3.1",
     "gatsby-plugin-mdx": "^1.1.0",
     "gatsby-plugin-offline": "^3.1.0",
@@ -47,11 +50,14 @@
     "gatsby-transformer-remark": "^2.7.0",
     "graphql": "^14.6.0",
     "material-palenight-theme": "github:whizkydee/vscode-material-palenight-theme",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.7.0",
     "prismjs": "^1.19.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "twin.macro": "^1.0.0-alpha.7"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -69,5 +75,14 @@
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-prettier": "^1.1.2",
     "tailwindcss": "^1.2.0"
+  },
+  "babelMacros": {
+    "twin": {
+      "config": "./tailwind.config.js",
+      "styled": "@emotion/styled",
+      "format": "auto",
+      "hasSuggestions": true,
+      "debug": false
+    }
   }
 }

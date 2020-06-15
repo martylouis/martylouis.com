@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Footer = () => (
-  <footer className="bg-purple-900">
+  <footer>
     <div className="container">
-      Footer
+      <div className="pt-16 pb-32">Footer</div>
     </div>
   </footer>
 );

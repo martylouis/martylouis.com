@@ -6,7 +6,13 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-postcss`,
+    `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-postcss`,
+      // options: {
+      //   postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
+      // },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -16,7 +22,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#fff`,
         display: `minimal-ui`,
-        // icon: `src/images/icon.png`
+        icon: `src/images/martylouis-logo.png`,
       },
     },
     {
@@ -26,15 +32,8 @@ module.exports = {
           id: `xgr1ass`,
         },
         google: {
-          families: [`Inter:400,700,900`],
+          families: [`Inter:300,400,600,700,900`],
         },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        tailwind: true,
-        purgeOnly: [`src/css/style.css`],
       },
     },
     {
@@ -58,6 +57,14 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        develop: false,
+        tailwind: true,
+        // purgeOnly: [`src/css/global.css`],
       },
     },
   ],
