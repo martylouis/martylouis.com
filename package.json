@@ -4,85 +4,47 @@
   "description": "Terms of Service for MartyLouisCo",
   "main": "index.js",
   "scripts": {
-    "analyze:lint": "eslint --ext .jsx --ext .js .",
-    "analyze:prettier": "prettier --list-different '**/*.{js,css,md,json}'",
-    "analyze": "npm run analyze:lint && npm run analyze:prettier",
-    "build": "gatsby build",
-    "dev": "gatsby develop",
-    "fix:lint": "eslint --ext .jsx --ext .js . --fix",
-    "fix:prettier": "prettier --write '**/*.{js,css,md,json}'",
-    "fix": "npm run fix:lint && npm run fix:prettier",
-    "start": "npm run dev",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/martylouis/martylouis-gatsby.git"
+    "url": "git+https://github.com/martylouis/martylouis.com.git"
   },
   "keywords": [],
   "author": "Marty Thierry <marty@martylouis.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/martylouis/martylouis-gatsby/issues"
+    "url": "https://github.com/martylouis/martylouis.com/issues"
   },
-  "homepage": "https://github.com/martylouis/martylouis-gatsby#readme",
+  "homepage": "https://github.com/martylouis/martylouis.com#readme",
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "@mdx-js/loader": "^1.6.5",
     "@mdx-js/mdx": "^1.5.7",
     "@mdx-js/react": "^1.5.7",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-prettier": "^3.1.2",
-    "gatsby": "^2.20.2",
-    "gatsby-plugin-emotion": "^4.2.1",
-    "gatsby-plugin-manifest": "^2.3.1",
-    "gatsby-plugin-mdx": "^1.1.0",
-    "gatsby-plugin-offline": "^3.1.0",
-    "gatsby-plugin-postcss": "^2.2.0",
-    "gatsby-plugin-purgecss": "^4.0.1",
-    "gatsby-plugin-react-helmet": "^3.2.0",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gatsby-remark-prismjs": "^3.4.0",
-    "gatsby-remark-vscode": "^2.0.3",
-    "gatsby-source-filesystem": "^2.2.1",
-    "gatsby-transformer-remark": "^2.7.0",
-    "graphql": "^14.6.0",
+    "@next/mdx": "^9.4.4",
     "material-palenight-theme": "github:whizkydee/vscode-material-palenight-theme",
-    "postcss-import": "^12.0.1",
-    "postcss-preset-env": "^6.7.0",
+    "next": "^9.4.4",
     "prismjs": "^1.19.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.1",
-    "twin.macro": "^1.0.0-alpha.7"
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
     "eslint-config-react-app": "^5.2.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.1",
-    "precss": "^4.0.0",
-    "prettier": "^2.0.2",
-    "stylelint": "^13.2.1",
-    "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-recommended": "^3.0.0",
-    "stylelint-prettier": "^1.1.2",
-    "tailwindcss": "^1.2.0"
-  },
-  "babelMacros": {
-    "twin": {
-      "config": "./tailwind.config.js",
-      "styled": "@emotion/styled",
-      "format": "auto",
-      "hasSuggestions": true,
-      "debug": false
-    }
+    "prettier": "^2.0.2"
   }
 }

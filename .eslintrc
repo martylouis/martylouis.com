@@ -1,14 +1,10 @@
 {
+  "parser": "babel-eslint",
   "extends": [
     "react-app",
     "plugin:prettier/recommended"
   ],
   "rules": {
-    "prettier/prettier": "error",
-    "quotes": [
-      "error",
-      "backtick"
-    ],
     "react/jsx-sort-props": [
       "error"
     ]
