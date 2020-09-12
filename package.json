@@ -1,7 +1,7 @@
 {
-  "name": "martylouis-gatsby",
+  "name": "martylouis-com",
   "version": "1.0.0",
-  "description": "Terms of Service for MartyLouisCo",
+  "description": "@martylouis personal website built on NextJS",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
@@ -14,37 +14,35 @@
   },
   "keywords": [],
   "author": "Marty Thierry <marty@martylouis.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/martylouis/martylouis.com/issues"
   },
   "homepage": "https://github.com/martylouis/martylouis.com#readme",
   "private": true,
   "dependencies": {
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
-    "@mdx-js/loader": "^1.6.5",
-    "@mdx-js/mdx": "^1.5.7",
-    "@mdx-js/react": "^1.5.7",
-    "@next/mdx": "^9.4.4",
-    "material-palenight-theme": "github:whizkydee/vscode-material-palenight-theme",
-    "next": "^9.4.4",
-    "prismjs": "^1.19.0",
-    "prop-types": "^15.7.2",
+    "@mapbox/rehype-prism": "^0.5.0",
+    "@mdx-js/loader": "^1.6.16",
+    "@next/mdx": "^9.5.3",
+    "gray-matter": "^4.0.2",
+    "next": "latest",
+    "next-mdx-remote": "^1.0.0",
+    "next-remote-watch": "^0.2.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.1"
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-config-react-app": "^5.2.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^2.5.1",
-    "prettier": "^2.0.2"
+    "eslint": "^7.8.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-mdx": "^1.8.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.1.1",
+    "tailwindcss": "^1.7.6"
   }
 }

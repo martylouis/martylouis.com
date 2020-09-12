@@ -1,0 +1,34 @@
+@tailwind base;
+
+/* Custom base */
+html {
+  font-size: 100%;
+  @apply min-h-screen bg-gray-100;
+}
+
+body {
+  @apply min-h-screen text-base text-gray-800 bg-gray-100;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+p {
+  margin-top: 1rem;
+}
+
+footer ul li {
+  @apply my-6 text-gray-500;
+}
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Custom utilities */

@@ -1,0 +1,68 @@
+# Web Design in 4 minutes
+
+by Jeremy Thomas
+
+Let's say you have a product, a portfolio, or just an idea you want to share with everyone on your own website. Before you publish it on the internet, you want to make it look attractive, professional, or at least decent to look at.
+
+What is the first thing you need to work on?
+
+## Content
+The purpose of design is to enhance the presentation of the content it's applied to. It might sound obvious, but content being the primary element of a website, it should not be established as an afterthought.
+
+Written content, like the paragraph you're currently reading, makes up for more than 90% of the Web. Styling this textual content will go a long way.
+
+Let's assume you've already finalised the content you want to publish and just created an empty style.css file, what is the first rule you can write?
+
+Centering
+Long lines of text can be hard to parse, and thus hard to read. Setting a limit of characters per line greatly enhances the readability and appeal of a wall of text.
+
+```html
+body {
+  margin: 0 auto;
+  max-width: 50em;
+}
+```
+
+After styling the text blocks, what about styling the text itself?
+
+Font family
+The browser's font defaults to "Times", which can look unappealing (mostly because it is the "unstyled" font). Switching to a sans-serif font like "Helvetica" or "Arial" can vastly improve the look of your page.
+
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+If you want to stick with a serif font, try "Georgia".
+
+While this makes the text more appealing, let's also make it more readable.
+
+Spacing
+When a page looks "broken" to a user, it's usually a spacing issue. Providing space both around and within your content can increase the appeal of your page.
+
+```html
+body {
+  line-height: 1.5;
+  padding: 4em 1em;
+}
+
+h2 {
+  margin-top: 1em;
+  padding-top: 1em;
+}
+```
+
+While the layout has greatly improved so far, let's apply more subtle changes.
+
+Color & contrast
+Black text on a white background can be harsh on the eyes. Opting for a softer shade of black for body text makes the page more comfortable to read.
+
+body {
+  color: #555;
+}
+And in order to keep a decent level of contrast, let's pick a darker shade for important words
+
+h1,
+h2,
+strong {
+  color: #333;
+}
+While most of the page has been improved visually, some elements (like the code snippets) still seem out of place.
