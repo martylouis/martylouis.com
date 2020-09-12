@@ -34,3 +34,6 @@ yarn-error.log*
 # now deployment-specific configs
 now.json
 .now
+
+#vercel
+.vercel
