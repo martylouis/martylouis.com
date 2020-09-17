@@ -19,7 +19,7 @@ h1, h2, h3, h4 {
 }
 
 p {
-  @apply my-4
+  @apply my-4;
 }
 
 footer ul li {
@@ -29,6 +29,30 @@ footer ul li {
 /* Start purging... */
 @tailwind components;
 /* Stop purging. */
+
+.container {
+  @apply max-w-4xl px-4 mx-auto;
+}
+
+.button,
+.button-link,
+.button-green,
+.button-gray {
+  @apply inline-flex items-center px-8 py-4 font-medium rounded-md;
+}
+
+
+.button-green {
+  @apply text-white bg-green-500;
+}
+
+.button-gray {
+  @apply text-white bg-gray-700;
+}
+
+.button-link {
+  @apply p-0 text-gray-900;
+}
 
 /* Start purging... */
 @tailwind utilities;

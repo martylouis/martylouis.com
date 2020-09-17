@@ -1,7 +1,7 @@
 module.exports = {
   header: [
     // { title: 'Home', href: '/' },
-    { title: 'Services', href: '/services' },
+    // { title: 'Services', href: '/services' },
     { title: 'Work', href: '/work' },
     { title: 'Blog', href: '/blog' },
     { title: 'Contact', href: '/contact' },
@@ -10,7 +10,7 @@ module.exports = {
     {
       heading: 'Overview',
       links: [
-        { title: 'Services', href: '/services' },
+        // { title: 'Services', href: '/services' },
         { title: 'Work', href: '/work' },
         { title: 'Blog', href: '/blog' },
         { title: 'Contact', href: '/contact' },
@@ -20,8 +20,8 @@ module.exports = {
       heading: 'Extras',
       links: [
         { title: 'Uses', href: '/uses' },
-        { title: 'Resources', href: '/resources' },
-        { title: 'Newsletter', href: '/newsletter' },
+        // { title: 'Resources', href: '/resources' },
+        // { title: 'Newsletter', href: '/newsletter' },
         {
           title: 'Podcast',
           href: 'https://thefreelancedance.com',
