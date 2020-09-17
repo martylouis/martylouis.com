@@ -8,6 +8,7 @@ export async function getStaticProps({ params }) {
     'title',
     'slug',
     'date',
+    'published',
     'excerpt',
     'content',
   ]);
