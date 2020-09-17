@@ -1,5 +1,5 @@
 import PostContent from '../../components/PostContent';
-import { getPostBySlug, getAllPosts } from '../../lib/api';
+import { getPostBySlug, getAllPosts } from '../../lib/getPosts';
 
 const Post = ({ post }) => <PostContent post={post} />;
 

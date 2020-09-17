@@ -10,7 +10,7 @@ module.exports = {
     url: 'https://martylouis.com',
     nav: {
       header: [
-        { title: 'Home', href: '/' },
+        // { title: 'Home', href: '/' },
         { title: 'Services', href: '/services' },
         { title: 'Work', href: '/work' },
         { title: 'Blog', href: '/blog' },
@@ -39,12 +39,31 @@ module.exports = {
             },
           ],
         },
-      ],
-      social: [
-        { title: 'Twitter', href: 'https://twitter.com/martylouis' },
-        { title: 'GitHub', href: 'https://github.com/martylouis' },
-        { title: 'LinkedIn', href: 'https://linkedin.com/martylouis' },
-        { title: 'Instagram', href: 'https://instagram.com/martylouis' },
+        {
+          heading: 'Follow @martylouis',
+          links: [
+            {
+              title: 'Twitter',
+              href: 'https://twitter.com/martylouis',
+              external: true,
+            },
+            {
+              title: 'GitHub',
+              href: 'https://github.com/martylouis',
+              external: true,
+            },
+            {
+              title: 'LinkedIn',
+              href: 'https://linkedin.com/martylouis',
+              external: true,
+            },
+            {
+              title: 'Instagram',
+              href: 'https://instagram.com/martylouis',
+              external: true,
+            },
+          ],
+        },
       ],
     },
   },

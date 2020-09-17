@@ -1,30 +1,22 @@
-import CustomLink from './CustomLink';
-import { SocialIcon } from './Icon';
-import { site } from '../lib/constants';
+import nav from '../data/nav';
+
+import Link from 'next/link';
+import ActiveLink from './ActiveLink';
 
 export default function Header() {
-  const { header, social } = site.nav;
+  const { header } = nav;
+
   return (
-    <header className="py-4">
+    <header className="py-8">
       <div className="container max-w-3xl px-4 mx-auto">
-        <nav className="flex space-x-8">
+        <nav className="flex justify-between">
+          <Link href="/">
+            <a>Marty Louis</a>
+          </Link>
           <ul className="flex space-x-4">
-            {header.slice(1).map(({ href, title }) => (
+            {header.map(({ href, title }) => (
               <li key={title}>
-                <CustomLink
-                  href={href}
-                  title={title}
-                  className="text-blue-500 no-underline"
-                />
-              </li>
-            ))}
-          </ul>
-          <ul className="flex space-x-4">
-            {social.slice(0, 2).map(({ href, title }) => (
-              <li key={title}>
-                <CustomLink href={href} className="block" external={true}>
-                  <SocialIcon name={title} title={title} size="5" />
-                </CustomLink>
+                <HeaderLink href={href} title={title} />
               </li>
             ))}
           </ul>
@@ -33,3 +25,11 @@ export default function Header() {
     </header>
   );
 }
+
+export const HeaderLink = ({ href, title }) => {
+  return (
+    <ActiveLink href={href} activeClassName="text-gray-900">
+      <a className="text-gray-500 no-underline">{title}</a>
+    </ActiveLink>
+  );
+};

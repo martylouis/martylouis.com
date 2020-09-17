@@ -1,7 +1,8 @@
+import site from '../data/site';
 import PageLayout from './PageLayout';
+
 import Head from 'next/head';
 import { MDXProvider } from '@mdx-js/react';
-import { site } from '../lib/constants';
 // import { useRouter } from 'next/router';
 
 const mdxCodeComponents = {
