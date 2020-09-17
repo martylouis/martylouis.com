@@ -1,4 +1,4 @@
-import { social, feather } from '../lib/icons';
+import { social, feather } from '../data/icons';
 
 export const SvgIcon = (props) => {
   const { title, size, className, path, ...rest } = props;

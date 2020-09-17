@@ -1,9 +1,10 @@
 import Head from 'next/head';
 import PageLayout from '../components/PageLayout';
-import { getAllPosts } from '../lib/api';
+import { getAllPosts } from '../lib/getPosts';
 import Link from 'next/link';
 import PostList from '../components/PostList';
-import { site } from '../lib/constants';
+import site from '../data/site';
+import { FeatherIcon } from '../components/Icon';
 
 export default function Home({ allPosts }) {
   const morePosts = allPosts;

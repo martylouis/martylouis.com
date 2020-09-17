@@ -1,5 +1,5 @@
 import { SvgIcon } from './Icon';
-import { martylouisLogo } from '../lib/icons';
+import { martylouisLogo } from '../data/icons';
 
 const Logo = (props) => {
   const { size, className } = props;
