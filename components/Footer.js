@@ -9,30 +9,20 @@ export default function Footer() {
   return (
     <footer className="pt-16 pb-24 bg-gray-900">
       <div className="container">
-        <div className={`md:grid md:gap-x-4 md:grid-cols-${footer.length + 1}`}>
-          <div className="mt-2">
-            <Logo size="12" className="text-green-500" />
-            <p className="mt-12 mb-0 text-sm text-gray-500">
-              &copy; 2020 Marty Louis Co. Built with NextJS and WordPress.
-            </p>
-            {/* <p className="mt-0 text-sm text-gray-400">
-              <Link href="/privacy">
-                <a className="text-blue-600">Privacy</a>
-              </Link>
-            </p> */}
+        {footer.map(({ heading, links }) => (
+          <div key={heading} className="md:flex">
+            <h4 className="mt-0 mr-8 tracking-wide text-gray-200">{heading}</h4>
+            <ul className="md:space-x-8 md:flex">
+              {links.map(({ title, href, external }) => (
+                <li key="title" className="flex my-0">
+                  <FooterLink title={title} href={href} external={external} />
+                </li>
+              ))}
+            </ul>
           </div>
-          {footer.map(({ heading, links }) => (
-            <div key={heading}>
-              <h4 className="text-gray-100">{heading}</h4>
-              <ul>
-                {links.map(({ title, href, external }) => (
-                  <li key="title" className="flex">
-                    <FooterLink title={title} href={href} external={external} />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        ))}
+        <div className="flex">
+          <p className="text-sm text-gray-500">&copy; 2020 Marty Louis Co.</p>
         </div>
       </div>
     </footer>
