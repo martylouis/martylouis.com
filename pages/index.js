@@ -12,10 +12,10 @@ export default function Home({ allPosts }) {
 
   return (
     <PageLayout>
-      <Head
-        title={`${intro.heading} – ${site.author} (${site.name})`}
-        description={site.meta.description}
-      />
+      <Head>
+        <title>{`${intro.heading} – ${site.author} (${site.name})`}</title>
+        <meta name="description" content={site.meta.description} />
+      </Head>
       <section className="py-16">
         <div className="container max-w-4xl">
           <Intro />
@@ -26,9 +26,9 @@ export default function Home({ allPosts }) {
           <Services />
         </div>
       </section>
-      <section className="py-16">
+      <section className="py-16 pb-32">
         <div className="container">
-          <BlogPosts posts={allPosts} />
+          <Projects />
         </div>
       </section>
     </PageLayout>
@@ -46,14 +46,16 @@ export const Intro = () => {
           🤓
         </span>
       </p>
-      <div className="flex">
-        <div className="mr-16 leading-snug">
-          <h1 className="mt-2 text-5xl font-black leading-none">{heading}</h1>
+      <div className="flex flex-wrap">
+        <div className="mr-16 leading-snug md:flex-1">
+          <h1 className="mt-2 text-4xl font-black leading-none md:text-5xl">
+            {heading}
+          </h1>
           <p className="text-2xl font-light text-gray-700">{subheading}</p>
         </div>
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 order-first md:order-none">
           <img
-            className="w-48 border-2 border-gray-200 rounded-lg"
+            className="w-24 border-2 border-gray-200 rounded-lg md:w-48"
             src={photo.link}
             alt={photo.title}
           />
@@ -132,3 +134,31 @@ export async function getStaticProps() {
     props: { allPosts },
   };
 }
+
+export const Projects = () => {
+  const projects = [
+    { title: 'Title', desc: 'desc' },
+    { title: 'Title', desc: 'desc' },
+    { title: 'Title', desc: 'desc' },
+    { title: 'Title', desc: 'desc' },
+  ];
+
+  return (
+    <>
+      <header className="text-center">
+        <h2 className="text-4xl font-black">Featured Projects</h2>
+        <p>coming soon...</p>
+      </header>
+      <div className="md:grid md:gap-x-8 md:grid-cols-2">
+        {projects.map(({ title, desc }) => (
+          <div key={title} className="mt-8">
+            <div className="h-56 bg-gray-200 rounded-lg opacity-50"></div>
+            {/* <div className="px-6 py-2 bg-white rounded-b-lg">
+              <h3 className="">{title}</h3>
+            </div> */}
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};

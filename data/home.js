@@ -4,7 +4,7 @@ module.exports = {
     subheading:
       'I work with agencies, startups, and businesses to design, build and maintain websites and brands',
     button: {
-      text: 'Get Started',
+      text: 'Contact Me!',
       link: '/',
     },
     photo: {

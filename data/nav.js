@@ -2,35 +2,35 @@ module.exports = {
   header: [
     // { title: 'Home', href: '/' },
     // { title: 'Services', href: '/services' },
-    { title: 'Work', href: '/work' },
-    { title: 'Blog', href: '/blog' },
+    // { title: 'Work', href: '/work' },
+    // { title: 'Blog', href: '/blog' },
     { title: 'Contact', href: '/contact' },
   ],
   footer: [
+    // {
+    //   heading: 'Overview',
+    //   links: [
+    //     // { title: 'Services', href: '/services' },
+    //     { title: 'Work', href: '/' },
+    //     { title: 'Blog', href: '/' },
+    //     { title: 'Contact', href: '/' },
+    //   ],
+    // },
+    // {
+    //   heading: 'Extras',
+    //   links: [
+    //     { title: 'Uses', href: '/' },
+    //     // { title: 'Resources', href: '/resources' },
+    //     // { title: 'Newsletter', href: '/newsletter' },
+    //     {
+    //       title: 'Podcast',
+    //       href: 'https://thefreelancedance.com',
+    //       external: true,
+    //     },
+    //   ],
+    // },
     {
-      heading: 'Overview',
-      links: [
-        // { title: 'Services', href: '/services' },
-        { title: 'Work', href: '/work' },
-        { title: 'Blog', href: '/blog' },
-        { title: 'Contact', href: '/contact' },
-      ],
-    },
-    {
-      heading: 'Extras',
-      links: [
-        { title: 'Uses', href: '/uses' },
-        // { title: 'Resources', href: '/resources' },
-        // { title: 'Newsletter', href: '/newsletter' },
-        {
-          title: 'Podcast',
-          href: 'https://thefreelancedance.com',
-          external: true,
-        },
-      ],
-    },
-    {
-      heading: 'Follow @martylouis',
+      heading: '@martylouis',
       links: [
         {
           title: 'Twitter',

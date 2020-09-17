@@ -36,6 +36,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: [
+        'Inter',
         'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',
@@ -71,15 +72,15 @@ module.exports = {
           900: '#15171A',
         },
         green: {
-          100: '#E7F8EE',
-          200: '#BCE9CE',
-          300: '#93DAAF',
-          400: '#6ACA90',
-          500: '#42B871',
-          600: '#33955A',
-          700: '#257143',
-          800: '#184C2D',
-          900: '#0B2716',
+          100: '#EBFBF2',
+          200: '#B0EECE',
+          300: '#75DBAD',
+          400: '#3BC48D',
+          500: '#00a86e',
+          600: '#008F56',
+          700: '#00713E',
+          800: '#005027',
+          900: '#002A12',
         },
         blue: {
           100: '#E3EFFC',
