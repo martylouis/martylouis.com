@@ -1,4 +1,5 @@
 import nav from '../data/nav';
+import Logo from '../components/Logo';
 
 import Link from 'next/link';
 import ActiveLink from './ActiveLink';
@@ -8,12 +9,18 @@ export default function Header() {
 
   return (
     <header className="py-8">
-      <div className="container max-w-3xl px-4 mx-auto">
+      <div className="container">
         <nav className="flex justify-between">
           <Link href="/">
-            <a>Marty Louis</a>
+            <a className="flex items-center">
+              {' '}
+              <Logo size="12" className="text-green-500" />{' '}
+              <div className="ml-4 text-lg font-black leading-none tracking-tighter text-gray-700 uppercase">
+                Marty Louis
+              </div>
+            </a>
           </Link>
-          <ul className="flex space-x-4">
+          <ul className="flex items-center space-x-8">
             {header.map(({ href, title }) => (
               <li key={title}>
                 <HeaderLink href={href} title={title} />
@@ -29,7 +36,7 @@ export default function Header() {
 export const HeaderLink = ({ href, title }) => {
   return (
     <ActiveLink href={href} activeClassName="text-gray-900">
-      <a className="text-gray-500 no-underline">{title}</a>
+      <a className="font-medium text-gray-500 no-underline">{title}</a>
     </ActiveLink>
   );
 };
