@@ -2,15 +2,20 @@ import Link from 'next/link';
 
 export default function PostList({ posts }) {
   return (
-    <div>
+    <ol>
       {posts.map((post) => (
-        <div key={post.slug}>
+        <li key={post.slug}>
           <Link href={`/blog/${post.slug}`}>
-            <a key={post.slug}>{post.title}</a>
+            <a className="block px-4 pt-2 -mx-4 border-2 border-transparent rounded-lg hover:border-gray-200">
+              <h3 className="mt-0 text-3xl font-extrabold tracking-tight">
+                {post.title}
+              </h3>
+              <p>{post.date}</p>
+              <p>{post.excerpt}</p>
+            </a>
           </Link>
-          <p>{post.excerpt}</p>
-        </div>
+        </li>
       ))}
-    </div>
+    </ol>
   );
 }
