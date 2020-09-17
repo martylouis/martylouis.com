@@ -6,6 +6,7 @@ import { MDXProvider } from '@mdx-js/react';
 // import { useRouter } from 'next/router';
 
 const mdxCodeComponents = {
+  h2: (props) => <Heading as="h1" className="text-red 500" {...props} />,
   // pre: ({ className, ...props }) => ({}),
   // 'pre.code': ({ className, ...props }) => ({}),
 };
