@@ -7,16 +7,19 @@ html {
 }
 
 body {
-  @apply min-h-screen text-base text-gray-800 bg-gray-100;
+  @apply min-h-screen text-gray-800 bg-gray-100;
+}
+
+a {
+  @apply transition duration-150 ease-in-out;
 }
 
 h1, h2, h3, h4 {
-  font-weight: 700;
-  margin-top: 1rem;
+  @apply my-4 font-extrabold;
 }
 
 p {
-  margin-top: 1rem;
+  @apply my-4
 }
 
 footer ul li {

@@ -34,14 +34,6 @@ module.exports = {
     },
   },
   theme: {
-    fontSize: {
-      sm: ['0.75rem', modularLineHeight],
-      base: ['1.15rem', modularLineHeight],
-      lg: ['1.533rem', modularLineHeight],
-      xl: ['2.043rem', modularLineHeight],
-      '2xl': ['2.724rem', modularLineHeight],
-      '3xl': ['3.631rem', modularLineHeight],
-    },
     fontFamily: {
       sans: [
         'system-ui',
@@ -58,6 +50,14 @@ module.exports = {
       ],
     },
     extend: {
+      fontSize: {
+        'sm-mod': ['0.75rem', modularLineHeight],
+        'base-mod': ['1.15rem', modularLineHeight],
+        'lg-mod': ['1.533rem', modularLineHeight],
+        'xl-mod': ['2.043rem', modularLineHeight],
+        '2xl-mod': ['2.724rem', modularLineHeight],
+        '3xl-mod': ['3.631rem', modularLineHeight],
+      },
       colors: {
         gray: {
           100: '#EDEEF0',

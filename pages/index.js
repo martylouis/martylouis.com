@@ -8,44 +8,51 @@ import { FeatherIcon } from '../components/Icon';
 
 export default function Home({ allPosts }) {
   const morePosts = allPosts;
-
   const heading = 'Freelance Web Designer in Destin, Florida';
 
   return (
     <PageLayout>
-      <Head>
-        <title>
-          {heading} – {site.author} ({site.name})
-        </title>
-      </Head>
-      <section className="mt-24">
+      <Head
+        title={`${heading} – ${site.author} (${site.name})`}
+        description={site.meta.description}
+      />
+
+      {/* Intro */}
+      <section className="my-24">
         <div className="container max-w-3xl px-4 mx-auto">
-          <p>
-            Hey! I’m @martylouis{' '}
-            <span role="img" aria-label="high fives">
-              🙌
+          <p className="text-xl">
+            Hey! I’m <strong>@martylouis</strong>{' '}
+            <span role="img" aria-label="nerd emoji">
+              🤓
             </span>
           </p>
-          <h1 className="text-3xl font-extrabold">{heading}</h1>
-          <p>
+          <h1 className="text-5xl font-extrabold leading-tight">{heading}</h1>
+          <p className="text-2xl leading-snug">
             I design, build and maintain websites and brands that people love. I
             work remotely with agencies, startups, and businesses of all sizes.
           </p>
         </div>
       </section>
-      <section>
+      {/* /Intro */}
+      {/* Blog */}
+      <section className="my-24">
         <div className="container max-w-3xl px-4 mx-auto">
-          <header>
-            <h2 className="text-xl">Blog</h2>
+          <header className="flex items-baseline justify-between mt-24 mb-8 tracking-tight">
+            <h2 className="font-extrabold text-green-700">
+              From the Blog &hellip;
+            </h2>
+            <div>
+              <Link href="/blog">
+                <a className="flex items-center font-extrabold text-green-500">
+                  All Posts <FeatherIcon name="arrowRight" className="ml-1" />
+                </a>
+              </Link>
+            </div>
           </header>
           {morePosts.length > 0 && <PostList posts={allPosts} />}
-          <div>
-            <Link href="/blog">
-              <a>View All Blog Posts »</a>
-            </Link>
-          </div>
         </div>
       </section>
+      {/* /Blog */}
     </PageLayout>
   );
 }
