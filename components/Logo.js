@@ -2,10 +2,9 @@ import { SvgIcon } from './Icon';
 import { martylouisLogo } from '../data/icons';
 
 const Logo = (props) => {
-  const { size, className } = props;
+  const { className } = props;
   return (
     <SvgIcon
-      size={size}
       title="MartyLouis.com Logo"
       path={martylouisLogo}
       fill="currentColor"

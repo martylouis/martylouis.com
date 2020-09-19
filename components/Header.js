@@ -14,7 +14,7 @@ export default function Header() {
           <Link href="/">
             <a className="flex items-center">
               {' '}
-              <Logo size="12" className="text-green-500" />{' '}
+              <Logo className="w-12 h-12 text-green-500" />{' '}
               <div className="ml-4 text-lg font-black leading-none tracking-tight text-gray-700 uppercase">
                 Marty Louis
               </div>
