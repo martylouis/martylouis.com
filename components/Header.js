@@ -10,14 +10,14 @@ export default function Header() {
   return (
     <header className="py-8">
       <div className="container">
-        <nav className="flex justify-between">
+        <nav className="flex justify-between pb-6">
           <Link href="/">
             <a className="flex items-center">
               {' '}
               <Logo className="w-12 h-12 text-green-500" />{' '}
-              <div className="ml-4 text-lg font-black leading-none tracking-tight text-gray-700 uppercase">
-                Marty Louis
-              </div>
+              {/* <div className="text-lg font-medium leading-none tracking-tight text-gray-700 uppercase">
+                Marty<span className="font-black">Louis</span>
+              </div> */}
             </a>
           </Link>
           <ul className="flex items-center space-x-8">

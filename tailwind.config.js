@@ -52,6 +52,15 @@ module.exports = {
       ],
     },
     extend: {
+      spacing: {
+        '16x9': '56.25%',
+        fourth: '75%',
+        half: '50%',
+        full: '100%',
+      },
+      borderRadius: {
+        xl: '1rem',
+      },
       fontSize: {
         'sm-mod': ['0.75rem', modularLineHeight],
         'base-mod': ['1.15rem', modularLineHeight],
