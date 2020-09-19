@@ -1,7 +1,6 @@
 import nav from '../data/nav';
 import Link from 'next/link';
 import ExternalLink from './ExternalLink';
-import Logo from './Logo';
 import { FeatherIcon } from './Icon';
 
 export default function Footer() {
@@ -35,7 +34,7 @@ export const FooterLink = ({ title, href, external }) => {
   return external ? (
     <ExternalLink href={href} className={classes}>
       <span className="flex items-center">
-        {title} <FeatherIcon name="externalLink" className="ml-1" />
+        {title} <FeatherIcon name="externalLink" className="w-4 h-4 ml-1" />
       </span>
     </ExternalLink>
   ) : (

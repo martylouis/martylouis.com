@@ -1,9 +1,9 @@
 import { social, feather } from '../data/icons';
 
 export const SvgIcon = (props) => {
-  const { title, size, className, path, ...rest } = props;
+  const { title, className, path, ...rest } = props;
   return (
-    <span className={`inline-block w-${size} h-${size} ${className}`}>
+    <span className={`inline-block ${className}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="block max-w-full max-h-full"
@@ -17,10 +17,9 @@ export const SvgIcon = (props) => {
 };
 
 export const FeatherIcon = (props) => {
-  const { name, title, size, className } = props;
+  const { name, title, className } = props;
   return (
     <SvgIcon
-      size={size}
       className={className}
       fill="none"
       stroke="currentColor"
@@ -34,15 +33,10 @@ export const FeatherIcon = (props) => {
   );
 };
 
-FeatherIcon.defaultProps = {
-  size: '4',
-};
-
 export const SocialIcon = (props) => {
-  const { name, title, size, className } = props;
+  const { name, title, className } = props;
   return (
     <SvgIcon
-      size={size}
       className={className}
       fill="currentColor"
       viewBox="0 0 24 24"
