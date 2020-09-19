@@ -8,12 +8,12 @@ export default function Footer() {
   return (
     <footer className="pt-16 pb-24 bg-gray-900">
       <div className="container">
-        {footer.map(({ heading, links }) => (
-          <div key={heading} className="md:flex">
+        {footer.map(({ heading, links }, i) => (
+          <div key={i} className="md:flex">
             <h4 className="mt-0 mr-8 tracking-wide text-gray-200">{heading}</h4>
             <ul className="md:space-x-8 md:flex">
               {links.map(({ title, href, external }) => (
-                <li key="title" className="flex my-0">
+                <li key={title} className="flex my-0">
                   <FooterLink title={title} href={href} external={external} />
                 </li>
               ))}
