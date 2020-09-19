@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @apply min-h-screen text-gray-800 bg-gray-100;
+  @apply min-h-screen font-sans text-gray-800 bg-gray-100;
 }
 
 a {
