@@ -1,0 +1,13 @@
+@layer base {
+  body {
+    @apply text-gray-900 bg-gray-50;
+  }
+}
+
+a {
+  @apply transition-all;
+}
+
+.container {
+  max-width: 72ch;
+}
