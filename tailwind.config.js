@@ -1,111 +1,45 @@
-const modularLineHeight = 'calc(0.45rem + 1em)';
-const mdx = require('@mdx-js/mdx');
+const colors = require('tailwindcss/colors');
 
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: {
-    mode: 'layers',
-    content: [
-      './components/**/*.{js,ts,jsx,tsx}',
-      './pages/**/*.{js,ts,jsx,tsx,md,mdx}',
-      './blog/**/*.{js,ts,jsx,tsx,md,mdx}',
-    ],
-    options: {
-      extractors: [
-        {
-          extensions: ['mdx'],
-          extractor: (content) => {
-            content = mdx.sync(content);
-
-            // Capture as liberally as possible, including things like `h-(screen-1.5)`
-            const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [];
-
-            // Capture classes within other delimiters like .block(class="w-1/2") in Pug
-            const innerMatches =
-              content.match(/[^<>"'`\s.(){}[\]#=%]*[^<>"'`\s.(){}[\]#=%:]/g) ||
-              [];
-
-            return broadMatches.concat(innerMatches);
-          },
-        },
-      ],
-    },
-  },
+  purge: ['./src/**/*{.js,.md,.mdx}'],
+  // darkMode: 'media',
   theme: {
-    fontFamily: {
-      sans: [
-        'Inter',
-        'system-ui',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        'Helvetica Neue',
-        'Helvetica',
-        'Arial',
-        'sans-serif',
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji',
-      ],
+    colors: {
+      gray: {
+        50: 'hsla(208, 16%, 97%, 1)',
+        100: 'hsla(208, 12%, 88%, 1)',
+        200: 'hsla(208, 12%, 76%, 1)',
+        300: 'hsla(208, 12%, 68%, 1)',
+        400: 'hsla(208, 10%, 60%, 1)',
+        500: 'hsla(208, 8%, 52%, 1)',
+        600: 'hsla(208, 8%, 44%, 1)',
+        700: 'hsla(208, 8%, 35%, 1)',
+        800: 'hsla(208, 8%, 26%, 1)',
+        900: 'hsla(208, 8%, 12%, 1)',
+      },
+      blue: colors.blue,
+      teal: colors.emerald,
+      orange: colors.amber,
+      pink: colors.pink,
+      white: colors.white,
+      // https://colordesigner.io/#29B269-D9CB9E-374140-2A2C2B-BDC3C7
+      primary: {
+        50: '#FBFEFC',
+        100: '#D9F5E4',
+        200: '#B9EACD',
+        300: '#9ADEB5',
+        400: '#7CD19E',
+        500: '#61C288',
+        600: '#46B171',
+        700: '#339359',
+        800: '#227242',
+        900: '#144F2C',
+        1000: '#092916',
+      },
     },
-    extend: {
-      spacing: {
-        '16x9': '56.25%',
-        fourth: '75%',
-        half: '50%',
-        full: '100%',
-      },
-      borderRadius: {
-        xl: '1rem',
-      },
-      fontSize: {
-        'sm-mod': ['0.75rem', modularLineHeight],
-        'base-mod': ['1.15rem', modularLineHeight],
-        'lg-mod': ['1.533rem', modularLineHeight],
-        'xl-mod': ['2.043rem', modularLineHeight],
-        '2xl-mod': ['2.724rem', modularLineHeight],
-        '3xl-mod': ['3.631rem', modularLineHeight],
-      },
-      colors: {
-        gray: {
-          100: '#EDEEF0',
-          200: '#CCCFD4',
-          300: '#ACB1B7',
-          400: '#8B929B',
-          500: '#6B737E',
-          600: '#555C65',
-          700: '#40454C',
-          800: '#2A2E33',
-          900: '#15171A',
-        },
-        green: {
-          100: '#EBFBF2',
-          200: '#B0EECE',
-          300: '#75DBAD',
-          400: '#3BC48D',
-          500: '#00a86e',
-          600: '#008F56',
-          700: '#00713E',
-          800: '#005027',
-          900: '#002A12',
-        },
-        blue: {
-          100: '#E3EFFC',
-          200: '#B1D1F7',
-          300: '#80B4EF',
-          400: '#5196E6',
-          500: '#2479DB',
-          600: '#1A61B2',
-          700: '#114888',
-          800: '#0A305C',
-          900: '#04182F',
-        },
-      },
+    container: {
+      center: true,
+      padding: '1.5rem',
     },
   },
-  variants: {},
-  plugins: [],
 };

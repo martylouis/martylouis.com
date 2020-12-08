@@ -1,49 +1,45 @@
 {
-  "root": true,
-  "parserOptions": {
-    "ecmaVersion": 2020,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
   "env": {
-    "node": true,
     "browser": true,
+    "node": true,
     "es6": true
   },
   "extends": [
     "eslint:recommended",
+    "plugin:prettier/recommended",
     "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:mdx/recommended",
-    "plugin:prettier/recommended"
+    "plugin:jsx-a11y/recommended"
   ],
   "rules": {
-    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true
+      }
+    ],
     "react/prop-types": "off",
+    "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
-        "components": [
-          "Link"
-        ],
-        "specialLink": [
-          "hrefLeft",
-          "hrefRight"
-        ],
-        "aspects": [
-          "invalidHref",
-          "preferButton"
-        ]
-      }
-    ],
-    "prettier/prettier": [
-      "error",
-      {},
-      {
-        "usePrettierrc": true
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref"]
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@components", "./src/components"],
+          ["@lib", "./src/lib"],
+          ["@utils", "./src/utils"],
+          ["@styles", "./src/styles"],
+          ["@data", "./data"]
+        ]
+      }
+    }
   }
 }

@@ -1,30 +1,33 @@
 module.exports = {
   header: [
-    // { title: 'Home', href: '/' },
-    // { title: 'Services', href: '/services' },
-    // { title: 'Work', href: '/work' },
-    // { title: 'Blog', href: '/blog' },
-    { title: 'Contact', href: '/contact' },
+    // { title: 'Home', url: '/' },
+    { title: 'Work', url: '/work' },
+    { title: 'Services', url: '/services' },
+    { title: 'Blog', url: '/services' },
+    // { title: 'Hello World!', url: '/blog/hello-world' },
+    // { title: 'GR30A', url: '/projects/gulf-realty-30a' },
+    // { title: 'About', url: '/about' },
+    { title: 'Contact', url: '/contact' },
   ],
   footer: [
     // {
     //   heading: 'Overview',
     //   links: [
-    //     // { title: 'Services', href: '/services' },
-    //     { title: 'Work', href: '/' },
-    //     { title: 'Blog', href: '/' },
-    //     { title: 'Contact', href: '/' },
+    //     // { title: 'Services', url: '/services' },
+    //     { title: 'Work', url: '/' },
+    //     { title: 'Blog', url: '/' },
+    //     { title: 'Contact', url: '/' },
     //   ],
     // },
     // {
     //   heading: 'Extras',
     //   links: [
-    //     { title: 'Uses', href: '/' },
-    //     // { title: 'Resources', href: '/resources' },
-    //     // { title: 'Newsletter', href: '/newsletter' },
+    //     { title: 'Uses', url: '/' },
+    //     // { title: 'Resources', url: '/resources' },
+    //     // { title: 'Newsletter', url: '/newsletter' },
     //     {
     //       title: 'Podcast',
-    //       href: 'https://thefreelancedance.com',
+    //       url: 'https://thefreelancedance.com',
     //       external: true,
     //     },
     //   ],
@@ -34,22 +37,22 @@ module.exports = {
       links: [
         {
           title: 'Twitter',
-          href: 'https://twitter.com/martylouis',
+          url: 'https://twitter.com/martylouis',
           external: true,
         },
         {
           title: 'GitHub',
-          href: 'https://github.com/martylouis',
+          url: 'https://github.com/martylouis',
           external: true,
         },
         {
           title: 'LinkedIn',
-          href: 'https://linkedin.com/martylouis',
+          url: 'https://linkedin.com/martylouis',
           external: true,
         },
         {
           title: 'Instagram',
-          href: 'https://instagram.com/martylouis',
+          url: 'https://instagram.com/martylouis',
           external: true,
         },
       ],

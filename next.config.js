@@ -1,32 +1,27 @@
-// const rehypePrism = require('@mapbox/rehype-prism');
+const path = require('path');
 
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
-  options: {
-    // remarkPlugins: [],
-    // rehypePlugins: []
-  },
 });
 
 module.exports = withMDX({
-  pageExtensions: ['js', 'jsx', 'md', 'mdx'],
+  pageExtensions: ['js', 'mdx'],
 });
 
-// module.exports = {
-//   module: {
-//     rules: [
-//       {
-//         test: /.mdx?$/,
-//         use: [
-//           'babel-loader',
-//           {
-//             resolve: '@mdx-js/loader',
-//             options: {
-//               rehypePlugins: [rehypePrism],
-//             },
-//           },
-//         ],
-//       },
-//     ],
-//   },
-// };
+module.exports = {
+  images: {
+    domains: ['static.martylouis.com'],
+  },
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.mdx?$/,
+  //       use: [
+  //         'babel-loader',
+  //         '@mdx-js/loader',
+  //         path.join(__dirname, './lib/frontmatter-loader'),
+  //       ],
+  //     },
+  //   ],
+  // },
+};
