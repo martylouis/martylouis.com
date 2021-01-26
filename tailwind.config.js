@@ -4,6 +4,9 @@ module.exports = {
   purge: ['./src/**/*{.js,.md,.mdx}'],
   // darkMode: 'media',
   theme: {
+    fontFamily: {
+      sans: ['Inter', 'sans-serif'],
+    },
     colors: {
       gray: {
         50: 'hsla(208, 16%, 97%, 1)',
@@ -18,12 +21,10 @@ module.exports = {
         900: 'hsla(208, 8%, 12%, 1)',
       },
       blue: colors.blue,
-      teal: colors.emerald,
-      orange: colors.amber,
-      pink: colors.pink,
+      red: colors.red,
       white: colors.white,
       // https://colordesigner.io/#29B269-D9CB9E-374140-2A2C2B-BDC3C7
-      primary: {
+      green: {
         50: '#FBFEFC',
         100: '#D9F5E4',
         200: '#B9EACD',
@@ -40,6 +41,11 @@ module.exports = {
     container: {
       center: true,
       padding: '1.5rem',
+    },
+  },
+  variants: {
+    extend: {
+      translate: ['group-hover', 'group-focus'],
     },
   },
 };

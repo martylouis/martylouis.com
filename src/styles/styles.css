@@ -1,6 +1,6 @@
 @layer base {
   body {
-    @apply text-gray-900 bg-gray-50;
+    @apply font-sans antialiased text-gray-800 bg-gray-50;
   }
 }
 
@@ -8,6 +8,35 @@ a {
   @apply transition-all;
 }
 
+p > a {
+  @apply font-bold text-green-600;
+}
+
+p > a:hover,
+p > a:focus {
+  text-decoration: underline;
+}
+
 .container {
-  max-width: 72ch;
+  @apply max-w-4xl gap-8 px-8 mx-auto sm:grid sm:grid-cols-12;
+}
+
+.grayscale {
+  /* filter: grayscale(100%); */
+  /* object-fit: cover; */
+  @apply flex place-items-center;
+}
+
+.grayscale::after {
+  @apply absolute bottom-0 left-0 w-full h-full bg-gray-500 rounded-full;
+  content: '';
+  mix-blend-mode: color;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@layer utilities {
+  .text-transparent {
+    color: transparent;
+  }
 }
