@@ -1,6 +1,6 @@
-const Emoji = ({ type, ariaLabel, ...restProps }) => (
-  <span role="img" aria-label={ariaLabel} data-emoji={type} {...restProps}>
-    {type}
+const Emoji = ({ emoji, ariaLabel, ...rest }) => (
+  <span role="img" aria-label={ariaLabel} {...rest}>
+    {emoji}
   </span>
 );
 
