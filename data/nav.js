@@ -1,11 +1,9 @@
 module.exports = {
   header: [
     // { title: 'Home', url: '/' },
-    { title: 'Work', url: '/work' },
-    { title: 'Services', url: '/services' },
-    { title: 'Blog', url: '/services' },
-    // { title: 'Hello World!', url: '/blog/hello-world' },
-    // { title: 'GR30A', url: '/projects/gulf-realty-30a' },
+    // { title: 'Work', url: '/work' },
+    // { title: 'Services', url: '/services' },
+    // { title: 'Articles', url: '/blog' },
     // { title: 'About', url: '/about' },
     { title: 'Contact', url: '/contact' },
   ],
