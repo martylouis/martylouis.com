@@ -7,9 +7,10 @@ module.exports = {
         label: 'smiling with glasses',
       },
     },
-    heading: 'Freelance Web Designer in Destin, Florida 🌴',
+    // heading: 'Freelance Web Designer in Destin, Florida 🌴',
+    heading: 'Let’s make your website better.',
     subheading:
-      'Marty Louis works with agencies, startups, and businesses design, build, maintain, and grow their websites and brands.',
+      'Your website should be fast, user-focused, and easy to manage. Let’s work together to design and build a website that’s beautiful, strategic, easy to update, and effectively meets your brand and marketing requirements.',
     button: {
       text: 'Let’s work together',
       link: '/',
@@ -56,26 +57,26 @@ module.exports = {
           'Do you need updates to your eCommerce site and just don’t have the time? Do you want to make changes to your WordPress site but not sure how? I can help',
         link: '/wordpress',
       },
-      {
-        emoji: {
-          type: '🚩',
-          label: 'triangular flag',
-        },
-        title: ' Agency Overflow',
-        desc:
-          'Running out of resources to handle your next website job? Have a web opportunity but don’t have the internal resources to make it happen? Just add me to your team and I help you support your clients.',
-        link: '/agency-overflow',
-      },
-      {
-        emoji: {
-          type: '🎩',
-          label: 'top hat',
-        },
-        title: 'Logo & Branding',
-        desc:
-          'Your brand is the essence of your business. A good brand should clearly express and reflect the personality of your business. From your company logo to your full visual identity and how you communicate with your audience.',
-        link: '/logo-branding',
-      },
+      // {
+      //   emoji: {
+      //     type: '🚩',
+      //     label: 'triangular flag',
+      //   },
+      //   title: ' Agency Overflow',
+      //   desc:
+      //     'Running out of resources to handle your next website job? Have a web opportunity but don’t have the internal resources to make it happen? Just add me to your team and I help you support your clients.',
+      //   link: '/agency-overflow',
+      // },
+      // {
+      //   emoji: {
+      //     type: '🎩',
+      //     label: 'top hat',
+      //   },
+      //   title: 'Logo & Branding',
+      //   desc:
+      //     'Your brand is the essence of your business. A good brand should clearly express and reflect the personality of your business. From your company logo to your full visual identity and how you communicate with your audience.',
+      //   link: '/logo-branding',
+      // },
     ],
   },
   projects: [
