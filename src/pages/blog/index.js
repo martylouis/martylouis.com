@@ -3,6 +3,7 @@ import { Page } from '@components/layout';
 import Link from 'next/link';
 import { getAllFilesByFrontMatter } from '@lib/getMdxFilesByFrontMatter';
 import { format, parseISO } from 'date-fns';
+import Image from 'next/image';
 
 const BlogIndex = ({ posts }) => {
   const [searchValue, setSearchValue] = useState(''); // for future search!
@@ -31,17 +32,21 @@ const BlogIndex = ({ posts }) => {
           {getSortedBlogPosts.map((frontMatter) => (
             <li key={frontMatter.title}>
               <Link href={`/blog/${frontMatter.slug}`}>
-                <a>
-                  <div className="mb-4 aspect-w-16 aspect-h-10">
-                    <img
-                      className="object-cover mb-4 shadow-md rounded-xl"
-                      src={`//placehold.it/600x800?text=${frontMatter.title}`}
-                      alt={frontMatter.title}
-                    />
-                  </div>
-                  <h2 className="mb-4 font-bold md:text-xl">
-                    {frontMatter.title}
-                  </h2>
+                <a className="block space-y-3">
+                  {frontMatter.thumb && (
+                    <figure>
+                      <Image
+                        src={frontMatter.thumb.url}
+                        width={920}
+                        height={575}
+                        alt={frontMatter.thumb.alt}
+                        preload
+                        layout="responsive"
+                        className="object-cover rounded"
+                      />
+                    </figure>
+                  )}
+                  <h2 className="font-bold md:text-xl">{frontMatter.title}</h2>
                   <p className="text-sm text-gray-500">
                     {format(
                       parseISO(frontMatter.date_published),
