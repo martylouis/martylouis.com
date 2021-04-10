@@ -4,7 +4,7 @@ module.exports = {
     // { title: 'Work', url: '/work' },
     // { title: 'Services', url: '/services' },
     // { title: 'Articles', url: '/blog' },
-    { title: 'Blog', url: '/blog' },
+    // { title: 'About', url: '/about' },
     { title: 'Contact', url: '/contact' },
   ],
   footer: [
