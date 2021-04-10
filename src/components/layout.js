@@ -8,11 +8,11 @@ export function Page({ children }) {
       <div className="flex-grow flex-shrink-0">
         <SiteHeader className="py-4 bg-white border-b border-gray-100" />
         <main
-          initial={{ opacity: 0, y: '-1.5rem' }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ ease: 'easeOut', duration: 0.3 }}
-          exit={{ opacity: 0, y: 0 }}
-          id="siteMain"
+        // initial={{ opacity: 0, y: '-1.5rem' }}
+        // animate={{ opacity: 1, y: 0 }}
+        // transition={{ ease: 'easeOut', duration: 0.3 }}
+        // exit={{ opacity: 0, y: 0 }}
+        // id="siteMain"
         >
           {children}
         </main>
