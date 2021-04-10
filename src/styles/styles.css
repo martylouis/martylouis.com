@@ -44,9 +44,9 @@ a {
   @apply transition-all;
 }
 
-p > a {
+/* p > a {
   @apply font-bold text-green-600;
-}
+} */
 
 p > a:hover,
 p > a:focus {
