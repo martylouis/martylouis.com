@@ -12,6 +12,9 @@ module.exports = {
   images: {
     domains: ['static.martylouis.com'],
   },
+  future: {
+    webpack5: true,
+  },
   // module: {
   //   rules: [
   //     {
