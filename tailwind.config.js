@@ -1,12 +1,11 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-  mode: 'jit',
   purge: ['./src/**/*{.js,.md,.mdx}'],
-  darkMode: 'false',
+  // darkMode: 'media',
   theme: {
     fontFamily: {
-      sans: ['Inter var', 'sans-serif'],
+      sans: ['Inter', 'sans-serif'],
     },
     colors: {
       gray: {
@@ -49,8 +48,4 @@ module.exports = {
       translate: ['group-hover', 'group-focus'],
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
-  ],
 };

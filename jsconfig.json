@@ -2,13 +2,25 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@lib/*": ["./src/lib/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@data/*": ["./src/data/*"]
-    }
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@lib/*": [
+        "./src/lib/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ],
+      "@data/*": [
+        "./data/*"
+      ],
+    },
   },
-  "include": ["src/**/*"],
+  "include": [
+    "src/**/*"
+  ],
   "exclude": ["node_modules", "dist"]
 }
