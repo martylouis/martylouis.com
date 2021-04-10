@@ -18,7 +18,7 @@ const BlogIndex = ({ posts }) => {
   return (
     <Page>
       <div className="container">
-        <header className="py-16 md:py-24">
+        <header className="my-16 md:my-24">
           <h1 className="mb-2 text-3xl font-black tracking-tight md:text-5xl">
             Blog
           </h1>
