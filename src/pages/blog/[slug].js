@@ -27,6 +27,9 @@ const Blog = ({ mdxSource, frontMatter }) => {
             </h1>
             <p className="text-sm text-gray-600">
               {format(parseISO(frontMatter.date_published), 'MMM dd, yyyy')}
+            </span>
+            <span className="text-gray-200">&bull;</span>
+            <span>{frontMatter.readingTime.text}</span>
             </p>
           </header>
           <div className="prose">{content}</div>
