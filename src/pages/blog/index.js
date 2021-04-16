@@ -40,7 +40,6 @@ const BlogIndex = ({ posts }) => {
                         width={920}
                         height={575}
                         alt={frontMatter.thumb.alt}
-                        preload
                         layout="responsive"
                         className="object-cover rounded"
                       />
