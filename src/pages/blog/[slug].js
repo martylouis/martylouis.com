@@ -24,7 +24,7 @@ const Blog = ({ mdxSource, frontMatter }) => {
         image={image.src}
       />
       <article className="container">
-        {console.log(frontMatter)}
+        {/* {console.log(frontMatter)} */}
         <div className="my-8">
           <Link href="/blog" passHref>
             <a className="flex items-center space-x-2 text-gray-600">
@@ -34,46 +34,42 @@ const Blog = ({ mdxSource, frontMatter }) => {
         </div>
         <header className="mt-10 mb-10">
           <h1 className="mb-4 text-3xl font-black tracking-tight md:text-5xl">
-            {frontMatter.title}
+            {title}
           </h1>
           <p className="space-x-2 text-sm tracking-wide text-gray-600">
-            <span>
-              {format(parseISO(frontMatter.datePublished), 'MMM dd, yyyy')}
-            </span>
+            <span>{format(parseISO(datePublished), 'MMM dd, yyyy')}</span>
             <span className="text-gray-200">&bull;</span>
-            <span>{frontMatter.readingTime.text}</span>
+            <span>{readingTime.text}</span>
           </p>
         </header>
-        {frontMatter.image && (
+        {image && (
           <figure className="flex flex-col my-8 lg:-mx-16">
             <div className="relative aspect-w-16 aspect-h-8">
               <Image
-                src={frontMatter.image.src}
-                alt={frontMatter.image.alt}
+                src={image.src}
+                alt={image.alt}
                 priority
                 layout="fill"
                 className="object-cover rounded"
               />
             </div>
             <figcaption className="p-3 text-center">
-              {frontMatter.image.caption && (
-                <p className="tracking-wide text-gray-700">
-                  {frontMatter.image.caption}
-                </p>
+              {image.caption && (
+                <p className="tracking-wide text-gray-700">{image.caption}</p>
               )}
-              {frontMatter.image.unsplash && (
+              {image.unsplash && (
                 <p className="mt-2 text-sm tracking-wide text-gray-400">
                   Photo by{' '}
                   <a
-                    href={`https://unsplash.com/@${frontMatter.image.unsplash.profile}`}
+                    href={`https://unsplash.com/@${image.unsplash.profile}`}
                     rel="noopener nofollow"
                     className="underline"
                   >
-                    {frontMatter.image.unsplash.profile}
+                    {image.unsplash.profile}
                   </a>{' '}
                   on{' '}
                   <a
-                    href={`https://unsplash.com/photos/${frontMatter.image.unsplash.id}`}
+                    href={`https://unsplash.com/photos/${image.unsplash.id}`}
                     rel="noopener nofollow"
                     className="underline"
                   >

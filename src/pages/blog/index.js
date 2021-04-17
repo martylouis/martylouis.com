@@ -33,10 +33,10 @@ const BlogIndex = ({ posts }) => {
             <li key={frontMatter.title}>
               <Link href={`/blog/${frontMatter.slug}`}>
                 <a className="block space-y-3">
-                  {frontMatter.image && (
+                  {frontMatter.image.src && (
                     <figure>
                       <Image
-                        src={frontMatter.image.url}
+                        src={frontMatter.image.src}
                         width={768}
                         height={400}
                         alt={frontMatter.image.alt}
