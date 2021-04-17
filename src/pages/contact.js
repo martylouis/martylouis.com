@@ -1,13 +1,9 @@
-import { NextSeo } from 'next-seo';
 import { Page } from '@components/layout';
 import ContactForm from '@components/contact-form';
 
 export default function Contact() {
   return (
     <Page>
-      <NextSeo
-        title={'Marty Louis'}
-        description={'Marty Louis personal blog!'}
       />
       <div className="max-w-4xl px-8 mx-auto my-16">
         <div className="grid gap-16 md:grid-cols-2">
