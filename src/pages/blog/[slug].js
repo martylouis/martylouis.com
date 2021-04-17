@@ -14,7 +14,15 @@ const fileDir = 'blog';
 const Blog = ({ mdxSource, frontMatter }) => {
   const content = hydrate(mdxSource, { components: MdxComponents });
 
-  const { title, description, datePublished, slug, image, tags } = frontMatter;
+  const {
+    title,
+    description,
+    datePublished,
+    readingTime,
+    slug,
+    image,
+    tags,
+  } = frontMatter;
 
   return (
     <Page>
