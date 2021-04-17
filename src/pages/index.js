@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { NextSeo } from 'next-seo';
 import { Page } from '@components/layout';
 import { hero, services } from '@data/home';
 import Emoji from '@components/emoji';
@@ -12,10 +11,6 @@ const { greeting, subheading, photo } = hero;
 export default function Index() {
   return (
     <Page>
-      <NextSeo
-        title={'Marty Louis'}
-        description={'Marty Louis personal blog!'}
-      />
       <Hero />
       <Services />
       <About />
