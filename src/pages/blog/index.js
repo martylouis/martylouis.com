@@ -10,7 +10,7 @@ const BlogIndex = ({ posts }) => {
   const getSortedBlogPosts = posts
     .sort(
       (a, b) =>
-        Number(new Date(b.date_published)) - Number(new Date(a.date_published))
+        Number(new Date(b.datePublished)) - Number(new Date(a.datePublished))
     )
     .filter((frontMatter) =>
       frontMatter.title.toLowerCase().includes(searchValue.toLowerCase())
@@ -33,13 +33,13 @@ const BlogIndex = ({ posts }) => {
             <li key={frontMatter.title}>
               <Link href={`/blog/${frontMatter.slug}`}>
                 <a className="block space-y-3">
-                  {frontMatter.thumb && (
+                  {frontMatter.image && (
                     <figure>
                       <Image
-                        src={frontMatter.thumb.url}
-                        width={920}
-                        height={575}
-                        alt={frontMatter.thumb.alt}
+                        src={frontMatter.image.url}
+                        width={768}
+                        height={400}
+                        alt={frontMatter.image.alt}
                         layout="responsive"
                         className="object-cover rounded"
                       />
@@ -48,7 +48,7 @@ const BlogIndex = ({ posts }) => {
                   <h2 className="font-bold md:text-xl">{frontMatter.title}</h2>
                   <p className="text-sm text-gray-500">
                     {format(
-                      parseISO(frontMatter.date_published),
+                      parseISO(frontMatter.datePublished),
                       'MMM dd, yyyy'
                     )}
                   </p>
