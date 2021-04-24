@@ -10,6 +10,11 @@ export default class MyDocument extends Document {
               httpEquiv="Content-Type"
               content="text/html; charset=ISO-8859-1"
             />
+            <link rel="preconnect" href="https://fonts.gstatic.com" />
+            <link
+              href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap"
+              rel="stylesheet"
+            />
           </Head>
           <body>
             <Main />
