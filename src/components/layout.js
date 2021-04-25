@@ -9,13 +9,14 @@ export function Page({ frontMatter, children }) {
       <SEO />
       <div className="flex flex-col h-screen">
         <div className="flex-grow flex-shrink-0">
-          {/* <SiteHeader className="py-4 bg-white border-b border-gray-100" /> */}
+          <SiteHeader />
           <main
-          // initial={{ opacity: 0, y: '-1.5rem' }}
-          // animate={{ opacity: 1, y: 0 }}
-          // transition={{ ease: 'easeOut', duration: 0.3 }}
-          // exit={{ opacity: 0, y: 0 }}
-          // id="siteMain"
+            className="px-6 md:px-10"
+            // initial={{ opacity: 0, y: '-1.5rem' }}
+            // animate={{ opacity: 1, y: 0 }}
+            // transition={{ ease: 'easeOut', duration: 0.3 }}
+            // exit={{ opacity: 0, y: 0 }}
+            // id="siteMain"
           >
             {children}
           </main>
