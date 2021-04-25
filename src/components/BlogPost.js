@@ -19,7 +19,13 @@ const BlogPost = ({ children, frontMatter }) => {
 
   return (
     <Page>
-      <article className="container">
+      <SEO
+        title={`${title} | martylouis.com`}
+        description={description}
+        datePublished={datePublished}
+        image={image.src}
+      />
+      <article className="wrapper">
         <div className="my-8">
           <Link href="/blog" passHref>
             <a className="flex items-center space-x-2 text-gray-600">
@@ -27,6 +33,7 @@ const BlogPost = ({ children, frontMatter }) => {
             </a>
           </Link>
         </div>
+
         <header className="mt-10 mb-10">
           <h1 className="mb-4 text-3xl font-black tracking-tight md:text-5xl">
             {title}
@@ -37,45 +44,10 @@ const BlogPost = ({ children, frontMatter }) => {
             <span>{readingTime.text}</span>
           </p>
         </header>
-        {image && (
-          <figure className="flex flex-col my-8 lg:-mx-16">
-            <div className="relative aspect-w-16 aspect-h-8">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                priority
-                layout="fill"
-                className="object-cover rounded"
-              />
-            </div>
-            <figcaption className="p-3 text-center">
-              {image.caption && (
-                <p className="tracking-wide text-gray-700">{image.caption}</p>
-              )}
-              {image.unsplash && (
-                <p className="mt-2 text-sm tracking-wide text-gray-400">
-                  Photo by{' '}
-                  <a
-                    href={`https://unsplash.com/@${image.unsplash.profile}`}
-                    rel="noopener nofollow"
-                    className="underline"
-                  >
-                    {image.unsplash.profile}
-                  </a>{' '}
-                  on{' '}
-                  <a
-                    href={`https://unsplash.com/photos/${image.unsplash.id}`}
-                    rel="noopener nofollow"
-                    className="underline"
-                  >
-                    Unsplash
-                  </a>
-                </p>
-              )}
-            </figcaption>
-          </figure>
-        )}
-        <div className="prose">{children}</div>
+
+        <BlogPostImage image={image} />
+
+        {children}
       </article>
     </Page>
   );

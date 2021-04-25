@@ -5,12 +5,15 @@ import { logo } from '@data/icons';
 
 export default function SiteHeader({ ...otherProps }) {
   return (
-    <header id="siteHeader" {...otherProps}>
-      <div className="max-w-4xl px-8 mx-auto">
+    <header
+      id="siteHeader"
+      className="py-4 border-b bg-pgray-50 border-pgray-800 md:py-6"
+    >
+      <div className="px-8 mx-auto">
         <div className="flex items-center justify-between">
           <Link href="/">
             <a className="flex items-center">
-              <div className="flex w-12 text-green-600 md:mr-4 flex-flex-shrink-0 md:w-14">
+              <div className="flex w-12 text-green-500 md:mr-4 flex-flex-shrink-0 md:w-12">
                 <Icon
                   viewBox="0 0 256 256"
                   fill="currentColor"
