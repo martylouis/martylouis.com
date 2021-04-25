@@ -1,0 +1,63 @@
+---
+title: MDX Sample File
+description: Just a sample file for testing MDX
+datePublished: '2021-04-24T21:56:51'
+dateModified: '2021-04-24T21:56:51'
+image:
+  {
+    src: 'https://images.unsplash.com/photo-1585399000684-d2f72660f092?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3451&q=80',
+    alt: 'iPhone on orange',
+    caption: 'iPhone on orange',
+    unsplash: { profile: 'mailchimp', id: '4vrZpOo7fTc' },
+  }
+tags: [tag1, tag2, tag3]
+---
+
+## TOPIC_NAME
+
+TOPIC_DETAILS
+blah blah blah...
+
+## Table of Contents
+
+- topic content 1 [Reference](http://dibya.org)
+- Renders actual, "native" React DOM elements
+  - item
+  - item
+- Allows you to escape or skip HTML (try toggling the checkboxes above)
+- If you escape or skip the HTML, no `dangerouslySetInnerHTML` is used! Yay!
+
+## Getting started
+
+Preliminary question:
+
+<button onClick={() => alert(42)}>
+  What is the answer to the mystery of universe ??
+</button>
+
+## HTML block below
+
+<blockquote>
+  This blockquote will change based on the HTML settings above.
+</blockquote>
+
+## How about some code?
+
+```js
+var React = require('react');
+var Markdown = require('react-markdown');
+React.render(
+  <Markdown source="# Your markdown here" />,
+  document.getElementById('content')
+);
+```
+
+Pretty neat, eh?
+
+## Tables?
+
+| Feature   | Support |
+| --------- | ------- |
+| tables    | ✔       |
+| alignment | ✔       |
+| wewt      | ✔       |
