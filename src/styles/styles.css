@@ -34,10 +34,13 @@ html {
   }
 } */
 
-@layer base {
-  body {
-    @apply antialiased;
-  }
+html,
+body {
+  @apply lg:text-lg text-pgray-800;
+}
+
+body {
+  @apply bg-pgray-50;
 }
 
 a {

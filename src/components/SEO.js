@@ -38,7 +38,7 @@ const SEO = (props) => {
           content={meta.site_name}
           key="og_sitename"
         />
-        <meta property="og:url" content={`${router.asPath}`} />
+        <meta property="og:url" content={`${meta.url}${router.asPath}`} />
         <meta property="og:title" content={meta.title} key="og_title" />
         <meta
           property="og:description"
