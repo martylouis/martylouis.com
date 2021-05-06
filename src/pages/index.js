@@ -1,39 +1,71 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Page } from '@components/layout';
 import { hero, services } from '@data/home';
 import Emoji from '@components/emoji';
 import { H1, H2, H3 } from '@components/typography';
 import Tabs from '@components/tabs';
+import Page from '@layouts/Page';
+import Box from '@components/Box';
 
 const { greeting, subheading, photo } = hero;
 
 export default function Index() {
   return (
     <Page>
-      <Hero />
-      <Services />
-      <About />
-      <Feed />
+      <Box as="h1" css={{ fontSize: '3rem', lineHeight: 1.2, mb: '2.4rem' }}>
+        Freelance Web Designer & Developer in Destin, Florida
+      </Box>
+      <p>
+        Hey! I’m Marty. I'm a digital designer and web developer with a
+        background in graphic design. Eventually, I learned to code and never
+        looked back.
+      </p>
+      <p>
+        Currently I freelance remotely with companies all over the US building
+        websites and apps with teams small and large.
+      </p>
+      <p>
+        I also co-host a podcast called{' '}
+        <strong>
+          <a href="https://www.thefreelancedance.com">The Freelance Dance</a>
+        </strong>{' '}
+        💃🏽 with my friends{' '}
+        <strong>
+          <a href="https://twitter.com/@brandonwatts">Brandon</a>
+        </strong>{' '}
+        &
+        <strong>
+          {' '}
+          <a href="https://twitter.com/@jake_jay">Jake</a>
+        </strong>{' '}
+        — check it out.
+      </p>
+      <Box as="h2" css={{ fontSize: '2rem', mt: '8vh' }}>
+        Selected Work
+      </Box>
+      <Box as="h2" css={{ fontSize: '2rem', mt: '8vh' }}>
+        Recent Posts
+      </Box>
+      <Hero_old />
     </Page>
   );
 }
 
-function Hero() {
+function Hero_old() {
   return (
     <section id="hero">
       <div className="max-w-4xl px-8 mx-auto">
         <div className="pt-8 pb-16 space-y-6 md:space-y-10 md:text-center sm:py-24">
           <h1 className="text-4xl font-black tracking-tighter text-gray-900 md:text-6xl">
             Let’s make your website{' '}
-            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-green-400 to-green-800">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-green-400 to-blue-800">
               better
             </span>
           </h1>
           <p className="text-gray-700 md:text-2xl">{subheading}</p>
           <div className="flex space-x-4 md:justify-center">
             <Link href="/contact">
-              <a className="block px-6 py-3 font-medium text-white bg-green-700 rounded md:text-lg">
+              <a className="block px-6 py-3 font-medium text-white bg-green-600 rounded md:text-lg">
                 Get in touch
               </a>
             </Link>

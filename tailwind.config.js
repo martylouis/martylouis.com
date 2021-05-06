@@ -42,10 +42,10 @@ module.exports = {
         900: '#07280D',
       },
     },
-    container: {
-      center: true,
-      padding: '1.5rem',
-    },
+    // container: {
+    //   center: true,
+    //   padding: '1.5rem',
+    // },
   },
   variants: {
     extend: {

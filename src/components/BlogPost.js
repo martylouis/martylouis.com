@@ -1,9 +1,9 @@
+import Page from '@layouts/Page';
 import { format, parseISO } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft } from 'react-feather';
 import BlogPostImage from './BlogPostImage';
-import { Page } from './layout';
 import SEO from './SEO';
 
 const BlogPost = ({ children, frontMatter }) => {
@@ -25,15 +25,7 @@ const BlogPost = ({ children, frontMatter }) => {
         datePublished={datePublished}
         image={image.src}
       />
-      <article className="wrapper">
-        <div className="my-8">
-          <Link href="/blog" passHref>
-            <a className="flex items-center space-x-2 text-gray-600">
-              <ArrowLeft size="16" /> <span>Blog</span>
-            </a>
-          </Link>
-        </div>
-
+      <article>
         <header className="mt-10 mb-10">
           <h1 className="mb-4 text-3xl font-black tracking-tight md:text-5xl">
             {title}
