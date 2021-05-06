@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Page } from '@components/layout';
 import Link from 'next/link';
 import { getAllFilesByFrontMatter } from '@lib/getMdxFilesByFrontMatter';
 import { format, parseISO } from 'date-fns';
 import Image from 'next/image';
+import Page from '@layouts/Page';
 
 const BlogIndex = ({ posts }) => {
   const [searchValue, setSearchValue] = useState(''); // for future search!
