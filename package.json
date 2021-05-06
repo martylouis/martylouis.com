@@ -21,6 +21,11 @@
   },
   "homepage": "https://github.com/martylouis/martylouis.com#readme",
   "private": true,
+  "babelMacros": {
+    "twin": {
+      "sassyPseudo": true
+    }
+  },
   "dependencies": {
     "@formspree/react": "^2.2.3",
     "@hookform/resolvers": "1.3.0",
