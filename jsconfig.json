@@ -3,10 +3,12 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["./src/components/*"],
+      "@layouts/*": ["./src/layouts/*"],
       "@lib/*": ["./src/lib/*"],
       "@utils/*": ["./src/utils/*"],
       "@styles/*": ["./src/styles/*"],
-      "@data/*": ["./src/data/*"]
+      "@data/*": ["./src/data/*"],
+      "stitches": ["./stiches.config.js"]
     }
   },
   "include": ["src/**/*"],
