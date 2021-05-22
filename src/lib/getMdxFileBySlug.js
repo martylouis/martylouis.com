@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
-import renderToString from 'next-mdx-remote/render-to-string';
+import { serialize } from 'next-mdx-remote/serialize';
 import MdxComponents from '@components/MdxComponents';
 
 const root = process.cwd();
@@ -13,7 +13,7 @@ export async function getMdxFileBySlug(type, slug) {
     : fs.readFileSync(path.join(root, 'src/data', `${type}.mdx`), 'utf8');
 
   const { data, content } = matter(source);
-  const mdxSource = await renderToString(content, {
+  const mdxSource = await serialize(content, {
     components: MdxComponents,
     mdxOptions: {
       // remarkPlugins: {},

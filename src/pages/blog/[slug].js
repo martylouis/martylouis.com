@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import hydrate from 'next-mdx-remote/hydrate';
+import { MDXRemote } from 'next-mdx-remote';
 import { getMdxFileBySlug } from '@lib/getMdxFileBySlug';
 import { getFiles } from '@lib/getFiles';
 import MdxComponents from '@components/MdxComponents';
@@ -9,9 +9,10 @@ import BlogPost from '@components/BlogPost';
 const blogContent = 'blog';
 
 const Blog = ({ mdxSource, frontMatter }) => {
-  const content = hydrate(mdxSource, { components: MdxComponents });
+  // const content = hydrate(mdxSource, { components: MdxComponents });
+  // return <BlogPost frontMatter={frontMatter}>{content}</BlogPost>;
 
-  return <BlogPost frontMatter={frontMatter}>{content}</BlogPost>;
+  return <MDXRemote {...mdxSource} />;
 };
 
 export async function getStaticPaths() {
