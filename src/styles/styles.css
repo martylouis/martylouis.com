@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* -------------------------------------------------------
 Variable font.
 Usage:
@@ -68,12 +72,6 @@ p > a:focus {
   mix-blend-mode: color;
   opacity: 0.5;
   z-index: 1;
-}
-
-@layer utilities {
-  .text-transparent {
-    color: transparent;
-  }
 }
 
 .wrapper {
