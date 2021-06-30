@@ -16,8 +16,8 @@ export default function Index() {
         Freelance Web Designer & Developer in Destin, Florida
       </Box>
       <p>
-        Hey! I’m Marty. I'm a digital designer and web developer with a
-        background in graphic design. Eventually, I learned to code and never
+        Hey! I&apos;m Marty. I&apos;m a digital designer and web developer with
+        a background in graphic design. Eventually, I learned to code and never
         looked back.
       </p>
       <p>
