@@ -9,9 +9,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import path from 'path';
 import readingTime from 'reading-time';
-// import mdxPrism from 'mdx-prism';
-// import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-// import rehypeSlug from 'rehype-slug';
+import mdxPrism from 'mdx-prism';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
 
 // include components in scope here
 const components = {
@@ -38,7 +38,7 @@ export const getStaticProps = async ({ params }) => {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       // remarkPlugins: [require('remark-code-titles')],
-      // rehypePlugins: [mdxPrism, rehypeSlug, rehypeAutolinkHeadings],
+      rehypePlugins: [mdxPrism, rehypeSlug, rehypeAutolinkHeadings],
     },
     scope: data,
   });
