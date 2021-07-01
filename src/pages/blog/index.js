@@ -1,21 +1,8 @@
-import { useState } from 'react';
-import Link from 'next/link';
-import { getAllFilesByFrontMatter } from '@lib/getMdxFilesByFrontMatter';
-import { format, parseISO } from 'date-fns';
-import Image from 'next/image';
 import Page from '@layouts/Page';
+import BlogList from '@components/BlogList';
+import { getFilesByFrontMatter } from '@utils/mdx';
 
 const BlogIndex = ({ posts }) => {
-  const [searchValue, setSearchValue] = useState(''); // for future search!
-  const getSortedBlogPosts = posts
-    .sort(
-      (a, b) =>
-        Number(new Date(b.datePublished)) - Number(new Date(a.datePublished))
-    )
-    .filter((frontMatter) =>
-      frontMatter.title.toLowerCase().includes(searchValue.toLowerCase())
-    );
-
   return (
     <Page>
       <div className="container">
@@ -27,36 +14,7 @@ const BlogIndex = ({ posts }) => {
             Projects, notes, tutorials, and cool things.
           </p>
         </header>
-
-        <ul className="grid gap-12 md:grid-cols-3 sm:grid-cols-2">
-          {getSortedBlogPosts.map((frontMatter) => (
-            <li key={frontMatter.title}>
-              <Link href={`/blog/${frontMatter.slug}`}>
-                <a className="block space-y-3">
-                  {frontMatter.image.src && (
-                    <figure>
-                      <Image
-                        src={frontMatter.image.src}
-                        width={768}
-                        height={400}
-                        alt={frontMatter.image.alt}
-                        layout="responsive"
-                        className="object-cover rounded"
-                      />
-                    </figure>
-                  )}
-                  <h2 className="font-bold md:text-xl">{frontMatter.title}</h2>
-                  <p className="text-sm text-gray-500">
-                    {format(
-                      parseISO(frontMatter.datePublished),
-                      'MMM dd, yyyy'
-                    )}
-                  </p>
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <BlogList posts={posts} />
       </div>
     </Page>
   );
@@ -65,7 +23,7 @@ const BlogIndex = ({ posts }) => {
 export default BlogIndex;
 
 export async function getStaticProps() {
-  const posts = await getAllFilesByFrontMatter('blog');
+  const posts = await getFilesByFrontMatter('posts');
 
   return { props: { posts } };
 }

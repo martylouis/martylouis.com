@@ -6,10 +6,12 @@ import { H1, H2, H3 } from '@components/typography';
 import Tabs from '@components/tabs';
 import Page from '@layouts/Page';
 import Box from '@components/Box';
+import BlogList from '@components/BlogList';
+import { getFilesByFrontMatter } from '@utils/mdx';
 
 const { greeting, subheading, photo } = hero;
 
-export default function Index() {
+export default function Index({ posts }) {
   return (
     <Page>
       <Box as="h1" css={{ fontSize: '3rem', lineHeight: 1.2, mb: '2.4rem' }}>
@@ -46,9 +48,18 @@ export default function Index() {
       <Box as="h2" css={{ fontSize: '2rem', mt: '8vh' }}>
         Recent Posts
       </Box>
+      <Box css={{ mt: '2rem' }}>
+        <BlogList posts={posts} />
+      </Box>
       <Hero_old />
     </Page>
   );
+}
+
+export async function getStaticProps() {
+  const posts = await getFilesByFrontMatter('posts');
+
+  return { props: { posts } };
 }
 
 function Hero_old() {

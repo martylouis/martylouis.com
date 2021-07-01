@@ -6,16 +6,9 @@ import { ArrowLeft } from 'react-feather';
 import BlogPostImage from './BlogPostImage';
 import SEO from './SEO';
 
-const BlogPost = ({ children, frontMatter }) => {
-  const {
-    title,
-    description,
-    datePublished,
-    readingTime,
-    slug,
-    image,
-    tags,
-  } = frontMatter;
+const BlogPost = ({ frontMatter, children }) => {
+  const { title, description, datePublished, readingTime, slug, image, tags } =
+    frontMatter;
 
   return (
     <Page>
@@ -32,14 +25,14 @@ const BlogPost = ({ children, frontMatter }) => {
           </h1>
           <p className="space-x-2 text-sm tracking-wide text-gray-600">
             <span>{format(parseISO(datePublished), 'MMM dd, yyyy')}</span>
-            <span className="text-gray-200">&bull;</span>
+            <span className="text-gray-100">&bull;</span>
             <span>{readingTime.text}</span>
           </p>
         </header>
 
         <BlogPostImage image={image} />
 
-        {children}
+        <div className="prose">{children}</div>
       </article>
     </Page>
   );
