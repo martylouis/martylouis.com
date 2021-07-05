@@ -10,7 +10,11 @@ const ContactForm = () => {
     process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID
   );
 
-  const { register, handleSubmit, errors: clientErrors } = useForm({
+  const {
+    register,
+    handleSubmit,
+    errors: clientErrors,
+  } = useForm({
     resolver: yupResolver(schema),
   });
 
