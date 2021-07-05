@@ -17,7 +17,7 @@ export default function Contact() {
       <div>
         <h1 className="text-4xl font-bold">{meta.title}</h1>
         <p className="my-8">{meta.description}</p>
-        <ContactForm />
+        {/* <ContactForm /> */}
       </div>
     </Page>
   );
