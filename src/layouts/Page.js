@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import SEO from '../components/SEO';
 import MartyLouisLogo from '@components/MartyLouisLogo';
-import styles from './Page.module.css';
+import Container from '@components/Container';
+import { css } from 'twin.macro';
 
 const Page = ({ children }) => {
   return (
@@ -10,7 +11,7 @@ const Page = ({ children }) => {
       <div className="flex flex-col h-screen">
         <div className="flex-grow flex-shrink-0">
           <header className="py-[4vh]">
-            <div className={styles.container}>
+            <Container>
               <Link href="/" passHref>
                 <a className="flex items-center max-w-3xl">
                   <span className="w-8 h-8 lg:w-10 lg:h-10">
@@ -20,14 +21,21 @@ const Page = ({ children }) => {
                 </a>
               </Link>
               {/* PageHeaderNav */}
-            </div>
+            </Container>
           </header>
-          <main>{children}</main>
+          <main className="pb-[8vh]">
+            <Container>{children}</Container>
+          </main>
         </div>
-        <footer className="py-[8vh]">
-          <div className={styles.container}>
-            <p>&copy; {new Date().getFullYear()} Marty Louis Co</p>
-          </div>
+        <footer className="py-[8vh] border-t border-gray-200">
+          <Container>
+            <p
+              className="text-sm text-center text-gray-400"
+              css={{ gridColumn: ' 1 / -1' }}
+            >
+              &copy; {new Date().getFullYear()} Marty Louis Co
+            </p>
+          </Container>
         </footer>
       </div>
     </>
