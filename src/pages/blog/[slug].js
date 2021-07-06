@@ -1,4 +1,5 @@
 import BlogPost from '@components/BlogPost';
+import Figure from '@components/Figure';
 import { postFilePaths, POSTS_PATH } from '@utils/mdx';
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -16,6 +17,7 @@ const components = {
   Head,
   Image,
   Link,
+  Figure,
 };
 
 const Blog = ({ source, frontMatter }) => {
