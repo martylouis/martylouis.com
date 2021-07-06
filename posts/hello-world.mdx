@@ -14,14 +14,93 @@ image:
 tags: [website, nextjs, tailwind]
 ---
 
-Well, it’s about time! Yep, here’s the new site.
+State management is a fundamental challenge every developer needs to face when building a React app — and it is not a trivial one. There are many valid ways to manage state in React, and each one solves a salient set of problems.
 
-## Tailwind CSS
+As developers, it is important not only to be aware of the different approaches, tools, and patterns, but to also understand their use cases and trade-offs.
 
-```html
-<div>this is some html!</div>
+A helpful way to think about state management is in terms of the problems we solve in our projects. So, I will use a simple counter app to illustrate some relevant ways to think about state in React.
+
+---
+
+## Local component state in React
+
+The simplest way to implement the counter is to use local component state with the `useState` hook.
+
+```jsx:Counter.js
+import { useState } from 'react';
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const increaseCount = () => {
+    setCount(count + 1);
+  };
+
+  const decreaseCount = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  };
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={decreaseCount}>-</button>
+      <button onClick={increaseCount}>+</button>
+    </div>
+  );
+};
+
+export default Counter;
 ```
 
-## NextJS
+So we are done, right? Article over? Not quite.
 
-## Vercel
+If this was a real project, it is likely that in the future, we would need more buttons and headers elsewhere in our app. And it is a good idea to make sure they all look and behave consistently, which is why we should probably turn them into reusable React components.
+
+> As developers, it is important not only to be aware of the different approaches, tools, and patterns, but to also understand their use cases and trade-offs.
+
+## Component props in React
+
+Turning our `<Button>` and `<Header>` into separate components reveals a new challenge. We need some way to communicate between them and the main Counter component.
+
+This is where component props come into play. For our `<Header />` component, we add a `text` prop. For our Button, we need both a `label` prop and an `onClick` callback. Our code now looks like this:
+
+```jsx
+import { useState } from 'react';
+
+const Header = ({ text }) => <h1>{text}</h1>;
+
+const Button = ({ label, onClick }) => (
+  <button onClick={onClick}>{label}</button>
+);
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const increaseCount = () => {
+    setCount(count + 1);
+  };
+
+  const decreaseCount = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  };
+  // This is a comment!
+  return (
+    <div>
+      <Header text={count} />
+      <Button onClick={decreaseCount} label="-" />
+      <Button onClick={increaseCount} label="+" />
+    </div>
+  );
+};
+
+export default Counter;
+```
+
+## Using Redux
+
+We can do all of the above and much more by using [Redux](https://google.com) to manage the state of our app. The tool has a strong community behind it and a [rich ecosystem that can be leveraged with ease](https://google.com).
+
+Let’s set up our counter with [Redux Toolkit](https://google.com).

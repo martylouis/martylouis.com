@@ -10,7 +10,7 @@ image:
     caption: 'iPhone on orange',
     unsplash: { profile: 'mailchimp', id: '4vrZpOo7fTc' },
   }
-tags: [tag1, tag2, tag3]
+tags: [NextJS, MDX]
 ---
 
 ## TOPIC_NAME
@@ -24,16 +24,11 @@ blah blah blah...
 - Renders actual, "native" React DOM elements
   - item
   - item
+  - item
+  - item
+  - item
 - Allows you to escape or skip HTML (try toggling the checkboxes above)
 - If you escape or skip the HTML, no `dangerouslySetInnerHTML` is used! Yay!
-
-## Getting started
-
-Preliminary question:
-
-<button onClick={() => alert(42)}>
-  What is the answer to the mystery of universe ??
-</button>
 
 ## HTML block below
 
@@ -43,13 +38,61 @@ Preliminary question:
 
 ## How about some code?
 
-```js
+```bash:terminal.app
+$ echo 'hello world' && git commit -A .
+$ npm install prism
+```
+
+```html:index.html
+<div class="select-auto...">This text is selectable!</div>
+```
+
+```jsx:app.js
 var React = require('react');
+// this is a comment
 var Markdown = require('react-markdown');
 React.render(
   <Markdown source="# Your markdown here" />,
   document.getElementById('content')
 );
+```
+
+```css:styles.css
+:not(pre) > code[class*='language-'] {
+  white-space: normal;
+  border-radius: 0.2em;
+  padding: 0.1em;
+}
+
+pre[class*='language-'] {
+  overflow: auto;
+  position: relative;
+  margin: 0.5em 0;
+  padding: 1.25em 1em;
+}
+
+.language-css > code,
+.language-sass > code,
+.language-scss > code {
+  color: #fd9170;
+  @apply text-orange-400;
+}
+
+[class*='language-'] .namespace {
+  opacity: 0.7;
+}
+
+.token.atrule,
+.token.boolean,
+.token.constant,
+.token.function,
+.token.id,
+.token.important,
+.token.keyword,
+.token.symbol {
+  color: #c792ea !important;
+  @apply text-purple-400;
+}
 ```
 
 Pretty neat, eh?

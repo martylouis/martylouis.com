@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import styles from './Blog/Blog.module.css';
 
 const BlogPostImage = ({ image, children }) => {
   const { src, alt, caption, unsplash } = image;
@@ -6,7 +7,7 @@ const BlogPostImage = ({ image, children }) => {
   {
     return (
       image && (
-        <figure className="my-4 full-bleed">
+        <figure className={styles.figure}>
           <div className="relative aspect-w-16 aspect-h-8">
             <Image
               src={src}
