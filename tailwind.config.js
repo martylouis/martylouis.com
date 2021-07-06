@@ -7,26 +7,33 @@ module.exports = {
   theme: {
     fontFamily: {
       // sans: ['Inter var', 'sans-serif'],
+      // serif: ['DM Serif Display', 'serif'],
       sans: ['DM Sans', 'sans-serif'],
-      serif: ['DM Serif Display', 'serif'],
+      mono: ['DM Mono', 'monospace'],
     },
     colors: {
       // https://hihayk.github.io/scale/#4/5/80/96/0/0/-25/25/757880/117/120/128/l-1
-      pgray: {
-        50: '#FAFAFA',
-        100: '#DFE0E1',
-        200: '#C5C6C9',
-        300: '#AAACB0',
-        400: '#909298',
-        500: '#757880',
-        600: '#5D6067',
-        700: '#46484D',
-        800: '#2E3034',
-        900: '#17181A',
-      },
+      // gray: {
+      //   50: '#FAFAFA',
+      //   100: '#DFE0E1',
+      //   200: '#C5C6C9',
+      //   300: '#AAACB0',
+      //   400: '#909298',
+      //   500: '#757880',
+      //   600: '#5D6067',
+      //   700: '#46484D',
+      //   800: '#2E3034',
+      //   900: '#17181A',
+      // },
+      gray: colors.coolGray,
       blue: colors.blue,
       red: colors.red,
       white: colors.white,
+      purple: colors.purple,
+      orange: colors.orange,
+      pink: colors.pink,
+      teal: colors.teal,
+      yellow: colors.yellow,
       // https://colordesigner.io/#29B269-D9CB9E-374140-2A2C2B-BDC3C7
       // https://hihayk.github.io/scale/#4/5/80/96/0/0/-25/25/33B74C/51/183/76/l-1
       green: {

@@ -31,9 +31,14 @@ export default class MyDocument extends Document {
               httpEquiv="Content-Type"
               content="text/html; charset=ISO-8859-1"
             />
-            <link rel="preconnect" href="https://fonts.gstatic.com" />
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link
-              href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap"
+              rel="preconnect"
+              href="https://fonts.gstatic.com"
+              crossOrigin="true"
+            />
+            <link
+              href="https://fonts.googleapis.com/css2?family=DM+Mono:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
               rel="stylesheet"
             />
           </Head>
