@@ -7,6 +7,7 @@ import Figure from './Figure';
 import SEO from './SEO';
 import tw, { styled } from 'twin.macro';
 import Badge from './Badge';
+import { StyledHeading, StyledText } from './Prose';
 
 const BlogPost = ({ frontMatter, children }) => {
   const { title, description, datePublished, readingTime, slug, image, tags } =
@@ -20,33 +21,67 @@ const BlogPost = ({ frontMatter, children }) => {
         datePublished={datePublished}
         image={image.src}
       />
-      <header className="my-8">
-        <h1 className="mb-8 text-3xl font-bold tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
+      <header className="mb-8">
+        <StyledHeading size="xl" css={{ ...tw`mb-2` }}>
           {title}
-        </h1>
-        <div className="flex items-center">
-          <div className="flex flex-wrap items-center text-sm leading-none tracking-wide text-gray-500">
-            <span className="mr-2">
-              {format(parseISO(datePublished), 'MMM dd, yyyy')}
+        </StyledHeading>
+        <StyledText
+          as="p"
+          css={{ ...tw`mb-4 text-lg text-gray-500 md:text-xl` }}
+        >
+          {description}
+        </StyledText>
+        <div className="grid grid-cols-3 gap-3 mt-6 text-sm leading-none text-gray-500">
+          <div>
+            <span className="block mb-1 text-xs text-gray-400">Written by</span>
+            <div className="flex items-center pr-2">
+              <span className="block mr-1.5 flex-shrink-0">
+                <Image
+                  src="/avatar.jpg"
+                  width="24px"
+                  height="24px"
+                  alt=""
+                  className="rounded-full "
+                />
+              </span>
+              <span>
+                <a
+                  href="https://twitter.com/martylouis"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Marty Thierry
+                </a>
+              </span>
+            </div>
+          </div>
+          <div>
+            <span className="block mb-1 text-xs text-gray-400">
+              Published on
             </span>
-            <span className="mr-2 text-gray-300">&bull;</span>
-            <span className="mr-2">{readingTime.text}</span>
-            {tags && (
+            <span>{format(parseISO(datePublished), 'MMM dd, yyyy')}</span>
+          </div>
+          <div>
+            <span className="block mb-1 text-xs text-gray-400">
+              Reading time
+            </span>
+            <span>{readingTime.text}</span>
+          </div>
+          {/* {tags && (
               <>
                 <span className="mr-2 text-gray-300">&bull;</span>
                 <span className="sr-only" css={{ '& > span + span': tw`mr-2` }}>
                   Tags:
                 </span>
-                {tags.map((tag) => (
+                {tags?.map((tag) => (
                   <Badge key={tag}>{tag}</Badge>
                 ))}
               </>
-            )}
-          </div>
+            )} */}
         </div>
       </header>
-      <Figure {...image} />
-      <div className="prose">{children}</div>
+      <Figure {...image} priority="true" />
+      {children}
     </Page>
   );
 };

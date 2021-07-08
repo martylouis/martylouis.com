@@ -2,7 +2,7 @@ import Link from 'next/link';
 import SEO from '../components/SEO';
 import MartyLouisLogo from '@components/MartyLouisLogo';
 import Container from '@components/Container';
-import { css } from 'twin.macro';
+import tw, { css } from 'twin.macro';
 
 const Page = ({ children }) => {
   return (
@@ -10,7 +10,7 @@ const Page = ({ children }) => {
       <SEO />
       <div className="flex flex-col h-screen">
         <div className="flex-grow flex-shrink-0">
-          <header className="py-[4vh]">
+          <header tw="py-[3vh]">
             <Container>
               <Link href="/" passHref>
                 <a className="flex items-center max-w-3xl">

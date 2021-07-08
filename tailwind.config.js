@@ -2,14 +2,13 @@ const colors = require('tailwindcss/colors');
 
 module.exports = {
   mode: 'jit',
-  purge: ['./src/**/*{.js,.md,.mdx}'],
+  purge: ['./src/**/*{.js,.md,.mdx}', './posts/**/*{.js,.md,.mdx}'],
   darkMode: 'false',
   theme: {
     fontFamily: {
       // sans: ['Inter var', 'sans-serif'],
       // serif: ['DM Serif Display', 'serif'],
       sans: ['DM Sans', 'sans-serif'],
-      mono: ['DM Mono', 'monospace'],
     },
     colors: {
       // https://hihayk.github.io/scale/#4/5/80/96/0/0/-25/25/757880/117/120/128/l-1
