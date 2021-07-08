@@ -1,10 +1,10 @@
 import tw, { styled } from 'twin.macro';
 
 const Container = styled('div', {
-  ...tw`px-6 md:px-12 lg:px-0 lg:grid`,
-  gridTemplateColumns: '1fr min(64ch, 100%) 2fr 1fr',
+  ...tw`max-w-3xl px-6 mx-auto md:px-12 lg:px-0`,
+  // gridTemplateColumns: '1fr min(64ch, 100%) 2fr 1fr',
   '& > *': {
-    gridColumn: 2,
+    // gridColumn: 2,
   },
 });
 

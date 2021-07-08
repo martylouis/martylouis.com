@@ -1,5 +1,6 @@
 import BlogPost from '@components/BlogPost';
 import Figure from '@components/Figure';
+import Banner from '@components/Banner';
 import { postFilePaths, POSTS_PATH } from '@utils/mdx';
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -11,6 +12,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import path from 'path';
 import readingTime from 'reading-time';
+import Prose from '@components/Prose';
+import tw, { styled } from 'twin.macro';
+
+const StyledDiv = styled('div', {});
 
 // include components in scope here
 const components = {
@@ -18,6 +23,9 @@ const components = {
   Image,
   Link,
   Figure,
+  Banner,
+  StyledDiv,
+  ...Prose,
 };
 
 const Blog = ({ source, frontMatter }) => {
@@ -39,18 +47,18 @@ export const getStaticProps = async ({ params }) => {
     mdxOptions: {
       remarkPlugins: [
         require('remark-slug'),
-        [
-          require('remark-autolink-headings'),
-          {
-            linkProperties: {
-              className: ['anchor'],
-            },
-            content: {
-              type: 'raw',
-              value: svgIconLink,
-            },
-          },
-        ],
+        // [
+        //   require('remark-autolink-headings'),
+        //   {
+        //     linkProperties: {
+        //       className: ['anchor'],
+        //     },
+        //     content: {
+        //       type: 'raw',
+        //       value: svgIconLink,
+        //     },
+        //   },
+        // ],
         require('remark-code-titles'),
       ],
       rehypePlugins: [mdxPrism],

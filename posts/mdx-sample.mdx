@@ -13,12 +13,74 @@ image:
 tags: [NextJS, MDX]
 ---
 
-## TOPIC_NAME
+<div className="grid md:grid-cols-3 gap-4 my-8">
+  <Figure src="/banner.jpg" frame="square" caption="This is a banner image" />
+  <Figure
+    src="/banner.jpg"
+    frame="landscape"
+    caption="This is a banner image"
+  />
+  <Figure
+    src="/banner.jpg"
+    frame="landscape"
+    caption="This is a banner image"
+  />
+  <Figure
+    src="/banner.jpg"
+    frame="landscape"
+    caption="This is a banner image"
+  />
+  <Figure
+    src="/banner.jpg"
+    frame="landscape"
+    caption="This is a banner image"
+  />
+  <Figure
+    src="/banner.jpg"
+    frame="landscape"
+    caption="This is a banner image"
+  />
+</div>
 
-TOPIC_DETAILS
-blah blah blah...
+## The Logo
 
-## Table of Contents
+<div className="flex flex-col items-center justify-center py-8">
+  <div className="bg-white p-8 rounded-2xl">
+    <Image src="/logo.png" width="200px" height="200px" />
+  </div>
+  <p className="text-xs text-gray-400 mt-2">martylouis logo</p>
+</div>
+
+## Heading 2
+
+- **Pull requests discourage trust.** Proposing every code change that somebody else has to approve doesn't feel encouraging for teams that should operate with a high degree of trust. There are more efficient ways to collaborate on code.
+- **Pull requests don't prevent bugs.** Reviewing code is hard! You can catch obvious mistakes, but you won't have consistent in-depth scrutiny. Many issues reveal themselves only after extensive use, which doesn't happen during code reviews. We rely on fast iterations with user feedback.
+- **Pull requests slow down.** Code reviews aren't high priority for engineers. They have to make time to clean up their review queue. In reality, PRs are an afterthought and not what you want to spend your time on as an engineer.
+
+### Heading 3
+
+#### Heading 4 `code`
+
+# 24 heading with number!
+
+1. numbered list
+2. numbers
+3. numbers
+4. numbers
+5. numbers
+6. numbers
+7. numbers
+8. numbers
+9. numbers
+10. numbers
+11. numbers
+12. numbers
+
+## Make your own rules this a super long header that more than 54 chars
+
+Every company or team is different, but one thing is the same: They all want to build the best **product** in the _shortest time_ possible. There are different ways to achieve this. Ours is to bet on our team and give all engineers the trust to do their best job. This [includes letting them decide](https://link.com) whenever they want their code reviewed by somebody else. This might be not the right process for other teams that have more strict security requirements. So far, this works well for us. It allows us to rapidly iterate on features, attract great engineers who want to tackle big problems, and establish an asynchronous communication culture that fits our fully distributed team.
+
+It's up to you and your colleagues to set the rules for your team. Don't adopt best practices in a dogmatic fashion. Rather, ask yourself if the circumstances of others apply to you. There is a high chance that they won't, and you find a more suited way to do things.
 
 - topic content 1 [Reference](http://dibya.org)
 - Renders actual, "native" React DOM elements
@@ -30,17 +92,41 @@ blah blah blah...
 - Allows you to escape or skip HTML (try toggling the checkboxes above)
 - If you escape or skip the HTML, no `dangerouslySetInnerHTML` is used! Yay!
 
+## Bug Fixes
+
+- [#473](#) - Fixed specificity issue with inherited variants & variants leaking as DOM attributes.
+- [#474](#) - Fixed specificity issue when components would share the same style.
+- [#483](#) - Fixed responsive variants not respecting usage order.
+- [#492](#) - Fixed default variants being ignored when responsively applying variants.
+- [#523](#) - Fixed flash of unstyled content after upgrading from alpha to beta.
+- [#532](#) - Fixed variant props being passed down to DOM elements.
+- [#535](#) - Fixed performance degradation after migrating from alpha to beta.
+- [#563](#) - Fixed resulting CSS from custom `theme` / `globals` not appending if parameters were the same.
+- [#586](#) - Fixed inconsistent use of `prefix`.
+- [#588](#) - Fixed `backdropFilter` not transforming locally-scoped tokens in `css()`.
+- [#622](#) - Fixed ability to set new default variants when composing components.
+  Performance fixed and improvements. Full benchmarks here.
+
+### It’s up to you!
+
+It's up to you and your colleagues to set the rules for your team. Don't adopt best practices in a dogmatic fashion. Rather, ask yourself if the circumstances of others apply to you. There is a high chance that they won't, and you find a more suited way to do things.
+
+### It’s up to you!
+
+It's up to you and your colleagues to set the rules for your team. Don't adopt best practices in a dogmatic fashion. Rather, ask yourself if the circumstances of others apply to you. There is a high chance that they won't, and you find a more suited way to do things.
+
 ## HTML block below
 
-<blockquote>
-  This blockquote will change based on the HTML settings above.
-</blockquote>
+> This blockquote will change based on the HTML settings above.
 
 ## How about some code?
 
+This is some amazing code you can copy!
+
 ```bash:terminal.app
-$ echo 'hello world' && git commit -A .
-$ npm install prism
+npm install prism
+# or
+yarn add prism
 ```
 
 ```html:index.html
