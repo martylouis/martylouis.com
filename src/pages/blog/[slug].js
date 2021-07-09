@@ -1,6 +1,6 @@
 import BlogPost from '@components/BlogPost';
 import Figure from '@components/Figure';
-import Banner from '@components/Banner';
+import Aside from '@components/Aside';
 import { postFilePaths, POSTS_PATH } from '@utils/mdx';
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -23,7 +23,7 @@ const components = {
   Image,
   Link,
   Figure,
-  Banner,
+  Aside,
   StyledDiv,
   ...Prose,
 };
