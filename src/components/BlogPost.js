@@ -7,7 +7,8 @@ import Figure from './Figure';
 import SEO from './SEO';
 import tw, { styled } from 'twin.macro';
 import Badge from './Badge';
-import { StyledHeading, StyledText } from './Prose';
+import { StyledHeader, StyledHeading, StyledHR, StyledText } from './Prose';
+import Container from './Container';
 
 const BlogPost = ({ frontMatter, children }) => {
   const { title, description, datePublished, readingTime, slug, image, tags } =
@@ -21,19 +22,10 @@ const BlogPost = ({ frontMatter, children }) => {
         datePublished={datePublished}
         image={image.src}
       />
-      <header className="mb-8">
-        <StyledHeading size="xl" css={{ ...tw`mb-2` }}>
-          {title}
-        </StyledHeading>
-        <StyledText
-          as="p"
-          css={{ ...tw`mb-4 text-lg text-gray-500 md:text-xl` }}
-        >
-          {description}
-        </StyledText>
-        <div className="grid grid-cols-3 gap-3 mt-6 text-sm leading-none text-gray-500">
+      <Container as="article">
+        <StyledHeader title={title} subtitle={description} />
+        <div className="grid items-center max-w-xl grid-cols-3 gap-3 mx-auto my-8 text-sm leading-none text-gray-500">
           <div>
-            <span className="block mb-1 text-xs text-gray-400">Written by</span>
             <div className="flex items-center pr-2">
               <span className="block mr-1.5 flex-shrink-0">
                 <Image
@@ -56,15 +48,9 @@ const BlogPost = ({ frontMatter, children }) => {
             </div>
           </div>
           <div>
-            <span className="block mb-1 text-xs text-gray-400">
-              Published on
-            </span>
             <span>{format(parseISO(datePublished), 'MMM dd, yyyy')}</span>
           </div>
           <div>
-            <span className="block mb-1 text-xs text-gray-400">
-              Reading time
-            </span>
             <span>{readingTime.text}</span>
           </div>
           {/* {tags && (
@@ -79,9 +65,12 @@ const BlogPost = ({ frontMatter, children }) => {
               </>
             )} */}
         </div>
-      </header>
-      <Figure {...image} priority="true" />
-      {children}
+
+        {/* <StyledHR /> */}
+
+        <Figure {...image} priority="true" />
+        {children}
+      </Container>
     </Page>
   );
 };

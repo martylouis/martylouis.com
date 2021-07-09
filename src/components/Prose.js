@@ -3,26 +3,28 @@ import { Link as LinkIcon } from 'react-feather';
 import tw, { theme, styled } from 'twin.macro';
 import NextLink from 'next/link';
 
+export const StyledDiv = styled('div', {});
+
 export const StyledText = styled('span', {
-  ...tw`max-w-[54ch]`,
+  ...tw`max-w-xl mx-auto`,
   '& > code': {
-    ...tw`inline-block px-1 text-sm font-normal text-purple-500 bg-purple-500 rounded-sm bg-opacity-10`,
+    ...tw`inline-block px-1 text-sm font-normal text-purple-500 bg-purple-400 rounded-sm bg-opacity-10`,
   },
 });
 
 export const StyledLink = styled('a', {
-  ...tw`px-0.5 hover:text-purple-700 hover:underline focus:underline`,
+  ...tw`px-0.5 font-medium hover:text-purple-700 hover:underline focus:underline`,
   textUnderlineOffset: '1px',
   textDecorationLine: 'underline',
   // textDecorationColor: theme`colors.gray.300`,
 });
 
 export const StyledHeading = styled('h1', {
-  ...tw`font-bold`,
+  ...tw`max-w-xl mx-auto font-bold`,
   variants: {
     size: {
       xl: {
-        ...tw`my-4 text-2xl tracking-tight md:my-6 lg:my-8 md:text-3xl lg:text-4xl`,
+        ...tw`text-3xl tracking-tight md:text-4xl lg:text-5xl`,
       },
       lg: { ...tw`text-2xl md:text-3xl` },
       md: { ...tw`text-xl md:text-2xl` },
@@ -30,6 +32,19 @@ export const StyledHeading = styled('h1', {
     },
   },
 });
+
+export const StyledHeader = ({ title, subtitle = '' }) => (
+  <StyledDiv as="header" css={{ ...tw`mx-auto mt-8 mb-4 md:mt-16 lg:mt-24` }}>
+    <StyledHeading as="h1" size="xl" css={{ ...tw`mb-2` }}>
+      {title}
+    </StyledHeading>
+    {subtitle && (
+      <StyledText as="p" css={{ ...tw`text-lg text-gray-500 lg:text-xl` }}>
+        {subtitle}
+      </StyledText>
+    )}
+  </StyledDiv>
+);
 
 export const LinkedHeading = ({ id, children, ...props }) => (
   <StyledText
@@ -39,7 +54,7 @@ export const LinkedHeading = ({ id, children, ...props }) => (
     css={{
       ...tw`block mt-12 mb-4`,
       '& + *': { ...tw`mt-0` },
-      '&:hover span': { ...tw`text-gray-500` },
+      '&:hover span': { ...tw`opacity-100 ` },
     }}
   >
     <StyledHeading
@@ -51,7 +66,7 @@ export const LinkedHeading = ({ id, children, ...props }) => (
       }}
     >
       {children}
-      <span tw="w-3.5 h-3.5 text-gray-300 ml-1.5 transition-colors flex-shrink-0">
+      <span tw="w-3.5 h-3.5 ml-1.5 text-gray-400 transition-opacity opacity-0 flex-shrink-0">
         <LinkIcon aria-hidden tw="w-full h-full block" />
       </span>
     </StyledHeading>
@@ -59,7 +74,7 @@ export const LinkedHeading = ({ id, children, ...props }) => (
 );
 
 export const StyledList = styled('ul', {
-  ...tw`pl-2 my-4`,
+  ...tw`max-w-xl pl-2 mx-auto my-4`,
 });
 
 export const StyledOrderedList = ({ children, ...props }) => (
@@ -106,6 +121,10 @@ export const StyledUnorderedList = ({ children, ...props }) => (
   </StyledList>
 );
 
+export const StyledHR = styled('hr', {
+  ...tw`my-8 border-gray-300 md:my-16`,
+});
+
 const Prose = {
   h1: (props) => <LinkedHeading {...props} size="lg" as="h2" />,
   h2: (props) => <LinkedHeading {...props} size="lg" as="h2" />,
@@ -122,9 +141,11 @@ const Prose = {
       as="blockquote"
       {...props}
       css={{
-        ...tw`pl-4 my-8 font-bold border-l-4 border-purple-400 lg:my-16`,
+        $$purple400: theme`colors.purple.200`,
+        ...tw`max-w-full pl-4 my-8 font-bold border-l-4 border-purple-400 lg:my-16`,
         p: {
-          ...tw`my-0 text-xl italic lg:text-2xl`,
+          ...tw`max-w-full my-0 text-xl italic lg:text-2xl`,
+          textShadow: '2px 2px 0 $$purple400',
         },
       }}
     />

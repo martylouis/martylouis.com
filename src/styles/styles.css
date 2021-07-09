@@ -28,6 +28,10 @@ Usage:
   src: url('/fonts/Inter-italic.var.woff2?v=3.18') format('woff2');
 }
 
+::selection {
+  @apply text-gray-900 bg-yellow-200;
+}
+
 @layer base {
   html {
     font-family: 'DM Sans', sans-serif;
@@ -100,16 +104,18 @@ pre[class*='language-']::-moz-selection,
 pre[class*='language-'] ::-moz-selection,
 code[class*='language-']::-moz-selection,
 code[class*='language-'] ::-moz-selection {
+  @apply bg-blue-600/25;
+  color: inherit;
   text-shadow: none;
-  background: rgba(29, 59, 83, 0.99);
 }
 
 pre[class*='language-']::selection,
 pre[class*='language-'] ::selection,
 code[class*='language-']::selection,
 code[class*='language-'] ::selection {
+  @apply bg-blue-600/25;
+  color: inherit;
   text-shadow: none;
-  background: rgba(29, 59, 83, 0.99);
 }
 
 @media print {
