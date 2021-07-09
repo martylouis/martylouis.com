@@ -23,9 +23,7 @@ const Page = ({ children }) => {
               {/* PageHeaderNav */}
             </Container>
           </header>
-          <main className="pb-[8vh]">
-            <Container>{children}</Container>
-          </main>
+          <main className="pb-[8vh]">{children}</main>
         </div>
         <footer className="py-[8vh] border-t border-gray-200">
           <Container>
