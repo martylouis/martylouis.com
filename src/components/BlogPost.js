@@ -2,7 +2,7 @@ import Page from '@layouts/Page';
 import { format, parseISO } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft } from 'react-feather';
+import { ArrowLeft, Calendar, Watch } from 'react-feather';
 import Figure from './Figure';
 import SEO from './SEO';
 import tw, { styled } from 'twin.macro';
@@ -24,9 +24,9 @@ const BlogPost = ({ frontMatter, children }) => {
       />
       <Container as="article">
         <StyledHeader title={title} subtitle={description} />
-        <div className="grid items-center max-w-xl grid-cols-3 gap-3 mx-auto my-8 text-sm leading-none text-gray-500">
+        <div className="flex items-center max-w-xl mx-auto mt-6 space-x-2 text-sm leading-none text-gray-500 md:space-x-8">
           <div>
-            <div className="flex items-center pr-2">
+            <div className="flex items-center">
               <span className="block mr-1.5 flex-shrink-0">
                 <Image
                   src="/avatar.jpg"
@@ -47,10 +47,16 @@ const BlogPost = ({ frontMatter, children }) => {
               </span>
             </div>
           </div>
-          <div>
+          <div className="flex items-center">
+            <span className="mr-1 text-gray-400">
+              <Calendar size="16" />
+            </span>
             <span>{format(parseISO(datePublished), 'MMM dd, yyyy')}</span>
           </div>
-          <div>
+          <div className="flex items-center">
+            <span className="mr-1 text-gray-400">
+              <Watch size="16" />
+            </span>
             <span>{readingTime.text}</span>
           </div>
           {/* {tags && (
@@ -66,7 +72,7 @@ const BlogPost = ({ frontMatter, children }) => {
             )} */}
         </div>
 
-        {/* <StyledHR /> */}
+        <StyledHR css={{ ...tw`max-w-xl mx-auto my-8` }} />
 
         <Figure {...image} priority="true" />
         {children}

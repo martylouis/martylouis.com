@@ -142,10 +142,10 @@ const Prose = {
       {...props}
       css={{
         $$purple400: theme`colors.purple.200`,
-        ...tw`max-w-full pl-4 my-8 font-bold border-l-4 border-purple-400 lg:my-16`,
+        ...tw`max-w-full py-1 pl-6 my-8 font-bold border-l-4 border-gray-300 lg:my-16`,
         p: {
-          ...tw`max-w-full my-0 text-xl italic lg:text-2xl`,
-          textShadow: '2px 2px 0 $$purple400',
+          ...tw`max-w-full my-0 text-xl italic md:text-2xl`,
+          // textShadow: '2px 2px 0 $$purple400',
         },
       }}
     />
