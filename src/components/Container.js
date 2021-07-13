@@ -6,6 +6,13 @@ const Container = styled('div', {
   '& > *': {
     // gridColumn: 2,
   },
+
+  variants: {
+    size: {
+      fw: {},
+    },
+    grid: {},
+  },
 });
 
 export default Container;

@@ -234,26 +234,3 @@ pre[class*='language-'] {
 .token.italic {
   font-style: italic;
 }
-
-.remark-code-title {
-  @apply relative inline-flex items-center justify-center w-full h-8 px-4 mt-4 overflow-auto text-xs leading-none bg-gray-900 rounded-t-xl lg:h-10 lg:text-sm text-gray-50/75;
-  grid-column: 1 / -1;
-}
-
-.remark-code-title::before {
-  @apply absolute left-0 w-1.5 h-1.5 ml-4 rounded-full lg:w-2 lg:h-2 bg-gray-500/50;
-  content: '';
-  box-shadow: 0.75rem 0 0 rgba(107, 114, 128, 0.5),
-    1.5rem 0 0 rgba(107, 114, 128, 0.5);
-}
-
-@screen lg {
-  .remark-code-title::before {
-    box-shadow: 1rem 0 0 rgba(107, 114, 128, 0.5),
-      2rem 0 0 rgba(107, 114, 128, 0.5);
-  }
-}
-
-.remark-code-title + pre[class*='language-'] {
-  @apply mt-0 rounded-t-none;
-}
