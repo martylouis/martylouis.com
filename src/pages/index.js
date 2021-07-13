@@ -8,20 +8,25 @@ import Page from '@layouts/Page';
 import Box from '@components/Box';
 import BlogList from '@components/BlogList';
 import { getFilesByFrontMatter } from '@utils/mdx';
+import { StyledHeader } from '@components/Prose';
+import Container from '@components/Container';
 
 const { greeting, subheading, photo } = hero;
 
 export default function Index({ posts }) {
   return (
     <Page>
-      <Box as="h1" css={{ fontSize: '3rem', lineHeight: 1.2, mb: '2.4rem' }}>
-        Freelance Web Designer & Developer in Destin, Florida
-      </Box>
-      <p>
-        Hey! I&apos;m Marty. I&apos;m a digital designer and web developer with
-        a background in graphic design. Eventually, I learned to code and never
-        looked back.
-      </p>
+      <Container>
+        <StyledHeader
+          title="Freelance Web Designer & Developer in Destin, Florida"
+          subtitle="Hey! I'm Marty. I'm a digital designer and web developer with a background in graphic design. Eventually, I learned to code and never looked back."
+        />
+      </Container>
+      <Box
+        as="h1"
+        css={{ fontSize: '3rem', lineHeight: 1.2, mb: '2.4rem' }}
+      ></Box>
+      <p></p>
       <p>
         Currently I freelance remotely with companies all over the US building
         websites and apps with teams small and large.

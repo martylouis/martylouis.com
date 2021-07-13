@@ -2,17 +2,24 @@ import Page from '@layouts/Page';
 import BlogList from '@components/BlogList';
 import { getFilesByFrontMatter } from '@utils/mdx';
 import { StyledHeader } from '@components/Prose';
+import Container from '@components/Container';
 
 const BlogIndex = ({ posts }) => {
   return (
     <Page>
-      <div className="container">
-        <StyledHeader
-          title="Blog"
-          subtitle="Projects, notes, tutorials and other cool things"
-        />
-        <BlogList posts={posts} />
-      </div>
+      <section>
+        <Container>
+          <StyledHeader
+            title="Blog"
+            subtitle="Projects, notes, tutorials and other cool things"
+          />
+        </Container>
+      </section>
+      <section>
+        <Container>
+          <BlogList posts={posts} />
+        </Container>
+      </section>
     </Page>
   );
 };
