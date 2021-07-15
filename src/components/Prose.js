@@ -20,7 +20,8 @@ export const ProseSpan = styled('span', {});
 export const ProseText = styled('p', {
   ...tw`px-6 mt-0 mb-2 md:px-0 md:mb-4`,
   '& > code': {
-    ...tw`inline-block px-1 text-sm font-normal text-purple-500 bg-purple-400 rounded-sm bg-opacity-10`,
+    ...tw`inline-block px-1 text-sm subpixel-antialiased font-normal rounded`,
+    ...tw`text-purple-600 bg-purple-200 bg-opacity-75 dark:text-purple-400 dark:bg-purple-900 dark:bg-opacity-10`,
   },
 
   variants: {
@@ -47,7 +48,7 @@ export const ProseHeading = ({ id, children, ...props }) => {
       as={props.as}
       {...props}
       css={{
-        ...tw`text-gray-800 transition-colors dark:text-yellow-50`,
+        ...tw`text-gray-800 transition-colors dark:text-gray-50`,
         scrollMarginTop: '4rem',
       }}
     >
@@ -103,7 +104,7 @@ export const StyledUnorderedList = ({ children, ...props }) => (
 );
 
 export const ProseHR = styled('hr', {
-  ...tw`my-8 border-yellow-200 dark:border-gray-700 md:my-16`,
+  ...tw`my-8 transition-colors border-gray-200 dark:border-gray-700 md:my-16`,
 });
 
 export const ProseBlockquote = styled('blockquote', {

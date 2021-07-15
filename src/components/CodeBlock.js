@@ -26,14 +26,18 @@ const StyledPre = styled('pre', {
   // $$code_removed: '',
   // $$code_added: '',
 
+  '.dark &': {
+    boxShadow: '0 0 1px rgba(255,255,255, 0.75)',
+  },
+
   '& > code': { display: 'block' },
 
   '&[class*="language-"]': {
-    ...tw`px-6 pt-3 pb-6 mb-2`,
+    ...tw`p-6 my-6`,
   },
 
   '&[class*="language-"], & > code[class*="language-"]': {
-    ...tw`overflow-auto text-xs leading-relaxed text-left sm:text-[14px] sm:leading-6 sm:rounded-b-lg`,
+    ...tw`overflow-auto text-sm leading-relaxed text-left sm:rounded-lg`,
     color: '$$code_text',
     background: '$$code_bg',
     whiteSpace: 'pre',
@@ -130,9 +134,10 @@ const StyledPre = styled('pre', {
 
 const remarkCodeTitleStyles = global({
   '.remark-code-title': {
-    ...tw`relative flex items-center justify-center w-full h-8 px-4 mt-4 overflow-auto text-xs leading-none tracking-wide text-yellow-200 sm:rounded-t-lg lg:h-10 lg:text-sm`,
+    ...tw`relative flex items-center justify-center w-full h-8 px-4 mt-4 overflow-auto text-xs leading-none tracking-wide text-gray-300 sm:rounded-t-lg lg:h-10 lg:text-sm`,
     $$code_bg: '#1c242a',
     background: '$$code_bg',
+    boxShadow: '0 0 1px rgba(255, 255, 255, 0.75)',
 
     '&:before': {
       ...tw`absolute left-0 w-[8px] h-[8px] ml-4 rounded-full lg:w-[10px] lg:h-[10px] bg-gray-500 bg-opacity-50`,
@@ -143,6 +148,10 @@ const remarkCodeTitleStyles = global({
 
     '& + pre[class*="language-"]': {
       ...tw`mt-0 rounded-t-none`,
+    },
+
+    '.dark &': {
+      boxShadow: '0 0 1px rgba(255,255,255, 0.75)',
     },
   },
 });

@@ -1,7 +1,8 @@
 module.exports = {
   header: [
     // { title: 'Home', url: '/' },
-    // { title: 'Work', url: '/work' },
+    { title: 'Work', url: '/#work' },
+    { title: 'About', url: '/#about' },
     // { title: 'Services', url: '/services' },
     // { title: 'Articles', url: '/blog' },
     { title: 'Blog', url: '/blog' },
