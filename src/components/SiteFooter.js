@@ -2,13 +2,15 @@ import Container from './Container';
 
 const SiteFooter = () => {
   return (
-    <footer className="py-[8vh] border-t border-gray-200">
-      <Container>
+    <footer>
+      <Container size="md">
+        <div className="w-full transition-all border-t border-gray-200 dark:border-gray-700"></div>
         <p
-          className="text-sm text-center text-gray-400"
+          className="text-xs text-center  text-gray-400 py-[6vh]"
           css={{ gridColumn: ' 1 / -1' }}
         >
-          &copy; {new Date().getFullYear()} Marty Louis Co
+          &copy; {new Date().getFullYear()} Marty Louis Co — Built with Next.js
+          and ☕️
         </p>
       </Container>
     </footer>
