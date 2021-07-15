@@ -13,7 +13,7 @@ const ThemeToggle = () => {
   if (!mounted) return null;
 
   const handleToggle = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    setTheme(theme && resolvedTheme === 'dark' ? 'light' : 'dark');
   };
 
   return (
