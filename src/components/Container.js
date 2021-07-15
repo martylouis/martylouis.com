@@ -5,13 +5,14 @@ const Container = styled('div', {
 
   variants: {
     size: {
+      sm: { ...tw`max-w-xl px-6` },
       md: { ...tw`max-w-3xl px-6` },
       lg: { ...tw`max-w-5xl px-6` },
       xl: { ...tw`max-w-6xl px-6` },
-      full: { ...tw`max-w-7xl` },
+      full: { ...tw`w-full max-w-7xl` },
     },
-    type: {
-      grid: {
+    isGrid: {
+      true: {
         display: 'grid',
         gridTemplateColumns: '1fr min(60ch, 100%) 1fr',
         '& > *': {

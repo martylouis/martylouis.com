@@ -15,7 +15,7 @@ export default CodeBlock;
 
 const StyledPre = styled('pre', {
   $$code_text: 'white',
-  $$code_bg: '#1c242a', //
+  $$code_bg: theme`colors.gray.900`, //
   $$code_syntax1: '#E1E4E8', // purple
   $$code_syntax2: '#F97583', // red
   $$code_syntax3: '#B392F0', // purple
@@ -135,7 +135,7 @@ const StyledPre = styled('pre', {
 const remarkCodeTitleStyles = global({
   '.remark-code-title': {
     ...tw`relative flex items-center justify-center w-full h-8 px-4 mt-4 overflow-auto text-xs leading-none tracking-wide text-gray-300 sm:rounded-t-lg lg:h-10 lg:text-sm`,
-    $$code_bg: '#1c242a',
+    $$code_bg: theme`colors.gray.900`,
     background: '$$code_bg',
     boxShadow: '0 0 1px rgba(255, 255, 255, 0.75)',
 
