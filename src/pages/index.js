@@ -1,26 +1,28 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { hero, services } from '@data/home';
-import Emoji from '@components/emoji';
-import { H1, H2, H3 } from '@components/typography';
-import Tabs from '@components/tabs';
-import Page from '@layouts/Page';
-import Box from '@components/Box';
 import BlogList from '@components/BlogList';
-import { getFilesByFrontMatter } from '@utils/mdx';
-import { StyledHeader } from '@components/Prose';
+import Box from '@components/Box';
 import Container from '@components/Container';
+import Emoji from '@components/emoji';
+import Tabs from '@components/tabs';
+import { H3 } from '@components/typography';
+import { hero, services } from '@data/home';
+import Page from '@layouts/Page';
+import { getFilesByFrontMatter } from '@utils/mdx';
+import Image from 'next/image';
+import Link from 'next/link';
 
-const { greeting, subheading, photo } = hero;
+const { heading, subheading, photo } = hero;
 
 export default function Index({ posts }) {
   return (
     <Page>
       <Container>
-        <StyledHeader
-          title="Freelance Web Designer & Developer in Destin, Florida"
-          subtitle="Hey! I'm Marty. I'm a digital designer and web developer with a background in graphic design. Eventually, I learned to code and never looked back."
-        />
+        <h1>
+          Freelance Web Designer & Developer all the way from Destin, Florida
+        </h1>
+        <p>
+          Oh hello! I’m Marty and design and develop websites and graphics and
+          logos and all kinds of other stuff. Say hey
+        </p>
       </Container>
       <Box
         as="h1"

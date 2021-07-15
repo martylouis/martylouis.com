@@ -12,7 +12,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import path from 'path';
 import readingTime from 'reading-time';
-import Prose from '@components/Prose';
+import ProseComponents, { ProseContainer } from '@components/Prose';
 import tw, { styled } from 'twin.macro';
 
 const StyledDiv = styled('div', {});
@@ -25,7 +25,8 @@ const components = {
   Figure,
   Aside,
   StyledDiv,
-  ...Prose,
+  ...ProseComponents,
+  ProseContainer,
 };
 
 const Blog = ({ source, frontMatter }) => {

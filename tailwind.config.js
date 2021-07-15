@@ -6,11 +6,23 @@ module.exports = {
   darkMode: 'false',
   theme: {
     fontFamily: {
-      // sans: ['Inter var', 'sans-serif'],
-      // serif: ['DM Serif Display', 'serif'],
-      sans: ['DM Sans', 'sans-serif'],
+      sans: ['Inter var', 'sans-serif'],
+      serif: ['DM Serif Display', 'serif'],
+      // sans: ['DM Sans', 'sans-serif'],
     },
     colors: {
+      see: {
+        50: 'hsl(51, 21%, 98%)',
+        100: 'hsl(50, 20%, 94%)',
+        200: 'hsl(52, 28%, 88%)',
+        300: {},
+      },
+      dye: {
+        50: {},
+        700: 'hsl(225, 24%, 32%)',
+        800: 'hsl(225, 16%, 22%)',
+        900: 'hsl(225, 7%, 12%)',
+      },
       // https://hihayk.github.io/scale/#4/5/80/96/0/0/-25/25/757880/117/120/128/l-1
       // gray: {
       //   50: '#FAFAFA',
