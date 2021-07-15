@@ -33,8 +33,7 @@ module.exports = {
           label: 'building construction',
         },
         title: 'Website Development',
-        desc:
-          'Keep your website up to date with a click of the button. WordPress is a great alternative to traditional html websites.',
+        desc: 'Keep your website up to date with a click of the button. WordPress is a great alternative to traditional html websites.',
         link: '/website-development',
       },
       {
@@ -43,8 +42,7 @@ module.exports = {
           label: 'sparkles',
         },
         title: 'UX Design',
-        desc:
-          'Your website should work how your users expect it to. I can help you design your site to be simple and intuitive.',
+        desc: 'Your website should work how your users expect it to. I can help you design your site to be simple and intuitive.',
         link: '/ux',
       },
       {
@@ -53,8 +51,7 @@ module.exports = {
           label: 'rescue workers helmet',
         },
         title: 'WordPress Support',
-        desc:
-          'Do you need updates to your eCommerce site and just don’t have the time? Do you want to make changes to your WordPress site but not sure how? I can help',
+        desc: 'Do you need updates to your eCommerce site and just don’t have the time? Do you want to make changes to your WordPress site but not sure how? I can help',
         link: '/wordpress',
       },
       // {
@@ -79,43 +76,46 @@ module.exports = {
       // },
     ],
   },
-  projects: [
-    {
-      title: 'Wattsware',
-      desc: 'desc 1 Lorem ipsum dolor sit amet.',
-      img: 'https://source.unsplash.com/random/200',
-    },
-    {
-      title: 'Redhorse Corp',
-      desc: 'desc 2 Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-      img: 'https://source.unsplash.com/random/300',
-    },
-    {
-      title: 'Gulf Realty 30A',
-      desc: 'desc 3 Lorem, ipsum dolor.',
-      img: 'https://source.unsplash.com/random/340',
-    },
-    {
-      title: 'Manatee Air',
-      desc: 'desc 4 Lorem ipsum dolor sit amet.',
-      img: 'https://source.unsplash.com/random/400',
-    },
-    {
-      title: 'Evans Tire',
-      desc: 'desc 4 Lorem ipsum dolor sit amet.',
-      img: 'https://source.unsplash.com/random/340',
-    },
-    {
-      title: 'Charger Enterprises',
-      desc: 'desc 4 Lorem ipsum dolor sit amet.',
-      img: 'https://source.unsplash.com/random/100',
-    },
-    {
-      title: 'Cartecay River Brewing Co',
-      desc: 'desc 4 Lorem ipsum dolor sit amet.',
-      img: 'https://source.unsplash.com/random/330',
-    },
-  ],
+  projects: {
+    heading: 'Featured Work',
+    items: [
+      {
+        title: 'Wattsware',
+        desc: 'desc 1 Lorem ipsum dolor sit amet.',
+        img: 'https://source.unsplash.com/random/200',
+      },
+      {
+        title: 'Redhorse Corp',
+        desc: 'desc 2 Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
+        img: 'https://source.unsplash.com/random/300',
+      },
+      {
+        title: 'Gulf Realty 30A',
+        desc: 'desc 3 Lorem, ipsum dolor.',
+        img: 'https://source.unsplash.com/random/340',
+      },
+      {
+        title: 'Manatee Air',
+        desc: 'desc 4 Lorem ipsum dolor sit amet.',
+        img: 'https://source.unsplash.com/random/400',
+      },
+      {
+        title: 'Evans Tire',
+        desc: 'desc 4 Lorem ipsum dolor sit amet.',
+        img: 'https://source.unsplash.com/random/340',
+      },
+      {
+        title: 'Charger Enterprises',
+        desc: 'desc 4 Lorem ipsum dolor sit amet.',
+        img: 'https://source.unsplash.com/random/100',
+      },
+      {
+        title: 'Cartecay River Brewing Co',
+        desc: 'desc 4 Lorem ipsum dolor sit amet.',
+        img: 'https://source.unsplash.com/random/330',
+      },
+    ],
+  },
   blog: {
     heading: 'Recent Blog Posts',
     items: [

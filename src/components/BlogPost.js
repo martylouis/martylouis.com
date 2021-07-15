@@ -7,7 +7,7 @@ import Figure from './Figure';
 import SEO from './SEO';
 import tw, { styled } from 'twin.macro';
 import Badge from './Badge';
-import { StyledHeading, ProseHR, ProseHeading } from './Prose';
+import { ProseHR, ProseHeading, ProseContent } from './Prose';
 import Container from './Container';
 
 const BlogPost = ({ frontMatter, children }) => {
@@ -22,7 +22,7 @@ const BlogPost = ({ frontMatter, children }) => {
         datePublished={datePublished}
         image={image.src}
       />
-      <Container as="article">
+      <div as="article">
         {/* <StyledHeader title={title} subtitle={description} /> */}
         <div className="flex items-center max-w-xl mx-auto mt-6 space-x-2 text-sm leading-none text-gray-500 md:space-x-8">
           <div>
@@ -75,8 +75,8 @@ const BlogPost = ({ frontMatter, children }) => {
         <ProseHR css={{ ...tw`max-w-xl mx-auto my-8` }} />
 
         <Figure {...image} priority="true" />
-        {children}
-      </Container>
+        <ProseContent>{children}</ProseContent>
+      </div>
     </Page>
   );
 };

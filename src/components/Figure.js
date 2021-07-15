@@ -5,25 +5,29 @@ import tw, { styled } from 'twin.macro';
 const Figure = (props) => {
   const { src, alt, caption, frame, priority, unsplash } = props;
   return (
-    <figure>
-      <StyledFrame frame={frame}>
+    <StyledFigure>
+      <StyledFigureImageWrapper frame={frame}>
         <Image src={src} alt={alt} layout="fill" priority={priority} />
-      </StyledFrame>
-      <Figcaption>
+      </StyledFigureImageWrapper>
+      <StyledFigCaption>
         {unsplash ? (
           <UnsplashCaption caption={caption} {...unsplash} />
         ) : (
           <p>{caption}</p>
         )}
-      </Figcaption>
-    </figure>
+      </StyledFigCaption>
+    </StyledFigure>
   );
 };
 
 export default Figure;
 
-const StyledFrame = styled('div', {
-  '& img': { ...tw`object-cover rounded-xl` },
+const StyledFigure = styled('figure', {
+  ...tw`max-w-6xl mx-auto`,
+});
+
+const StyledFigureImageWrapper = styled('div', {
+  '& img': { ...tw`object-cover` },
 
   variants: {
     frame: {
@@ -38,9 +42,9 @@ const StyledFrame = styled('div', {
   },
 });
 
-const Figcaption = styled('figcaption', {
-  ...tw`flex items-center justify-center mt-2`,
-  '& p': { ...tw`mt-1 text-xs tracking-wide text-gray-500 text-opacity-75` },
+const StyledFigCaption = styled('figcaption', {
+  ...tw`flex items-center justify-center mb-4`,
+  '& p': { ...tw`my-4 text-xs tracking-wide text-gray-500 text-opacity-75` },
   '& a': { ...tw`underline hover:text-gray-600` },
 });
 

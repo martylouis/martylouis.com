@@ -71,12 +71,12 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus animi nisi, so
 
 ## The Logo
 
-<div className="flex flex-col items-center justify-center py-8">
-  <div className="bg-white p-8 rounded-2xl">
+<ProseContainer>
+  <div className="flex flex-col items-center justify-center py-8 bg-see-50">
     <Image src="/logo.png" width="200px" height="200px" />
   </div>
-  <p className="text-xs text-gray-400 mt-2">martylouis logo</p>
-</div>
+</ProseContainer>
+<p className="text-xs py-4 text-center text-dye-700">martylouis logo</p>
 
 ## Heading 2
 
@@ -125,6 +125,18 @@ It's up to you and your colleagues to set the rules for your team. Don't adopt b
 - Allows you to escape or skip HTML (try toggling the checkboxes above)
 - If you escape or skip the HTML, no `dangerouslySetInnerHTML` is used! Yay!
 
+This was my wishlist:
+
+- Syntax highlight
+- Apply multiple themes
+- Highlight specific lines
+- Highlight specific words
+- Interact with the content
+- Make specific words link to other pages
+- Show line numbers
+- Make it collapsible/expandable
+- Render a preview
+
 ## Bug Fixes
 
 - [#473](#) - Fixed specificity issue with inherited variants & variants leaking as DOM attributes.
@@ -155,6 +167,21 @@ It's up to you and your colleagues to set the rules for your team. Don't adopt b
 
 This is some amazing code you can copy!
 
+```css:tailwind.styles.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+}
+```
+
 ```bash:terminal.app
 npm install prism
 # or
@@ -166,13 +193,25 @@ yarn add prism
 ```
 
 ```jsx:app.js
-var React = require('react');
-// this is a comment
-var Markdown = require('react-markdown');
-React.render(
-  <Markdown source="# Your markdown here" />,
-  document.getElementById('content')
-);
+const Aside = ({ children, type }) => {
+  let re = /ab_c/;
+
+  // comment!
+
+  return (
+    <StyledAside as="aside">
+      <StyledAsideContainer type={type}>
+        {type && (
+          <StyledIcon>
+            <IconType type={type} />
+          </StyledIcon>
+        )}
+        {children}
+        {document.getElementById('content')}
+      </StyledAsideContainer>
+    </StyledAside>
+  );
+};
 ```
 
 ```css:styles.css

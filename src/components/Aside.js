@@ -20,18 +20,9 @@ const Aside = ({ children, type }) => {
 export default Aside;
 
 const StyledAside = styled('aside', {
-  ...tw`mx-auto my-8`,
-
-  variants: {
-    size: {
-      default: { maxWidth: '39rem' },
-      full: { ...tw`max-w-full` },
-      content: { ...tw`max-w-xl` },
-    },
-  },
-
-  defaultVariants: {
-    size: 'default',
+  ...tw`grid font-medium grid-cols-[1fr min(60ch, 100%) 1fr] mx-auto my-8 md:col-start-1 md:col-end-4 px-4 sm:px-0`,
+  '& > *': {
+    ...tw`col-start-2 col-end-3`,
   },
 });
 
@@ -42,16 +33,14 @@ const StyledIcon = styled('span', {
 });
 
 const StyledAsideContainer = styled('div', {
-  ...tw`relative max-w-full p-6 text-sm leading-snug rounded-lg`,
-
-  '& p': {
-    ...tw`my-0 text-sm`,
-    '& + p': { ...tw`mt-2` },
+  ...tw`relative py-6 rounded-md sm:px-6 sm:-mx-4`,
+  '& > p:last-child': {
+    ...tw`mb-0`,
   },
 
   variants: {
     type: {
-      default: tw`text-gray-700 bg-gray-400 bg-opacity-10`,
+      default: tw`text-dye-800 bg-see-200`,
       info: {
         ...tw`border-2 border-blue-500 bg-blue-50`,
         '&:before': {
@@ -96,7 +85,6 @@ const StyledAsideContainer = styled('div', {
   },
   defaultVariants: {
     type: 'default',
-    width: 'bleed',
   },
 });
 

@@ -1,7 +1,6 @@
 import Page from '@layouts/Page';
 import BlogList from '@components/BlogList';
 import { getFilesByFrontMatter } from '@utils/mdx';
-import { StyledHeader } from '@components/Prose';
 import Container from '@components/Container';
 
 const BlogIndex = ({ posts }) => {
@@ -9,10 +8,8 @@ const BlogIndex = ({ posts }) => {
     <Page>
       <section>
         <Container>
-          <StyledHeader
-            title="Blog"
-            subtitle="Projects, notes, tutorials and other cool things"
-          />
+          <h1>Blog</h1>
+          <p>Projects, notes, tutorials and other cool things!</p>
         </Container>
       </section>
       <section>
