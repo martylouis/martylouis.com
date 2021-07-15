@@ -28,9 +28,9 @@ Usage:
   src: url('/fonts/Inter-italic.var.woff2?v=3.18') format('woff2');
 }
 
-::selection {
+/* ::selection {
   @apply text-gray-900 bg-yellow-200;
-}
+} */
 
 @layer base {
   html {
@@ -45,16 +45,12 @@ Usage:
 
   html,
   body {
-    @apply subpixel-antialiased leading-relaxed font-normal text-dye-700 md:text-[17px] lg:text-[18px];
+    @apply antialiased leading-relaxed font-normal md:text-[17px] lg:text-[18px];
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-see-100;
-  }
-
-  a {
-    @apply transition-colors;
+    @apply text-gray-700 transition-all bg-yellow-100 dark:bg-gray-900 dark:text-yellow-200;
   }
 }
 
@@ -102,20 +98,20 @@ pre[class*='language-'] {
 }
 */
 
-pre[class*='language-']::-moz-selection,
+/* pre[class*='language-']::-moz-selection,
 pre[class*='language-'] ::-moz-selection,
 code[class*='language-']::-moz-selection,
 code[class*='language-'] ::-moz-selection {
-  /* @apply bg-blue-600/25;
+  @apply bg-blue-600/25;
   color: inherit;
-  text-shadow: none; */
+  text-shadow: none;
 }
 
 pre[class*='language-']::selection,
 pre[class*='language-'] ::selection,
 code[class*='language-']::selection,
 code[class*='language-'] ::selection {
-  /* @apply bg-blue-600/25;
+  @apply bg-blue-600/25;
   color: inherit;
-  text-shadow: none; */
-}
+  text-shadow: none;
+} */

@@ -3,7 +3,7 @@ const colors = require('tailwindcss/colors');
 module.exports = {
   mode: 'jit',
   purge: ['./src/**/*{.js,.md,.mdx}', './posts/**/*{.js,.md,.mdx}'],
-  darkMode: 'false',
+  darkMode: 'class',
   theme: {
     fontFamily: {
       sans: ['Inter var', 'sans-serif'],
@@ -11,32 +11,30 @@ module.exports = {
       // sans: ['DM Sans', 'sans-serif'],
     },
     colors: {
-      see: {
-        50: 'hsl(51, 21%, 98%)',
-        100: 'hsl(50, 20%, 94%)',
-        200: 'hsl(52, 28%, 88%)',
-        300: {},
+      yellow: {
+        50: '#f5f4f0',
+        100: '#f3f2ed',
+        200: '#e4e3d7',
+        300: '#ccc9b3',
+        400: '#b4af8e',
+        500: '#938d62',
+        600: '#74704e',
+        700: '#5c583d',
+        800: '#494731',
+        900: '#46442f',
       },
-      dye: {
-        50: {},
-        700: 'hsl(225, 24%, 32%)',
-        800: 'hsl(225, 16%, 22%)',
-        900: 'hsl(225, 7%, 12%)',
+      gray: {
+        50: '#f7f7f8',
+        100: '#f1f2f3',
+        200: '#e1e2e5',
+        300: '#c5c7ce',
+        400: '#a4a7b2',
+        500: '#838895',
+        600: '#656976',
+        700: '#4b4e58',
+        800: '#3b3d45',
+        900: '#36383f',
       },
-      // https://hihayk.github.io/scale/#4/5/80/96/0/0/-25/25/757880/117/120/128/l-1
-      // gray: {
-      //   50: '#FAFAFA',
-      //   100: '#DFE0E1',
-      //   200: '#C5C6C9',
-      //   300: '#AAACB0',
-      //   400: '#909298',
-      //   500: '#757880',
-      //   600: '#5D6067',
-      //   700: '#46484D',
-      //   800: '#2E3034',
-      //   900: '#17181A',
-      // },
-      gray: colors.coolGray,
       blue: colors.blue,
       red: colors.red,
       white: colors.white,
@@ -44,7 +42,6 @@ module.exports = {
       orange: colors.orange,
       pink: colors.pink,
       teal: colors.teal,
-      yellow: colors.yellow,
       // https://colordesigner.io/#29B269-D9CB9E-374140-2A2C2B-BDC3C7
       // https://hihayk.github.io/scale/#4/5/80/96/0/0/-25/25/33B74C/51/183/76/l-1
       green: {

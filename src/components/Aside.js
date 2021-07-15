@@ -31,7 +31,7 @@ const StyledIcon = styled('span', {
 });
 
 const StyledAsideContainer = styled('div', {
-  ...tw`relative py-6 rounded-md sm:px-6 sm:-mx-6`,
+  ...tw`relative py-6 rounded-md bg-yellow-200 dark:bg-gray-800 sm:px-6 sm:-mx-6`,
 
   '& > p:last-child': {
     ...tw`mb-0`,
@@ -39,7 +39,6 @@ const StyledAsideContainer = styled('div', {
 
   variants: {
     type: {
-      default: tw`text-dye-800 bg-see-200`,
       info: {
         ...tw`border-2 border-blue-500 bg-blue-50`,
         '&:before': {

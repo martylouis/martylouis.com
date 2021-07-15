@@ -47,7 +47,7 @@ export const ProseHeading = ({ id, children, ...props }) => {
       as={props.as}
       {...props}
       css={{
-        ...tw`text-dye-800`,
+        ...tw`text-gray-800 transition-colors dark:text-yellow-50`,
         scrollMarginTop: '4rem',
       }}
     >
@@ -70,7 +70,7 @@ export const StyledOrderedList = ({ children, ...props }) => (
       ...tw`pl-10 md:pl-4`,
       '& > li': { ...tw`pl-2` },
       '& > li:before': {
-        ...tw`absolute tracking-tighter text-dye-700 right-full`,
+        ...tw`absolute tracking-tighter text-gray-700 right-full`,
         content: 'counter(list-item, decimal) "."',
         fontFamily: 'Inter, sans-serif',
         fontVariant: 'tabular-nums',
@@ -85,15 +85,15 @@ export const StyledUnorderedList = ({ children, ...props }) => (
   <StyledList
     as="ul"
     css={{
-      $$dye700: theme`colors.dye.700`,
+      $$gray700: theme`colors.gray.700`,
       ...tw`pl-8 md:pl-2`,
       '& > li': { ...tw`pl-4` },
       '& > li:before': {
-        ...tw`absolute w-[6px] h-[6px] bg-dye-700 rounded-full mt-2.5 top-0 left-0 mr-2`,
+        ...tw`absolute w-[6px] h-[6px] bg-gray-700 rounded-full mt-2.5 top-0 left-0 mr-2`,
         content: '',
       },
       '& ul > li:before': {
-        boxShadow: 'inset 0 0 0 1px $$dye700',
+        boxShadow: 'inset 0 0 0 1px $$dark700',
         background: 'transparent',
       },
     }}
@@ -103,7 +103,7 @@ export const StyledUnorderedList = ({ children, ...props }) => (
 );
 
 export const ProseHR = styled('hr', {
-  ...tw`my-8 border-gray-300 md:my-16`,
+  ...tw`my-8 border-yellow-200 dark:border-gray-700 md:my-16`,
 });
 
 export const ProseBlockquote = styled('blockquote', {

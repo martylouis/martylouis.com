@@ -9,56 +9,21 @@ import Page from '@layouts/Page';
 import { getFilesByFrontMatter } from '@utils/mdx';
 import Image from 'next/image';
 import Link from 'next/link';
+import tw from 'twin.macro';
 
 const { heading, subheading, photo } = hero;
 
 export default function Index({ posts }) {
   return (
     <Page>
-      <Container>
-        <h1>
-          Freelance Web Designer & Developer all the way from Destin, Florida
-        </h1>
-        <p>
-          Oh hello! I’m Marty and design and develop websites and graphics and
-          logos and all kinds of other stuff. Say hey
-        </p>
+      <Container size="md">
+        <header tw="my-8 max-w-[60ch]">
+          <p tw="text-3xl mb-2 font-serif italic">Oh hello&hellip;</p>
+          <h1 tw="font-serif mb-6 tracking-tight text-5xl text-gray-800 dark:text-yellow-50">
+            I&rsquo;m Marty &mdash; a freelance designer in Destin, Florida
+          </h1>
+        </header>
       </Container>
-      <Box
-        as="h1"
-        css={{ fontSize: '3rem', lineHeight: 1.2, mb: '2.4rem' }}
-      ></Box>
-      <p></p>
-      <p>
-        Currently I freelance remotely with companies all over the US building
-        websites and apps with teams small and large.
-      </p>
-      <p>
-        I also co-host a podcast called{' '}
-        <strong>
-          <a href="https://www.thefreelancedance.com">The Freelance Dance</a>
-        </strong>{' '}
-        💃🏽 with my friends{' '}
-        <strong>
-          <a href="https://twitter.com/@brandonwatts">Brandon</a>
-        </strong>{' '}
-        &
-        <strong>
-          {' '}
-          <a href="https://twitter.com/@jake_jay">Jake</a>
-        </strong>{' '}
-        — check it out.
-      </p>
-      <Box as="h2" css={{ fontSize: '2rem', mt: '8vh' }}>
-        Selected Work
-      </Box>
-      <Box as="h2" css={{ fontSize: '2rem', mt: '8vh' }}>
-        Recent Posts
-      </Box>
-      <Box css={{ mt: '2rem' }}>
-        <BlogList posts={posts} />
-      </Box>
-      <Hero_old />
     </Page>
   );
 }
