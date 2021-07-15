@@ -15,7 +15,7 @@ export default CodeBlock;
 
 const StyledPre = styled('pre', {
   $$code_text: 'white',
-  $$code_bg: '#24292E', //
+  $$code_bg: '#1c242a', //
   $$code_syntax1: '#E1E4E8', // purple
   $$code_syntax2: '#F97583', // red
   $$code_syntax3: '#B392F0', // purple
@@ -25,6 +25,8 @@ const StyledPre = styled('pre', {
   $$code_comment: '#6A737D', // gray
   // $$code_removed: '',
   // $$code_added: '',
+
+  '& > code': { display: 'block' },
 
   '&[class*="language-"]': {
     ...tw`px-6 pt-3 pb-6 mb-2`,
@@ -42,11 +44,11 @@ const StyledPre = styled('pre', {
     hyphens: 'none',
     textShadow: '0 1px 0 rgba(0, 0, 0, 0.25)',
 
-    '&::selection': {
-      color: 'blue',
+    '&::selection, & ::selection': {
+      ...tw`bg-gray-700`,
+      color: 'inherit',
+      textShadow: 'none',
     },
-
-    '& > code': { display: 'block' },
 
     '.token': {
       '&.comment, &.prolog, &.cdata': {
@@ -127,11 +129,9 @@ const StyledPre = styled('pre', {
 });
 
 const remarkCodeTitleStyles = global({
-  'pre[class*="language-"]': {},
-
   '.remark-code-title': {
-    ...tw`relative flex items-center justify-center w-full h-8 px-4 mt-4 overflow-auto text-xs leading-none tracking-wide text-gray-400 sm:rounded-t-lg lg:h-10 lg:text-sm`,
-    $$code_bg: '#24292E',
+    ...tw`relative flex items-center justify-center w-full h-8 px-4 mt-4 overflow-auto text-xs leading-none tracking-wide text-yellow-200 sm:rounded-t-lg lg:h-10 lg:text-sm`,
+    $$code_bg: '#1c242a',
     background: '$$code_bg',
 
     '&:before': {
