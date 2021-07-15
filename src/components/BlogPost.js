@@ -8,7 +8,6 @@ import SEO from './SEO';
 import tw, { styled } from 'twin.macro';
 import Badge from './Badge';
 import { ProseHR, ProseHeading, ProseContent } from './Prose';
-import Container from './Container';
 
 const BlogPost = ({ frontMatter, children }) => {
   const { title, description, datePublished, readingTime, slug, image, tags } =

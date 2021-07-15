@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import tw, { styled } from 'twin.macro';
+import Container from './Container';
 
 const Figure = (props) => {
   const { src, alt, caption, frame, priority, unsplash } = props;
   return (
-    <StyledFigure>
+    <Container size="full">
       <StyledFigureImageWrapper frame={frame}>
         <Image src={src} alt={alt} layout="fill" priority={priority} />
       </StyledFigureImageWrapper>
@@ -16,15 +17,11 @@ const Figure = (props) => {
           <p>{caption}</p>
         )}
       </StyledFigCaption>
-    </StyledFigure>
+    </Container>
   );
 };
 
 export default Figure;
-
-const StyledFigure = styled('figure', {
-  ...tw`max-w-6xl mx-auto`,
-});
 
 const StyledFigureImageWrapper = styled('div', {
   '& img': { ...tw`object-cover` },
