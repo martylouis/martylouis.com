@@ -1,10 +1,15 @@
 import tw, { css, styled, theme } from 'twin.macro';
 import { XCircle, HelpCircle, CheckCircle, AlertCircle } from 'react-feather';
 import { StyledDiv } from './Prose';
+import Container from './Container';
 
 const Aside = ({ children, type }) => {
   return (
-    <StyledAside as="aside">
+    <Container
+      type="grid"
+      as="aside"
+      tw="my-8 col-start-1 col-end-4 px-6 sm:px-0"
+    >
       <StyledAsideContainer type={type}>
         {type && (
           <StyledIcon>
@@ -13,18 +18,11 @@ const Aside = ({ children, type }) => {
         )}
         {children}
       </StyledAsideContainer>
-    </StyledAside>
+    </Container>
   );
 };
 
 export default Aside;
-
-const StyledAside = styled('aside', {
-  ...tw`grid font-medium grid-cols-[1fr min(60ch, 100%) 1fr] mx-auto my-8 md:col-start-1 md:col-end-4 px-4 sm:px-0`,
-  '& > *': {
-    ...tw`col-start-2 col-end-3`,
-  },
-});
 
 const StyledIcon = styled('span', {
   ...tw`absolute top-0 left-0 p-px rounded-full`,
@@ -33,7 +31,8 @@ const StyledIcon = styled('span', {
 });
 
 const StyledAsideContainer = styled('div', {
-  ...tw`relative py-6 rounded-md sm:px-6 sm:-mx-4`,
+  ...tw`relative py-6 rounded-md sm:px-6 sm:-mx-6`,
+
   '& > p:last-child': {
     ...tw`mb-0`,
   },
