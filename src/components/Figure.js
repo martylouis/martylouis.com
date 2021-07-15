@@ -6,7 +6,7 @@ import Container from './Container';
 const Figure = (props) => {
   const { src, alt, caption, frame, priority, unsplash } = props;
   return (
-    <Container size="full">
+    <figure>
       <StyledFigureImageWrapper frame={frame}>
         <Image src={src} alt={alt} layout="fill" priority={priority} />
       </StyledFigureImageWrapper>
@@ -17,7 +17,7 @@ const Figure = (props) => {
           <p>{caption}</p>
         )}
       </StyledFigCaption>
-    </Container>
+    </figure>
   );
 };
 

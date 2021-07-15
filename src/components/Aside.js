@@ -5,11 +5,7 @@ import Container from './Container';
 
 const Aside = ({ children, type }) => {
   return (
-    <Container
-      type="grid"
-      as="aside"
-      tw="my-8 col-start-1 col-end-4 px-6 sm:px-0"
-    >
+    <Container isGrid as="aside" tw="my-8 col-start-1 col-end-4 px-6 sm:px-0">
       <StyledAsideContainer type={type}>
         {type && (
           <StyledIcon>
@@ -31,7 +27,8 @@ const StyledIcon = styled('span', {
 });
 
 const StyledAsideContainer = styled('div', {
-  ...tw`relative py-6 rounded-md bg-yellow-200 dark:bg-gray-800 sm:px-6 sm:-mx-6`,
+  ...tw`relative py-6 transition-colors rounded-md sm:px-6 sm:-mx-6`,
+  ...tw`bg-gray-200 dark:bg-gray-700`,
 
   '& > p:last-child': {
     ...tw`mb-0`,
@@ -41,6 +38,7 @@ const StyledAsideContainer = styled('div', {
     type: {
       info: {
         ...tw`border-2 border-blue-500 bg-blue-50`,
+        ...tw`dark:(text-blue-100 bg-blue-900 bg-opacity-20)`,
         '&:before': {
           content: '',
           ...tw`bg-blue-500`,
@@ -51,6 +49,7 @@ const StyledAsideContainer = styled('div', {
       },
       success: {
         ...tw`border-2 border-green-500 bg-green-50`,
+        ...tw`dark:(text-gray-100 bg-green-900 bg-opacity-30)`,
         '&:before': {
           content: '',
           ...tw`bg-green-500`,
@@ -60,17 +59,19 @@ const StyledAsideContainer = styled('div', {
         },
       },
       warning: {
-        ...tw`border-2 border-yellow-500 bg-yellow-50`,
+        ...tw`border-2 border-orange-500 bg-orange-50`,
+        ...tw`dark:(text-gray-100 bg-orange-900 bg-opacity-20)`,
         '&:before': {
           content: '',
-          ...tw`bg-yellow-500`,
+          ...tw`bg-orange-500`,
         },
         [`& ${StyledIcon}`]: {
-          ...tw`bg-yellow-500 text-yellow-50`,
+          ...tw`bg-orange-500 text-orange-50`,
         },
       },
       danger: {
         ...tw`border-2 border-red-500 bg-red-50`,
+        ...tw`dark:(text-gray-100 bg-red-900 bg-opacity-20)`,
         '&:before': {
           content: '',
           ...tw`bg-red-500`,

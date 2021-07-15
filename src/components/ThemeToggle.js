@@ -59,7 +59,7 @@ const StyledSwitch = styled(Switch.Root, {
 });
 
 const StyledThumb = styled(Switch.Thumb, {
-  ...tw`inline-flex items-center justify-center flex-shrink-0 w-[32px] h-[32px]  rounded-full bg-gray-800 dark:bg-gray-200`,
+  ...tw`inline-flex items-center justify-center flex-shrink-0 w-[32px] h-[32px]  rounded-full bg-gray-800 dark:bg-gray-300`,
   // boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.8)',
   transition: 'transform 100ms',
   transform: 'translateX(40%)',

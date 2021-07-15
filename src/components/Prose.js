@@ -4,24 +4,14 @@ import tw, { theme, styled } from 'twin.macro';
 import NextLink from 'next/link';
 import CodeBlock from './CodeBlock';
 
-export const ProseContent = styled('div', {
-  ...tw`grid grid-cols-[1fr min(60ch, 100%) 1fr]`,
-  '& > *': {
-    ...tw`col-start-2 col-end-3`,
-  },
-});
-
-export const ProseContainer = styled('div', {
-  gridColumn: '1 / -1',
-});
-
 export const ProseSpan = styled('span', {});
 
 export const ProseText = styled('p', {
-  ...tw`px-6 mt-0 mb-2 md:px-0 md:mb-4`,
+  ...tw`px-6 mt-0 mb-2 sm:px-0 md:mb-4`,
   '& > code': {
     ...tw`inline-block px-1 text-sm subpixel-antialiased font-normal rounded`,
-    ...tw`text-purple-600 bg-purple-200 bg-opacity-75 dark:text-purple-400 dark:bg-purple-900 dark:bg-opacity-10`,
+    ...tw`text-purple-600 bg-purple-200 bg-opacity-75`,
+    ...tw`dark:(text-purple-400 bg-purple-900 bg-opacity-10)`,
   },
 
   variants: {
@@ -48,7 +38,7 @@ export const ProseHeading = ({ id, children, ...props }) => {
       as={props.as}
       {...props}
       css={{
-        ...tw`text-gray-800 transition-colors dark:text-gray-50`,
+        ...tw`text-gray-800 dark:text-gray-100`,
         scrollMarginTop: '4rem',
       }}
     >
@@ -71,7 +61,7 @@ export const StyledOrderedList = ({ children, ...props }) => (
       ...tw`pl-10 md:pl-4`,
       '& > li': { ...tw`pl-2` },
       '& > li:before': {
-        ...tw`absolute tracking-tighter text-gray-700 right-full`,
+        ...tw`absolute tracking-tighter text-gray-700 right-full dark:text-gray-300`,
         content: 'counter(list-item, decimal) "."',
         fontFamily: 'Inter, sans-serif',
         fontVariant: 'tabular-nums',
@@ -90,7 +80,8 @@ export const StyledUnorderedList = ({ children, ...props }) => (
       ...tw`pl-8 md:pl-2`,
       '& > li': { ...tw`pl-4` },
       '& > li:before': {
-        ...tw`absolute w-[6px] h-[6px] bg-gray-700 rounded-full mt-2.5 top-0 left-0 mr-2`,
+        ...tw`absolute w-[6px] h-[6px] rounded-full mt-2.5 top-0 left-0 mr-2`,
+        ...tw`bg-gray-700 dark:bg-gray-300`,
         content: '',
       },
       '& ul > li:before': {

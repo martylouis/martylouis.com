@@ -12,7 +12,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import path from 'path';
 import readingTime from 'reading-time';
-import ProseComponents, { ProseContainer } from '@components/Prose';
+import ProseComponents from '@components/Prose';
+import Container from '@components/Container';
 import tw, { styled } from 'twin.macro';
 
 const StyledDiv = styled('div', {});
@@ -20,13 +21,13 @@ const StyledDiv = styled('div', {});
 // include components in scope here
 const components = {
   Head,
+  ...ProseComponents,
   Image,
   Link,
   Figure,
   Aside,
+  Container,
   StyledDiv,
-  ...ProseComponents,
-  ProseContainer,
 };
 
 const Blog = ({ source, frontMatter }) => {
@@ -71,6 +72,8 @@ export const getStaticProps = async ({ params }) => {
     props: {
       source: mdxSource,
       frontMatter: {
+        slug: params.slug,
+        permalink: `https://martylouis.com/blog/${params.slug}`,
         wordCount: content.split(/\s+/gu).length,
         readingTime: readingTime(content),
         ...data,
