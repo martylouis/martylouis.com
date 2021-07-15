@@ -17,10 +17,11 @@ export default function Index({ posts }) {
   return (
     <Page>
       <Container size="md">
-        <header tw="my-8 max-w-[60ch]">
+        <header tw="h-screen flex justify-center flex-col max-w-[60ch]">
           <p tw="text-3xl mb-2 font-serif italic">Oh hello&hellip;</p>
-          <h1 tw="font-serif mb-6 tracking-tight text-5xl text-gray-800 dark:text-yellow-50">
-            I&rsquo;m Marty &mdash; a freelance designer in Destin, Florida
+          <h1 tw="font-serif mb-6 tracking-tight text-5xl text-gray-800 dark:text-gray-100">
+            I&rsquo;m Marty &mdash; I make websites, apps, and brands from
+            Destin, Florida
           </h1>
         </header>
       </Container>

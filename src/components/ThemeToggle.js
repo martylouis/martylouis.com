@@ -21,14 +21,14 @@ const ThemeToggle = () => {
       <StyledThumb>
         {resolvedTheme === 'dark' ? (
           <Sun
-            size="14px"
+            size="20px"
             strokeWidth="2px"
             fill="currentColor"
             tw="text-gray-800"
           />
         ) : (
           <Moon
-            size="14px"
+            size="20px"
             fill="currentColor"
             strokeWidth="0"
             tw="text-white"
@@ -42,28 +42,30 @@ const ThemeToggle = () => {
 export default ThemeToggle;
 
 const StyledSwitch = styled(Switch.Root, {
-  ...tw`inline-flex items-center w-6 h-4 bg-yellow-400 bg-opacity-50 rounded-full`,
+  ...tw`inline-flex items-center w-[40px] h-[20px] rounded-full`,
+  ...tw`bg-gray-200`,
   appearance: 'none',
   border: 'none',
   padding: 0,
   position: 'relative',
-  // boxShadow: 'inset 0 1px 3px rgba(0, 0, 0, 0.08)',
+  boxShadow:
+    'inset 0 2px 5px 3px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255,255,255, 0.1)',
   '&:focus': {
     outline: 'none',
   },
   '&[data-state="checked"]': {
-    ...tw`bg-[#000] bg-opacity-30`,
+    ...tw`bg-gray-900`,
   },
 });
 
 const StyledThumb = styled(Switch.Thumb, {
-  ...tw`inline-flex items-center justify-center w-[20px] h-[20px] bg-gray-700 rounded-full dark:bg-yellow-200`,
+  ...tw`inline-flex items-center justify-center flex-shrink-0 w-[32px] h-[32px]  rounded-full bg-gray-800 dark:bg-gray-200`,
   // boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.8)',
   transition: 'transform 100ms',
-  transform: 'translateX(9px)',
+  transform: 'translateX(40%)',
   willChange: 'transform',
 
   '&[data-state="checked"]': {
-    transform: 'translateX(-3px)',
+    transform: 'translateX(-15%)',
   },
 });
