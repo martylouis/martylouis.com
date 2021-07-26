@@ -27,7 +27,7 @@ const StyledPre = styled('pre', {
   // $$code_added: '',
 
   '.dark &': {
-    boxShadow: '0 0 1px rgba(255,255,255, 0.75)',
+    boxShadow: '0 0 1px rgba(255,255,255, 0.25)',
   },
 
   '& > code': { display: 'block' },
@@ -134,24 +134,16 @@ const StyledPre = styled('pre', {
 
 const remarkCodeTitleStyles = global({
   '.remark-code-title': {
-    ...tw`relative flex items-center justify-center w-full h-8 px-4 mt-4 overflow-auto text-xs leading-none tracking-wide text-gray-300 sm:rounded-t-lg lg:h-10 lg:text-sm`,
+    ...tw`relative flex items-center justify-center w-full h-6 px-4 mt-4 overflow-auto text-xs leading-none tracking-wide text-gray-400 sm:rounded-t-lg lg:h-8`,
     $$code_bg: theme`colors.gray.900`,
     background: '$$code_bg',
-    boxShadow: '0 0 1px rgba(255, 255, 255, 0.75)',
-
-    '&:before': {
-      ...tw`absolute left-0 w-[8px] h-[8px] ml-4 rounded-full lg:w-[10px] lg:h-[10px] bg-gray-500 bg-opacity-50`,
-      content: '',
-      boxShadow:
-        '1rem 0 0 rgba(107, 114, 128, 0.5), 2rem 0 0 rgba(107, 114, 128, 0.5)',
-    },
 
     '& + pre[class*="language-"]': {
       ...tw`mt-0 rounded-t-none`,
     },
 
     '.dark &': {
-      boxShadow: '0 0 1px rgba(255,255,255, 0.75)',
+      boxShadow: '0 0 1px rgba(255,255,255, 0.25)',
     },
   },
 });
