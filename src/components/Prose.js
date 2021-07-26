@@ -100,7 +100,7 @@ export const ProseHR = styled('hr', {
 });
 
 export const ProseBlockquote = styled('blockquote', {
-  ...tw`py-1 pl-6 mx-4 my-4 font-serif border-l-4 border-green-300 md:mx-0 lg:my-8`,
+  ...tw`py-1 pl-6 mx-4 my-4 font-mono border-l-4 border-green-400 md:mx-0 lg:my-8`,
   p: {
     ...tw`px-0 my-1 text-2xl italic leading-tight md:text-3xl md:leading-tight`,
   },

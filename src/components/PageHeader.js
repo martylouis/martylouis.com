@@ -32,7 +32,7 @@ const PageHeader = ({ title, description, ...meta }) => {
         {datePublished && (
           <div tw="flex space-x-2 text-sm font-medium text-gray-500">
             <span>{format(parseISO(datePublished), 'MMM dd, yyyy')}</span>
-            <span>•</span>
+            <span tw="text-gray-400 dark:text-gray-600">•</span>
             {readingTime && <span>{readingTime.text}</span>}
           </div>
         )}
