@@ -8,14 +8,13 @@ const PageHeader = ({ title, description, ...meta }) => {
   const { datePublished, readingTime } = meta;
 
   return (
-    <header className="mt-16">
+    <header tw="mt-8 sm:mt-24">
       <Container isGrid tw="mb-6">
         <ProseText
           as="h1"
           size="lg"
           css={{
             ...tw`mb-0 text-5xl font-extrabold tracking-tighter`,
-            ...tw`text-gray-800 dark:text-gray-200`,
           }}
         >
           {title}

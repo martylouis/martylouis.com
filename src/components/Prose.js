@@ -9,8 +9,9 @@ export const ProseSpan = styled('span', {});
 
 export const ProseText = styled('p', {
   ...tw`mt-0 mb-2 md:mb-4`,
+  '& strong': { ...tw`font-extrabold text-gray-800 dark:text-gray-100` },
   '& > code': {
-    ...tw`inline-flex px-1 font-size[0.85rem] rounded`,
+    ...tw`inline-flex px-1 font-size[0.85rem] rounded subpixel-antialiased`,
     ...tw`text-gray-900 bg-gray-200 bg-opacity-75`,
     ...tw`dark:(text-gray-100 bg-gray-700)`,
   },
@@ -100,10 +101,12 @@ export const ProseHR = styled('hr', {
 });
 
 export const ProseBlockquote = styled('blockquote', {
-  ...tw`py-1 pl-6 mx-4 my-4 font-mono border-l-4 border-green-400 md:mx-0 lg:my-8`,
+  ...tw`py-1 pl-6 my-4 border-l-4 border-green-400 md:mx-0 lg:my-8`,
   p: {
-    ...tw`px-0 my-1 text-2xl italic leading-tight md:text-3xl md:leading-tight`,
+    ...tw`px-0 my-1 text-xl italic font-black leading-tight tracking-tighter md:text-2xl md:leading-tight`,
   },
+
+  'article &': { ...tw`-mx-0 sm:-mx-8 md:-mx-16` },
 });
 
 export const ProseInlineCode = styled('code', {
