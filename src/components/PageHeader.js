@@ -9,7 +9,7 @@ const PageHeader = ({ title, description, ...meta }) => {
 
   return (
     <header className="mt-16">
-      <Container isGrid tw="mb-8">
+      <Container isGrid tw="mb-6">
         <ProseText
           as="h1"
           size="lg"
@@ -20,58 +20,20 @@ const PageHeader = ({ title, description, ...meta }) => {
         >
           {title}
         </ProseText>
-        <ProseText
-          css={{
-            ...tw`my-3 text-xl font-light text-gray-600 dark:text-gray-400`,
-          }}
-        >
-          {description}
-        </ProseText>
+        {description && (
+          <ProseText
+            css={{
+              ...tw`mt-3 text-xl font-medium text-gray-500 dark:text-gray-400`,
+            }}
+          >
+            {description}
+          </ProseText>
+        )}
         {datePublished && (
-          <div className="flex justify-between px-6 mb-6 space-x-2 text-sm leading-none md:px-0">
-            <div className="flex space-x-4">
-              <div className="flex items-center">
-                <span className="block mr-1.5 flex-shrink-0">
-                  <Image
-                    src="/avatar.jpg"
-                    width="24px"
-                    height="24px"
-                    alt=""
-                    className="rounded-full "
-                  />
-                </span>
-                <span>
-                  <a
-                    href="https://twitter.com/martylouis"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Marty Thierry
-                  </a>
-                </span>
-              </div>
-              {datePublished && (
-                <div className="flex items-center">
-                  {format(parseISO(datePublished), 'MMM dd, yyyy')}
-                </div>
-              )}
-            </div>
-            {readingTime && (
-              <div className="flex items-center text-gray-500 dark:text-gray-400">
-                <span>{readingTime.text}</span>
-              </div>
-            )}
-            {/* {tags && (
-                <>
-                  <span className="mr-2 text-gray-300">&bull;</span>
-                  <span className="sr-only" css={{ '& > span + span': tw`mr-2` }}>
-                    Tags:
-                  </span>
-                  {tags?.map((tag) => (
-                    <Badge key={tag}>{tag}</Badge>
-                  ))}
-                </>
-              )} */}
+          <div tw="flex space-x-2 text-sm font-medium text-gray-500">
+            <span>{format(parseISO(datePublished), 'MMM dd, yyyy')}</span>
+            <span>•</span>
+            {readingTime && <span>{readingTime.text}</span>}
           </div>
         )}
       </Container>

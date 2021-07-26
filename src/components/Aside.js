@@ -5,16 +5,14 @@ import { StyledDiv } from './Prose';
 
 const Aside = ({ children, type, ariaLabel = '' }) => {
   return (
-    <aside aria-label={!ariaLabel && type} tw="col-start-1 col-end-4 my-8">
-      <StyledAsideContainer type={type}>
-        {type && (
-          <StyledIcon>
-            <IconType type={type} />
-          </StyledIcon>
-        )}
-        {children}
-      </StyledAsideContainer>
-    </aside>
+    <StyledAside as="aside" type={type} aria-label={!ariaLabel && type}>
+      {type && (
+        <StyledIcon>
+          <IconType type={type} />
+        </StyledIcon>
+      )}
+      {children}
+    </StyledAside>
   );
 };
 
@@ -26,19 +24,23 @@ const StyledIcon = styled('span', {
   marginLeft: '-14px',
 });
 
-const StyledAsideContainer = styled('div', {
-  ...tw`relative px-6 py-6 transition-colors rounded-md sm:-mx-6`,
-  ...tw`bg-gray-200 dark:bg-gray-700`,
+const StyledAside = styled('div', {
+  ...tw`relative col-start-1 col-end-4 px-6 py-6 my-6 transition-colors rounded-md`,
+  ...tw`bg-gray-200 border-2 border-gray-300 dark:(bg-gray-700 border-gray-600 bg-opacity-20)`,
 
-  '& > p:last-child': {
+  '& > :last-child': {
     ...tw`mb-0`,
+  },
+
+  'article &': {
+    ...tw`sm:-mx-6`,
   },
 
   variants: {
     type: {
       info: {
-        ...tw`border-2 border-blue-500 bg-blue-50`,
-        ...tw`dark:(text-blue-100 bg-blue-900 bg-opacity-20)`,
+        ...tw`border-blue-500 bg-blue-50`,
+        ...tw`dark:(text-blue-100 bg-blue-900 border-blue-600 bg-opacity-20)`,
         '&:before': {
           content: '',
           ...tw`bg-blue-500`,
@@ -48,8 +50,8 @@ const StyledAsideContainer = styled('div', {
         },
       },
       success: {
-        ...tw`border-2 border-green-500 bg-green-50`,
-        ...tw`dark:(text-gray-100 bg-green-900 bg-opacity-30)`,
+        ...tw`border-green-500 bg-green-50`,
+        ...tw`dark:(text-gray-100 bg-green-900 border-green-600 bg-opacity-20)`,
         '&:before': {
           content: '',
           ...tw`bg-green-500`,
@@ -59,8 +61,8 @@ const StyledAsideContainer = styled('div', {
         },
       },
       warning: {
-        ...tw`border-2 border-orange-500 bg-orange-50`,
-        ...tw`dark:(text-gray-100 bg-orange-900 bg-opacity-20)`,
+        ...tw`border-orange-500 bg-orange-50`,
+        ...tw`dark:(text-gray-100 bg-orange-900 border-orange-500 bg-opacity-20)`,
         '&:before': {
           content: '',
           ...tw`bg-orange-500`,
@@ -70,8 +72,8 @@ const StyledAsideContainer = styled('div', {
         },
       },
       danger: {
-        ...tw`border-2 border-red-500 bg-red-50`,
-        ...tw`dark:(text-gray-100 bg-red-900 bg-opacity-20)`,
+        ...tw`border-red-500 bg-red-50`,
+        ...tw`dark:(text-gray-100 bg-red-900 border-red-500 bg-opacity-20)`,
         '&:before': {
           content: '',
           ...tw`bg-red-500`,

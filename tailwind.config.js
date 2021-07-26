@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   mode: 'jit',
@@ -8,6 +9,7 @@ module.exports = {
     fontFamily: {
       sans: ['Inter var', 'sans-serif'],
       serif: ['DM Serif Display', 'serif'],
+      mono: ['Dank Mono', ...defaultTheme.fontFamily.mono],
       // sans: ['DM Sans', 'sans-serif'],
     },
     colors: {
