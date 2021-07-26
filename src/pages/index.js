@@ -18,8 +18,8 @@ export default function Index({ posts }) {
     <Page>
       <Container size="md">
         <header tw="h-screen flex justify-center flex-col max-w-[60ch]">
-          <p tw="text-3xl mb-2 font-serif italic">Oh hello&hellip;</p>
-          <h1 tw="font-serif mb-6 tracking-tight text-5xl text-gray-800 dark:text-gray-100">
+          <p tw="text-3xl mb-2 font-light italic">Oh hello&hellip;</p>
+          <h1 tw="mb-6 tracking-tight text-5xl text-gray-800 dark:text-gray-100">
             I&rsquo;m Marty &mdash; I make websites, apps, and brands from
             Destin, Florida
           </h1>

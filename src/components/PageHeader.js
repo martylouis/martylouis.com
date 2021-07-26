@@ -14,7 +14,7 @@ const PageHeader = ({ title, description, ...meta }) => {
           as="h1"
           size="lg"
           css={{
-            ...tw`mb-0 font-serif text-5xl font-normal`,
+            ...tw`mb-0 text-5xl font-extrabold tracking-tighter`,
             ...tw`text-gray-800 dark:text-gray-200`,
           }}
         >
