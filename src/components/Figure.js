@@ -4,10 +4,10 @@ import tw, { styled } from 'twin.macro';
 import Container from './Container';
 
 const Figure = (props) => {
-  const { src, alt, caption, frame, priority, unsplash } = props;
+  const { src, alt, caption, aspectRatio, priority, unsplash } = props;
   return (
-    <figure>
-      <StyledFigureImageWrapper frame={frame}>
+    <StyledFigure {...props}>
+      <StyledFigureImageWrapper aspectRatio={aspectRatio}>
         <Image src={src} alt={alt} layout="fill" priority={priority} />
       </StyledFigureImageWrapper>
       <StyledFigCaption>
@@ -17,17 +17,19 @@ const Figure = (props) => {
           <p>{caption}</p>
         )}
       </StyledFigCaption>
-    </figure>
+    </StyledFigure>
   );
 };
 
 export default Figure;
 
+const StyledFigure = styled('figure', {});
+
 const StyledFigureImageWrapper = styled('div', {
   '& img': { ...tw`object-cover` },
 
   variants: {
-    frame: {
+    aspectRatio: {
       landscape: { ...tw`aspect-w-16 aspect-h-9` },
       portrait: { ...tw`aspect-w-4 aspect-h-3` },
       square: { ...tw`aspect-w-1 aspect-h-1` },
@@ -35,14 +37,16 @@ const StyledFigureImageWrapper = styled('div', {
   },
 
   defaultVariants: {
-    frame: 'landscape',
+    aspectRatio: 'landscape',
   },
 });
 
 const StyledFigCaption = styled('figcaption', {
   ...tw`flex items-center justify-center mb-4`,
-  '& p': { ...tw`my-2 text-xs tracking-wide text-gray-600 text-opacity-90` },
-  '& a': { ...tw`underline hover:text-gray-700` },
+  '& p': {
+    ...tw`my-2 text-xs tracking-wide text-gray-600 text-opacity-90 dark:(text-gray-500)`,
+  },
+  '& a': { ...tw`underline hover:text-gray-700 dark:hover:text-gray-400` },
 });
 
 const UnsplashCaption = ({ caption, ...unsplash }) => {

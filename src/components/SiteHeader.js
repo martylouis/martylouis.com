@@ -7,10 +7,10 @@ import { header as headerNav } from '@data/nav';
 
 const SiteHeader = () => {
   return (
-    <header tw="py-2 backdrop-filter backdrop-blur w-full fixed z-50">
-      <Container size="md" tw="flex items-center justify-between">
+    <header tw="py-4 backdrop-filter backdrop-blur w-full fixed z-50">
+      <Container size="lg" tw="flex items-center justify-between">
         <Link href="/" passHref>
-          <a tw="inline-block">
+          <a tw="inline-block hocus:(text-green-500 outline-none)">
             <span tw="block w-10 h-10">
               <Logo title="Marty Louis logo" />
             </span>
@@ -36,12 +36,10 @@ export default SiteHeader;
 
 const StyledLink = styled('a', {
   ...tw`text-gray-600`,
-  ...tw`inline-flex items-center px-2 h-[32px] text-sm rounded cursor-pointer`,
-  ...tw`hover:(text-gray-900 bg-gray-900 bg-opacity-10)`,
-  ...tw`focus:(text-gray-900 bg-gray-900 bg-opacity-10 outline-none)`,
+  ...tw`inline-flex items-center px-4 height[40px] text-sm rounded cursor-pointer`,
+  ...tw`hocus:(text-gray-900 bg-gray-300 bg-opacity-25 outline-none)`,
   '.dark &': {
     ...tw`text-gray-400`,
-    ...tw`hover:(text-gray-100 bg-gray-100 bg-opacity-10)`,
-    ...tw`focus:(text-gray-100 bg-gray-100 bg-opacity-10 outline-none)`,
+    ...tw`hocus:(text-gray-100 bg-gray-700 bg-opacity-50 outline-none)`,
   },
 });
