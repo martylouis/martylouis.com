@@ -17,7 +17,11 @@ const ThemeToggle = () => {
   };
 
   return (
-    <StyledSwitch onClick={handleToggle} checked={resolvedTheme === 'dark'}>
+    <StyledSwitch
+      onClick={handleToggle}
+      aria-hidden="true"
+      checked={resolvedTheme === 'dark'}
+    >
       <StyledThumb>
         {resolvedTheme === 'dark' ? (
           <Sun

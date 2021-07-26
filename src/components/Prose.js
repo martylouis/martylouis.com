@@ -3,15 +3,16 @@ import { Link as LinkIcon } from 'react-feather';
 import tw, { theme, styled } from 'twin.macro';
 import NextLink from 'next/link';
 import CodeBlock from './CodeBlock';
+import { ExternalLink } from 'react-feather';
 
 export const ProseSpan = styled('span', {});
 
 export const ProseText = styled('p', {
   ...tw`px-6 mt-0 mb-2 sm:px-0 md:mb-4`,
   '& > code': {
-    ...tw`inline-block px-1 text-sm subpixel-antialiased font-normal rounded`,
-    ...tw`text-purple-600 bg-purple-200 bg-opacity-75`,
-    ...tw`dark:(text-purple-400 bg-purple-900 bg-opacity-10)`,
+    ...tw`inline-flex px-1 font-size[0.85rem] rounded`,
+    ...tw`text-gray-900 bg-gray-200 bg-opacity-75`,
+    ...tw`dark:(text-gray-100 bg-gray-700)`,
   },
 
   variants: {
@@ -24,9 +25,9 @@ export const ProseText = styled('p', {
 });
 
 export const ProseLink = styled('a', {
-  ...tw`px-0.5 font-medium hover:text-purple-700 hover:underline focus:underline`,
-  textUnderlineOffset: '1px',
-  textDecorationLine: 'underline',
+  ...tw`px-0.5 -mx-0.5 rounded-sm font-medium underline text-underline-offset[1px] text-decoration-thickness[2px]`,
+  ...tw`text-gray-900 dark:(text-gray-100)`,
+  ...tw`hocus:(text-green-500 dark:text-green-400)`,
 });
 
 export const ProseHeading = ({ id, children, ...props }) => {
@@ -99,7 +100,7 @@ export const ProseHR = styled('hr', {
 });
 
 export const ProseBlockquote = styled('blockquote', {
-  ...tw`py-1 pl-6 mx-4 my-4 font-serif border-l-4 border-purple-300 md:mx-0 lg:my-8`,
+  ...tw`py-1 pl-6 mx-4 my-4 font-serif border-l-4 border-green-300 md:mx-0 lg:my-8`,
   p: {
     ...tw`px-0 my-1 text-2xl italic leading-tight md:text-3xl md:leading-tight`,
   },
