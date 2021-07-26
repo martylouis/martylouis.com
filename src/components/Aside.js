@@ -1,16 +1,11 @@
 import tw, { css, styled, theme } from 'twin.macro';
 import { XCircle, HelpCircle, CheckCircle, AlertCircle } from 'react-feather';
 import { StyledDiv } from './Prose';
-import Container from './Container';
+// import Container from './Container';
 
 const Aside = ({ children, type, ariaLabel = '' }) => {
   return (
-    <Container
-      isGrid
-      as="aside"
-      aria-label={!ariaLabel && type}
-      tw="my-8 col-start-1 col-end-4 px-6 sm:px-0"
-    >
+    <aside aria-label={!ariaLabel && type} tw="col-start-1 col-end-4 my-8">
       <StyledAsideContainer type={type}>
         {type && (
           <StyledIcon>
@@ -19,7 +14,7 @@ const Aside = ({ children, type, ariaLabel = '' }) => {
         )}
         {children}
       </StyledAsideContainer>
-    </Container>
+    </aside>
   );
 };
 
@@ -32,7 +27,7 @@ const StyledIcon = styled('span', {
 });
 
 const StyledAsideContainer = styled('div', {
-  ...tw`relative py-6 transition-colors rounded-md sm:px-6 sm:-mx-6`,
+  ...tw`relative px-6 py-6 transition-colors rounded-md sm:-mx-6`,
   ...tw`bg-gray-200 dark:bg-gray-700`,
 
   '& > p:last-child': {

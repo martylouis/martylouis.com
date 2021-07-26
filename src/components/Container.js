@@ -1,7 +1,7 @@
 import tw, { styled } from 'twin.macro';
 
 const Container = styled('div', {
-  ...tw`mx-auto`,
+  ...tw`px-6 mx-auto sm:px-0`,
 
   variants: {
     size: {

@@ -8,7 +8,7 @@ import { ExternalLink } from 'react-feather';
 export const ProseSpan = styled('span', {});
 
 export const ProseText = styled('p', {
-  ...tw`px-6 mt-0 mb-2 sm:px-0 md:mb-4`,
+  ...tw`mt-0 mb-2 md:mb-4`,
   '& > code': {
     ...tw`inline-flex px-1 font-size[0.85rem] rounded`,
     ...tw`text-gray-900 bg-gray-200 bg-opacity-75`,
