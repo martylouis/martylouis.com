@@ -3,9 +3,14 @@ import { XCircle, HelpCircle, CheckCircle, AlertCircle } from 'react-feather';
 import { StyledDiv } from './Prose';
 import Container from './Container';
 
-const Aside = ({ children, type }) => {
+const Aside = ({ children, type, ariaLabel = '' }) => {
   return (
-    <Container isGrid as="aside" tw="my-8 col-start-1 col-end-4 px-6 sm:px-0">
+    <Container
+      isGrid
+      as="aside"
+      aria-label={!ariaLabel && type}
+      tw="my-8 col-start-1 col-end-4 px-6 sm:px-0"
+    >
       <StyledAsideContainer type={type}>
         {type && (
           <StyledIcon>

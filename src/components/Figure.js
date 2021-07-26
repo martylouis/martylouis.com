@@ -41,8 +41,8 @@ const StyledFigureImageWrapper = styled('div', {
 
 const StyledFigCaption = styled('figcaption', {
   ...tw`flex items-center justify-center mb-4`,
-  '& p': { ...tw`my-4 text-xs tracking-wide text-gray-500 text-opacity-75` },
-  '& a': { ...tw`underline hover:text-gray-600` },
+  '& p': { ...tw`my-2 text-xs tracking-wide text-gray-600 text-opacity-90` },
+  '& a': { ...tw`underline hover:text-gray-700` },
 });
 
 const UnsplashCaption = ({ caption, ...unsplash }) => {

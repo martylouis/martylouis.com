@@ -31,7 +31,7 @@ const BlogPost = ({ frontMatter, children }) => {
               as="h1"
               size="lg"
               css={{
-                ...tw`mb-4 font-serif text-5xl font-normal`,
+                ...tw`mb-0 font-serif text-5xl font-normal`,
                 ...tw`text-gray-800 dark:text-gray-200`,
               }}
             >
@@ -39,7 +39,7 @@ const BlogPost = ({ frontMatter, children }) => {
             </ProseText>
             <ProseText
               css={{
-                ...tw`mb-6 text-xl font-medium text-gray-600 dark:text-gray-400`,
+                ...tw`my-4 text-2xl font-light text-gray-600 dark:text-gray-400`,
               }}
             >
               {description}
