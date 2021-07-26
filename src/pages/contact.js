@@ -1,4 +1,6 @@
 import ContactForm from '@components/contact-form';
+import Container from '@components/Container';
+import PageHeader from '@components/PageHeader';
 import SEO from '@components/SEO';
 import Page from '@layouts/Page';
 
@@ -15,9 +17,10 @@ export default function Contact() {
         description={meta.description}
       />
       <div>
-        <h1 className="text-4xl font-bold">{meta.title}</h1>
-        <p className="my-8">{meta.description}</p>
-        {/* <ContactForm /> */}
+        <PageHeader title={meta.title} description={meta.description} />
+        <Container isGrid>
+          <div>{`{Contact Form goes here!}`}</div>
+        </Container>
       </div>
     </Page>
   );
