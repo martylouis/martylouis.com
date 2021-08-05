@@ -8,8 +8,6 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Inter var', 'sans-serif'],
-      mono: ['Dank Mono', ...defaultTheme.fontFamily.mono],
-      // sans: ['DM Sans', 'sans-serif'],
     },
     colors: {
       black: 'black',
