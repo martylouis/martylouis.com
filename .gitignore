@@ -1,3 +1,7 @@
+posts/demo*.mdx
+src/pages/demo*.mdx
+src/pages/demo*.js
+
 # Logs
 logs
 *.log
