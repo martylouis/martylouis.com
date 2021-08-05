@@ -4,16 +4,21 @@ import tw, { theme, styled } from 'twin.macro';
 import NextLink from 'next/link';
 import CodeBlock from './CodeBlock';
 import { ExternalLink } from 'react-feather';
+import Link from './Link';
 
 export const ProseSpan = styled('span', {});
 
 export const ProseText = styled('p', {
   ...tw`mt-0 mb-2 md:mb-4`,
   '& strong': { ...tw`font-extrabold text-gray-800 dark:text-gray-100` },
-  '& > code': {
-    ...tw`inline-flex px-1 font-size[0.85rem] rounded subpixel-antialiased`,
-    ...tw`text-gray-900 bg-gray-200 bg-opacity-75`,
-    ...tw`dark:(text-gray-100 bg-gray-700)`,
+  '& code': {
+    ...tw`inline-flex px-1 font-size[0.9rem] font-bold whitespace-pre-wrap rounded`,
+    ...tw`text-purple-500 transition-colors bg-white bg-opacity-25 border border-gray-200`,
+    ...tw`dark:(text-purple-500 bg-gray-900 border border-gray-700 bg-opacity-50)`,
+  },
+
+  '& a code': {
+    ...tw`text-blue-500 dark:text-blue-400 hocus:(text-blue-600 dark:text-blue-500)`,
   },
 
   variants: {
@@ -25,12 +30,6 @@ export const ProseText = styled('p', {
   },
 });
 
-export const ProseLink = styled('a', {
-  ...tw`px-0.5 -mx-0.5 rounded-sm font-medium underline text-underline-offset[1px] text-decoration-thickness[2px]`,
-  ...tw`text-gray-900 dark:(text-gray-100)`,
-  ...tw`hocus:(text-green-500 dark:text-green-400)`,
-});
-
 export const ProseHeading = ({ id, children, ...props }) => {
   LinkIcon.toString = () => '.link-icon';
 
@@ -40,7 +39,7 @@ export const ProseHeading = ({ id, children, ...props }) => {
       as={props.as}
       {...props}
       css={{
-        ...tw`text-gray-800 dark:text-gray-100`,
+        ...tw`text-gray-800 transition-colors dark:text-gray-100`,
         scrollMarginTop: '4rem',
       }}
     >
@@ -119,7 +118,14 @@ const ProseComponents = {
   h3: (props) => <ProseHeading {...props} size="md" as="h3" />,
   h4: (props) => <ProseHeading {...props} size="sm" as="h4" />,
   p: (props) => <ProseText {...props} />,
-  a: ProseLink,
+  a: (props) => (
+    <Link
+      {...props}
+      css={{
+        ...tw`text-blue-500 dark:text-blue-400 hocus:(text-blue-600 dark:text-blue-500)`,
+      }}
+    />
+  ),
   ol: (props) => <StyledOrderedList {...props} />,
   ul: (props) => <StyledUnorderedList {...props} />,
   li: (props) => <ProseText as="li" {...props} />,

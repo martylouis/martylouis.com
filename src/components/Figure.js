@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from '@components/Link';
 import tw, { styled } from 'twin.macro';
 import Container from './Container';
 
@@ -63,8 +63,8 @@ const UnsplashCaption = ({ caption, ...unsplash }) => {
 
 const UnsplashLink = ({ href, children }) => {
   return (
-    <Link href={href} rel="noopener nofollow">
-      <a>{children}</a>
+    <Link href={href} svgSize="12px">
+      {children}
     </Link>
   );
 };
