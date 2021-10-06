@@ -563,12 +563,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stitches/react@npm:^0.2.2":
-  version: 0.2.5
-  resolution: "@stitches/react@npm:0.2.5"
+"@stitches/react@npm:^1.2.4":
+  version: 1.2.4
+  resolution: "@stitches/react@npm:1.2.4"
   peerDependencies:
     react: ">= 16.3.0"
-  checksum: ff66bd3a5bee850f79b01405c74892e63ad83cddeb8ae8408ab46c9749264755ce6cf956ea7e2434804eae9989d0f6521b657025da5ac3740ce8d449c905a8f9
+  checksum: f7626e428c66ced9e199276faffdc37570a1a55c0744b10bbeeda4a8a8350e9af64050be09d5e6c53fbed65f30199e0a413661da253b50a4503341e470e941ed
   languageName: node
   linkType: hard
 
@@ -4729,7 +4729,7 @@ __metadata:
     "@formspree/react": ^2.2.4
     "@hookform/resolvers": 2.8.2
     "@radix-ui/react-switch": ^0.0.14
-    "@stitches/react": ^0.2.2
+    "@stitches/react": ^1.2.4
     "@tailwindcss/aspect-ratio": ^0.3.0
     "@tailwindcss/typography": ^0.4.1
     autoprefixer: ^10.3.7
