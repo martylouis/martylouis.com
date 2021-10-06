@@ -1196,7 +1196,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.2.5, autoprefixer@npm:^10.2.6":
+"autoprefixer@npm:^10.2.5, autoprefixer@npm:^10.3.7":
   version: 10.3.7
   resolution: "autoprefixer@npm:10.3.7"
   dependencies:
@@ -4605,7 +4605,7 @@ __metadata:
     "@stitches/react": ^0.2.2
     "@tailwindcss/aspect-ratio": ^0.3.0
     "@tailwindcss/typography": ^0.4.1
-    autoprefixer: ^10.2.6
+    autoprefixer: ^10.3.7
     babel-plugin-macros: ^3.1.0
     classnames: ^2.3.1
     date-fns: ^2.22.1
