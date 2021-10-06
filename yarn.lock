@@ -4775,7 +4775,7 @@ __metadata:
     eslint: ^7.32.0
     eslint-config-next: ^11.1.2
     gray-matter: ^4.0.3
-    mdx-bundler: ^6.0.1
+    mdx-bundler: ^6.0.2
     next: ^11.1.2
     next-themes: ^0.0.15
     postcss: ^8.3.5
@@ -4946,7 +4946,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mdx-bundler@npm:^6.0.1":
+"mdx-bundler@npm:^6.0.2":
   version: 6.0.2
   resolution: "mdx-bundler@npm:6.0.2"
   dependencies:
