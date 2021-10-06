@@ -176,7 +176,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formspree/react@npm:^2.2.3":
+"@formspree/react@npm:^2.2.4":
   version: 2.2.4
   resolution: "@formspree/react@npm:2.2.4"
   dependencies:
@@ -4599,7 +4599,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "martylouis-com@workspace:."
   dependencies:
-    "@formspree/react": ^2.2.3
+    "@formspree/react": ^2.2.4
     "@hookform/resolvers": 2.6.0
     "@radix-ui/react-switch": ^0.0.14
     "@stitches/react": ^0.2.2

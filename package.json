@@ -28,7 +28,7 @@
     }
   },
   "dependencies": {
-    "@formspree/react": "^2.2.3",
+    "@formspree/react": "^2.2.4",
     "@hookform/resolvers": "2.6.0",
     "@radix-ui/react-switch": "^0.0.14",
     "@stitches/react": "^0.2.2",
