@@ -1,29 +1,39 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { bundleMDX } from 'mdx-bundler';
 
-const root = process.cwd();
+export const POSTS_PATH = path.join(process.cwd(), 'data/posts');
 
-// POSTS_PATH is useful when you want to get the path to a specific file
-export const POSTS_PATH = path.join(root, 'posts');
+export const getSourceOfFile = (fileName) => {
+  return fs.readFileSync(path.join(POSTS_PATH, fileName));
+};
 
-// postFilePaths is the list of all mdx files inside the POSTS_PATH directory
-export const postFilePaths = fs
-  .readdirSync(POSTS_PATH)
-  // Only include md(x) files
-  .filter((path) => /\.mdx?$/.test(path));
+export const getAllPosts = () => {
+  return fs
+    .readdirSync(POSTS_PATH)
+    .filter((path) => /\.mdx?$/.test(path))
+    .map((fileName) => {
+      const source = getSourceOfFile(fileName);
+      const slug = fileName.replace(/\.mdx?$/, '');
+      const { data } = matter(source);
 
-export async function getFilesByFrontMatter() {
-  return postFilePaths.reduce((allPosts, postSlug) => {
-    const source = fs.readFileSync(path.join(root, 'posts', postSlug), 'utf8');
-    const { data } = matter(source);
+      return {
+        frontmatter: data,
+        slug: slug,
+      };
+    });
+};
 
-    return [
-      {
-        ...data,
-        slug: postSlug.replace('.mdx', ''),
-      },
-      ...allPosts,
-    ];
-  }, []);
-}
+export const getSinglePost = async (slug) => {
+  const source = getSourceOfFile(slug + '.mdx');
+
+  const { code, frontmatter } = await bundleMDX(source, {
+    cwd: POSTS_PATH,
+  });
+
+  return {
+    frontmatter,
+    code,
+  };
+};

@@ -1,30 +1,25 @@
-import Page from '@layouts/Page';
 import BlogList from '@components/BlogList';
-import { getFilesByFrontMatter } from '@utils/mdx';
 import Container from '@components/Container';
-import { projects } from '@data/home';
 import PageHeader from '@components/PageHeader';
+import Page from '@layouts/Page';
+import { getAllPosts } from '@utils/mdx';
+import Link from 'next/link';
 
-const BlogIndex = ({ posts }) => {
+export default function Index({ posts }) {
   return (
     <Page>
-      <PageHeader
-        title="Blog"
-        description="Latest articles, projects, notes, and other cool stuff"
-      />
-      <section>
-        <Container isGrid>
-          <BlogList posts={posts} />
-        </Container>
-      </section>
+      <PageHeader>Blog</PageHeader>
+      <Container size="md">
+        <BlogList posts={posts} />
+      </Container>
     </Page>
   );
-};
-
-export default BlogIndex;
-
-export async function getStaticProps() {
-  const posts = await getFilesByFrontMatter('posts');
-
-  return { props: { posts } };
 }
+
+export const getStaticProps = async () => {
+  const posts = getAllPosts();
+
+  return {
+    props: { posts },
+  };
+};

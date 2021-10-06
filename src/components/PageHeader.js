@@ -4,7 +4,7 @@ import { ProseText } from './Prose';
 import tw, { css } from 'twin.macro';
 import { format, parseISO } from 'date-fns';
 
-const PageHeader = ({ title, description, ...meta }) => {
+const PageHeader = ({ description, children, ...meta }) => {
   const { datePublished, readingTime } = meta;
 
   return (
@@ -17,7 +17,7 @@ const PageHeader = ({ title, description, ...meta }) => {
             ...tw`mb-0 text-5xl font-extrabold tracking-tighter`,
           }}
         >
-          {title}
+          {children}
         </ProseText>
         {description && (
           <ProseText

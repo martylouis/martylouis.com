@@ -1,5 +1,5 @@
 // import { createCss } from '@stitches/react';
-// import { utils } from './src/utils/stitches.utils';
+// import { utils } from '@lib/stitches.utils';
 
 // export const {
 //   css,

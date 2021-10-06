@@ -18,7 +18,9 @@ const BlogPost = ({ frontMatter, children }) => {
         image={image.src}
       />
       <article id={slug}>
-        <PageHeader title={title} description={description} {...frontMatter} />
+        <PageHeader description={description} {...frontMatter}>
+          {title}
+        </PageHeader>
         <Container isGrid>
           <Figure
             {...image}
