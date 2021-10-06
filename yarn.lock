@@ -220,12 +220,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hookform/resolvers@npm:2.6.0":
-  version: 2.6.0
-  resolution: "@hookform/resolvers@npm:2.6.0"
+"@hookform/resolvers@npm:2.8.2":
+  version: 2.8.2
+  resolution: "@hookform/resolvers@npm:2.8.2"
   peerDependencies:
     react-hook-form: ^7.0.0
-  checksum: e76c04c886640b4df27772fb008aaea29a8f851c75ba35ef1c9b83dd666bb6f20ffd458ce34c4e4717bcc1ab1702a117e11416a464b7e055245a1b9a75b89945
+  checksum: a58971b4b1610417fcb9674038cfbc77c39ec0c4a6473b8b2bff7d908e31531ca8df5df21dfafc351f21d32fa963c900f03893d482b2e6def2dc6916c243fa23
   languageName: node
   linkType: hard
 
@@ -4600,7 +4600,7 @@ __metadata:
   resolution: "martylouis-com@workspace:."
   dependencies:
     "@formspree/react": ^2.2.4
-    "@hookform/resolvers": 2.6.0
+    "@hookform/resolvers": 2.8.2
     "@radix-ui/react-switch": ^0.0.14
     "@stitches/react": ^0.2.2
     "@tailwindcss/aspect-ratio": ^0.2.1
