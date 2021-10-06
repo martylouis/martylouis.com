@@ -4755,7 +4755,7 @@ __metadata:
     remark-slug: ^7.0.0
     tailwindcss: ^2.2.4
     tailwindcss-classnames: ^2.2.3
-    twin.macro: ^2.6.2
+    twin.macro: ^2.7.0
   languageName: unknown
   linkType: soft
 
@@ -7959,7 +7959,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"twin.macro@npm:^2.6.2":
+"twin.macro@npm:^2.7.0":
   version: 2.7.0
   resolution: "twin.macro@npm:2.7.0"
   dependencies:
