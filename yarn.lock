@@ -4754,7 +4754,7 @@ __metadata:
     remark-code-titles: ^0.1.2
     remark-slug: ^7.0.0
     tailwindcss: ^2.2.4
-    tailwindcss-classnames: ^2.2.1
+    tailwindcss-classnames: ^2.2.3
     twin.macro: ^2.6.2
   languageName: unknown
   linkType: soft
@@ -7700,7 +7700,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"tailwindcss-classnames@npm:^2.2.1":
+"tailwindcss-classnames@npm:^2.2.3":
   version: 2.2.3
   resolution: "tailwindcss-classnames@npm:2.2.3"
   dependencies:
