@@ -581,12 +581,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/aspect-ratio@npm:^0.2.1":
-  version: 0.2.2
-  resolution: "@tailwindcss/aspect-ratio@npm:0.2.2"
+"@tailwindcss/aspect-ratio@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@tailwindcss/aspect-ratio@npm:0.3.0"
   peerDependencies:
     tailwindcss: ">=2.0.0 || >=3.0.0-alpha.1"
-  checksum: ae8c7937b58227adc9dcd3fd980f642442a8c4f6509673c5e4123d59ba3ceb013ead5a860c1c2e2e5e724d1af3682b0bb0d9c4d74d2cde7cbb8df926fa16c839
+  checksum: f863da71ba3920ebcb96057ca9d446b0b40addbcd0b6c0631fc33625eaeb10c8aeb92f333bb8bae2db2fd025d9895e06582fce2d1fb2e35420a27bb0a6f994f7
   languageName: node
   linkType: hard
 
@@ -4603,7 +4603,7 @@ __metadata:
     "@hookform/resolvers": 2.8.2
     "@radix-ui/react-switch": ^0.0.14
     "@stitches/react": ^0.2.2
-    "@tailwindcss/aspect-ratio": ^0.2.1
+    "@tailwindcss/aspect-ratio": ^0.3.0
     "@tailwindcss/typography": ^0.4.1
     autoprefixer: ^10.2.6
     babel-plugin-macros: ^3.1.0
