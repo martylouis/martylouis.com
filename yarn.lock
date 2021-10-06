@@ -4778,7 +4778,7 @@ __metadata:
     mdx-bundler: ^6.0.2
     next: ^11.1.2
     next-themes: ^0.0.15
-    postcss: ^8.3.5
+    postcss: ^8.3.9
     prettier: ^2.3.2
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -6328,7 +6328,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.1.6, postcss@npm:^8.1.8, postcss@npm:^8.2.1, postcss@npm:^8.3.5":
+"postcss@npm:^8.1.6, postcss@npm:^8.1.8, postcss@npm:^8.2.1, postcss@npm:^8.3.9":
   version: 8.3.9
   resolution: "postcss@npm:8.3.9"
   dependencies:
