@@ -4753,7 +4753,7 @@ __metadata:
     remark-autolink-headings: ^7.0.1
     remark-code-titles: ^0.1.2
     remark-slug: ^7.0.0
-    tailwindcss: ^2.2.4
+    tailwindcss: ^2.2.16
     tailwindcss-classnames: ^2.2.3
     twin.macro: ^2.7.0
   languageName: unknown
@@ -7716,7 +7716,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^2.2.4, tailwindcss@npm:^2.2.7":
+"tailwindcss@npm:^2.2.16, tailwindcss@npm:^2.2.7":
   version: 2.2.16
   resolution: "tailwindcss@npm:2.2.16"
   dependencies:
