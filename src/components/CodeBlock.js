@@ -1,4 +1,4 @@
-import { global } from '@stitches/react';
+import { globalCss } from '@stitches/react';
 import tw, { styled, theme } from 'twin.macro';
 
 const CodeBlock = ({ children, ...props }) => {
@@ -132,7 +132,7 @@ const StyledPre = styled('pre', {
   },
 });
 
-const remarkCodeTitleStyles = global({
+const remarkCodeTitleStyles = globalCss({
   '.remark-code-title': {
     ...tw`relative flex items-center justify-center w-full h-6 px-4 mt-4 overflow-auto text-xs leading-none tracking-wide text-gray-400 sm:rounded-t-lg lg:h-8`,
     $$code_bg: theme`colors.gray.900`,
