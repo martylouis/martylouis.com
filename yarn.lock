@@ -2154,7 +2154,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^2.22.1":
+"date-fns@npm:^2.25.0":
   version: 2.25.0
   resolution: "date-fns@npm:2.25.0"
   checksum: 8896dc1dde0ee5ef77616942423bfa11fa2017a5ac19457293b7aaedc8822ff94f0a14eaf93da573b09b601dc0149eb430988a046cc9f79a2eb15f8c66c9c50c
@@ -4608,7 +4608,7 @@ __metadata:
     autoprefixer: ^10.3.7
     babel-plugin-macros: ^3.1.0
     classnames: ^2.3.1
-    date-fns: ^2.22.1
+    date-fns: ^2.25.0
     esbuild: ^0.12.28
     eslint: ^7.32.0
     eslint-config-next: ^11.1.2
