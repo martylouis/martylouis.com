@@ -30,7 +30,7 @@
   "dependencies": {
     "@formspree/react": "^2.2.4",
     "@hookform/resolvers": "2.8.2",
-    "@radix-ui/react-switch": "^0.0.14",
+    "@radix-ui/react-switch": "^0.1.0",
     "@stitches/react": "^1.2.4",
     "@tailwindcss/aspect-ratio": "^0.3.0",
     "@tailwindcss/typography": "^0.4.1",
