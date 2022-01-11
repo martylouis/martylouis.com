@@ -7,6 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint": "next lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "repository": {
@@ -36,7 +37,7 @@
     "@tailwindcss/typography": "^0.4.1",
     "classnames": "^2.3.1",
     "date-fns": "^2.25.0",
-    "esbuild": "^0.13.4",
+    "esbuild": "^0.14.11",
     "gray-matter": "^4.0.3",
     "mdx-bundler": "^6.0.2",
     "next": "12",
@@ -52,12 +53,13 @@
     "tailwindcss-classnames": "^2.2.3"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.7",
+    "autoprefixer": "^10.4.2",
     "babel-plugin-macros": "^3.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-next": "^11.1.2",
+    "eslint": "^8.6.0",
+    "eslint-config-next": "latest",
+    "eslint-config-prettier": "^8.3.0",
     "postcss": "latest",
-    "prettier": "^2.4.1",
+    "prettier": "^2.5.1",
     "tailwindcss": "latest",
     "twin.macro": "^2.8.2"
   },
