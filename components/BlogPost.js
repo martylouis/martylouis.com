@@ -1,4 +1,4 @@
-import PageLayout from '@components/PageLayout';
+import PageLayout from '@/components/PageLayout';
 import Container from './Container';
 import Figure from './Figure';
 import PageHeader from './PageHeader';

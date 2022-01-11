@@ -1,6 +1,6 @@
-import Container from '@components/Container';
-import PageLayout from '@components/PageLayout';
-import { getAllPosts } from '@utils/mdx';
+import Container from '@/components/Container';
+import PageLayout from '@/components/PageLayout';
+import { getAllPosts } from '@/utils/mdx';
 import Link from 'next/link';
 import tw from 'twin.macro';
 

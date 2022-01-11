@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import Link from 'next/link';
 import { getMDXComponent } from 'mdx-bundler/client';
-import { getAllPosts, getSinglePost } from '@utils/mdx';
-import ProseComponents from '@components/Prose';
-import BlogPost from '@components/BlogPost';
+import { getAllPosts, getSinglePost } from '@/utils/mdx';
+import ProseComponents from '@/components/Prose';
+import BlogPost from '@/components/BlogPost';
 import Image from 'next/image';
 
 const CustomLink = ({ as, href, ...otherProps }) => {

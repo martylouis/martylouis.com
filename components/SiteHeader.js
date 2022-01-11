@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Logo from './Logo';
 import tw, { styled } from 'twin.macro';
 import ThemeToggle from './ThemeToggle';
-import { header as headerNav } from '@data/site/nav';
+import { header as headerNav } from '@/data/site/nav';
 import { useRouter } from 'next/router';
 import Container from './Container';
 

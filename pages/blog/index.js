@@ -1,8 +1,8 @@
-import BlogList from '@components/BlogList';
-import Container from '@components/Container';
-import PageHeader from '@components/PageHeader';
-import PageLayout from '@components/PageLayout';
-import { getAllPosts } from '@utils/mdx';
+import BlogList from '@/components/BlogList';
+import Container from '@/components/Container';
+import PageHeader from '@/components/PageHeader';
+import PageLayout from '@/components/PageLayout';
+import { getAllPosts } from '@/utils/mdx';
 import Link from 'next/link';
 
 export default function Index({ posts }) {
