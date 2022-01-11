@@ -7,7 +7,7 @@ import tw from 'twin.macro';
 export default function Index({ posts }) {
   return (
     <PageLayout>
-      <Container size="md">
+      <Container>
         <header tw="flex flex-col justify-center mt-32 max-w-[60ch]">
           <p tw="mb-2 text-3xl italic font-light">Oh hello&hellip;</p>
           <h1 tw="mb-6 text-5xl tracking-tight text-gray-800 dark:text-gray-100">

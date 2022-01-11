@@ -9,7 +9,7 @@ const PageHeader = ({ description, children, ...meta }) => {
 
   return (
     <header tw="mt-8 sm:mt-24">
-      <Container isGrid tw="mb-6">
+      <Container>
         <ProseText
           as="h1"
           size="lg"

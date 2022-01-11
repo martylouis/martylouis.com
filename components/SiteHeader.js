@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Container from './Container';
 import Logo from './Logo';
 import tw, { styled } from 'twin.macro';
 import ThemeToggle from './ThemeToggle';

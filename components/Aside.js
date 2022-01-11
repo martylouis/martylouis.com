@@ -1,7 +1,6 @@
 import tw, { css, styled, theme } from 'twin.macro';
 import { XCircle, HelpCircle, CheckCircle, AlertCircle } from 'react-feather';
 import { StyledDiv } from './Prose';
-// import Container from './Container';
 
 const Aside = ({ children, type, ariaLabel = '' }) => {
   return (

@@ -21,7 +21,7 @@ const BlogPost = ({ frontMatter, children }) => {
         <PageHeader description={description} {...frontMatter}>
           {title}
         </PageHeader>
-        <Container isGrid>
+        <Container>
           <Figure
             {...image}
             priority="true"

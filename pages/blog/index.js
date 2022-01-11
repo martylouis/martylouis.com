@@ -9,7 +9,7 @@ export default function Index({ posts }) {
   return (
     <PageLayout>
       <PageHeader>Blog</PageHeader>
-      <Container size="md">
+      <Container>
         <BlogList posts={posts} />
       </Container>
     </PageLayout>

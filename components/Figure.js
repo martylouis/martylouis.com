@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from '@components/Link';
 import tw, { styled } from 'twin.macro';
-import Container from './Container';
 
 const Figure = (props) => {
   const { src, alt, caption, aspectRatio, priority, unsplash } = props;
