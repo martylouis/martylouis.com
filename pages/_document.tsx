@@ -1,8 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { getCssText } from 'stitches.config';
+import { getCssText } from '../stitches.config';
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps(ctx: any) {
     try {
       const initialProps = await Document.getInitialProps(ctx);
 

@@ -27,29 +27,3 @@ html {
   font-named-instance: 'Italic';
   src: url('/fonts/Inter-italic.var.woff2?v=3.18') format('woff2');
 }
-
-/* html,
-body {
-  @apply antialiased leading-relaxed font-normal md:text-[17px] lg:text-[18px];
-  scroll-behavior: smooth;
-}
-
-body {
-  @apply text-gray-700 transition-all bg-gray-100 dark:bg-gray-800 dark:text-gray-300;
-}
-
-a {
-  @apply transition-colors;
-}
-
-.grayscale {
-  @apply flex place-items-center;
-}
-
-.grayscale::after {
-  @apply absolute bottom-0 left-0 w-full h-full rounded-full;
-  content: '';
-  mix-blend-mode: color;
-  opacity: 0.5;
-  z-index: 1;
-} */
