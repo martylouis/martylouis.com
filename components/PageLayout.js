@@ -1,8 +1,8 @@
 import SiteFooter from '@components/SiteFooter';
 import SiteHeader from '@components/SiteHeader';
-import SEO from '../components/SEO';
+import SEO from './SEO';
 
-const Page = ({ children }) => {
+const PageLayout = ({ children }) => {
   return (
     <>
       <SEO />
@@ -17,4 +17,4 @@ const Page = ({ children }) => {
   );
 };
 
-export default Page;
+export default PageLayout;

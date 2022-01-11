@@ -2,15 +2,18 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@layouts/*": ["./src/layouts/*"],
-      "@lib/*": ["./src/lib/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@data/*": ["./src/data/*"],
+      "@components/*": ["components/*"],
+      "@data/*": ["./data/*"],
+      "@styles/*": ["./styles/*"],
+      "@utils/*": ["./utils/*"],
       "stitches": ["./stiches.config.js"]
     }
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "./components/**/*",
+    "./data/**/*",
+    "./styles/**/*",
+    "./utils/**/*"
+  ],
+  "exclude": ["node_modules", "dist", ".next", ".yarn"]
 }

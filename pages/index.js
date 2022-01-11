@@ -1,15 +1,15 @@
 import Container from '@components/Container';
-import Page from '@layouts/Page';
+import PageLayout from '@components/PageLayout';
 import { getAllPosts } from '@utils/mdx';
 import Link from 'next/link';
 
 export default function Index({ posts }) {
   return (
-    <Page>
+    <PageLayout>
       <Container size="md">
-        <header tw="mt-32 flex justify-center flex-col max-w-[60ch]">
-          <p tw="text-3xl mb-2 font-light italic">Oh hello&hellip;</p>
-          <h1 tw="mb-6 tracking-tight text-5xl text-gray-800 dark:text-gray-100">
+        <header tw="flex flex-col justify-center mt-32 max-w-[60ch]">
+          <p tw="mb-2 text-3xl italic font-light">Oh hello&hellip;</p>
+          <h1 tw="mb-6 text-5xl tracking-tight text-gray-800 dark:text-gray-100">
             I&rsquo;m Marty &mdash; I make websites, apps, and brands from
             Destin, Florida
           </h1>
@@ -22,7 +22,7 @@ export default function Index({ posts }) {
           ))}
         </ul>
       </Container>
-    </Page>
+    </PageLayout>
   );
 }
 

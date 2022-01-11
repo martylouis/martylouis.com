@@ -1,4 +1,4 @@
-import Page from '@layouts/Page';
+import PageLayout from '@components/PageLayout';
 import Container from './Container';
 import Figure from './Figure';
 import PageHeader from './PageHeader';
@@ -10,7 +10,7 @@ const BlogPost = ({ frontMatter, children }) => {
     frontMatter;
 
   return (
-    <Page>
+    <PageLayout>
       <SEO
         title={`${title} | martylouis.com`}
         description={description}
@@ -30,7 +30,7 @@ const BlogPost = ({ frontMatter, children }) => {
           {children}
         </Container>
       </article>
-    </Page>
+    </PageLayout>
   );
 };
 
