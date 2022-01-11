@@ -7,9 +7,9 @@ const Figure = (props) => {
   const { src, alt, caption, aspectRatio, priority, unsplash } = props;
   return (
     <StyledFigure {...props}>
-      <StyledFigureImageWrapper aspectRatio={aspectRatio}>
+      <div className="object-cover aspect-video">
         <Image src={src} alt={alt} layout="fill" priority={priority} />
-      </StyledFigureImageWrapper>
+      </div>
       <StyledFigCaption>
         {unsplash ? (
           <UnsplashCaption caption={caption} {...unsplash} />
@@ -23,22 +23,8 @@ const Figure = (props) => {
 
 export default Figure;
 
-const StyledFigure = styled('figure', {});
-
-const StyledFigureImageWrapper = styled('div', {
-  '& img': { ...tw`object-cover` },
-
-  variants: {
-    aspectRatio: {
-      landscape: { ...tw`aspect-w-16 aspect-h-9` },
-      portrait: { ...tw`aspect-w-4 aspect-h-3` },
-      square: { ...tw`aspect-w-1 aspect-h-1` },
-    },
-  },
-
-  defaultVariants: {
-    aspectRatio: 'landscape',
-  },
+const StyledFigure = styled('figure', {
+  ...tw`relative`,
 });
 
 const StyledFigCaption = styled('figcaption', {
