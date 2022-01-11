@@ -32,7 +32,7 @@ const BlogPost = ({ frontMatter, children }) => {
           </ProseText>
         )}
         {datePublished && (
-          <div tw="flex space-x-2 text-sm font-medium text-gray-500">
+          <div tw="flex my-6 space-x-2 text-sm font-medium text-gray-500">
             <span>{format(parseISO(datePublished), 'MMM dd, yyyy')}</span>
             {readingTime && (
               <>
@@ -42,11 +42,7 @@ const BlogPost = ({ frontMatter, children }) => {
             )}
           </div>
         )}
-        <Figure
-          {...image}
-          priority="true"
-          css={{ ...tw`sm:-mx-8 md:-mx-24` }}
-        />
+        <Figure {...image} priority="true" />
         {children}
       </Container>
     </PageLayout>
