@@ -8,8 +8,8 @@ import Link from 'next/link';
 export default function Index({ posts }) {
   return (
     <PageLayout>
-      <PageHeader>Blog</PageHeader>
-      <Container>
+      <Container as="article">
+        <PageHeader>Blog</PageHeader>
         <BlogList posts={posts} />
       </Container>
     </PageLayout>
