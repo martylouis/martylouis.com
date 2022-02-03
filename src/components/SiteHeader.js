@@ -17,7 +17,7 @@ const SiteHeader = () => {
     <Container as="nav">
       <div tw="relative flex items-center justify-between py-4">
         <Link href="/" passHref>
-          <a tw="inline-block hocus:(text-green-500 outline-none)">
+          <a tw="inline-block hocus:(outline-none)">
             <span tw="block w-10 h-10">
               <Logo title="Marty Louis logo" />
             </span>

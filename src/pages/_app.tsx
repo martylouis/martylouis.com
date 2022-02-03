@@ -6,14 +6,7 @@ import { ThemeProvider } from 'next-themes';
 export default function App({ Component, pageProps, router }: AppProps) {
   globalStyles();
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      value={{
-        dark: 'dark',
-        light: 'light',
-      }}
-    >
+    <ThemeProvider attribute="class" defaultTheme="system">
       <Component key={router.route} {...pageProps} />
     </ThemeProvider>
   );

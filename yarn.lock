@@ -247,6 +247,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@modulz/radix-icons@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@modulz/radix-icons@npm:4.0.0"
+  peerDependencies:
+    react: ^16.x || ^17.x
+  checksum: 5b88ae6b85f2f07769d3ed57a80eed24b6d5babcd781d5e9980438a9738fc58f76701909dfad891e86a0747572bc8a7d210dc544d1e200a1465e89de539e3ddd
+  languageName: node
+  linkType: hard
+
 "@napi-rs/triples@npm:1.0.3":
   version: 1.0.3
   resolution: "@napi-rs/triples@npm:1.0.3"
@@ -4817,6 +4826,7 @@ __metadata:
   dependencies:
     "@formspree/react": ^2.2.4
     "@hookform/resolvers": 2.8.2
+    "@modulz/radix-icons": ^4.0.0
     "@radix-ui/react-switch": ^0.1.0
     "@stitches/react": ^1.2.4
     "@tailwindcss/aspect-ratio": ^0.3.0
