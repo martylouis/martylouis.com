@@ -7,7 +7,6 @@
       "@/styles/*": ["src/styles/*"],
       "@/utils/*": ["src/utils/*"]
     },
-    "types": ["types"],
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -23,6 +22,7 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
+  "types": ["types"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
