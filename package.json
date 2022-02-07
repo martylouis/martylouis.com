@@ -1,32 +1,24 @@
 {
+  "private": true,
   "name": "martylouis-com",
   "version": "1.0.0",
   "description": "@martylouis personal website built with Next.js",
-  "main": "src/pages/index.js",
+  "license": "MIT",
+  "author": "Marty Thierry <marty@martylouis.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martylouis/martylouis.com.git"
+  },
+  "bugs": {
+    "url": "https://github.com/martylouis/martylouis.com/issues"
+  },
+  "homepage": "https://github.com/martylouis/martylouis.com#readme",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/martylouis/martylouis.com.git"
-  },
-  "keywords": [],
-  "author": "Marty Thierry <marty@martylouis.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/martylouis/martylouis.com/issues"
-  },
-  "homepage": "https://github.com/martylouis/martylouis.com#readme",
-  "private": true,
-  "babelMacros": {
-    "twin": {
-      "sassyPseudo": true,
-      "preset": "stitches"
-    }
   },
   "dependencies": {
     "@formspree/react": "^2.2.4",
@@ -42,8 +34,10 @@
     "esbuild": "^0.14.11",
     "gray-matter": "^4.0.3",
     "mdx-bundler": "^6.0.2",
-    "next": "12",
+    "next": "latest",
+    "next-contentlayer": "^0.0.34",
     "next-themes": "^0.0.15",
+    "phosphor-react": "^1.4.0",
     "react": "latest",
     "react-dom": "latest",
     "react-feather": "^2.0.9",
@@ -55,17 +49,33 @@
     "tailwindcss-classnames": "^2.2.3"
   },
   "devDependencies": {
+    "@types/node": "^17.0.15",
     "@types/react": "^17.0.38",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
     "autoprefixer": "^10.4.2",
     "babel-plugin-macros": "^3.1.0",
     "eslint": "^8.6.0",
     "eslint-config-next": "latest",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "postcss": "latest",
-    "prettier": "^2.5.1",
+    "prettier": "latest",
     "tailwindcss": "latest",
-    "twin.macro": "^2.8.2",
+    "twin.macro": "latest",
     "typescript": "^4.5.4"
   },
-  "packageManager": "yarn@3.0.2"
+  "packageManager": "yarn@3.0.2",
+  "browserslist": [
+    ">5%",
+    "not IE 11",
+    "not dead",
+    "not op_mini all"
+  ],
+  "babelMacros": {
+    "twin": {
+      "sassyPseudo": true,
+      "preset": "stitches"
+    }
+  }
 }
