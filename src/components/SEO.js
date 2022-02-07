@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 const SEO = (props) => {
   const router = useRouter();
   const meta = {
-    title: 'Marty Thierry — Freelance Web Designer in Destin, Florida',
+    title: 'Marty Thierry | Freelance Web Designer in Destin, Florida',
     description:
       'Marty is a web designer, developer, podcaster, writer and creator in Destin, Florida who offers UX design and development for web and mobile products, marketing websites, and mobile apps.',
     image: '/banner.jpg',

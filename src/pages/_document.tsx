@@ -26,7 +26,12 @@ export default class Document extends NextDocument {
   render() {
     return (
       <Html lang="en" dir="ltr">
-        <Head />
+        <Head>
+          <link
+            href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=optional"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />

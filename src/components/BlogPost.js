@@ -25,14 +25,14 @@ const BlogPost = ({ frontMatter, children }) => {
         {description && (
           <ProseText
             css={{
-              ...tw`mt-3 text-xl font-medium text-gray-500 dark:text-gray-400`,
+              ...tw`mt-3 text-lg text-gray-500 dark:text-gray-400`,
             }}
           >
             {description}
           </ProseText>
         )}
         {datePublished && (
-          <div tw="flex my-6 space-x-2 text-sm font-medium text-gray-500">
+          <div tw="flex my-6 space-x-2 text-sm text-gray-500">
             <span>{format(parseISO(datePublished), 'MMM dd, yyyy')}</span>
             {readingTime && (
               <>

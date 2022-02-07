@@ -6,7 +6,7 @@ const PageHeader = ({ children, as = 'h1', ...props }) => {
     <ProseText
       as={as}
       css={{
-        ...tw`mt-8 text-4xl font-black md:mt-16 md:text-5xl`,
+        ...tw`font-serif text-4xl text-gray-900 dark:text-gray-50`,
       }}
     >
       {children}

@@ -1,13 +1,5 @@
-import tw from 'twin.macro';
-
 const Logo = (props) => (
-  <svg
-    width="192"
-    height="96"
-    viewBox="0 0 192 96"
-    fill="currentColor"
-    tw="inline-block max-w-full max-h-full"
-  >
+  <svg {...props} viewBox="0 0 192 96" fill="currentColor">
     <title>{props.title}</title>
     <path
       fillRule="evenodd"

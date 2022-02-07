@@ -2,13 +2,12 @@ import tw, { theme, globalStyles } from 'twin.macro';
 import { globalCss } from '../../stitches.config';
 
 const customStyles = {
-  'html, body *': tw`text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-900`,
-  body: {
-    ...tw`antialiased`,
-    scrollBehavior: 'smooth',
+  html: {
+    fontSize: 'clamp(1em, 1em + 0.6vw, 2em)',
   },
-  a: {
-    ...tw`transition-colors`,
+  body: {
+    ...tw`h-full font-sans antialiased text-gray-700 bg-gray-50 dark:(text-gray-400 bg-gray-900)`,
+    scrollBehavior: 'smooth',
   },
 };
 

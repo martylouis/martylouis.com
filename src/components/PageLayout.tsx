@@ -1,18 +1,21 @@
 import SiteFooter from '@/components/SiteFooter';
 import SiteHeader from '@/components/SiteHeader';
 import SEO from './SEO';
+import tw, { styled } from 'twin.macro';
+
+const StyledPageLayout = styled('div', {
+  ...tw`flex flex-col min-h-screen px-[8%]`,
+});
 
 const PageLayout = ({ children }) => {
   return (
     <>
       <SEO />
-      <div className="flex flex-col h-screen">
-        <div className="flex-grow flex-shrink-0">
-          <SiteHeader />
-          <main className="pb-[8vh]">{children}</main>
-        </div>
+      <StyledPageLayout>
+        <SiteHeader />
+        <main tw="flex-1">{children}</main>
         <SiteFooter />
-      </div>
+      </StyledPageLayout>
     </>
   );
 };

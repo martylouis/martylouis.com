@@ -1,10 +1,12 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import tw, { styled } from 'twin.macro';
-import { MoonIcon, SunIcon } from '@modulz/radix-icons';
+import { Sun, MoonStars } from 'phosphor-react';
 
-const StyledButton = styled('button', {
-  ...tw`inline-flex items-center justify-center text-xs font-bold rounded`,
+export const StyledButton = styled('button', {
+  ...tw`inline-flex w-6 h-6 items-center justify-center text-xs font-bold rounded-full border border-gray-300 transition-colors dark:(border-gray-700)
+  hocus:(bg-teal-200/50 dark:bg-teal-900/25)
+  focus:(outline-none ring ring-teal-700)`,
 });
 
 const ThemeToggle = () => {
@@ -25,7 +27,7 @@ const ThemeToggle = () => {
       onClick={handleToggle}
       aria-label="Toggle theme"
     >
-      {resolvedTheme === 'dark' ? <SunIcon /> : <MoonIcon />}
+      {resolvedTheme === 'dark' ? <Sun /> : <MoonStars />}
     </StyledButton>
   );
 };
