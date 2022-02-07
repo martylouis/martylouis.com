@@ -37,10 +37,10 @@ export const Post = defineDocumentType(() => ({
   filePathPattern: `posts/*.mdx`,
   bodyType: 'mdx',
   fields: {
-    // date: { type: 'date', required: true },
+    date: { type: 'date', required: true },
     // dateCreated: { type: 'date', resolve: (doc) => doc.date },
     title: { type: 'string', required: true },
-    // isPublished: { type: 'boolean', required: true },
+    isPublished: { type: 'boolean', required: true },
   },
   computedFields,
 }));
