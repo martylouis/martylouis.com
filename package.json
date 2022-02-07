@@ -65,6 +65,9 @@
     "twin.macro": "latest",
     "typescript": "^4.5.4"
   },
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "browserslist": [
     ">5%",
     "not IE 11",
