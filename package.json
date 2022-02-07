@@ -37,6 +37,7 @@
     "@tailwindcss/aspect-ratio": "^0.3.0",
     "@tailwindcss/typography": "^0.4.1",
     "classnames": "^2.3.1",
+    "contentlayer": "^0.0.34",
     "date-fns": "^2.25.0",
     "esbuild": "^0.14.11",
     "gray-matter": "^4.0.3",
