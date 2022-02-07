@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  font-family: 'Inter', sans-serif;
-}
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: 'Inter var', sans-serif;
-  }
-}
-
 @font-face {
   font-family: 'Inter var';
   font-weight: 100 900;
@@ -26,4 +17,15 @@ html {
   font-style: italic;
   font-named-instance: 'Italic';
   src: url('/fonts/Inter-italic.var.woff2?v=3.18') format('woff2');
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+  @supports (font-variation-settings: normal) {
+    html {
+      font-family: 'Inter var', sans-serif;
+    }
+  }
 }
