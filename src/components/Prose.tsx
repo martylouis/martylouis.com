@@ -12,13 +12,13 @@ export const ProseText = styled('p', {
   ...tw`mt-0 mb-2 md:mb-4`,
   '& strong': { ...tw`font-extrabold text-gray-800 dark:text-gray-100` },
   '& code': {
-    ...tw`inline-flex px-1 font-size[0.9rem] font-bold whitespace-pre-wrap rounded`,
-    ...tw`text-purple-500 transition-colors bg-white bg-opacity-25 border border-gray-200`,
-    ...tw`dark:(text-purple-500 bg-gray-900 border border-gray-700 bg-opacity-50)`,
+    ...tw`inline-flex px-1 font-bold whitespace-pre-wrap rounded font-size[0.9rem]`,
+    ...tw`text-indigo-500 transition-colors bg-white bg-opacity-25 border border-gray-200`,
+    ...tw`dark:(text-indigo-500 bg-gray-900 border border-gray-700 bg-opacity-50)`,
   },
 
   '& a code': {
-    ...tw`text-blue-500 dark:text-blue-400 hocus:(text-blue-600 dark:text-blue-500)`,
+    ...tw`text-teal-500 dark:text-teal-400 hocus:(text-teal-600 dark:text-teal-500)`,
   },
 
   variants: {
@@ -81,7 +81,7 @@ export const StyledUnorderedList = ({ children, ...props }) => (
       ...tw`pl-8 md:pl-2`,
       '& > li': { ...tw`pl-4` },
       '& > li:before': {
-        ...tw`absolute w-[6px] h-[6px] rounded-full mt-2.5 top-0 left-0 mr-2`,
+        ...tw`absolute top-0 left-0 mr-2 rounded-full w-[6px] h-[6px] mt-2.5`,
         ...tw`bg-gray-700 dark:bg-gray-300`,
         content: '',
       },
@@ -100,7 +100,7 @@ export const ProseHR = styled('hr', {
 });
 
 export const ProseBlockquote = styled('blockquote', {
-  ...tw`py-1 pl-6 my-4 border-l-4 border-green-400 md:mx-0 lg:my-8`,
+  ...tw`py-1 pl-6 my-4 border-l-4 border-teal-400 md:mx-0 lg:my-8`,
   p: {
     ...tw`px-0 my-1 text-xl italic font-black leading-tight tracking-tighter md:text-2xl md:leading-tight`,
   },
@@ -109,7 +109,7 @@ export const ProseBlockquote = styled('blockquote', {
 });
 
 export const ProseInlineCode = styled('code', {
-  ...tw`inline px-1 text-sm font-normal text-purple-500 bg-purple-400 rounded-sm bg-opacity-10`,
+  ...tw`inline px-1 text-sm font-normal text-indigo-500 bg-indigo-400 rounded-sm bg-opacity-10`,
 });
 
 const ProseComponents = {
@@ -122,7 +122,7 @@ const ProseComponents = {
     <Link
       {...props}
       css={{
-        ...tw`text-blue-500 dark:text-blue-400 hocus:(text-blue-600 dark:text-blue-500)`,
+        ...tw`text-teal-500 dark:text-teal-400 hocus:(text-teal-600 dark:text-teal-500)`,
       }}
     />
   ),
