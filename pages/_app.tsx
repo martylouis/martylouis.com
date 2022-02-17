@@ -1,9 +1,17 @@
-import globalStyles from '../styles/global';
 import '@/styles/styles.css';
-import { AppProps } from 'next/app';
+import splitbee from '@splitbee/web';
 import { ThemeProvider } from 'next-themes';
+import { AppProps } from 'next/app';
+import { useEffect } from 'react';
+import globalStyles from '../styles/global';
 
 export default function App({ Component, pageProps, router }: AppProps) {
+  useEffect((): void => {
+    splitbee.init({
+      apiUrl: '/sp-api',
+      scriptUrl: '/sb.js',
+    });
+  }, []);
   globalStyles();
   return (
     <ThemeProvider
