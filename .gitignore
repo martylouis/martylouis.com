@@ -1,6 +1,5 @@
-posts/demo*.mdx
+data/posts/demo*.mdx
 src/pages/demo*.mdx
-src/pages/demo*.js
 
 # Logs
 logs
@@ -119,3 +118,6 @@ dist
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Contentlayer
+.contentlayer
