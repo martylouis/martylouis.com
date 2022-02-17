@@ -21,7 +21,7 @@ const StyledLink = styled('a', {
 export default function Index() {
   return (
     <Container>
-      {SEO}
+      <SEO />
       <main tw="flex-1 flex items-center justify-center">
         <div tw="flex flex-col items-center">
           <Logo tw="w-[80px] h-[35px] text-gray-600 dark:(text-gray-400)" />
