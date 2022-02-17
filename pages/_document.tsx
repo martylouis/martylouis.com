@@ -1,5 +1,5 @@
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
-import { getCssText } from '../../stitches.config';
+import { getCssText } from '../stitches.config';
 
 export default class Document extends NextDocument {
   static async getInitialProps(ctx: any) {
@@ -26,12 +26,7 @@ export default class Document extends NextDocument {
   render() {
     return (
       <Html lang="en" dir="ltr">
-        <Head>
-          <link
-            href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=optional"
-            rel="stylesheet"
-          />
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />
