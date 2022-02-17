@@ -8,7 +8,7 @@ import globalStyles from '../styles/global';
 export default function App({ Component, pageProps, router }: AppProps) {
   useEffect((): void => {
     splitbee.init({
-      apiUrl: '/sp-api',
+      apiUrl: '/sb-api',
       scriptUrl: '/sb.js',
     });
   }, []);
