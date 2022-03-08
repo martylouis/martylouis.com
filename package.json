@@ -33,6 +33,7 @@
     "contentlayer": "^0.0.34",
     "date-fns": "^2.25.0",
     "esbuild": "^0.14.11",
+    "framer-motion": "^6.2.8",
     "gray-matter": "^4.0.3",
     "kbar": "^0.1.0-beta.27",
     "mdx-bundler": "^6.0.2",
