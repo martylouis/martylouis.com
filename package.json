@@ -17,9 +17,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "yarn tsc && next lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "@formspree/react": "^2.2.4",
@@ -63,12 +64,13 @@
     "eslint-config-next": "latest",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^12.3.5",
     "postcss": "latest",
     "prettier": "latest",
     "tailwindcss": "latest",
     "twin.macro": "latest",
-    "typescript": "^4.5.4",
-    "husky": "^7.0.0"
+    "typescript": "^4.5.4"
   },
   "engines": {
     "node": ">=14.0.0"
@@ -84,5 +86,18 @@
       "sassyPseudo": true,
       "preset": "stitches"
     }
+  },
+  "lint-staged": {
+    "**/*.{ts|tsx}": [
+      "yarn tsc --noEmit"
+    ],
+    "**/*.{js,jsx,ts,tsx}": [
+      "next lint",
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{md,mdx}": [
+      "prettier --write"
+    ]
   }
 }
