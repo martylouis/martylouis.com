@@ -17,7 +17,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "yarn tsc && next lint",
+    "lint": "yarn tsc && next lint --cache --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
     "prepare": "husky install",
     "precommit": "lint-staged"
