@@ -19,8 +19,7 @@
     "start": "next start",
     "lint": "yarn tsc && next lint --cache --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
-    "prepare": "husky install",
-    "precommit": "lint-staged"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@formspree/react": "^2.2.4",
@@ -51,7 +50,8 @@
     "remark-autolink-headings": "^7.0.1",
     "remark-code-titles": "^0.1.2",
     "remark-slug": "^7.0.0",
-    "tailwindcss-classnames": "^2.2.3"
+    "tailwindcss-classnames": "^2.2.3",
+    "twin.macro": "^2.8.2"
   },
   "devDependencies": {
     "@types/node": "^17.0.15",
@@ -71,7 +71,6 @@
     "postcss": "latest",
     "prettier": "latest",
     "tailwindcss": "latest",
-    "twin.macro": "latest",
     "typescript": "^4.5.4"
   },
   "engines": {
@@ -90,11 +89,8 @@
     }
   },
   "lint-staged": {
-    "**/*.{ts|tsx}": [
-      "yarn tsc --noEmit"
-    ],
-    "**/*.{js,jsx,ts,tsx}": [
-      "next lint --fix",
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
       "prettier --write"
     ],
     "*.{md,mdx}": [

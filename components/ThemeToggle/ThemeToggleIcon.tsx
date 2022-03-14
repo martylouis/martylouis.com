@@ -5,10 +5,10 @@ export interface ThemeToggleIconProps {
   title?: string;
 }
 
-const ThemeToggleIcon = ({
+function ThemeToggleIcon({
   title = 'Toggle Theme',
   theme,
-}: ThemeToggleIconProps) => {
+}: ThemeToggleIconProps) {
   const animateContainer = {
     light: {
       opacity: 1,
@@ -193,5 +193,5 @@ const ThemeToggleIcon = ({
       />
     </motion.svg>
   );
-};
+}
 export default ThemeToggleIcon;

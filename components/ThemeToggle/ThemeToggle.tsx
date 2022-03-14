@@ -14,7 +14,7 @@ export const StyledButton = styled('button', {
   `,
 });
 
-const ThemeToggle = () => {
+function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme, resolvedTheme } = useTheme();
 
@@ -35,6 +35,6 @@ const ThemeToggle = () => {
       <ThemeToggleIcon theme={resolvedTheme === 'dark' ? 'dark' : 'light'} />
     </StyledButton>
   );
-};
+}
 
 export default ThemeToggle;

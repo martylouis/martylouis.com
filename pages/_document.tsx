@@ -14,11 +14,13 @@ export default class Document extends NextDocument {
             {/* Stitches CSS for SSR */}
             <style
               id="stitches"
+              // eslint-disable-next-line react/no-danger
               dangerouslySetInnerHTML={{ __html: getCssText() }}
             />
           </>
         ),
       };
+      // eslint-disable-next-line no-empty
     } finally {
     }
   }
