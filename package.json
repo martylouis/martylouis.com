@@ -18,7 +18,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\""
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@formspree/react": "^2.2.4",
@@ -66,7 +67,8 @@
     "prettier": "latest",
     "tailwindcss": "latest",
     "twin.macro": "latest",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.4",
+    "husky": "^7.0.0"
   },
   "engines": {
     "node": ">=14.0.0"
