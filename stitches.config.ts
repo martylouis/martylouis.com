@@ -1,4 +1,4 @@
-import { createStitches, CSS as StitchesCSS } from '@stitches/react';
+import { createStitches } from '@stitches/react';
 export type { CSS } from '@stitches/react/types/css-util';
 
 export const stitches = createStitches({

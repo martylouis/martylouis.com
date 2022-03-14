@@ -1,4 +1,4 @@
-import tw, { theme, globalStyles } from 'twin.macro';
+import tw, { globalStyles } from 'twin.macro';
 import { globalCss } from '../stitches.config';
 
 const customStyles = {

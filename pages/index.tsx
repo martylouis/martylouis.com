@@ -1,4 +1,3 @@
-import Logo from '@/components/Logo';
 import SEO from '@/components/SEO';
 import ThemeToggle from '@/components/ThemeToggle';
 import { ArrowUpRight } from 'phosphor-react';
@@ -25,16 +24,6 @@ export default function Index() {
     hidden: {
       opacity: 0,
     },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const animateList = {
-    hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
