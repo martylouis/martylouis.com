@@ -4,10 +4,14 @@ import tw, { styled } from 'twin.macro';
 import ThemeToggleIcon from './ThemeToggleIcon';
 
 export const StyledButton = styled('button', {
-  ...tw`inline-flex p-1.5 w-8 h-8 items-center justify-center text-xs font-bold rounded-full
-    text-gray-600 dark:text-gray-400
-  hover:(text-gray-900 dark:text-gray-100)
-  // focus:(outline-none ring ring-teal-700)`,
+  ...tw`
+    inline-flex w-9 h-9 p-2 rounded-lg
+    bg-black/0 dark:(bg-white/0)
+    hover:(bg-black/5 text-black/90 dark:(bg-white/10 text-white/90))
+    active:(bg-black/5 text-black dark:(bg-white/10 text-white))
+    focus:(outline-none text-black/90 ring-2 ring-black/80 dark:(text-white/90 ring-white/80))
+    transition-all
+  `,
 });
 
 const ThemeToggle = () => {
@@ -26,7 +30,7 @@ const ThemeToggle = () => {
     <StyledButton
       type="button"
       onClick={handleToggle}
-      aria-label="Toggle theme"
+      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
     >
       <ThemeToggleIcon theme={resolvedTheme === 'dark' ? 'dark' : 'light'} />
     </StyledButton>

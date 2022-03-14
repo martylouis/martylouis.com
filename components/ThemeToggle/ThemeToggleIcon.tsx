@@ -1,26 +1,22 @@
 import { motion } from 'framer-motion';
 
-interface ThemeToggleIconProps {
+export interface ThemeToggleIconProps {
   theme: string;
   title?: string;
 }
 
 const ThemeToggleIcon = ({
-  title = 'Toggle Icon',
+  title = 'Toggle Theme',
   theme,
 }: ThemeToggleIconProps) => {
-  const getTheme = theme;
-
   const animateContainer = {
     light: {
       opacity: 1,
       rotate: 90,
       transition: {
         type: 'spring',
-        stiffness: 200,
-
-        staggerChildren: 0.015,
-        delayChildren: 0.015,
+        staggerChildren: 0.05,
+        delayChildren: 0.005,
       },
     },
     dark: {
@@ -28,8 +24,6 @@ const ThemeToggleIcon = ({
       rotate: 50,
       transition: {
         type: 'spring',
-        stiffness: 80,
-        dampness: 50,
         staggerChildren: 0.015,
         delayChildren: 0.015,
       },
@@ -54,8 +48,8 @@ const ThemeToggleIcon = ({
       y: 0,
       transition: {
         type: 'spring',
-        stiffness: 100,
-        dampness: 20,
+        stiffness: 50,
+        dampness: 80,
       },
     },
   };
@@ -85,21 +79,27 @@ const ThemeToggleIcon = ({
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 256 256"
-      initial={{ rotate: 50 }}
-      animate={getTheme}
+      initial={{ rotate: 50, opacity: 0 }}
+      animate={theme}
       variants={animateContainer}
-      style={{ originX: '50%', originY: '50%', overflow: 'visible' }}
+      style={{
+        originX: '50%',
+        originY: '50%',
+        overflow: 'visible',
+        width: '100%',
+        height: '100%',
+      }}
     >
       {title && <title>{title}</title>}
       <mask id="mask0">
-        <motion.rect width="256" height="256" fill="white" />
+        <circle cx="128" cy="128" r="128" fill="white" />
         <motion.circle
           cx="128"
           cy="32"
           r="120"
           fill="black"
           variants={mask}
-          animate={getTheme}
+          animate={theme}
         />
       </mask>
       <motion.circle
