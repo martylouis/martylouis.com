@@ -5,13 +5,7 @@
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint", "prettier"],
-  "extends": [
-    "airbnb",
-    "airbnb-typescript",
-    "next",
-    "next/core-web-vitals",
-    "plugin:prettier/recommended"
-  ],
+  "extends": ["next", "next/core-web-vitals", "plugin:prettier/recommended"],
   "rules": {
     "react/jsx-props-no-spreading": "off"
   }

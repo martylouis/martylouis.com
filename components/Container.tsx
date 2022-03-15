@@ -21,7 +21,7 @@ const StyledBox = styled(Box, {
   },
 });
 
-function Container({ size, children, ...props }: ContainerProps) {
+function Container({ size = 'sm', children, ...props }: ContainerProps) {
   return (
     <StyledBox {...props} size={size}>
       {children}
