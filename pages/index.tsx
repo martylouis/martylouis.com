@@ -89,7 +89,7 @@ export default function Index() {
               </div>
             </FadeInUpChild>
             <FadeInUpChild>
-              <h2 tw="text-4xl font-extrabold mb-8 text-gray-900 dark:(text-gray-200)">
+              <h2 tw="text-5xl font-extrabold mb-8 text-gray-900 dark:(text-gray-200)">
                 UX designer and developer, passionate about building accessible,
                 performant, and beautiful user experiences.
               </h2>
@@ -98,8 +98,9 @@ export default function Index() {
               <p tw="text-xl my-8">
                 I&rsquo;ve been helping agencies, startups, and enterprises
                 build products, websites, and brands for 10+ years. With a
-                proven process and fundamental design principles, I partner with
-                you to build something great!
+                proven process and fundamental design principles, I can help
+                design a new product, upgrade your user experience, or build a
+                design system.
               </p>
             </FadeInUpChild>
             <FadeInUpChild>
