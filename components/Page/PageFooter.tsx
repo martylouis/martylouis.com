@@ -41,7 +41,7 @@ function PageFooter() {
           ))}
         </ul>
         <p tw="mt-8 text-sm text-center text-gray-500 dark:text-gray-600">
-          &copy; 2022 &bull; Marty Louis Co.
+          &copy; {new Date().getFullYear()} Marty Louis Co.
         </p>
       </Container>
     </footer>
