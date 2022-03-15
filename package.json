@@ -15,10 +15,9 @@
   "homepage": "https://github.com/martylouis/martylouis.com#readme",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "yarn lint && next build",
     "start": "next start",
     "lint": "yarn tsc && next lint --cache --fix",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -50,10 +49,12 @@
     "remark-autolink-headings": "^7.0.1",
     "remark-code-titles": "^0.1.2",
     "remark-slug": "^7.0.0",
+    "sharp": "^0.30.3",
     "tailwindcss-classnames": "^2.2.3",
     "twin.macro": "^2.8.2"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "@types/node": "^17.0.15",
     "@types/react": "^17.0.38",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
@@ -90,7 +91,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
+      "eslint --cache --fix",
       "prettier --write"
     ],
     "*.{md,mdx}": [

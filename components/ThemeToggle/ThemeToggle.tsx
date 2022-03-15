@@ -5,7 +5,7 @@ import ThemeToggleIcon from './ThemeToggleIcon';
 
 export const StyledButton = styled('button', {
   ...tw`
-    inline-flex w-9 h-9 p-2 rounded-lg
+    inline-flex w-9 h-9 p-2 rounded-md
     bg-black/0 dark:(bg-white/0)
     hover:(bg-black/5 text-black/90 dark:(bg-white/10 text-white/90))
     active:(bg-black/5 text-black dark:(bg-white/10 text-white))
