@@ -1,3 +1,4 @@
+import 'twin.macro';
 import PageFooter from './PageFooter';
 import PageHeader from './PageHeader';
 
@@ -7,11 +8,11 @@ export interface PageProps {
 
 function Page({ children }: PageProps) {
   return (
-    <>
+    <div tw="flex flex-col min-h-screen">
       <PageHeader />
-      <main>{children}</main>;
+      <main tw="flex-1">{children}</main>
       <PageFooter />
-    </>
+    </div>
   );
 }
 

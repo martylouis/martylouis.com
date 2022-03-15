@@ -2,17 +2,18 @@ import tw, { styled } from 'twin.macro';
 import Box from './Box';
 
 export interface ContainerProps {
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'full';
   children: React.ReactNode;
 }
 
 const StyledBox = styled(Box, {
-  ...tw`w-full px-4 mx-auto lg:px-8`,
+  ...tw`w-full px-6 mx-auto xl:px-0`,
   variants: {
     size: {
-      sm: { ...tw`max-w-xl` },
+      sm: { ...tw`max-w-2xl` },
       md: { ...tw`max-w-3xl` },
       lg: { ...tw`max-w-5xl` },
+      full: { ...tw`max-w-none xl:px-12` },
     },
   },
   defaultVariants: {
