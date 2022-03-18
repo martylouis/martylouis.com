@@ -1,9 +1,11 @@
+import { homeContent, homeSEO } from '@/data/pages/home.constants';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { PaperPlaneTilt } from 'phosphor-react';
 import tw, { styled } from 'twin.macro';
 import Container from '@/components/Container';
 import Page from '@/components/Page';
+import { SEOPage } from '@/components/SEO';
 
 const StyledButton = styled('a', {
   ...tw`
@@ -59,63 +61,73 @@ function FadeInUpChild({ children }) {
   );
 }
 
-export default function Index() {
+export const Profile = ({ name, title, image }) => {
+  const { src, alt, width, height } = image;
+  return (
+    <div tw="flex gap-6 items-center mb-8">
+      <div tw="flex-shrink-0">
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          tw="rounded-full border-4 border-gray-200"
+          role="presentation"
+        />
+      </div>
+      <div>
+        <h1 tw="text-2xl text-black dark:text-white">{name}</h1>
+        <p dangerouslySetInnerHTML={{ __html: title }}></p>
+      </div>
+    </div>
+  );
+};
+
+export const Hero = ({ title, subtitle, button }) => {
+  const { url, text } = button;
+  return (
+    <>
+      <FadeInUpChild>
+        <h2
+          tw="text-3xl lg:text-5xl font-extrabold mb-8 text-gray-900 dark:(text-gray-200)"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+      </FadeInUpChild>
+      <FadeInUpChild>
+        <p tw="text-xl my-8" dangerouslySetInnerHTML={{ __html: subtitle }} />
+      </FadeInUpChild>
+      <FadeInUpChild>
+        <p tw="my-12">
+          <StyledButton href={url} target="_blank">
+            <span
+              dangerouslySetInnerHTML={{
+                __html: text,
+              }}
+            />
+            <PaperPlaneTilt
+              tw="-mr-1"
+              weight="fill"
+              aria-hidden="false"
+              focusable="false"
+            />
+          </StyledButton>
+        </p>
+      </FadeInUpChild>
+    </>
+  );
+};
+
+export default function Home() {
   return (
     <Page>
+      <SEOPage {...homeSEO} />
       <Container>
         <div tw="mt-24 mb-16">
-          <FadeInUp tw="w-full">
+          <FadeInUp>
             <FadeInUpChild>
-              <div tw="flex gap-6 items-center mb-8">
-                <div tw="flex-shrink-0">
-                  <Image
-                    width="96"
-                    height="96"
-                    src="/avatar.jpg"
-                    alt="Marty&rsquo;s face"
-                    tw="rounded-full border-4 border-gray-200"
-                  />
-                </div>
-                <div>
-                  <h1 tw="text-2xl">Marty Thierry</h1>
-                  <p>
-                    🏝{' '}
-                    <span tw="text-black/50 dark:text-white/50">
-                      Freelancing from the Emerald Coast in sunny Destin,
-                      Florida
-                    </span>
-                  </p>
-                </div>
-              </div>
+              <Profile {...homeContent.profile} />
             </FadeInUpChild>
-            <FadeInUpChild>
-              <h2 tw="text-5xl font-extrabold mb-8 text-gray-900 dark:(text-gray-200)">
-                UX designer and developer, passionate about building accessible,
-                performant, and beautiful user experiences.
-              </h2>
-            </FadeInUpChild>
-            <FadeInUpChild>
-              <p tw="text-xl my-8">
-                I&rsquo;ve been helping agencies, startups, and enterprises
-                build products, websites, and brands for 10+ years. With a
-                proven process and fundamental design principles, I can help
-                design a new product, upgrade your user experience, or build a
-                design system.
-              </p>
-            </FadeInUpChild>
-            <FadeInUpChild>
-              <p tw="my-12">
-                <StyledButton href="mailto:hello@martylouis.com">
-                  <span>Let&rsquo;s Work Together</span>
-                  <PaperPlaneTilt
-                    tw="-mr-1"
-                    weight="fill"
-                    aria-hidden="false"
-                    focusable="false"
-                  />
-                </StyledButton>
-              </p>
-            </FadeInUpChild>
+            <Hero {...homeContent.hero} />
           </FadeInUp>
         </div>
       </Container>
