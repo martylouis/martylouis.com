@@ -1,7 +1,7 @@
 import tw, { styled } from 'twin.macro';
 import Box from './Box';
 
-export interface ContainerProps {
+export interface IContainer {
   size?: 'sm' | 'md' | 'lg' | 'full';
   children: React.ReactNode;
 }
@@ -17,11 +17,11 @@ const StyledBox = styled(Box, {
     },
   },
   defaultVariants: {
-    size: 'sm',
+    size: 'md',
   },
 });
 
-function Container({ size = 'sm', children, ...props }: ContainerProps) {
+function Container({ size, children, ...props }: IContainer) {
   return (
     <StyledBox {...props} size={size}>
       {children}
