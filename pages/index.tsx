@@ -1,8 +1,9 @@
 import { homeContent, homeSEO } from '@/data/pages/home.constants';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { PaperPlaneTilt } from 'phosphor-react';
+import { ArrowUpRight, PaperPlaneTilt } from 'phosphor-react';
 import tw, { styled } from 'twin.macro';
+import { Button } from '@/components/Button';
 import Container from '@/components/Container';
 import Page from '@/components/Page';
 import { SEOPage } from '@/components/SEO';
@@ -163,7 +164,18 @@ export default function Home() {
                       Case study coming soon.
                     </p>
                     <p>
-                      <a href="https://wattsware.com">View website</a>
+                      <Button
+                        target="_blank"
+                        rel="noopener"
+                        href="https://wattsware.com"
+                      >
+                        <span>View Website</span>
+                        <ArrowUpRight
+                          weight="bold"
+                          aria-hidden="true"
+                          focusable="false"
+                        />
+                      </Button>
                     </p>
                   </div>
                 </div>
