@@ -64,14 +64,14 @@ function FadeInUpChild({ children }) {
 export const Profile = ({ name, title, image }) => {
   const { src, alt, width, height } = image;
   return (
-    <div tw="flex gap-6 items-center mb-8">
+    <Container tw="flex items-center gap-6 mb-8">
       <div tw="flex-shrink-0">
         <Image
           src={src}
           alt={alt}
           width={width}
           height={height}
-          tw="rounded-full border-4 border-gray-200"
+          tw="border-4 border-gray-200 rounded-full"
           role="presentation"
         />
       </div>
@@ -79,14 +79,14 @@ export const Profile = ({ name, title, image }) => {
         <h1 tw="text-2xl text-black dark:text-white">{name}</h1>
         <p dangerouslySetInnerHTML={{ __html: title }}></p>
       </div>
-    </div>
+    </Container>
   );
 };
 
 export const Hero = ({ title, subtitle, button }) => {
   const { url, text } = button;
   return (
-    <>
+    <Container>
       <FadeInUpChild>
         <h2
           tw="text-3xl lg:text-5xl font-extrabold mb-8 text-gray-900 dark:(text-gray-200)"
@@ -94,7 +94,7 @@ export const Hero = ({ title, subtitle, button }) => {
         />
       </FadeInUpChild>
       <FadeInUpChild>
-        <p tw="text-xl my-8" dangerouslySetInnerHTML={{ __html: subtitle }} />
+        <p tw="my-8 text-xl" dangerouslySetInnerHTML={{ __html: subtitle }} />
       </FadeInUpChild>
       <FadeInUpChild>
         <p tw="my-12">
@@ -113,7 +113,7 @@ export const Hero = ({ title, subtitle, button }) => {
           </StyledButton>
         </p>
       </FadeInUpChild>
-    </>
+    </Container>
   );
 };
 
@@ -121,16 +121,57 @@ export default function Home() {
   return (
     <Page>
       <SEOPage {...homeSEO} />
-      <Container>
-        <div tw="mt-24 mb-16">
-          <FadeInUp>
-            <FadeInUpChild>
-              <Profile {...homeContent.profile} />
-            </FadeInUpChild>
-            <Hero {...homeContent.hero} />
-          </FadeInUp>
-        </div>
-      </Container>
+
+      <div tw="mt-24 mb-16">
+        <FadeInUp>
+          <FadeInUpChild>
+            <Profile {...homeContent.profile} />
+          </FadeInUpChild>
+          <Hero {...homeContent.hero} />
+          <FadeInUpChild>
+            <section tw="flex flex-col gap-8 py-8">
+              <header tw="flex flex-col gap-2">
+                <Container>
+                  <h2 tw="text-2xl font-bold">Work</h2>
+                  <p>Some of the latest projects I&rsquo;ve been working on.</p>
+                </Container>
+              </header>
+              <Container size="lg" tw="flex flex-col gap-8">
+                <div tw="flex flex-col overflow-hidden border border-gray-800 rounded md:grid md:grid-cols-2 bg-gray-50/5">
+                  <div tw="relative aspect-ratio[16/9] md:aspect-ratio[unset]">
+                    <Image
+                      src="/images/banner.jpg"
+                      alt=""
+                      layout="fill"
+                      tw="object-cover"
+                    />
+                  </div>
+                  <div tw="flex flex-col gap-4 p-8">
+                    <h3 tw="text-xl font-bold">Wattsware.com</h3>
+                    <p>
+                      PR tech expert, Brandon Watts, needed an update for his
+                      company website. He really wanted to put something
+                      together fast, so we spun up a WordPress site and
+                      customized it in no time.
+                    </p>
+                    <p tw="text-opacity-50">
+                      We&rsquo;re currently working on moving his site over to
+                      the neat headless CMS,{' '}
+                      <a href="https://storyblok.com">Storyblok</a>.
+                    </p>
+                    <p tw="text-gray-900/50 dark:text-gray-100/50">
+                      Case study coming soon.
+                    </p>
+                    <p>
+                      <a href="https://wattsware.com">View website</a>
+                    </p>
+                  </div>
+                </div>
+              </Container>
+            </section>
+          </FadeInUpChild>
+        </FadeInUp>
+      </div>
     </Page>
   );
 }
