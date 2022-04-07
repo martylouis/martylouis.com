@@ -3,7 +3,7 @@ import { globalCss } from '../stitches.config';
 
 const customStyles = {
   body: {
-    ...tw`h-full font-sans antialiased text-gray-700 bg-gray-50 dark:(text-gray-400 bg-gray-900)`,
+    ...tw`h-full font-sans antialiased text-gray-700 bg-gray-50/50 dark:(text-gray-400 bg-gray-900)`,
     scrollBehavior: 'smooth',
   },
 };
