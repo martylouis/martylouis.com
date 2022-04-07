@@ -1,5 +1,5 @@
 import { ArrowUpRight } from 'phosphor-react';
-import tw, { styled } from 'twin.macro';
+import tw from 'twin.macro';
 import Button from '@/components/Button';
 import Container from '@/components/Container';
 
@@ -8,15 +8,6 @@ const social = [
   { title: 'Twitter', href: 'https://twitter.com/martylouis' },
   { title: 'LinkedIn', href: 'https://linkedin.com/in/martylouis' },
 ];
-
-const StyledLink = styled('a', {
-  ...tw`inline-flex font-medium space-x-0.5 items-center relative cursor-pointer transition-colors h-12 px-8 rounded-md
-  text-gray-800 dark:text-gray-200 bg-transparent
-  hover:(bg-black/5 text-black/90 dark:(bg-white/10 text-white/90))
-  active:(bg-black/5 text-black dark:(bg-white/10 text-white))
-  focus:(outline-none text-black/90 ring-2 ring-black/80 dark:(text-white/90 ring-white/80))
-  `,
-});
 
 function PageFooter() {
   return (

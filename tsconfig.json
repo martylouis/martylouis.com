@@ -16,7 +16,7 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,

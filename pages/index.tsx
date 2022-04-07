@@ -3,27 +3,12 @@ import { projects } from '@/data/projects';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { PaperPlaneRight } from 'phosphor-react';
-import tw, { styled } from 'twin.macro';
+import tw from 'twin.macro';
 import Button from '@/components/Button';
 import Container from '@/components/Container';
 import Page from '@/components/Page';
 import Project from '@/components/Project';
 import { SEOPage } from '@/components/SEO';
-
-const StyledHeading = styled('h2', {
-  ...tw`text-3xl font-bold text-gray-900 lg:text-5xl dark:text-gray-100`,
-});
-
-const StyledButton = styled('a', {
-  ...tw`
-    inline-flex font-medium gap-3 items-center relative cursor-pointer text-lg transition-colors duration-200
-    h-12 px-8 rounded-full
-    text-gray-200 bg-black/80 dark:(text-gray-800 bg-white/90)
-    boxShadow[0 15px 20px -10px rgba(0, 0, 0, 0.2)] dark:boxShadow[0 15px 20px -10px rgba(255, 255, 255, 0.2)]
-    hover:(bg-black text-white dark:(bg-white text-black))
-    focus:(outline-none ring-2 ring-offset-2 ring-black/80 dark:(ring-white/80))
-  `,
-});
 
 function FadeInUp({ children }) {
   return (
