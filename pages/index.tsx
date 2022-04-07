@@ -1,12 +1,17 @@
 import { homeContent, homeSEO } from '@/data/pages/home.constants';
+import { projects } from '@/data/projects';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { ArrowUpRight, PaperPlaneTilt } from 'phosphor-react';
+import { PaperPlaneTilt } from 'phosphor-react';
 import tw, { styled } from 'twin.macro';
-import { Button } from '@/components/Button';
 import Container from '@/components/Container';
 import Page from '@/components/Page';
+import Project from '@/components/Project';
 import { SEOPage } from '@/components/SEO';
+
+const StyledHeading = styled('h2', {
+  ...tw`text-3xl font-bold text-gray-900 lg:text-5xl dark:text-gray-100`,
+});
 
 const StyledButton = styled('a', {
   ...tw`
@@ -65,7 +70,7 @@ function FadeInUpChild({ children }) {
 export const Profile = ({ name, title, image }) => {
   const { src, alt, width, height } = image;
   return (
-    <Container tw="flex items-center gap-6 mb-8">
+    <div tw="flex items-center gap-4">
       <div tw="flex-shrink-0">
         <Image
           src={src}
@@ -77,28 +82,31 @@ export const Profile = ({ name, title, image }) => {
         />
       </div>
       <div>
-        <h1 tw="text-2xl text-black dark:text-white">{name}</h1>
-        <p dangerouslySetInnerHTML={{ __html: title }}></p>
+        <h1 tw="text-xl font-medium">{name}</h1>
+        <h2 tw="font-medium" dangerouslySetInnerHTML={{ __html: title }} />
       </div>
-    </Container>
+    </div>
   );
 };
 
 export const Hero = ({ title, subtitle, button }) => {
   const { url, text } = button;
   return (
-    <Container>
+    <Container tw="flex flex-col items-center gap-8">
       <FadeInUpChild>
-        <h2
-          tw="text-3xl lg:text-5xl font-extrabold mb-8 text-gray-900 dark:(text-gray-200)"
+        <Profile {...homeContent.profile} />
+      </FadeInUpChild>
+      <FadeInUpChild>
+        <p
+          tw="text-3xl font-medium"
           dangerouslySetInnerHTML={{ __html: title }}
         />
       </FadeInUpChild>
       <FadeInUpChild>
-        <p tw="my-8 text-xl" dangerouslySetInnerHTML={{ __html: subtitle }} />
+        <p tw="text-2xl" dangerouslySetInnerHTML={{ __html: subtitle }} />
       </FadeInUpChild>
       <FadeInUpChild>
-        <p tw="my-12">
+        <p>
           <StyledButton href={url} target="_blank">
             <span
               dangerouslySetInnerHTML={{
@@ -123,65 +131,33 @@ export default function Home() {
     <Page>
       <SEOPage {...homeSEO} />
 
-      <div tw="mt-24 mb-16">
+      <div tw="py-8 lg:py-16">
         <FadeInUp>
-          <FadeInUpChild>
-            <Profile {...homeContent.profile} />
-          </FadeInUpChild>
           <Hero {...homeContent.hero} />
-          <FadeInUpChild>
-            <section tw="flex flex-col gap-8 py-8">
-              <header tw="flex flex-col gap-2">
-                <Container>
-                  <h2 tw="text-2xl font-bold">Work</h2>
-                  <p>Some of the latest projects I&rsquo;ve been working on.</p>
-                </Container>
-              </header>
-              <Container size="lg" tw="flex flex-col gap-8">
-                <div tw="flex flex-col overflow-hidden border border-gray-800 rounded md:grid md:grid-cols-2 bg-gray-50/5">
-                  <div tw="relative aspect-ratio[16/9] md:aspect-ratio[unset]">
-                    <Image
-                      src="/images/banner.jpg"
-                      alt=""
-                      layout="fill"
-                      tw="object-cover"
-                    />
-                  </div>
-                  <div tw="flex flex-col gap-4 p-8">
-                    <h3 tw="text-xl font-bold">Wattsware.com</h3>
-                    <p>
-                      PR tech expert, Brandon Watts, needed an update for his
-                      company website. He really wanted to put something
-                      together fast, so we spun up a WordPress site and
-                      customized it in no time.
-                    </p>
-                    <p tw="text-opacity-50">
-                      We&rsquo;re currently working on moving his site over to
-                      the neat headless CMS,{' '}
-                      <a href="https://storyblok.com">Storyblok</a>.
-                    </p>
-                    <p tw="text-gray-900/50 dark:text-gray-100/50">
-                      Case study coming soon.
-                    </p>
-                    <p>
-                      <Button
-                        target="_blank"
-                        rel="noopener"
-                        href="https://wattsware.com"
-                      >
-                        <span>View Website</span>
-                        <ArrowUpRight
-                          weight="bold"
-                          aria-hidden="true"
-                          focusable="false"
-                        />
-                      </Button>
-                    </p>
-                  </div>
-                </div>
-              </Container>
-            </section>
-          </FadeInUpChild>
+
+          <div tw="py-16">
+            <div tw="border-t border-gray-900/5 dark:border-gray-100/5" />
+          </div>
+
+          <section tw="flex flex-col gap-16 py-8">
+            <Container tw="flex flex-col gap-4 text-center">
+              <h2
+                id="work"
+                tw="text-3xl font-bold text-gray-900 lg:text-5xl dark:text-gray-100"
+              >
+                Featured Work
+              </h2>
+              <p tw="font-medium lg:text-xl">
+                From small to large, here are just a few of the projects
+                I&rsquo;ve worked on.
+              </p>
+            </Container>
+            <Container size="lg" tw="grid gap-8 md:grid-cols-2">
+              {projects.map(({ ...project }) => (
+                <Project key={project.id} {...project} />
+              ))}
+            </Container>
+          </section>
         </FadeInUp>
       </div>
     </Page>
