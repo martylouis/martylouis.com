@@ -25,7 +25,7 @@ export const projects: IProject[] = [
   },
   {
     id: 2,
-    title: 'Redhorsecorp.com',
+    title: 'RedhorseCorp.com',
     description:
       '<p>Government contractor, Redhorse Corp., needed a new website for their rapidly growing company.</p><p>I refreshed their site to look more modern and professional which helped them to attract the best job candidates.</p>',
     image: {
@@ -61,7 +61,7 @@ export const projects: IProject[] = [
   },
   {
     id: 5,
-    title: 'GulfRealty30a.com',
+    title: 'EvansTire.com',
     description:
       '<p>Eddie Valenzuela, Jenny Mendoza, and the team at Mancuso Media became the new marketing agency of Evans Tire & Auto, a chain of tire shops located through out San Diego, CA.</p><p>They needed a highly customized WordPress website to promote their locations, promotions, services and custom integrations.</p><p>I built the custom WordPress theme and customized the site to meet their needs.</p>',
     image: {
