@@ -1,5 +1,6 @@
 import { ArrowUpRight } from 'phosphor-react';
 import tw, { styled } from 'twin.macro';
+import Button from '@/components/Button';
 import Container from '@/components/Container';
 
 const social = [
@@ -21,10 +22,10 @@ function PageFooter() {
   return (
     <footer tw="bg-white border-t border-black/5 dark:(bg-black/10 border-white/5) py-16">
       <Container>
-        <ul tw="flex items-center justify-center flex-col flex-wrap gap-2 md:flex-row">
+        <ul tw="flex flex-col flex-wrap items-center justify-center gap-8 md:flex-row">
           {social.map((item) => (
             <li key={item.title}>
-              <StyledLink
+              <Button
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -36,7 +37,7 @@ function PageFooter() {
                   aria-hidden="true"
                   focusable="false"
                 />
-              </StyledLink>
+              </Button>
             </li>
           ))}
         </ul>

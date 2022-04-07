@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { PaperPlaneRight } from 'phosphor-react';
 import tw, { styled } from 'twin.macro';
+import Button from '@/components/Button';
 import Container from '@/components/Container';
 import Page from '@/components/Page';
 import Project from '@/components/Project';
@@ -114,19 +115,19 @@ export const Hero = ({ title, subtitle, button }) => {
       </FadeInUpChild>
       <FadeInUpChild>
         <p tw="flex justify-center pt-4">
-          <StyledButton href={url} target="_blank">
+          <Button href={url} target="_blank" size="lg">
             <span
               dangerouslySetInnerHTML={{
                 __html: text,
               }}
             />
             <PaperPlaneRight
-              tw="-mr-1"
+              tw="ml-1"
               weight="fill"
               aria-hidden="false"
               focusable="false"
             />
-          </StyledButton>
+          </Button>
         </p>
       </FadeInUpChild>
     </Container>
