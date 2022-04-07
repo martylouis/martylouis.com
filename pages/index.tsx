@@ -130,23 +130,27 @@ export default function Home() {
         <div tw="border-t border-gray-900/5 dark:border-gray-100/5" />
 
         <section tw="flex flex-col gap-16 py-16 lg:py-24">
-          <Container tw="flex flex-col gap-4 text-center">
-            <h2
-              id="work"
-              tw="text-3xl font-bold text-gray-900 lg:text-5xl dark:text-gray-100"
-            >
-              Featured Work
-            </h2>
-            <p tw="font-medium lg:text-xl">
-              From small to large, here are just a few of the projects
-              I&rsquo;ve worked on.
-            </p>
-          </Container>
-          <Container size="lg" tw="grid gap-8 md:grid-cols-2">
-            {projects.map(({ ...project }) => (
-              <Project key={project.id} {...project} />
-            ))}
-          </Container>
+          <FadeInUpChild>
+            <Container tw="flex flex-col gap-4 text-center">
+              <h2
+                id="work"
+                tw="text-3xl font-bold text-gray-900 lg:text-5xl dark:text-gray-100"
+              >
+                Featured Work
+              </h2>
+              <p tw="font-medium lg:text-xl">
+                From small to large, here are just a few of the projects
+                I&rsquo;ve worked on.
+              </p>
+            </Container>
+          </FadeInUpChild>
+          <FadeInUpChild>
+            <Container size="lg" tw="grid gap-8 md:grid-cols-2">
+              {projects.map(({ ...project }) => (
+                <Project key={project.id} {...project} />
+              ))}
+            </Container>
+          </FadeInUpChild>
         </section>
       </FadeInUp>
     </Page>
