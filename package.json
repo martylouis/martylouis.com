@@ -16,7 +16,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "yarn lint && next build",
-    "start": "next start",
+    "start": "yarn build && next start",
     "lint": "yarn tsc && next lint --cache --fix",
     "prepare": "husky install"
   },
