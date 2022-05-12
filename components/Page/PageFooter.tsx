@@ -12,7 +12,7 @@ const social = [
 function PageFooter() {
   return (
     <footer tw="bg-white border-t border-black/5 dark:(bg-black/10 border-white/5) py-16">
-      <Container>
+      <Container tw="flex flex-col items-center gap-12">
         <ul tw="flex flex-col flex-wrap items-center justify-center gap-8 md:flex-row">
           {social.map((item) => (
             <li key={item.title}>
@@ -32,7 +32,7 @@ function PageFooter() {
             </li>
           ))}
         </ul>
-        <p tw="mt-8 text-sm text-center text-gray-500 dark:text-gray-600">
+        <p tw="text-center text-gray-600 dark:text-gray-300">
           &copy; {new Date().getFullYear()} Marty Louis Co.
         </p>
       </Container>

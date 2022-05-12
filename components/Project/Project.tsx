@@ -51,7 +51,7 @@ const Project = (project: IProject) => (
         {project.case_url ? (
           <a>Case Study</a>
         ) : (
-          <p tw="text-xs text-gray-900/50 dark:text-gray-100/50">
+          <p tw="text-sm text-gray-800 dark:text-gray-200">
             Case study coming soon...
           </p>
         )}
