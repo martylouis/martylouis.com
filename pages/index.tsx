@@ -1,98 +1,143 @@
 import { homeContent, homeSEO } from '@/data/pages/home.constants';
 import { projects } from '@/data/projects';
 import Image from 'next/image';
-import { PaperPlaneRight } from 'phosphor-react';
-import tw from 'twin.macro';
-import Button from '@/components/Button';
+import { ButtonLink } from '@/components/Button';
 import Container from '@/components/Container';
-import Page from '@/components/Page';
 import Project from '@/components/Project';
 import { SEOPage } from '@/components/SEO';
+import {
+  IconProps,
+  LogoGithub,
+  LogoLinkedin,
+  LogoMartyLouis,
+  LogoTwitter,
+  PaperPlane,
+} from '@/components/Icons';
+import ThemeToggle from '@/components/ThemeToggle';
 
-export const Profile = ({ name, title, image }) => {
-  const { src, alt, width, height } = image;
-  return (
-    <div tw="flex items-center justify-center w-full gap-4">
-      <div tw="flex-shrink-0">
-        <Image
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          tw="rounded-full"
-          role="presentation"
-        />
-      </div>
-      <div>
-        <h1 tw="text-xl font-medium">{name}</h1>
-        <h2
-          tw="text-sm font-medium"
-          dangerouslySetInnerHTML={{ __html: title }}
-        />
-      </div>
-    </div>
-  );
-};
-
-export const Hero = ({ title, subtitle, button }) => {
-  const { url, text } = button;
-  return (
-    <Container tw="flex flex-col gap-8 py-16 md:gap-12 lg:py-24">
-      <Profile {...homeContent.profile} />
-
-      <p tw="text-xl lg:text-2xl" dangerouslySetInnerHTML={{ __html: title }} />
-
-      <p
-        tw="text-xl lg:text-2xl"
-        dangerouslySetInnerHTML={{ __html: subtitle }}
-      />
-      <p tw="flex justify-center pt-4">
-        <Button href={url} target="_blank" size="lg">
-          <span
-            dangerouslySetInnerHTML={{
-              __html: text,
-            }}
-          />
-          <PaperPlaneRight
-            tw="ml-1"
-            weight="fill"
-            aria-hidden="false"
-            focusable="false"
-          />
-        </Button>
-      </p>
-    </Container>
-  );
-};
+const socialLinks = [
+  {
+    name: 'GitHub',
+    icon: LogoGithub,
+    href: 'https://github.com/martylouis',
+  },
+  {
+    name: 'LinkedIn',
+    icon: LogoLinkedin,
+    href: 'https://www.linkedin.com/in/martylouis/',
+  },
+  {
+    name: 'Twitter',
+    icon: LogoTwitter,
+    href: 'https://twitter.com/martylouis',
+  },
+];
 
 export default function Home() {
+  const { title, subtitle, button } = homeContent.hero;
+  const { url, text } = button;
+  const { src, alt, width, height } = homeContent.profile.image;
   return (
-    <Page>
+    <>
       <SEOPage {...homeSEO} />
 
-      <Hero {...homeContent.hero} />
+      <header className="py-24">
+        <Container>
+          <div className="mb-8 flex w-full items-center gap-10">
+            <div className="flex-shrink-1 mr-auto flex items-center rounded-full border border-gray-500 p-0.5">
+              <Image
+                src={'/images/martylouis-profile.jpg'}
+                alt={'Marty Thierry'}
+                width={128}
+                height={128}
+                className="rounded-full"
+                role="presentation"
+              />
+            </div>
+            <SocialLinks links={socialLinks} />
+            <ThemeToggle size={24} />
+          </div>
+          <h1 className="mb-8 text-5xl font-black tracking-tight">
+            Hey, I’m Marty
+          </h1>
+          <div className="mb-8 space-y-4">
+            <p className="text-xl">
+              I’m a UX designer and developer based in Destin, Florida. I enjoy
+              building beautiful, functional user interfaces that are easy to
+              use and simple to understand.
+            </p>
+            <p className="text-xl">
+              I’ve been helping small businesses and organizations build
+              websites, apps, and brands for over 10 years. Say hello or
+              checkout some featured work below.
+            </p>
+          </div>
+          <ButtonLink href={url} variant="primary" size="lg">
+            <span>Let’s work together</span>
+            <PaperPlane size={24} />
+          </ButtonLink>
+        </Container>
+      </header>
 
-      <div tw="border-t border-gray-900/5 dark:border-gray-100/5" />
+      {/* <div className="mb-16 border border-b border-gray-400" /> */}
 
-      <section tw="flex flex-col gap-16 py-16 lg:py-24">
-        <Container tw="flex flex-col gap-4 text-center">
-          <h2
-            id="work"
-            tw="text-3xl font-bold text-gray-900 lg:text-5xl dark:text-gray-100"
-          >
+      <Container>
+        <div className="mb-12">
+          <h2 id="work" className="mb-2 text-4xl font-extrabold">
             Featured Work
           </h2>
-          <p tw="font-medium lg:text-xl">
+          <p className="text-lg text-gray-low">
             From small to large, here are just a few of the projects I&rsquo;ve
             worked on.
           </p>
+        </div>
+        {projects.map(({ ...project }) => (
+          <Project key={project.id} {...project} />
+        ))}
+      </Container>
+
+      <footer className="py-16">
+        <Container className="flex items-center">
+          <div className="flex items-center gap-4">
+            <div className="inline-flex h-16 w-16 rounded-full bg-gray-600 p-2">
+              <LogoMartyLouis />
+            </div>
+            <p className="text-sm text-gray-low">
+              &copy; {new Date().getFullYear()} Marty Louis Co.
+            </p>
+          </div>
+          <div className="ml-auto flex items-center gap-10">
+            <SocialLinks links={socialLinks} />
+            <ThemeToggle size={24} />
+          </div>
         </Container>
-        <Container size="lg" tw="grid gap-8 md:grid-cols-2">
-          {projects.map(({ ...project }) => (
-            <Project key={project.id} {...project} />
-          ))}
-        </Container>
-      </section>
-    </Page>
+      </footer>
+    </>
   );
 }
+
+type SocialLinkProps = {
+  links: {
+    name: string;
+    icon: React.ComponentType<IconProps>;
+    href: string;
+  }[];
+};
+
+const SocialLinks = ({ links, ...props }: SocialLinkProps) => {
+  return (
+    <>
+      {links.map(({ name, icon: Icon, href }) => (
+        <a
+          key={name}
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          title={`Follow @martylouis on ${name}`}
+        >
+          <Icon size={24} title={`Follow @martylouis on ${name}`} />
+        </a>
+      ))}
+    </>
+  );
+};

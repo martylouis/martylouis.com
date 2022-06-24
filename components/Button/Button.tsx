@@ -1,36 +1,69 @@
-import tw, { styled } from 'twin.macro';
+import clsx from 'clsx';
+import Link from 'next/link';
+import { forwardRef } from 'react';
 
-interface IButton {
-  children: React.ReactNode;
+interface LinkProps {
+  to?: string;
   href?: string;
   target?: string;
   rel?: string;
+  type?: string;
   title?: string;
-  size?: 'lg' | 'md' | 'sm';
+  onClick?: () => void;
 }
 
-const StyledButton = styled('a', {
-  ...tw`
-    inline-flex font-medium gap-x-1 items-center relative cursor-pointer transition-colors h-12 px-8 rounded-full
-    text-gray-900 dark:text-gray-200
-    border-2 border-gray-900 dark:border-gray-100
-    hover:(bg-black text-white dark:(bg-white text-black))
-    active:(bg-black/5 text-black dark:(bg-white/10 text-white))
-    focus:(outline-none text-black/90 ring-2 ring-black/80 dark:(text-white/90 ring-white/80))
-  `,
-  variants: {
-    size: {
-      lg: { ...tw`h-16 text-xl` },
-    },
-    defaultVariants: {
-      size: 'md',
-    },
-  },
-});
+interface ButtonProps extends LinkProps {
+  children: React.ReactNode;
+  variant?: 'default' | 'primary' | 'text';
+  size?: 'sm' | 'md' | 'lg';
+  as?: React.ElementType;
+  ref?: React.Ref<HTMLButtonElement>;
+}
 
-const Button = ({ href, target, rel, title, size, children }: IButton) => {
-  const linkProps = { href, target, rel, title, size };
-  return <StyledButton {...linkProps}>{children}</StyledButton>;
+const ButtonWrapper = ({
+  as = 'button',
+  variant = 'default',
+  size = 'md',
+  children,
+  ...props
+}: ButtonProps) => {
+  const Component = as;
+  return (
+    <Component
+      className={clsx(
+        'relative inline-flex cursor-pointer items-center border font-semibold transition-colors',
+        variant === 'default' &&
+          'border-gray-low text-gray-high hover:border-gray-high hover:bg-gray-high hover:text-gray-100',
+        variant === 'primary' &&
+          'bg-gray-high text-gray-100 hover:border-gray-high hover:bg-gray-100 hover:text-gray-high',
+        variant === 'text' && '',
+        size === 'sm' && 'h-8 rounded px-2 text-sm',
+        size === 'md' && 'h-11 gap-2 rounded-full px-4',
+        size === 'lg' && 'h-16 gap-3 rounded-full px-6 text-2xl font-bold'
+      )}
+      {...props}
+    >
+      {children}
+    </Component>
+  );
 };
 
-export default Button;
+export const Button = ({ variant, size, children }: ButtonProps) => {
+  return (
+    <ButtonWrapper variant={variant} size={size}>
+      {children}
+    </ButtonWrapper>
+  );
+};
+
+// button link forwardRef
+// eslint-disable-next-line react/display-name
+export const ButtonLink = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, ...props }, ref) => {
+    return (
+      <ButtonWrapper as="a" target="_blank" {...props} ref={ref}>
+        {children}
+      </ButtonWrapper>
+    );
+  }
+);

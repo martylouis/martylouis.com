@@ -1,31 +1,30 @@
-import tw, { styled } from 'twin.macro';
-import Box from './Box';
+import clsx from 'clsx';
 
-export interface IContainer {
-  size?: 'sm' | 'md' | 'lg' | 'full';
+export interface ContainerProps {
+  size?: 'sm' | 'md' | 'lg';
   children: React.ReactNode;
+  className?: string;
 }
 
-const StyledBox = styled(Box, {
-  ...tw`w-full px-6 mx-auto xl:px-0`,
-  variants: {
-    size: {
-      sm: { ...tw`max-w-2xl` },
-      md: { ...tw`max-w-3xl` },
-      lg: { ...tw`max-w-5xl` },
-      full: { ...tw`max-w-none xl:px-12` },
-    },
-  },
-  defaultVariants: {
-    size: 'md',
-  },
-});
-
-function Container({ size, children, ...props }: IContainer) {
+function Container({
+  size = 'md',
+  className,
+  children,
+  ...props
+}: ContainerProps) {
   return (
-    <StyledBox {...props} size={size}>
+    <div
+      className={clsx(
+        'mx-auto w-full px-6 md:px-8 xl:px-0',
+        size === 'sm' && 'max-w-screen-sm',
+        size === 'md' && 'max-w-screen-md',
+        size === 'lg' && 'max-w-screen-lg',
+        className
+      )}
+      {...props}
+    >
       {children}
-    </StyledBox>
+    </div>
   );
 }
 

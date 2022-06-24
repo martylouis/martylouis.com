@@ -1,10 +1,8 @@
-/* eslint-disable react/jsx-props-no-spreading */
-import '@/styles/styles.css';
+import '../styles/global.css';
 import splitbee from '@splitbee/web';
 import { ThemeProvider } from 'next-themes';
 import { AppProps } from 'next/app';
 import { useEffect } from 'react';
-import globalStyles from '../styles/global';
 
 export default function App({ Component, pageProps, router }: AppProps) {
   useEffect((): void => {
@@ -13,7 +11,6 @@ export default function App({ Component, pageProps, router }: AppProps) {
       scriptUrl: '/sb.js',
     });
   }, []);
-  globalStyles();
   return (
     <ThemeProvider
       disableTransitionOnChange

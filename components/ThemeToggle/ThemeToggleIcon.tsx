@@ -3,9 +3,11 @@ import { motion } from 'framer-motion';
 export interface ThemeToggleIconProps {
   theme: string;
   title?: string;
+  size?: number;
 }
 
 function ThemeToggleIcon({
+  size,
   title = 'Toggle Theme',
   theme,
 }: ThemeToggleIconProps) {
@@ -63,21 +65,32 @@ function ThemeToggleIcon({
     dark: {
       pathLength: 0,
       opacity: 0,
-      strokeWidth: 0,
-      transition: { type: 'spring' },
     },
     light: {
       opacity: 1,
       pathLength: 1,
-      transition: {
-        type: 'spring',
-      },
     },
   };
+
+  const sunBeams = [
+    { id: 1, coords: { x1: '216', y1: '128', x2: '248', y2: '128' } },
+    {
+      id: 2,
+      coords: { x1: '190.23', y1: '190.23', x2: '212.85', y2: '212.85' },
+    },
+    { id: 3, coords: { x1: '128', y1: '216', x2: '128', y2: '248' } },
+    { id: 4, coords: { x1: '65.77', y1: '190.23', x2: '43.15', y2: '212.85' } },
+    { id: 5, coords: { x1: '40', y1: '128', x2: '8', y2: '128' } },
+    { id: 6, coords: { x1: '65.77', y1: '65.77', x2: '43.15', y2: '43.15' } },
+    { id: 7, coords: { x1: '128', y1: '40', x2: '128', y2: '8' } },
+    { id: 8, coords: { x1: '190.23', y1: '65.77', x2: '212.85', y2: '43.15' } },
+  ];
 
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
       viewBox="0 0 256 256"
       initial={{ rotate: 50, opacity: 0 }}
       animate={theme}
@@ -111,86 +124,16 @@ function ThemeToggleIcon({
         mask="url(#mask0)"
         style={{ originX: '50%', originY: '50%' }}
       />
-      <motion.line
-        variants={beam}
-        stroke="currentColor"
-        strokeWidth="16"
-        strokeLinecap="round"
-        x1="216"
-        y1="128"
-        x2="248"
-        y2="128"
-      />
-      <motion.line
-        variants={beam}
-        stroke="currentColor"
-        strokeWidth="16"
-        strokeLinecap="round"
-        x1="190.23"
-        y1="190.23"
-        x2="212.85"
-        y2="212.85"
-      />
-      <motion.line
-        variants={beam}
-        stroke="currentColor"
-        strokeWidth="16"
-        strokeLinecap="round"
-        x1="128"
-        y1="216"
-        x2="128"
-        y2="248"
-      />
-      <motion.line
-        variants={beam}
-        stroke="currentColor"
-        strokeWidth="16"
-        strokeLinecap="round"
-        x1="65.77"
-        y1="190.23"
-        x2="43.15"
-        y2="212.85"
-      />
-      <motion.line
-        variants={beam}
-        stroke="currentColor"
-        strokeWidth="16"
-        strokeLinecap="round"
-        x1="40"
-        y1="128"
-        x2="8"
-        y2="128"
-      />
-      <motion.line
-        variants={beam}
-        stroke="currentColor"
-        strokeWidth="16"
-        strokeLinecap="round"
-        x1="65.77"
-        y1="65.77"
-        x2="43.15"
-        y2="43.15"
-      />
-      <motion.line
-        variants={beam}
-        stroke="currentColor"
-        strokeWidth="16"
-        strokeLinecap="round"
-        x1="128"
-        y1="40"
-        x2="128"
-        y2="8"
-      />
-      <motion.line
-        variants={beam}
-        stroke="currentColor"
-        strokeWidth="16"
-        strokeLinecap="round"
-        x1="190.23"
-        y1="65.77"
-        x2="212.85"
-        y2="43.15"
-      />
+      {sunBeams.map(({ id, coords }) => (
+        <motion.line
+          variants={beam}
+          key={id}
+          stroke="currentColor"
+          strokeWidth="16"
+          strokeLinecap="round"
+          {...coords}
+        />
+      ))}
     </motion.svg>
   );
 }

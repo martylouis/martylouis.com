@@ -4,8 +4,8 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/data/*": ["data/*"],
-      "@/styles/*": ["styles/*"],
-      "@/utils/*": ["utils/*"]
+      "@/lib/*": ["lib/*"],
+      "@/styles/*": ["styles/*"]
     },
     "allowJs": true,
     "esModuleInterop": true,
@@ -16,14 +16,12 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
-    "noUnusedLocals": false,
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": false,
+    "strict": true,
     "target": "es5"
   },
-  "types": ["types"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "data"]
+  "exclude": ["node_modules"]
 }

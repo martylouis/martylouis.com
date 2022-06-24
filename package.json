@@ -1,7 +1,7 @@
 {
-  "private": true,
   "name": "martylouis-com",
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "private": true,
   "description": "@martylouis personal website built with Next.js",
   "license": "MIT",
   "author": "Marty Thierry <marty@martylouis.com>",
@@ -17,75 +17,39 @@
     "dev": "next dev",
     "build": "yarn lint && next build",
     "start": "yarn build && next start",
-    "lint": "yarn tsc && next lint --cache --fix",
-    "prepare": "husky install"
+    "lint": "next lint --cache --fix"
   },
   "dependencies": {
-    "@formspree/react": "^2.2.4",
-    "@hookform/resolvers": "2.8.2",
-    "@modulz/radix-icons": "^4.0.0",
     "@splitbee/web": "^0.3.0",
-    "@stitches/react": "^1.2.4",
-    "@tailwindcss/aspect-ratio": "^0.3.0",
-    "@tailwindcss/typography": "^0.4.1",
-    "contentlayer": "^0.0.34",
-    "date-fns": "^2.25.0",
-    "esbuild": "^0.14.11",
-    "framer-motion": "^6.2.8",
-    "gray-matter": "^4.0.3",
-    "kbar": "^0.1.0-beta.27",
-    "next": "^12.1.0",
-    "next-contentlayer": "^0.0.34",
-    "next-themes": "^0.0.15",
-    "phosphor-react": "^1.4.0",
-    "react": "latest",
-    "react-dom": "latest",
-    "reading-time": "^1.5.0",
-    "rehype": "^12.0.0",
-    "remark-autolink-headings": "^7.0.1",
-    "remark-code-titles": "^0.1.2",
-    "remark-slug": "^7.0.0",
-    "sharp": "^0.30.5",
-    "tailwindcss": "^3.0.23",
-    "twin.macro": "^2.8.2"
+    "autoprefixer": "^10.4.7",
+    "clsx": "^1.1.1",
+    "framer-motion": "^6.3.13",
+    "next": "^12.1.6",
+    "next-themes": "^0.2.0",
+    "phosphor-react": "^1.4.1",
+    "postcss": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.30.7",
+    "tailwindcss": "^3.1.4",
+    "tsc": "^2.0.4"
   },
   "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+    "@tailwindcss/typography": "^0.5.2",
     "@types/node": "^17.0.15",
-    "@types/react": "^17.0.38",
-    "@typescript-eslint/eslint-plugin": "^5.10.2",
-    "@typescript-eslint/parser": "^5.10.2",
-    "autoprefixer": "^10.4.2",
-    "babel-plugin-macros": "^3.1.0",
-    "eslint": "^8.6.0",
-    "eslint-config-next": "latest",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^7.0.0",
-    "lint-staged": "^12.3.5",
-    "postcss": "latest",
-    "prettier": "latest",
-    "typescript": "^4.5.4"
+    "@types/react": "18.0.9",
+    "@types/react-dom": "18.0.5",
+    "eslint": "^8.17.0",
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.11",
+    "typescript": "^4.7.4"
   },
   "browserslist": [
-    ">5%",
+    ">1%",
     "not IE 11",
     "not dead",
     "not op_mini all"
-  ],
-  "babelMacros": {
-    "twin": {
-      "sassyPseudo": true,
-      "preset": "stitches"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --cache --fix",
-      "prettier --write"
-    ],
-    "*.{md,mdx}": [
-      "prettier --write"
-    ]
-  }
+  ]
 }

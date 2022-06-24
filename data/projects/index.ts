@@ -1,7 +1,7 @@
-export interface IProject {
+export interface ProjectProps {
   id: number;
   title: string;
-  description?: string;
+  description: string;
   image?: {
     src: string;
     alt: string;
@@ -10,7 +10,7 @@ export interface IProject {
   url: string;
 }
 
-export const projects: IProject[] = [
+export const projects: ProjectProps[] = [
   {
     id: 1,
     title: 'Wattsware.com',
