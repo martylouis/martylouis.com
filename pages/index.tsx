@@ -57,7 +57,7 @@ export default function Home() {
             <SocialLinks links={socialLinks} />
             <ThemeToggle size={24} />
           </div>
-          <h1 className="mb-8 text-5xl font-black tracking-tight">
+          <h1 className="mb-8 text-4xl font-black tracking-tight md:text-5xl">
             Hey, I’m Marty
           </h1>
           <div className="mb-8 space-y-4">
@@ -83,7 +83,7 @@ export default function Home() {
 
       <Container>
         <div className="mb-12">
-          <h2 id="work" className="mb-2 text-4xl font-extrabold">
+          <h2 id="work" className="mb-2 text-3xl font-extrabold md:text-4xl">
             Featured Work
           </h2>
           <p className="text-lg text-gray-low">
@@ -97,8 +97,8 @@ export default function Home() {
       </Container>
 
       <footer className="py-16">
-        <Container className="flex items-center">
-          <div className="flex items-center gap-4">
+        <Container className="flex flex-col-reverse items-center justify-between gap-8 sm:flex-row">
+          <div className="flex flex-col items-center gap-4 sm:flex-row">
             <div className="inline-flex h-16 w-16 rounded-full bg-gray-600 p-2">
               <LogoMartyLouis />
             </div>
@@ -106,7 +106,7 @@ export default function Home() {
               &copy; {new Date().getFullYear()} Marty Louis Co.
             </p>
           </div>
-          <div className="ml-auto flex items-center gap-10">
+          <div className="flex items-center gap-10">
             <SocialLinks links={socialLinks} />
             <ThemeToggle size={24} />
           </div>
