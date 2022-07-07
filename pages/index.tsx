@@ -102,7 +102,6 @@ export default function Home({ works }: { works: any[] }) {
             description={excerpt}
             image={{ src: cover, alt: title }}
             url={url}
-            priority={works[0] && true}
           />
         ))}
       </Container>
