@@ -1,4 +1,4 @@
-import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
 import { ArrowUpRight } from 'phosphor-react';
 import { ButtonLink } from '@/components/Button';
 
