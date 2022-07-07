@@ -10,28 +10,38 @@ export type ProjectProps = {
     alt: string;
   };
   url?: string;
-  priority?: boolean;
 };
 
-const Project = ({
-  title,
-  description,
-  image,
-  url,
-  priority,
-}: ProjectProps) => (
+const Project = ({ title, description, image, url }: ProjectProps) => (
   <div className="mb-16">
     {image?.src && (
       <div className="relative mb-8 flex w-full flex-col rounded-xl">
-        <div className="relative aspect-[4/3] h-full w-full">
-          <Image
-            src={image.src}
-            alt={image.alt}
-            layout="fill"
-            priority={priority}
-            className="h-full w-full rounded-2xl object-cover object-top"
-          />
-        </div>
+        {url ? (
+          <a
+            className="relative aspect-[4/3] h-full w-full"
+            href={url}
+            rel="nofollow noreferrer"
+            target="_blank"
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="h-full w-full rounded-2xl object-cover object-top"
+              width="1600"
+              height="1200"
+            />
+          </a>
+        ) : (
+          <div className="relative aspect-[4/3] h-full w-full">
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="h-full w-full rounded-2xl object-cover object-top"
+              width="1600"
+              height="1200"
+            />
+          </div>
+        )}
       </div>
     )}
     <div className="">
@@ -39,7 +49,7 @@ const Project = ({
       <p className="mb-6" dangerouslySetInnerHTML={{ __html: description }} />
       <div className="space-y-6">
         {url && (
-          <ButtonLink href={url}>
+          <ButtonLink href={url} rel="nofollow noreferrer">
             <span>Visit Website</span>
             <ArrowUpRight weight="bold" aria-hidden="true" focusable="false" />
           </ButtonLink>
