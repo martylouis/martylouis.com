@@ -7,6 +7,10 @@ module.exports = {
   reactStrictMode: true,
   rewrites,
   images: {
-    domains: ['static.martylouis.com', 'images.unsplash.com'],
+    domains: [
+      'static.martylouis.com',
+      'images.unsplash.com',
+      's3.us-west-2.amazonaws.com',
+    ],
   },
 };

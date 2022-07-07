@@ -1,14 +1,16 @@
-export interface ProjectProps {
-  id: number;
+export type ProjectProps = {
   title: string;
-  description: string;
-  image?: {
-    src: string;
-    alt: string;
-  };
+  id?: number;
+  description?: string;
+  image?:
+    | {
+        src: string;
+        alt: string;
+      }
+    | undefined;
   case_url?: string | boolean;
-  url: string;
-}
+  url?: string;
+};
 
 export const projects: ProjectProps[] = [
   {

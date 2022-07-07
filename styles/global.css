@@ -109,7 +109,7 @@ html {
 }
 
 body {
-  @apply h-full font-sans antialiased bg-gray-100 text-gray-high;
+  @apply h-full bg-gray-100 font-sans text-gray-high antialiased;
 }
 
 .background-spin {
