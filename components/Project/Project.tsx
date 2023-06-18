@@ -1,7 +1,8 @@
-import { ProjectProps } from '@/data/projects';
-import Image from 'next/image';
-import { ArrowUpRight } from 'phosphor-react';
-import { ButtonLink } from '@/components/Button';
+import Image from "next/image"
+import { ProjectProps } from "@/data/projects"
+import { ArrowUpRight } from "phosphor-react"
+
+import { ButtonLink } from "@/components/Button"
 
 const Project = ({
   id,
@@ -19,15 +20,15 @@ const Project = ({
             src={image.src}
             alt={image.alt}
             layout="fill"
-            className="h-full w-full object-cover object-top"
+            className=" h-full w-full object-cover object-top"
           />
         </div>
       </div>
     )}
     <div className="">
-      <h3 className="mb-4 text-2xl font-bold text-gray-high">{title}</h3>
+      <h3 className="mb-4 text-2xl font-bold">{title}</h3>
       <div
-        className="prose mb-6 prose-p:text-gray-low prose-a:font-bold prose-a:text-gray-high"
+        className="prose prose-a:font-bold mb-6"
         dangerouslySetInnerHTML={{ __html: description }}
       />
 
@@ -39,11 +40,11 @@ const Project = ({
         {case_url ? (
           <a>Case Study</a>
         ) : (
-          <p className="text-sm text-gray-low">Case study coming soon...</p>
+          <p className="text-sm">Case study coming soon...</p>
         )}
       </div>
     </div>
   </div>
-);
+)
 
-export default Project;
+export default Project
