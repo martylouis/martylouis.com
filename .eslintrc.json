@@ -1,3 +1,18 @@
 {
-  "extends": ["next/core-web-vitals", "prettier"]
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:tailwindcss/recommended"
+  ],
+  "plugins": ["tailwindcss"],
+  "rules": {
+    "tailwindcss/classnames-order": "error",
+    "tailwindcss/no-custom-classnames": "off"
+  },
+  "settings": {
+    "tailwindcss": {
+      "callees": ["cn"],
+      "config": "./tailwind.config.js"
+    }
+  }
 }
