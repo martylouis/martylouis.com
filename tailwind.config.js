@@ -1,78 +1,80 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
-const withOpacityValue =
-  (varName) =>
-  ({ opacityValue }) =>
-    opacityValue === undefined
-      ? `hsl(var(--${varName}))`
-      : `hsla(var(--${varName}) / ${opacityValue})`;
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
+  darkMode: ['class'],
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './data/posts/**/*.mdx',
-    './data/pages/**/*.mdx',
+    'app/**/*.{ts,tsx}',
+    'pages/**/*.{ts,tsx}',
+    'components/**/*.{ts,tsx}',
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-        serif: ['DM Serif Text', ...defaultTheme.fontFamily.serif],
-      },
-      backgroundImage: {
-        noise: 'url("/images/noise.svg")',
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
       },
     },
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      white: '#fff',
-      black: '#000',
-      gray: {
-        100: withOpacityValue('slate1'),
-        200: withOpacityValue('slate2'),
-        300: withOpacityValue('slate3'),
-        400: withOpacityValue('slate4'),
-        500: withOpacityValue('slate5'),
-        600: withOpacityValue('slate6'),
-        700: withOpacityValue('slate7'),
-        800: withOpacityValue('slate8'),
-        900: withOpacityValue('slate9'),
-        1000: withOpacityValue('slate10'),
-        low: withOpacityValue('slate11'),
-        high: withOpacityValue('slate12'),
+    extend: {
+      colors: {
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
       },
-      indigo: {
-        100: withOpacityValue('indigo1'),
-        200: withOpacityValue('indigo2'),
-        300: withOpacityValue('indigo3'),
-        400: withOpacityValue('indigo4'),
-        500: withOpacityValue('indigo5'),
-        600: withOpacityValue('indigo6'),
-        700: withOpacityValue('indigo7'),
-        800: withOpacityValue('indigo8'),
-        900: withOpacityValue('indigo9'),
-        1000: withOpacityValue('indigo10'),
-        low: withOpacityValue('indigo11'),
-        high: withOpacityValue('indigo12'),
+      borderRadius: {
+        lg: `var(--radius)`,
+        md: `calc(var(--radius) - 2px)`,
+        sm: 'calc(var(--radius) - 4px)',
       },
-      green: {
-        100: withOpacityValue('green1'),
-        200: withOpacityValue('green2'),
-        300: withOpacityValue('green3'),
-        400: withOpacityValue('green4'),
-        500: withOpacityValue('green5'),
-        600: withOpacityValue('green6'),
-        700: withOpacityValue('green7'),
-        800: withOpacityValue('green8'),
-        900: withOpacityValue('green9'),
-        1000: withOpacityValue('green10'),
-        low: withOpacityValue('green11'),
-        high: withOpacityValue('green12'),
+      fontFamily: {
+        sans: ['var(--font-sans)', ...fontFamily.sans],
+      },
+      keyframes: {
+        'accordion-down': {
+          from: { height: 0 },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('tailwindcss-animate')],
 };
