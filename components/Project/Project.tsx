@@ -19,7 +19,7 @@ const Project = ({
           <Image
             src={image.src}
             alt={image.alt}
-            layout="fill"
+            fill
             className=" h-full w-full object-cover object-top"
           />
         </div>
