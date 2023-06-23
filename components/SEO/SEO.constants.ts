@@ -1,26 +1,26 @@
 interface ISEOConstants {
   site: {
-    name: string;
-    url: string;
-  };
+    name: string
+    url: string
+  }
   image: {
-    url: string;
-    alt: string;
-  };
+    url: string
+    alt: string
+  }
   open_graph: {
-    type: string;
-  };
+    type: string
+  }
   twitter: {
-    card: string;
-    site: string;
-    creator: string;
-  };
+    card: string
+    site: string
+    creator: string
+  }
   github: {
-    url: string;
-    repo: string;
-    user: string;
-    issues: string;
-  };
+    url: string
+    repo: string
+    user: string
+    issues: string
+  }
 }
 
 export const SEOConstants: ISEOConstants = {
@@ -46,4 +46,4 @@ export const SEOConstants: ISEOConstants = {
     repo: 'https://github.com/martylouis/martylouis.com',
     issues: 'https://github.com/martylouis/martylouis.com/issues',
   },
-};
+}

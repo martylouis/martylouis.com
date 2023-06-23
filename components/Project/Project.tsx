@@ -1,8 +1,8 @@
-import Image from "next/image"
-import { ProjectProps } from "@/data/projects"
-import { ArrowUpRight } from "phosphor-react"
+import Image from 'next/image'
+import { ProjectProps } from '@/data/projects'
+import { ArrowUpRight } from 'phosphor-react'
 
-import { ButtonLink } from "@/components/Button"
+import { ButtonLink } from '@/components/Button'
 
 const Project = ({
   id,

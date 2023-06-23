@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
 export interface ThemeToggleIconProps {
-  theme: string;
-  title?: string;
-  size?: number;
+  theme: string
+  title?: string
+  size?: number
 }
 
 function ThemeToggleIcon({
@@ -30,7 +30,7 @@ function ThemeToggleIcon({
         delayChildren: 0.015,
       },
     },
-  };
+  }
 
   const mask = {
     light: {
@@ -54,12 +54,12 @@ function ThemeToggleIcon({
         dampness: 80,
       },
     },
-  };
+  }
 
   const circle = {
     light: { scale: 0.5 },
     dark: { scale: 1 },
-  };
+  }
 
   const beam = {
     dark: {
@@ -70,7 +70,7 @@ function ThemeToggleIcon({
       opacity: 1,
       pathLength: 1,
     },
-  };
+  }
 
   const sunBeams = [
     { id: 1, coords: { x1: '216', y1: '128', x2: '248', y2: '128' } },
@@ -84,7 +84,7 @@ function ThemeToggleIcon({
     { id: 6, coords: { x1: '65.77', y1: '65.77', x2: '43.15', y2: '43.15' } },
     { id: 7, coords: { x1: '128', y1: '40', x2: '128', y2: '8' } },
     { id: 8, coords: { x1: '190.23', y1: '65.77', x2: '212.85', y2: '43.15' } },
-  ];
+  ]
 
   return (
     <motion.svg
@@ -135,6 +135,6 @@ function ThemeToggleIcon({
         />
       ))}
     </motion.svg>
-  );
+  )
 }
-export default ThemeToggleIcon;
+export default ThemeToggleIcon

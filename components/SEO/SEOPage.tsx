@@ -1,4 +1,4 @@
-import SEO, { SEOConstants, SEOProps } from '@/components/SEO';
+import SEO, { SEOConstants, SEOProps } from '@/components/SEO'
 
 export const SEOPage = ({
   title,
@@ -9,7 +9,7 @@ export const SEOPage = ({
   imageAlt,
 }: SEOProps) => {
   // if customTitle is set, use it or fallback to title
-  const pageTitle = customTitle ?? `${title} — ${SEOConstants.site.name}`;
+  const pageTitle = customTitle ?? `${title} — ${SEOConstants.site.name}`
   return (
     <SEO
       title={pageTitle}
@@ -18,7 +18,7 @@ export const SEOPage = ({
       imageUrl={imageUrl}
       imageAlt={imageAlt}
     />
-  );
-};
+  )
+}
 
-export default SEOPage;
+export default SEOPage

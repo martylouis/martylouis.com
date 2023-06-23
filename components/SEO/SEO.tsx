@@ -1,17 +1,18 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { SEOConstants } from './SEO.constants';
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 
-const { site, image, open_graph: og, twitter } = SEOConstants;
+import { SEOConstants } from './SEO.constants'
+
+const { site, image, open_graph: og, twitter } = SEOConstants
 
 export interface SEOProps {
-  title?: string;
-  customTitle?: string;
-  description?: string;
-  canonicalUrl?: string;
-  imageUrl?: string;
-  imageAlt?: string;
-  ogType?: string;
+  title?: string
+  customTitle?: string
+  description?: string
+  canonicalUrl?: string
+  imageUrl?: string
+  imageAlt?: string
+  ogType?: string
 }
 
 export const SEO = ({
@@ -22,9 +23,9 @@ export const SEO = ({
   imageAlt = image.alt,
   ogType = og.type,
 }: SEOProps) => {
-  const router = useRouter();
+  const router = useRouter()
   const pageUrl =
-    `${canonicalUrl}${router.asPath}` ?? `${site.url}${router.asPath}`;
+    `${canonicalUrl}${router.asPath}` ?? `${site.url}${router.asPath}`
 
   return (
     <Head>
@@ -78,7 +79,7 @@ export const SEO = ({
       <link rel="manifest" href="/favicons/site.webmanifest" />
       <link rel="author" href="/humans.txt" />
     </Head>
-  );
-};
+  )
+}
 
-export default SEO;
+export default SEO

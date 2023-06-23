@@ -1,5 +1,5 @@
-import { forwardRef } from "react"
-import clsx from "clsx"
+import { forwardRef } from 'react'
+import clsx from 'clsx'
 
 interface LinkProps {
   to?: string
@@ -13,16 +13,16 @@ interface LinkProps {
 
 interface ButtonProps extends LinkProps {
   children: React.ReactNode
-  variant?: "default" | "primary" | "text"
-  size?: "sm" | "md" | "lg"
+  variant?: 'default' | 'primary' | 'text'
+  size?: 'sm' | 'md' | 'lg'
   as?: React.ElementType
   ref?: React.Ref<HTMLButtonElement>
 }
 
 const ButtonWrapper = ({
-  as = "button",
-  variant = "default",
-  size = "md",
+  as = 'button',
+  variant = 'default',
+  size = 'md',
   children,
   ...props
 }: ButtonProps) => {
@@ -30,15 +30,15 @@ const ButtonWrapper = ({
   return (
     <Component
       className={clsx(
-        "relative inline-flex cursor-pointer items-center border font-semibold transition-colors",
-        variant === "default" &&
-          "border-background hover:border-gray-high hover:bg-gray-high hover:text-gray-100",
-        variant === "primary" &&
-          "bg-background text-gray-100 hover:border-gray-high hover:bg-gray-100 hover:text-gray-high",
-        variant === "text" && "",
-        size === "sm" && "h-8 rounded px-2 text-sm",
-        size === "md" && "h-11 gap-2 rounded-full px-4",
-        size === "lg" && "h-16 gap-3 rounded-full px-6 text-2xl font-bold"
+        'relative inline-flex cursor-pointer items-center border font-semibold transition-colors',
+        variant === 'default' &&
+          'hover:border-gray-high hover:bg-gray-high border-background hover:text-gray-100',
+        variant === 'primary' &&
+          'hover:border-gray-high hover:text-gray-high bg-background text-gray-100 hover:bg-gray-100',
+        variant === 'text' && '',
+        size === 'sm' && 'h-8 rounded px-2 text-sm',
+        size === 'md' && 'h-11 gap-2 rounded-full px-4',
+        size === 'lg' && 'h-16 gap-3 rounded-full px-6 text-2xl font-bold'
       )}
       {...props}
     >

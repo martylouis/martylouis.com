@@ -1,8 +1,14 @@
 /** @type {import('prettier').Config} */
+/** @type {import("@ianvs/prettier-plugin-sort-imports").PrettierConfig} */
 module.exports = {
+  plugins: [
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss",
+  ],
   endOfLine: "lf",
+  printWidth: 80,
   semi: false,
-  singleQuote: false,
+  singleQuote: true,
   tabWidth: 2,
   trailingComma: "es5",
   importOrder: [
@@ -22,14 +28,6 @@ module.exports = {
     "",
     "^[./]",
   ],
-  importOrderSeparation: false,
-  importOrderSortSpecifiers: true,
-  importOrderBuiltinModulesToTop: true,
   importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
-  importOrderMergeDuplicateImports: true,
-  importOrderCombineTypeAndValueImports: true,
-  plugins: [
-    "@ianvs/prettier-plugin-sort-imports",
-    "prettier-plugin-tailwindcss",
-  ],
+  importOrderTypeScriptVersion: "5.0.0",
 }

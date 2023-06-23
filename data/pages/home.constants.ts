@@ -1,10 +1,10 @@
-import { IHomeSEO, IHomeContent } from './home.types';
+import { IHomeContent, IHomeSEO } from './home.types'
 
 export const homeSEO: IHomeSEO = {
   customTitle: 'Marty Louis Thierry — UX Designer in Destin, Florida 🏝',
   description:
     'UX designer and developer, passionate about building accessible, performant, and beautiful user experiences. Follow me → @martylouis on Twitter and GitHub',
-};
+}
 
 export const homeContent: IHomeContent = {
   profile: {
@@ -28,4 +28,4 @@ export const homeContent: IHomeContent = {
       url: 'mailto:hello@martylouis.com',
     },
   },
-};
+}

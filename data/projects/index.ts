@@ -1,13 +1,13 @@
 export interface ProjectProps {
-  id: number;
-  title: string;
-  description: string;
+  id: number
+  title: string
+  description: string
   image?: {
-    src: string;
-    alt: string;
-  };
-  case_url?: string | boolean;
-  url: string;
+    src: string
+    alt: string
+  }
+  case_url?: string | boolean
+  url: string
 }
 
 export const projects: ProjectProps[] = [
@@ -71,4 +71,4 @@ export const projects: ProjectProps[] = [
     case_url: false,
     url: 'https://evanstire.com',
   },
-];
+]

@@ -1,9 +1,9 @@
-import clsx from 'clsx';
+import clsx from 'clsx'
 
 export interface ContainerProps {
-  size?: 'sm' | 'md' | 'lg';
-  children: React.ReactNode;
-  className?: string;
+  size?: 'sm' | 'md' | 'lg'
+  children: React.ReactNode
+  className?: string
 }
 
 function Container({
@@ -25,7 +25,7 @@ function Container({
     >
       {children}
     </div>
-  );
+  )
 }
 
-export default Container;
+export default Container

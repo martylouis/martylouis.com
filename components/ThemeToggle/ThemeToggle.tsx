@@ -1,24 +1,25 @@
-import clsx from 'clsx';
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
-import ThemeToggleIcon from './ThemeToggleIcon';
+import { useEffect, useState } from 'react'
+import clsx from 'clsx'
+import { useTheme } from 'next-themes'
+
+import ThemeToggleIcon from './ThemeToggleIcon'
 
 type ThemeToggleProps = {
-  className?: string;
-  size?: number;
-};
+  className?: string
+  size?: number
+}
 
 function ThemeToggle({ className, size = 24, ...props }: ThemeToggleProps) {
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme, resolvedTheme } = useTheme()
 
   const handleToggle = () => {
-    setTheme(theme && resolvedTheme === 'dark' ? 'light' : 'dark');
-  };
+    setTheme(theme && resolvedTheme === 'dark' ? 'light' : 'dark')
+  }
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => setMounted(true), [])
 
-  if (!mounted) return null;
+  if (!mounted) return null
 
   return (
     <button
@@ -32,7 +33,7 @@ function ThemeToggle({ className, size = 24, ...props }: ThemeToggleProps) {
         size={size}
       />
     </button>
-  );
+  )
 }
 
-export default ThemeToggle;
+export default ThemeToggle

@@ -1,9 +1,9 @@
-import Image from "next/image"
-import { homeContent, homeSEO } from "@/data/pages/home.constants"
-import { projects } from "@/data/projects"
+import Image from 'next/image'
+import { homeContent, homeSEO } from '@/data/pages/home.constants'
+import { projects } from '@/data/projects'
 
-import { ButtonLink } from "@/components/Button"
-import Container from "@/components/Container"
+import { ButtonLink } from '@/components/Button'
+import Container from '@/components/Container'
 import {
   IconProps,
   LogoGithub,
@@ -11,26 +11,26 @@ import {
   LogoMartyLouis,
   LogoTwitter,
   PaperPlane,
-} from "@/components/Icons"
-import Project from "@/components/Project"
-import { SEOPage } from "@/components/SEO"
-import ThemeToggle from "@/components/ThemeToggle"
+} from '@/components/Icons'
+import Project from '@/components/Project'
+import { SEOPage } from '@/components/SEO'
+import ThemeToggle from '@/components/ThemeToggle'
 
 const socialLinks = [
   {
-    name: "GitHub",
+    name: 'GitHub',
     icon: LogoGithub,
-    href: "https://github.com/martylouis",
+    href: 'https://github.com/martylouis',
   },
   {
-    name: "LinkedIn",
+    name: 'LinkedIn',
     icon: LogoLinkedin,
-    href: "https://www.linkedin.com/in/martylouis/",
+    href: 'https://www.linkedin.com/in/martylouis/',
   },
   {
-    name: "Twitter",
+    name: 'Twitter',
     icon: LogoTwitter,
-    href: "https://twitter.com/martylouis",
+    href: 'https://twitter.com/martylouis',
   },
 ]
 
@@ -47,8 +47,8 @@ export default function Home() {
           <div className="mb-8 flex w-full items-center gap-10">
             <div className="mr-auto flex shrink items-center rounded-full border border-gray-500 p-0.5">
               <Image
-                src={"/images/martylouis-profile.jpg"}
-                alt={"Marty Thierry"}
+                src={'/images/martylouis-profile.jpg'}
+                alt={'Marty Thierry'}
                 width={128}
                 height={128}
                 className="rounded-full"

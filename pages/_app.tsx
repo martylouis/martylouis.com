@@ -1,12 +1,12 @@
-import "../styles/global.css"
+import '../styles/global.css'
 
-import { AppProps } from "next/app"
-import { Inter } from "next/font/google"
-import { ThemeProvider } from "next-themes"
+import { AppProps } from 'next/app'
+import { Inter } from 'next/font/google'
+import { ThemeProvider } from 'next-themes'
 
 const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
+  subsets: ['latin'],
+  variable: '--font-sans',
 })
 
 export default function App({ Component, pageProps, router }: AppProps) {
