@@ -1,6 +1,13 @@
-import '../styles/global.css';
-import { ThemeProvider } from 'next-themes';
-import { AppProps } from 'next/app';
+import "../styles/global.css"
+
+import { AppProps } from "next/app"
+import { Inter } from "next/font/google"
+import { ThemeProvider } from "next-themes"
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
@@ -9,7 +16,9 @@ export default function App({ Component, pageProps, router }: AppProps) {
       attribute="class"
       defaultTheme="system"
     >
-      <Component key={router.route} {...pageProps} />
+      <div className={`${inter.variable} font-sans`}>
+        <Component key={router.route} {...pageProps} />
+      </div>
     </ThemeProvider>
-  );
+  )
 }
