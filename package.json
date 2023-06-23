@@ -21,7 +21,9 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
-    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
+    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
+    "ui:add": "pnpx shadcn-ui@latest add",
+    "ui:diff": "pnpx shadcn-ui@latest diff"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
