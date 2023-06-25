@@ -1,6 +1,6 @@
 import Image from "next/image"
+import Link from "next/link"
 import { ProjectProps } from "@/data/projects"
-import { ArrowUpRight } from "phosphor-react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { ArrowSquareOut } from "@/components/Icons/arrowSquareOut"
 
 const Project = ({
   id,
@@ -44,10 +45,10 @@ const Project = ({
       </CardHeader>
       <CardContent className="mt-auto">
         <Button variant="secondary" asChild className="gap-1">
-          <a href={url} target="_blank" rel="nofollow noopener noreferrer">
+          <Link href={url} target="_blank" rel="nofollow noopener noreferrer">
             <span>Visit Website</span>
-            <ArrowUpRight weight="bold" aria-hidden="true" focusable="false" />
-          </a>
+            <ArrowSquareOut size={16} aria-hidden="true" className="-mr-0.5" />
+          </Link>
         </Button>
       </CardContent>
     </div>
