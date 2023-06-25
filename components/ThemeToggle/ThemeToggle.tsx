@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react'
-import clsx from 'clsx'
-import { useTheme } from 'next-themes'
+import { useEffect, useState } from "react"
+import clsx from "clsx"
+import { useTheme } from "next-themes"
 
-import ThemeToggleIcon from './ThemeToggleIcon'
+import { Button } from "@/components/ui/button"
+
+import ThemeToggleIcon from "./ThemeToggleIcon"
 
 type ThemeToggleProps = {
   className?: string
@@ -14,7 +16,7 @@ function ThemeToggle({ className, size = 24, ...props }: ThemeToggleProps) {
   const { theme, setTheme, resolvedTheme } = useTheme()
 
   const handleToggle = () => {
-    setTheme(theme && resolvedTheme === 'dark' ? 'light' : 'dark')
+    setTheme(theme && resolvedTheme === "dark" ? "light" : "dark")
   }
 
   useEffect(() => setMounted(true), [])
@@ -22,17 +24,19 @@ function ThemeToggle({ className, size = 24, ...props }: ThemeToggleProps) {
   if (!mounted) return null
 
   return (
-    <button
-      className={clsx('flex-shrink-0 transition-all', className)}
+    <Button
+      variant="ghost"
+      size="icon"
+      className={clsx("flex-shrink-0 transition-all", className)}
       onClick={handleToggle}
       aria-label="Toggle theme"
       {...props}
     >
       <ThemeToggleIcon
-        theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
+        theme={resolvedTheme === "dark" ? "dark" : "light"}
         size={size}
       />
-    </button>
+    </Button>
   )
 }
 

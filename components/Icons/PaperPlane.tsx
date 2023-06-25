@@ -1,8 +1,8 @@
-import { IconProps } from '.'
+import { IconProps } from "."
 
 export const PaperPlane = (props: IconProps) => {
-  const size = props.size || '100%'
-  const title = props.title || 'send'
+  const size = props.size || "100%"
+  const title = props.title || "send"
 
   return (
     <svg

@@ -25,25 +25,25 @@ interface ISEOConstants {
 
 export const SEOConstants: ISEOConstants = {
   site: {
-    name: 'Marty Louis Thierry',
-    url: 'https://www.martylouis.com',
+    name: "Marty Louis Thierry",
+    url: "https://www.martylouis.com",
   },
   image: {
-    url: '/images/banner.jpg',
-    alt: 'Marty Louis Thierry - Freelance UX Designer in Destin, FL',
+    url: "/images/banner.jpg",
+    alt: "Marty Louis Thierry - Freelance UX Designer in Destin, FL",
   },
   open_graph: {
-    type: 'website',
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@martylouis',
-    creator: '@martylouis',
+    card: "summary_large_image",
+    site: "@martylouis",
+    creator: "@martylouis",
   },
   github: {
-    url: 'https://github.com/martylouis',
-    user: 'martylouis',
-    repo: 'https://github.com/martylouis/martylouis.com',
-    issues: 'https://github.com/martylouis/martylouis.com/issues',
+    url: "https://github.com/martylouis",
+    user: "martylouis",
+    repo: "https://github.com/martylouis/martylouis.com",
+    issues: "https://github.com/martylouis/martylouis.com/issues",
   },
 }

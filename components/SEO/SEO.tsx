@@ -1,7 +1,7 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+import Head from "next/head"
+import { useRouter } from "next/router"
 
-import { SEOConstants } from './SEO.constants'
+import { SEOConstants } from "./SEO.constants"
 
 const { site, image, open_graph: og, twitter } = SEOConstants
 

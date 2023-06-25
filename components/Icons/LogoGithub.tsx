@@ -1,8 +1,8 @@
-import { IconProps } from '.'
+import { IconProps } from "."
 
 export const LogoGithub = (props: IconProps) => {
-  const size = props.size || '100%'
-  const title = props.title || 'logo github'
+  const size = props.size || "100%"
+  const title = props.title || "logo github"
 
   return (
     <svg

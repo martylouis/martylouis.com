@@ -4,8 +4,8 @@ export type IconProps = {
   className?: string
 }
 
-export { LogoTwitter } from './LogoTwitter'
-export { LogoGithub } from './LogoGithub'
-export { LogoLinkedin } from './LogoLinkedin'
-export { LogoMartyLouis } from './LogoMartyLouis'
-export { PaperPlane } from './PaperPlane'
+export { LogoTwitter } from "./LogoTwitter"
+export { LogoGithub } from "./LogoGithub"
+export { LogoLinkedin } from "./LogoLinkedin"
+export { LogoMartyLouis } from "./LogoMartyLouis"
+export { PaperPlane } from "./PaperPlane"

@@ -1,9 +1,11 @@
-import Image from 'next/image'
-import { homeContent, homeSEO } from '@/data/pages/home.constants'
-import { projects } from '@/data/projects'
+import Image from "next/image"
+import Link from "next/link"
+import { homeContent, homeSEO } from "@/data/pages/home.constants"
+import { projects } from "@/data/projects"
+import { EnvelopeClosedIcon } from "@radix-ui/react-icons"
 
-import { ButtonLink } from '@/components/Button'
-import Container from '@/components/Container'
+import { Button } from "@/components/ui/button"
+import Container from "@/components/Container"
 import {
   IconProps,
   LogoGithub,
@@ -11,26 +13,26 @@ import {
   LogoMartyLouis,
   LogoTwitter,
   PaperPlane,
-} from '@/components/Icons'
-import Project from '@/components/Project'
-import { SEOPage } from '@/components/SEO'
-import ThemeToggle from '@/components/ThemeToggle'
+} from "@/components/Icons"
+import Project from "@/components/Project"
+import { SEOPage } from "@/components/SEO"
+import ThemeToggle from "@/components/ThemeToggle"
 
 const socialLinks = [
   {
-    name: 'GitHub',
+    name: "GitHub",
     icon: LogoGithub,
-    href: 'https://github.com/martylouis',
+    href: "https://github.com/martylouis",
   },
   {
-    name: 'LinkedIn',
+    name: "LinkedIn",
     icon: LogoLinkedin,
-    href: 'https://www.linkedin.com/in/martylouis/',
+    href: "https://www.linkedin.com/in/martylouis/",
   },
   {
-    name: 'Twitter',
+    name: "Twitter",
     icon: LogoTwitter,
-    href: 'https://twitter.com/martylouis',
+    href: "https://twitter.com/martylouis",
   },
 ]
 
@@ -41,22 +43,41 @@ export default function Home() {
   return (
     <>
       <SEOPage {...homeSEO} />
-
+      <header>
+        <div className="container">
+          <div className="flex h-24 items-center justify-between border-b border-border">
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 rounded-full bg-foreground/5 p-1.5 text-foreground">
+                <LogoMartyLouis />
+              </div>
+              <span className="text-[22px] font-[600] tracking-[-0.86px]">
+                MartyLouis
+              </span>
+            </div>
+            <div className="flex items-center gap-4">
+              <Button variant="outline" size="sm" className="gap-2">
+                <EnvelopeClosedIcon />
+                Contact Me
+              </Button>
+              <SocialLinks links={socialLinks} />
+            </div>
+          </div>
+        </div>
+      </header>
       <header className="py-24">
         <Container>
-          <div className="mb-8 flex w-full items-center gap-10">
-            <div className="mr-auto flex shrink items-center rounded-full border border-gray-500 p-0.5">
+          <div className="mb-8 flex w-full items-center">
+            <div className="mr-auto flex shrink items-center rounded-full border border-border p-0.5">
               <Image
-                src={'/images/martylouis-profile.jpg'}
-                alt={'Marty Thierry'}
+                src={"/images/martylouis-profile.jpg"}
+                alt={"Marty Thierry"}
                 width={128}
                 height={128}
                 className="rounded-full"
                 role="presentation"
               />
             </div>
-            <SocialLinks links={socialLinks} />
-            <ThemeToggle size={24} />
+            {/* <SocialLinks links={socialLinks} /> */}
           </div>
           <h1 className="mb-8 text-4xl font-black tracking-tight md:text-5xl">
             Hey, I&rsquo;m Marty
@@ -73,10 +94,12 @@ export default function Home() {
               checkout some featured work below.
             </p>
           </div>
-          <ButtonLink href={url} variant="primary" size="lg">
-            <span>Let&rsquo;s work together</span>
-            <PaperPlane size={24} />
-          </ButtonLink>
+          <Button asChild size="lg" className="gap-2">
+            <Link href={url}>
+              <span>Let&rsquo;s work together</span>
+              <PaperPlane size={16} className="-mr-1" />
+            </Link>
+          </Button>
         </Container>
       </header>
 
@@ -97,20 +120,17 @@ export default function Home() {
         ))}
       </Container>
 
-      <footer className="py-16">
+      <footer className="border-t border-border py-16">
         <Container className="flex flex-col-reverse items-center justify-between gap-8 sm:flex-row">
           <div className="flex flex-col items-center gap-4 sm:flex-row">
-            <div className="inline-flex h-16 w-16 rounded-full bg-gray-600 p-2">
+            <div className="inline-flex h-16 w-16 p-2">
               <LogoMartyLouis />
             </div>
-            <p className="text-sm">
+            <p className="text-sm text-muted-foreground">
               &copy; {new Date().getFullYear()} Marty Louis Co.
             </p>
           </div>
-          <div className="flex items-center gap-10">
-            <SocialLinks links={socialLinks} />
-            <ThemeToggle size={24} />
-          </div>
+          <SocialLinks links={socialLinks} />
         </Container>
       </footer>
     </>
@@ -125,20 +145,23 @@ type SocialLinkProps = {
   }[]
 }
 
-const SocialLinks = ({ links, ...props }: SocialLinkProps) => {
+const SocialLinks = ({ links }: SocialLinkProps) => {
   return (
-    <>
+    <div className="flex items-center gap-1">
       {links.map(({ name, icon: Icon, href }) => (
-        <a
-          key={name}
-          href={href}
-          target="_blank"
-          rel="noreferrer"
-          title={`Follow @martylouis on ${name}`}
-        >
-          <Icon size={24} title={`Follow @martylouis on ${name}`} />
-        </a>
+        <Button variant="ghost" size="icon" asChild>
+          <a
+            key={name}
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+            title={`Follow @martylouis on ${name}`}
+          >
+            <Icon size={18} title={`Follow @martylouis on ${name}`} />
+          </a>
+        </Button>
       ))}
-    </>
+      <ThemeToggle size={18} />
+    </div>
   )
 }

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion"
 
 export interface ThemeToggleIconProps {
   theme: string
@@ -8,7 +8,7 @@ export interface ThemeToggleIconProps {
 
 function ThemeToggleIcon({
   size,
-  title = 'Toggle Theme',
+  title = "Toggle Theme",
   theme,
 }: ThemeToggleIconProps) {
   const animateContainer = {
@@ -16,7 +16,7 @@ function ThemeToggleIcon({
       opacity: 1,
       rotate: 90,
       transition: {
-        type: 'spring',
+        type: "spring",
         staggerChildren: 0.05,
         delayChildren: 0.005,
       },
@@ -25,7 +25,7 @@ function ThemeToggleIcon({
       opacity: 1,
       rotate: 50,
       transition: {
-        type: 'spring',
+        type: "spring",
         staggerChildren: 0.015,
         delayChildren: 0.015,
       },
@@ -35,11 +35,11 @@ function ThemeToggleIcon({
   const mask = {
     light: {
       opacity: 1,
-      x: '100%',
-      y: '-60%',
+      x: "100%",
+      y: "-60%",
       scale: 1,
       transition: {
-        type: 'spring',
+        type: "spring",
         stiffness: 100,
         dampness: 20,
       },
@@ -49,7 +49,7 @@ function ThemeToggleIcon({
       x: 0,
       y: 0,
       transition: {
-        type: 'spring',
+        type: "spring",
         stiffness: 50,
         dampness: 80,
       },
@@ -73,17 +73,17 @@ function ThemeToggleIcon({
   }
 
   const sunBeams = [
-    { id: 1, coords: { x1: '216', y1: '128', x2: '248', y2: '128' } },
+    { id: 1, coords: { x1: "216", y1: "128", x2: "248", y2: "128" } },
     {
       id: 2,
-      coords: { x1: '190.23', y1: '190.23', x2: '212.85', y2: '212.85' },
+      coords: { x1: "190.23", y1: "190.23", x2: "212.85", y2: "212.85" },
     },
-    { id: 3, coords: { x1: '128', y1: '216', x2: '128', y2: '248' } },
-    { id: 4, coords: { x1: '65.77', y1: '190.23', x2: '43.15', y2: '212.85' } },
-    { id: 5, coords: { x1: '40', y1: '128', x2: '8', y2: '128' } },
-    { id: 6, coords: { x1: '65.77', y1: '65.77', x2: '43.15', y2: '43.15' } },
-    { id: 7, coords: { x1: '128', y1: '40', x2: '128', y2: '8' } },
-    { id: 8, coords: { x1: '190.23', y1: '65.77', x2: '212.85', y2: '43.15' } },
+    { id: 3, coords: { x1: "128", y1: "216", x2: "128", y2: "248" } },
+    { id: 4, coords: { x1: "65.77", y1: "190.23", x2: "43.15", y2: "212.85" } },
+    { id: 5, coords: { x1: "40", y1: "128", x2: "8", y2: "128" } },
+    { id: 6, coords: { x1: "65.77", y1: "65.77", x2: "43.15", y2: "43.15" } },
+    { id: 7, coords: { x1: "128", y1: "40", x2: "128", y2: "8" } },
+    { id: 8, coords: { x1: "190.23", y1: "65.77", x2: "212.85", y2: "43.15" } },
   ]
 
   return (
@@ -96,11 +96,11 @@ function ThemeToggleIcon({
       animate={theme}
       variants={animateContainer}
       style={{
-        originX: '50%',
-        originY: '50%',
-        overflow: 'visible',
-        width: '100%',
-        height: '100%',
+        originX: "50%",
+        originY: "50%",
+        overflow: "visible",
+        width: "100%",
+        height: "100%",
       }}
     >
       {title && <title>{title}</title>}
@@ -122,7 +122,7 @@ function ThemeToggleIcon({
         r="128"
         fill="currentColor"
         mask="url(#mask0)"
-        style={{ originX: '50%', originY: '50%' }}
+        style={{ originX: "50%", originY: "50%" }}
       />
       {sunBeams.map(({ id, coords }) => (
         <motion.line

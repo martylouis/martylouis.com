@@ -1,8 +1,10 @@
-import Image from 'next/image'
-import { ProjectProps } from '@/data/projects'
-import { ArrowUpRight } from 'phosphor-react'
+import Image from "next/image"
+import Link from "next/link"
+import { ProjectProps } from "@/data/projects"
+import { ArrowUpRight } from "phosphor-react"
 
-import { ButtonLink } from '@/components/Button'
+import { Button } from "@/components/ui/button"
+import { ButtonLink } from "@/components/Button"
 
 const Project = ({
   id,
@@ -25,23 +27,20 @@ const Project = ({
         </div>
       </div>
     )}
-    <div className="">
-      <h3 className="mb-4 text-2xl font-bold">{title}</h3>
+    <div>
+      <h3 className="mb-4 text-xl font-medium">{title}</h3>
       <div
-        className="prose prose-a:font-bold mb-6"
+        className="mb-8 space-y-4 text-muted-foreground"
         dangerouslySetInnerHTML={{ __html: description }}
       />
 
-      <div className="space-y-6">
-        <ButtonLink href={url}>
-          <span>Visit Website</span>
-          <ArrowUpRight weight="bold" aria-hidden="true" focusable="false" />
-        </ButtonLink>
-        {case_url ? (
-          <a>Case Study</a>
-        ) : (
-          <p className="text-sm">Case study coming soon...</p>
-        )}
+      <div className="flex flex-wrap items-center gap-6">
+        <Button asChild className="gap-1">
+          <Link href={url}>
+            <span>Visit Website</span>
+            <ArrowUpRight weight="bold" aria-hidden="true" focusable="false" />
+          </Link>
+        </Button>
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-import SEO, { SEOConstants, SEOProps } from '@/components/SEO'
+import SEO, { SEOConstants, SEOProps } from "@/components/SEO"
 
 export const SEOPage = ({
   title,
