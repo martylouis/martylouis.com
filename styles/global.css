@@ -71,6 +71,9 @@
 @layer base {
   * {
     @apply border-border;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    word-break: break-word;
   }
   body {
     @apply bg-background text-foreground;
