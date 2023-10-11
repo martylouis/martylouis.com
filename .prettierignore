@@ -1,7 +1,0 @@
-.contentlayer
-.husky
-.next
-.tmp
-node_modules
-dist
-build
