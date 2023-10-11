@@ -1,5 +1,6 @@
 {
   "name": "martylouis-com",
+  "type": "module",
   "version": "1.0.0",
   "private": true,
   "description": "Personal website of Marty Thierry, built with Astro.",
