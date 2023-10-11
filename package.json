@@ -17,9 +17,14 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build:check": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write \"src/**/*.{astro,js,jsx,ts,tsx,json,md}\""
   },
-  "dependencies": { "astro": "^3.2.4" }
+  "dependencies": {
+    "@astrojs/check": "^0.2.0",
+    "astro": "^3.2.4",
+    "typescript": "^5.2.2"
+  }
 }
