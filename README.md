@@ -2,7 +2,8 @@
 
 This is the source code for my personal website, [martylouis.com](https://martylouis.com).
 
+## Features
 
-- [ ] [Astro](https://astro.build)
-- [ ] [Tailwindcss](https://tailwindcss.com)
-- [ ]
+- [x] [Astro](https://astro.build)
+- [x] [Tailwindcss](https://tailwindcss.com)
+- [x] [Prettier](https://prettier.io)
