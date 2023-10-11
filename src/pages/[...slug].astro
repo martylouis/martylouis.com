@@ -1,0 +1,28 @@
+---
+import Default from '@/layouts/Default.astro'
+import { getCollection, type CollectionEntry } from 'astro:content'
+
+export async function getStaticPaths() {
+  const pageEntries = await getCollection('pages', ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true // only include draft entries in dev
+  })
+
+  let params = pageEntries.map((entry) => {
+    let slug = entry.slug != 'index' ? entry.slug : undefined
+    return {
+      params: { slug: slug },
+      props: { entry },
+    }
+  })
+
+  return params
+}
+
+const { entry } = Astro.props
+
+const { Content } = await entry.render()
+---
+
+<Default title={entry.data.title} description={entry.data.description}>
+  <Content />
+</Default>
