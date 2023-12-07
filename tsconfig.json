@@ -1,11 +1,15 @@
 {
-  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "src",
     "jsx": "react-jsx",
     "jsxImportSource": "react",
+    "module": "esnext",
     "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
+      "@/*": ["*"]
+    },
+    "strictNullChecks": true
+  },
+  "exclude": ["node_modules", "dist", ".vercel", "public"],
+  "extends": "astro/tsconfigs/strict",
+  "include": ["**/*", ".eslintrc"]
 }

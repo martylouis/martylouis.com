@@ -1,6 +1,4 @@
 ---
-import '@/assets/css/global.css'
-
 interface Props {
   title: string
   description?: string
@@ -10,7 +8,7 @@ const { title, description } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="selection:bg-teal-100 selection:text-neutral-800">
   <head>
     <meta charset="utf-8" />
     <meta name="description" content="Astro description" />
@@ -20,9 +18,11 @@ const { title, description } = Astro.props
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
   </head>
-  <body class="mx-auto my-8 max-w-2xl font-sans text-neutral-900 antialiased">
+  <body class="bg-neutral-900 text-neutral-50 antialiased">
+    <slot name="header" />
     <main>
       <slot />
     </main>
+    <slot name="footer" />
   </body>
 </html>

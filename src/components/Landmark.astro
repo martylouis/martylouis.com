@@ -1,0 +1,82 @@
+---
+import { cn } from '@/lib/utils/cn'
+import type { Polymorphic } from 'astro/types'
+import { cva, type VariantProps } from 'class-variance-authority'
+
+type LandmarkTag = 'header' | 'footer' | 'main' | 'section' | 'article'
+
+type Props<Tag extends LandmarkTag> = Polymorphic<{ as: Tag }> &
+  VariantProps<typeof sectionVariants>
+
+export const sectionVariants = cva('mx-auto max-w-7xl', {
+  variants: {
+    block: {
+      none: 'p-0',
+      default: 'p-8',
+      lg: 'p-8 md:py-32',
+    },
+    borderX: {
+      true: 'xl:border-x border-neutral-800',
+    },
+    borderTop: {
+      true: 'border-t',
+    },
+    borderBottom: {
+      true: 'border-b',
+    },
+    columns: {
+      1: '',
+      2: 'grid grid-cols-1 md:grid-cols-2',
+      3: 'grid grid-cols-1 md:grid-cols-3',
+    },
+    divide: {
+      true: 'divide-y md:divide-y-0 md:divide-x divide-neutral-800',
+    },
+    gap: {
+      none: '',
+      sm: '',
+    },
+  },
+  compoundVariants: [
+    {
+      columns: 2,
+      divide: true,
+      class: 'p-0',
+    },
+    {
+      columns: 3,
+      divide: true,
+      class: 'p-0',
+    },
+  ],
+})
+
+const {
+  as = 'section',
+  block = 'default',
+  borderX = true,
+  borderBottom = true,
+  borderTop = false,
+  columns = 1,
+  divide = true,
+} = Astro.props
+
+const Tag = as as LandmarkTag
+---
+
+<Tag>
+  <div
+    class={cn(
+      sectionVariants({
+        block,
+        borderX,
+        borderBottom,
+        borderTop,
+        columns,
+        divide,
+      })
+    )}
+  >
+    <slot />
+  </div>
+</Tag>

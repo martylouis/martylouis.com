@@ -1,5 +1,11 @@
+# temp
+.temp
+
 # build output
 dist/
+
+# cache files
+.eslintcache
 
 # generated types
 .astro/
@@ -20,11 +26,8 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# Vercel output
+# Local Netlify folder
+.netlify
+
+# Local Vercel folder
 .vercel
-
-# Temp
-.temp/
-
-# All env files
-.env*
