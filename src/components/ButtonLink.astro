@@ -1,0 +1,37 @@
+---
+import { buttonVariant, type ButtonIconProps } from '@/components/Button.astro'
+import { cn } from '@/lib/utils/cn'
+// import { getPermalink } from '@/lib/utils/permalinks'
+import { Icon } from 'astro-icon'
+import type { HTMLAttributes } from 'astro/types'
+import type { VariantProps } from 'class-variance-authority'
+
+export type Props = HTMLAttributes<'a'> &
+  VariantProps<typeof buttonVariant> &
+  ButtonIconProps
+
+const {
+  variant = 'primary',
+  size = 'md',
+  href = '#',
+  iconStart,
+  iconEnd,
+  hasIconOnly = false,
+  isFullWidth = false,
+  ...props
+} = Astro.props
+---
+
+<a
+  class={cn(
+    buttonVariant({ variant, size, hasIconOnly, isFullWidth }),
+    { '-ml-1 gap-1 group': iconEnd },
+    props.class
+  )}
+  href={href}
+  {...props}
+>
+  {iconStart && <Icon name={iconStart} class="h-4 w-4" />}
+  <slot />
+  {iconEnd && <Icon name={iconEnd} class="h-4 w-4" />}
+</a>
