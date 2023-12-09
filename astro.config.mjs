@@ -11,7 +11,9 @@ const m2dxOptions = {
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    tailwind(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
     mdx({
       remarkPlugins: [[m2dx, m2dxOptions]],
       extendDefaultPlugins: true,
