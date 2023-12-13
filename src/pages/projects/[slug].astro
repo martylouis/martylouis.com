@@ -1,15 +1,13 @@
 ---
-import config from '@/data/config'
 import MainLayout from '@/layouts/MainLayout.astro'
 import { getCollection } from 'astro:content'
 
 export async function getStaticPaths() {
-  const pageEntries = await getCollection('pages', ({ data }) => {
+  const projectEntries = await getCollection('projects', ({ data }) => {
     return import.meta.env.PROD ? data.draft !== true : true // only include draft entries in dev
   })
 
-  let params = pageEntries.map((entry) => {
-    // let slug = entry.slug != 'index' ? entry.slug : undefined
+  let params = projectEntries.map((entry) => {
     return {
       params: { slug: entry.slug || undefined },
       props: { entry },

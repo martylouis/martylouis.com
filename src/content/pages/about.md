@@ -1,6 +1,6 @@
 ---
 title: About
-description: About the site and its author.
+description: Marty is a designer and developer based out of Destin, FL.
 draft: true
 ---
 

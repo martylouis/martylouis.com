@@ -1,6 +1,6 @@
 ---
 title: Privacy Policy
-description: Privacy Policy
+description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem aliquam animi corrupti fugiat eligendi.
 draft: true
 ---
 

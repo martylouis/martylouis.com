@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import m2dx from 'astro-m2dx'
 import react from '@astrojs/react'
+import config from './src/data/config'
 const m2dxOptions = {
   exportComponents: true,
   autoImports: true,
@@ -10,6 +11,9 @@ const m2dxOptions = {
 
 // https://astro.build/config
 export default defineConfig({
+  site: config.site.url,
+  base: config.site.paths.base,
+  trailingSlash: config.site.trailingSlash ? 'always' : 'never',
   integrations: [
     tailwind({
       applyBaseStyles: false,

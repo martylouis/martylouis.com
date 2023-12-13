@@ -1,0 +1,63 @@
+---
+import config from '@/data/config'
+import { getCanonicalURL } from '@/lib/urlUtils'
+import type { Image } from '@/types'
+
+type Props = {
+  title?: string
+  description?: string
+  image?: Image
+  canonicalURL?: URL | string | null
+}
+
+const {
+  title,
+  description,
+  image,
+  canonicalURL = getCanonicalURL(Astro.url.pathname.toString()),
+} = Astro.props
+
+console.log('canonicalURL:', canonicalURL)
+---
+
+<meta charset="utf-8" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+
+<title>{title || config.site.title}</title>
+<meta name="description" content={description || config.site.description} />
+
+<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+<meta name="generator" content={Astro.generator} />
+
+{/* Open Graph Meta */}
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title || config.site.title} />
+<meta
+  property="og:description"
+  content={description || config.site.description}
+/>
+<meta property="og:url" content={canonicalURL} />
+
+{/* Twitter Meta */}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content={config.site.twitter} />
+<meta name="twitter:creator" content={config.site.twitter} />
+<meta name="twitter:title" content={title || config.site.title} />
+<meta
+  name="twitter:description"
+  content={description || config.site.description}
+/>
+{
+  image && (
+    <>
+      <meta name="twitter:image" content={image.src} />
+      <meta name="twitter:image:alt" content={image.alt} />
+    </>
+  )
+}
+
+<meta name="author" content="Marty Louis" />
+
+<link rel="canonical" href={canonicalURL} />
