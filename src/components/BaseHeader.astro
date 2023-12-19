@@ -1,28 +1,30 @@
 ---
-import ButtonLink from "@/components/ButtonLink.astro";
 import Landmark from "@/components/Landmark.astro";
 import { ModeToggle } from "@/components/ModeToggle";
+import { getHomeURL } from "@/lib/urlUtils";
+import { Icon } from "astro-icon";
 ---
 
-<Landmark
-  block="base"
-  id="banner"
-  as="header"
-  slot="header"
-  hasDivider={false}
-  class="grid md:grid-cols-[200px_1fr_200px]"
->
-  <div>
-    <ButtonLink variant="ghost" href="/" class="font-light uppercase">
-      martylouis
-    </ButtonLink>
-  </div>
-  <nav class="flex items-center justify-center">
-    <ButtonLink href="#" variant="ghost" href="">Work</ButtonLink>
-    <ButtonLink href="#" variant="ghost" href="">Blog</ButtonLink>
-    <ButtonLink href="#" variant="ghost" href="">About</ButtonLink>
-  </nav>
-  <div class="flex md:justify-end">
-    <ModeToggle client:load />
+<Landmark slot="header" as="header" id="banner">
+  <div class="flex w-full items-center gap-4">
+    <div class="flex flex-1 gap-10 self-center">
+      <a href={getHomeURL()} class="mr-auto flex items-center gap-4">
+        <Icon name="martylouis-logo" class="h-10 w-10 text-foreground" />
+        <span class="font-semibold max-md:hidden">martylouis</span>
+      </a>
+    </div>
+    <!-- <div aria-hidden="true" class="hidden flex-1 items-center justify-center">
+        <nav class="flex gap-6">
+          <a class="inline-flex" href={getPermalink('services')}>Services</a>
+          <a class="inline-flex" href={getPermalink('projects')}>Projects</a>
+          <a class="inline-flex" href={getPermalink('blog')}>Blog</a>
+          <a class="inline-flex" href={getPermalink('contact')}>Contact</a>
+        </nav>
+      </div> -->
+    <div class="flex items-center justify-end gap-2 divide-x divide-border">
+      <div class="pl-4">
+        <ModeToggle client:load />
+      </div>
+    </div>
   </div>
 </Landmark>
