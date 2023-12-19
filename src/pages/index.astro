@@ -1,26 +1,77 @@
 ---
-import Landmark from "@/components/Landmark.astro";
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import {
-  getHomeURL,
-  getProjectURL,
-  getPostURL,
-  getPermalink,
-} from "@/lib/urlUtils";
+import Landmark from '@/components/Landmark.astro'
+import { ModeToggle } from '@/components/ModeToggle'
+import MainLayout from '@/layouts/MainLayout.astro'
+import { getHomeURL, getPermalink } from '@/lib/urlUtils'
+import { Icon } from 'astro-icon'
+import ButtonLink from '@/components/ButtonLink.astro'
+import config from '@/data/config'
 ---
 
-<BaseLayout>
-  <Landmark>
-    <h1>Hey, I'm Marty</h1>
-    <nav class="flex flex-col">
-      <a href={getHomeURL()}>Home</a>
-      <a href={getPermalink("/projects")}>Projects</a>
-      <a href={getPermalink("/services")}>Services</a>
-      <a href={getPermalink("/about")}>About</a>
-      <a href={getPermalink("/uses")}>Uses</a>
-      <a href={getPermalink("/now")}>Now</a>
-      <a href={getProjectURL("redhorse-corp")}>Redhorse Corp</a>
-      <a href={getPostURL("hello-world")}>Hello World</a>
-    </nav>
+<MainLayout>
+  <Landmark slot="header" as="header" id="banner">
+    <div class="flex w-full items-center gap-4">
+      <div class="flex flex-1 gap-10 self-center">
+        <a href={getHomeURL()} class="mr-auto flex items-center gap-4">
+          <Icon name="martylouis-logo" class="h-10 w-10 text-foreground" />
+          <span class="font-semibold max-md:hidden">martylouis</span>
+        </a>
+      </div>
+      <!-- <div aria-hidden="true" class="hidden flex-1 items-center justify-center">
+        <nav class="flex gap-6">
+          <a class="inline-flex" href={getPermalink('services')}>Services</a>
+          <a class="inline-flex" href={getPermalink('projects')}>Projects</a>
+          <a class="inline-flex" href={getPermalink('blog')}>Blog</a>
+          <a class="inline-flex" href={getPermalink('contact')}>Contact</a>
+        </nav>
+      </div> -->
+      <div class="flex items-center justify-end gap-2 divide-x divide-border">
+        <div>
+          {
+            config.social.links.map(({ id, name, url }) => (
+              <ButtonLink href={url} variant="ghost" size="icon">
+                <Icon name={`mdi:${id}`} class="h-5 w-5" aria-label={name} />
+              </ButtonLink>
+            ))
+          }
+        </div>
+
+        <div class="pl-4">
+          <ModeToggle client:load />
+        </div>
+      </div>
+    </div>
   </Landmark>
-</BaseLayout>
+  <Landmark block="lg">
+    <div class="max-w-2xl space-y-6">
+      <h1 class="font-semibold text-foreground">Hey, I’m Marty 🙌</h1>
+      <p class="text-4xl font-light">
+        I'm a web designer and front-end developer based in sunny Destin,
+        Florida. I'm all about helping businesses create awesome apps, websites,
+        and brands.
+      </p>
+    </div>
+  </Landmark>
+  <Landmark
+    block="none"
+    class="grid gap-px border-border bg-border md:grid-cols-3 md:border-x"
+  >
+    {
+      [...Array(6)].map(() => (
+        <div class="bg-background p-8">
+          <img
+            src="https://picsum.photos/seed/1701991025985/1200/1600.jpg"
+            alt="placholder"
+            class="h-full w-full object-cover"
+          />
+        </div>
+      ))
+    }
+    <!-- <div class="bg-background max-md:hidden" aria-hidden="true"></div> -->
+  </Landmark>
+  <Landmark class="border-b-0">
+    <div class="max-w-2xl space-y-6">
+      <h2 class="font-semibold text-foreground">Footer</h2>
+    </div>
+  </Landmark>
+</MainLayout>
