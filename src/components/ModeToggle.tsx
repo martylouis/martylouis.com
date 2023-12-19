@@ -1,52 +1,86 @@
-import * as React from "react";
-import { MoonIcon as Moon, SunIcon as Sun } from "@radix-ui/react-icons";
-
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from '@/components/ui/dropdown-menu'
+import { cn } from '@/lib/utils'
+import {
+  CaretDownIcon,
+  CheckIcon,
+  MoonIcon,
+  SunIcon,
+} from '@radix-ui/react-icons'
+import * as React from 'react'
 
-export function ModeToggle() {
-  const [theme, setThemeState] = React.useState<"light" | "dark" | "system">(
-    "light",
-  );
+type ThemeState = 'light' | 'dark' | 'system'
+
+export const ModeToggle: React.FC = () => {
+  const [theme, setThemeState] = React.useState<ThemeState>('light')
+
+  const toggleTheme = (selectedTheme: ThemeState) => {
+    setThemeState(selectedTheme)
+  }
+
+  const handleThemeChange = React.useCallback(() => {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    setThemeState(isDarkMode ? 'dark' : 'light')
+  }, [])
 
   React.useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark");
-    setThemeState(isDarkMode ? "dark" : "light");
-  }, []);
+    handleThemeChange()
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', handleThemeChange)
+    return () => {
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .removeEventListener('change', handleThemeChange)
+    }
+  }, [handleThemeChange])
 
   React.useEffect(() => {
-    const isDark =
-      theme === "dark" ||
-      (theme === "system" &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches);
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-  }, [theme]);
+    if (
+      theme === 'dark' ||
+      (theme === 'system' &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [theme])
+
+  const themes: ThemeState[] = ['dark', 'light', 'system']
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
-          <Sun className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+        <Button variant="outline" className="items-center" size="sm">
+          <span className="relative">
+            <SunIcon className="absolute h-4 w-4 rotate-0 scale-100 transition-transform duration-150 dark:-rotate-90 dark:scale-0" />
+            <MoonIcon className="h-4 w-4 rotate-90 scale-0 transition-transform duration-150 dark:rotate-0 dark:scale-100" />
+          </span>
           <span className="sr-only">Toggle theme</span>
+          <CaretDownIcon className="-mr-1 ml-1 h-5 w-5" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setThemeState("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setThemeState("dark")}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setThemeState("system")}>
-          System
-        </DropdownMenuItem>
+        {themes.map((themeItem, index) => (
+          <DropdownMenuItem key={index} onClick={() => toggleTheme(themeItem)}>
+            <CheckIcon
+              className={cn(
+                theme === themeItem ? 'opacity-100' : 'opacity-0',
+                'mr-2 transition-opacity delay-75'
+              )}
+            />
+            <span>
+              {themeItem.charAt(0).toUpperCase() + themeItem.slice(1)}
+            </span>
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }
