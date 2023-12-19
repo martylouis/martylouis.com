@@ -24,7 +24,7 @@
     "lint:astro": "astro check",
     "lint:imports": "organize-imports-cli ./tsconfig.json",
     "lint:eslint": "eslint . --fix --cache --ignore-path .gitignore",
-    "lint:prettier": "prettier --write \"**/*.{ts,js,jsx,tsx,md,mdx,astro}\" --cache --list-different --ignore-path .gitignore",
+    "lint:prettier": "prettier --write \"**/*.{ts,js,jsx,tsx,md,mdx,astro}\" --cache --list-different --ignore-path .gitignore --plugin=prettier-plugin-astro",
     "toolbar:disable": "astro preferences disable devToolbar",
     "toolbar:enable": "astro preferences enable devToolbar",
     "ui:add": "pnpm dlx shadcn-ui add",
