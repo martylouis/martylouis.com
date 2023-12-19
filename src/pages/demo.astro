@@ -1,33 +1,10 @@
 ---
 import ButtonLink from "@/components/ButtonLink.astro";
 import Landmark from "@/components/Landmark.astro";
-import { ModeToggle } from "@/components/ModeToggle";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Style Guide">
-  <Landmark
-    block="base"
-    id="banner"
-    as="header"
-    slot="header"
-    hasDivider={false}
-    class="grid md:grid-cols-[200px_1fr_200px]"
-  >
-    <div>
-      <ButtonLink variant="ghost" href="/" class="font-light uppercase">
-        martylouis
-      </ButtonLink>
-    </div>
-    <nav class="flex items-center justify-center">
-      <ButtonLink href="#" variant="ghost" href="">Work</ButtonLink>
-      <ButtonLink href="#" variant="ghost" href="">Blog</ButtonLink>
-      <ButtonLink href="#" variant="ghost" href="">About</ButtonLink>
-    </nav>
-    <div class="flex md:justify-end">
-      <ModeToggle client:load />
-    </div>
-  </Landmark>
   <Landmark block="lg">
     <div class="max-w-2xl">
       <span class="font-light text-neutral-400">

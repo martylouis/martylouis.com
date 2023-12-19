@@ -1,5 +1,6 @@
 ---
 import BaseHead from "@/components/BaseHead.astro";
+import BaseHeader from "@/components/BaseHeader.astro";
 import "../styles/global.css";
 
 const { ...head } = Astro.props;
@@ -37,7 +38,9 @@ const { ...head } = Astro.props;
     <BaseHead {...head} />
   </head>
   <body class="bg-background text-foreground antialiased">
-    <slot name="header" />
+    <slot name="header">
+      <BaseHeader />
+    </slot>
     <main id="main">
       <slot />
     </main>
