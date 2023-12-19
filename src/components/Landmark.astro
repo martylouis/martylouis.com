@@ -1,38 +1,38 @@
 ---
-import { cn } from '@/lib/utils'
-import type { Polymorphic } from 'astro/types'
-import { cva, type VariantProps } from 'class-variance-authority'
+import { cn } from "@/lib/utils";
+import type { Polymorphic } from "astro/types";
+import { cva, type VariantProps } from "class-variance-authority";
 
-type LandmarkTag = 'header' | 'footer' | 'main' | 'section' | 'article'
+type LandmarkTag = "header" | "footer" | "main" | "section" | "article";
 
 type Props<Tag extends LandmarkTag> = Polymorphic<{ as: Tag }> &
   VariantProps<typeof sectionVariants> & {
-    containerClass?: string
-    label?: string
-  }
+    containerClass?: string;
+    label?: string;
+  };
 
 export const sectionVariants = cva(
-  'mx-auto max-w-7xl w-full border-border divide-border',
+  "mx-auto max-w-7xl w-full border-border divide-border",
   {
     variants: {
       block: {
-        none: '',
-        base: 'p-6 md:p-8',
-        lg: 'p-6 md:p-8 md:py-32',
+        none: "",
+        base: "p-6 md:p-8",
+        lg: "p-6 md:p-8 md:py-32",
       },
       columns: {
-        2: 'grid grid-cols-1 md:grid-cols-2',
-        3: 'grid grid-cols-1 md:grid-cols-3',
+        2: "grid grid-cols-1 md:grid-cols-2",
+        3: "grid grid-cols-1 md:grid-cols-3",
       },
       border: {
-        default: 'border-b xl:border-x',
-        onlyT: 'border-t',
-        onlyB: 'border-b',
-        onlyX: 'xl:border-x',
-        none: 'border-transparent',
+        default: "border-b xl:border-x",
+        onlyT: "border-t",
+        onlyB: "border-b",
+        onlyX: "xl:border-x",
+        none: "border-transparent",
       },
       hasDivider: {
-        true: 'divide-y md:divide-y-0 md:divide-x',
+        true: "divide-y md:divide-y-0 md:divide-x",
       },
     },
     // compoundVariants: [
@@ -47,20 +47,20 @@ export const sectionVariants = cva(
     //     class: 'p-0',
     //   },
     // ],
-  }
-)
+  },
+);
 
 const {
-  as = 'section',
-  block = 'base',
+  as = "section",
+  block = "base",
   columns = undefined,
-  border = 'default',
+  border = "default",
   hasDivider = false,
-  containerClass = '',
+  containerClass = "",
   ...props
-} = Astro.props
+} = Astro.props;
 
-const Tag = as as LandmarkTag
+const Tag = as as LandmarkTag;
 ---
 
 <Tag
@@ -72,7 +72,7 @@ const Tag = as as LandmarkTag
       border,
       hasDivider,
     }),
-    props.class
+    props.class,
   )}
 >
   <slot />

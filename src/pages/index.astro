@@ -1,12 +1,12 @@
 ---
-import Landmark from '@/components/Landmark.astro'
-import MainLayout from '@/layouts/MainLayout.astro'
+import Landmark from "@/components/Landmark.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
 import {
   getHomeURL,
   getProjectURL,
   getPostURL,
   getPermalink,
-} from '@/lib/urlUtils'
+} from "@/lib/urlUtils";
 ---
 
 <MainLayout>
@@ -14,13 +14,13 @@ import {
     <h1>Hey, I'm Marty</h1>
     <nav class="flex flex-col">
       <a href={getHomeURL()}>Home</a>
-      <a href={getPermalink('/projects')}>Projects</a>
-      <a href={getPermalink('/services')}>Services</a>
-      <a href={getPermalink('/about')}>About</a>
-      <a href={getPermalink('/uses')}>Uses</a>
-      <a href={getPermalink('/now')}>Now</a>
-      <a href={getProjectURL('redhorse-corp')}>Redhorse Corp</a>
-      <a href={getPostURL('hello-world')}>Hello World</a>
+      <a href={getPermalink("/projects")}>Projects</a>
+      <a href={getPermalink("/services")}>Services</a>
+      <a href={getPermalink("/about")}>About</a>
+      <a href={getPermalink("/uses")}>Uses</a>
+      <a href={getPermalink("/now")}>Now</a>
+      <a href={getProjectURL("redhorse-corp")}>Redhorse Corp</a>
+      <a href={getPostURL("hello-world")}>Hello World</a>
     </nav>
   </Landmark>
 </MainLayout>

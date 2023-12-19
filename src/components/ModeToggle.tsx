@@ -1,31 +1,31 @@
-import * as React from 'react'
-import { MoonIcon as Moon, SunIcon as Sun } from '@radix-ui/react-icons'
+import * as React from "react";
+import { MoonIcon as Moon, SunIcon as Sun } from "@radix-ui/react-icons";
 
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from "@/components/ui/dropdown-menu";
 
 export function ModeToggle() {
-  const [theme, setThemeState] = React.useState<'light' | 'dark' | 'system'>(
-    'light'
-  )
+  const [theme, setThemeState] = React.useState<"light" | "dark" | "system">(
+    "light",
+  );
 
   React.useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains('dark')
-    setThemeState(isDarkMode ? 'dark' : 'light')
-  }, [])
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    setThemeState(isDarkMode ? "dark" : "light");
+  }, []);
 
   React.useEffect(() => {
     const isDark =
-      theme === 'dark' ||
-      (theme === 'system' &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
-  }, [theme])
+      theme === "dark" ||
+      (theme === "system" &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
+    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+  }, [theme]);
 
   return (
     <DropdownMenu>
@@ -37,16 +37,16 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setThemeState('light')}>
+        <DropdownMenuItem onClick={() => setThemeState("light")}>
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setThemeState('dark')}>
+        <DropdownMenuItem onClick={() => setThemeState("dark")}>
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setThemeState('system')}>
+        <DropdownMenuItem onClick={() => setThemeState("system")}>
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

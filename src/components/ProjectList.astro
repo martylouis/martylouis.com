@@ -1,11 +1,11 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection } from "astro:content";
 
 const projects = (
-  await getCollection('projects', ({ data }) => {
-    return data.draft !== true
+  await getCollection("projects", ({ data }) => {
+    return data.draft !== true;
   })
-).sort((b, a) => b.data.order - a.data.order)
+).sort((b, a) => b.data.order - a.data.order);
 ---
 
 <ol class="flex w-full flex-col gap-4">
