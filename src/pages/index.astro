@@ -4,16 +4,20 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <Landmark block="lg">
-    <div class="max-w-2xl space-y-6">
+  <section
+    class="mx-auto grid max-w-7xl grid-cols-12 gap-6 border-x border-b border-border p-8 md:py-32"
+  >
+    <div class="col-span-full md:col-start-4">
       <h1 class="font-semibold text-foreground">Hey, I’m Marty 🙌</h1>
+    </div>
+    <div class="col-span-full md:col-span-6 md:col-start-4">
       <p class="text-4xl font-light">
         I'm a web designer and front-end developer based in sunny Destin,
         Florida. I'm all about helping businesses create awesome apps, websites,
         and brands.
       </p>
     </div>
-  </Landmark>
+  </section>
   <Landmark
     block="none"
     class="grid gap-px border-border bg-border md:grid-cols-3 md:border-x"
@@ -30,10 +34,5 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
       ))
     }
     <!-- <div class="bg-background max-md:hidden" aria-hidden="true"></div> -->
-  </Landmark>
-  <Landmark class="border-b-0">
-    <div class="max-w-2xl space-y-6">
-      <h2 class="font-semibold text-foreground">Footer</h2>
-    </div>
   </Landmark>
 </BaseLayout>
