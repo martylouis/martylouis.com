@@ -1,5 +1,5 @@
 ---
-import MainLayout from "@/layouts/MainLayout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -23,6 +23,6 @@ const { ...head } = entry.data;
 const { Content } = await entry.render();
 ---
 
-<MainLayout {...head}>
+<BaseLayout {...head}>
   <Content />
-</MainLayout>
+</BaseLayout>
