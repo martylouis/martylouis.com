@@ -1,6 +1,8 @@
 ---
+import BaseFooter from "@/components/BaseFooter.astro";
 import BaseHead from "@/components/BaseHead.astro";
 import BaseHeader from "@/components/BaseHeader.astro";
+
 import "../styles/global.css";
 
 const { ...head } = Astro.props;
@@ -44,6 +46,8 @@ const { ...head } = Astro.props;
     <main id="main">
       <slot />
     </main>
-    <slot name="footer" />
+    <slot name="footer">
+      <BaseFooter />
+    </slot>
   </body>
 </html>
