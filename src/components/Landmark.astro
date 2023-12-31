@@ -6,74 +6,30 @@ import { cva, type VariantProps } from "class-variance-authority";
 type LandmarkTag = "header" | "footer" | "main" | "section" | "article";
 
 type Props<Tag extends LandmarkTag> = Polymorphic<{ as: Tag }> &
-  VariantProps<typeof sectionVariants> & {
-    containerClass?: string;
+  VariantProps<typeof landmarkVariants> & {
     label?: string;
   };
 
-export const sectionVariants = cva(
-  "mx-auto max-w-7xl w-full border-border divide-border",
-  {
-    variants: {
-      block: {
-        none: "",
-        base: "p-6 md:p-8",
-        lg: "p-6 md:p-8 md:py-32",
-      },
-      columns: {
-        2: "grid grid-cols-1 md:grid-cols-2",
-        3: "grid grid-cols-1 md:grid-cols-3",
-      },
-      border: {
-        default: "border-b xl:border-x",
-        onlyT: "border-t",
-        onlyB: "border-b",
-        onlyX: "xl:border-x",
-        none: "border-transparent",
-      },
-      hasDivider: {
-        true: "divide-y md:divide-y-0 md:divide-x",
-      },
+export const landmarkVariants = cva("mx-auto max-w-xl w-full px-6 md:px-8", {
+  variants: {
+    block: {
+      none: "",
+      sm: "py-4",
+      md: "py-8",
+      lg: "py-16",
     },
-    // compoundVariants: [
-    //   {
-    //     columns: 2,
-    //     hasDivider: true,
-    //     class: 'p-0',
-    //   },
-    //   {
-    //     columns: 3,
-    //     hasDivider: true,
-    //     class: 'p-0',
-    //   },
-    // ],
+    width: {
+      sm: "max-w-xl",
+      lg: "max-w-7xl",
+    },
   },
-);
+});
 
-const {
-  as = "section",
-  block = "base",
-  columns = undefined,
-  border = "default",
-  hasDivider = false,
-  containerClass = "",
-  ...props
-} = Astro.props;
+const { as = "section", block = "none", width = "sm", ...props } = Astro.props;
 
 const Tag = as as LandmarkTag;
 ---
 
-<Tag
-  {...props}
-  class={cn(
-    sectionVariants({
-      block,
-      columns,
-      border,
-      hasDivider,
-    }),
-    props.class,
-  )}
->
+<Tag {...props} class={cn(landmarkVariants({ block, width }), props.class)}>
   <slot />
 </Tag>

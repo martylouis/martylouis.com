@@ -1,0 +1,39 @@
+---
+import ButtonLink from "@/components/ButtonLink.astro";
+import { ArrowTopRightIcon } from "@radix-ui/react-icons";
+import { Image } from "astro:assets";
+import wattsware from "../assets/img/wattsware.jpg";
+
+const { entry, ...props } = Astro.props;
+const { title, url, image } = entry.data;
+const { Content } = await entry.render();
+
+console.log(image);
+---
+
+<div {...props}>
+  {
+    image && (
+      <Image
+        src={image.src}
+        alt={image.alt}
+        class="rounded-lg border-2 border-border"
+      />
+    )
+  }
+  <div class="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1">
+    <div class="flex items-center gap-2">
+      <h3 class="text-lg font-bold" set:text={title} />
+      {
+        url && (
+          <ButtonLink href={url} size="iconSm" variant="outline">
+            <ArrowTopRightIcon className="size-4" />
+          </ButtonLink>
+        )
+      }
+    </div>
+    <div class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+      <Content />
+    </div>
+  </div>
+</div>

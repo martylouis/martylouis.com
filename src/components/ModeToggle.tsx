@@ -1,69 +1,71 @@
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { cn } from '@/lib/utils'
+} from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 import {
   CaretDownIcon,
   CheckIcon,
   MoonIcon,
   SunIcon,
-} from '@radix-ui/react-icons'
-import * as React from 'react'
+} from "@radix-ui/react-icons";
+import * as React from "react";
 
-type ThemeState = 'light' | 'dark' | 'system'
+type ThemeState = "light" | "dark" | "system";
 
 export const ModeToggle: React.FC = () => {
-  const [theme, setThemeState] = React.useState<ThemeState>('light')
+  const [theme, setThemeState] = React.useState<ThemeState>("light");
 
   const toggleTheme = (selectedTheme: ThemeState) => {
-    setThemeState(selectedTheme)
-  }
+    setThemeState(selectedTheme);
+  };
 
   const handleThemeChange = React.useCallback(() => {
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    setThemeState(isDarkMode ? 'dark' : 'light')
-  }, [])
+    const isDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    setThemeState(isDarkMode ? "dark" : "light");
+  }, []);
 
   React.useEffect(() => {
-    handleThemeChange()
+    handleThemeChange();
     window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', handleThemeChange)
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", handleThemeChange);
     return () => {
       window
-        .matchMedia('(prefers-color-scheme: dark)')
-        .removeEventListener('change', handleThemeChange)
-    }
-  }, [handleThemeChange])
+        .matchMedia("(prefers-color-scheme: dark)")
+        .removeEventListener("change", handleThemeChange);
+    };
+  }, [handleThemeChange]);
 
   React.useEffect(() => {
     if (
-      theme === 'dark' ||
-      (theme === 'system' &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
+      theme === "dark" ||
+      (theme === "system" &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
-      document.documentElement.classList.add('dark')
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.remove("dark");
     }
-  }, [theme])
+  }, [theme]);
 
-  const themes: ThemeState[] = ['dark', 'light', 'system']
+  const themes: ThemeState[] = ["dark", "light", "system"];
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="items-center" size="sm">
+        <Button variant="ghost" className="items-center" size="sm">
           <span className="relative">
-            <SunIcon className="absolute h-4 w-4 rotate-0 scale-100 transition-transform duration-150 dark:-rotate-90 dark:scale-0" />
-            <MoonIcon className="h-4 w-4 rotate-90 scale-0 transition-transform duration-150 dark:rotate-0 dark:scale-100" />
+            <SunIcon className="absolute size-5 rotate-0 scale-100 transition-transform duration-150 dark:-rotate-90 dark:scale-0" />
+            <MoonIcon className="size-5 rotate-90 scale-0 transition-transform duration-150 dark:rotate-0 dark:scale-100" />
           </span>
           <span className="sr-only">Toggle theme</span>
-          <CaretDownIcon className="-mr-1 ml-1 h-5 w-5" />
+          <CaretDownIcon className="-mr-0.5 ml-1 h-3 w-3" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
@@ -71,8 +73,8 @@ export const ModeToggle: React.FC = () => {
           <DropdownMenuItem key={index} onClick={() => toggleTheme(themeItem)}>
             <CheckIcon
               className={cn(
-                theme === themeItem ? 'opacity-100' : 'opacity-0',
-                'mr-2 transition-opacity delay-75'
+                theme === themeItem ? "opacity-100" : "opacity-0",
+                "mr-2 transition-opacity delay-75",
               )}
             />
             <span>
@@ -82,5 +84,5 @@ export const ModeToggle: React.FC = () => {
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
-  )
-}
+  );
+};

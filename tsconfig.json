@@ -3,13 +3,10 @@
     "baseUrl": "src",
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "module": "esnext",
     "paths": {
       "@/*": ["*"]
-    },
-    "strictNullChecks": true
+    }
   },
-  "exclude": ["node_modules", "dist", ".vercel", "public"],
-  "extends": "astro/tsconfigs/strict",
-  "include": ["**/*", ".eslintrc"]
+  "exclude": ["node_modules", "dist", "src/components/ui"],
+  "extends": "astro/tsconfigs/strict"
 }

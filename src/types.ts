@@ -25,17 +25,9 @@ export type Paths = z.infer<typeof pathsSchema>;
 export const dateSchema = z.coerce.date();
 export type Date = z.infer<typeof dateSchema>;
 
-export const imageSchema = z.object({
-  src: z.string(),
-  alt: z.string(),
-});
-
-export type Image = z.infer<typeof imageSchema>;
-
 export const entrySchema = z.object({
   title: z.string().max(70),
-  description: z.string().min(50).max(160),
-  image: imageSchema.optional(),
+  description: z.string().min(50).max(160).optional(),
   created_at: dateSchema.optional(),
   updated_at: dateSchema.optional(),
   draft: z.boolean().optional(),

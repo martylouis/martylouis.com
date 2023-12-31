@@ -1,38 +1,85 @@
 ---
+import ButtonLink from "@/components/ButtonLink.astro";
 import Landmark from "@/components/Landmark.astro";
+import { ModeToggle } from "@/components/ModeToggle";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { ArrowTopRightIcon } from "@radix-ui/react-icons";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import martylouis from "../assets/img/martylouis.jpg";
+import wattsware from "../assets/img/wattsware.jpg";
+import ProjectCard from "@/components/ProjectCard.astro";
+import { projectEntries } from "@/lib/entries";
+import { cn } from "@/lib/utils";
 ---
 
 <BaseLayout>
-  <section
-    class="mx-auto grid max-w-7xl grid-cols-12 gap-6 border-x border-b border-border p-8 md:py-32"
-  >
-    <div class="col-span-full md:col-start-4">
-      <h1 class="font-semibold text-foreground">Hey, I’m Marty 🙌</h1>
-    </div>
-    <div class="col-span-full md:col-span-6 md:col-start-4">
-      <p class="text-4xl font-light">
-        I'm a web designer and front-end developer based in sunny Destin,
-        Florida. I'm all about helping businesses create awesome apps, websites,
-        and brands.
-      </p>
-    </div>
-  </section>
-  <Landmark
-    block="none"
-    class="grid gap-px border-border bg-border md:grid-cols-3 md:border-x"
-  >
-    {
-      [...Array(6)].map(() => (
-        <div class="bg-background p-8">
-          <img
-            src="https://picsum.photos/seed/1701991025985/1200/1600.jpg"
-            alt="placholder"
-            class="h-full w-full object-cover"
-          />
+  <Landmark as="header" slot="header" class="mt-8 md:mt-32">
+    <div class="flex w-full justify-between gap-6 md:items-center">
+      <div class="flex flex-wrap items-center gap-4">
+        <Image
+          src={martylouis}
+          alt="Marty Louis"
+          class="h-16 w-16 rounded-full"
+        />
+        <div>
+          <h1>Marty Thierry (martylouis)</h1>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400">
+            Web Designer & Developer
+          </p>
         </div>
-      ))
-    }
-    <!-- <div class="bg-background max-md:hidden" aria-hidden="true"></div> -->
+      </div>
+      <ModeToggle client:load />
+    </div>
+  </Landmark>
+  <Landmark>
+    <p class="mt-6 text-base">
+      Hey I’m Marty 👋, a web designer and developer from Destin, FL with 10+
+      years of experience. My focus is on creating easy-to-use, visually
+      appealing interfaces for websites and apps.
+    </p>
+    <div class="mt-6 flex gap-4">
+      <ButtonLink target="_blank" href="mailto:hello@martylouis.com">
+        <span><Icon name="email" class="-ml-1 mr-1.5 size-4" /></span>Contact Me
+      </ButtonLink>
+      <div class="flex gap-2">
+        <ButtonLink
+          size="icon"
+          variant="ghost"
+          href="https://github.com/martylouis"
+          target="_blank"
+          rel="noreferrer"
+          title="Follow @martylouis on GitHub"
+        >
+          <Icon name="github" class="size-5" />
+        </ButtonLink>
+        <ButtonLink
+          size="icon"
+          variant="ghost"
+          href="https://twitter.com/martylouis"
+          target="_blank"
+          rel="noreferrer"
+          title="Follow @martylouis on Twitter"
+        >
+          <Icon name="twitter" class="size-5" />
+        </ButtonLink>
+        <ButtonLink
+          size="icon"
+          variant="ghost"
+          href="https://www.linkedin.com/in/martylouis/"
+          target="_blank"
+          rel="noreferrer"
+          title="Follow @martylouis on LinkedIn"
+        >
+          <Icon name="linkedin" class="size-5" />
+        </ButtonLink>
+      </div>
+    </div>
+  </Landmark>
+  <Landmark block="lg" width="lg">
+    <!-- <h2>Projects</h2> -->
+    <div class="mt-8 grid gap-x-10 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+      {projectEntries.map(({ entry }, idx) => <ProjectCard {entry} />)}
+    </div>
   </Landmark>
 </BaseLayout>
