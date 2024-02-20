@@ -65,7 +65,7 @@ export const ModeToggle: React.FC = () => {
             <MoonIcon className="size-5 rotate-90 scale-0 transition-transform duration-150 dark:rotate-0 dark:scale-100" />
           </span>
           <span className="sr-only">Toggle theme</span>
-          <CaretDownIcon className="-mr-0.5 ml-1 h-3 w-3" />
+          <CaretDownIcon className="-mr-0.5 ml-1 size-3" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
