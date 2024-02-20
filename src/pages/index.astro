@@ -76,7 +76,7 @@ import martylouis from "../assets/img/martylouis.jpg";
   <Landmark block="lg" width="lg">
     <!-- <h2>Projects</h2> -->
     <div class="mt-8 grid gap-x-10 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
-      {projectEntries.map(({ entry }, idx) => <ProjectCard {entry} />)}
+      {projectEntries.map(({ entry }) => <ProjectCard {entry} />)}
     </div>
   </Landmark>
 </BaseLayout>
