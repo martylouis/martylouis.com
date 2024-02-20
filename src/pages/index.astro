@@ -2,15 +2,12 @@
 import ButtonLink from "@/components/ButtonLink.astro";
 import Landmark from "@/components/Landmark.astro";
 import { ModeToggle } from "@/components/ModeToggle";
+import ProjectCard from "@/components/ProjectCard.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { ArrowTopRightIcon } from "@radix-ui/react-icons";
+import { projectEntries } from "@/lib/entries";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import martylouis from "../assets/img/martylouis.jpg";
-import wattsware from "../assets/img/wattsware.jpg";
-import ProjectCard from "@/components/ProjectCard.astro";
-import { projectEntries } from "@/lib/entries";
-import { cn } from "@/lib/utils";
 ---
 
 <BaseLayout>
@@ -82,4 +79,5 @@ import { cn } from "@/lib/utils";
       {projectEntries.map(({ entry }, idx) => <ProjectCard {entry} />)}
     </div>
   </Landmark>
+  <Fragment slot="footer"></Fragment>
 </BaseLayout>

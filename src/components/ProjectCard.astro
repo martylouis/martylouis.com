@@ -2,13 +2,10 @@
 import ButtonLink from "@/components/ButtonLink.astro";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { Image } from "astro:assets";
-import wattsware from "../assets/img/wattsware.jpg";
 
 const { entry, ...props } = Astro.props;
 const { title, url, image } = entry.data;
 const { Content } = await entry.render();
-
-console.log(image);
 ---
 
 <div {...props}>

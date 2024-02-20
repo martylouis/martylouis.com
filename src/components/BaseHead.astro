@@ -1,12 +1,14 @@
 ---
 import config from "@/data/config";
 import { getCanonicalURL } from "@/lib/urlUtils";
-import type { Image } from "@/types";
 
 type Props = {
   title?: string;
   description?: string;
-  image?: Image;
+  image?: {
+    src: string;
+    alt: string;
+  } | null;
   canonicalURL?: URL | string | null;
 };
 
@@ -20,7 +22,6 @@ const {
 // console.log("canonicalURL:", canonicalURL);
 ---
 
-<meta charset="utf-8" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta content="IE=edge" http-equiv="X-UA-Compatible" />
@@ -58,6 +59,6 @@ const {
   )
 }
 
-<meta name="author" content="Marty Louis" />
+<meta name="author" content="Marty Thierry" />
 
 <link rel="canonical" href={canonicalURL} />
