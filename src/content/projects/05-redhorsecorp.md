@@ -1,12 +1,10 @@
 ---
 title: Red Horse Corporation
-description: dolore aute reprehenderit deserunt aliquip est consequat duis ex labore pariatur velit dolor exercitation duis duis excepteur fugiat fugiat non consequat mollit
-draft: false
+description: We partnered with Redhorse Corp. to revamp their website, giving it a modern and professional look to attract top talent.
+url: https://redhorsecorp.com
 image:
   src: /src/assets/img/redhorsecorp.jpg
-  alt: Red Horse Corporation
-order: 4
-url: https://redhorsecorp.com
+  alt: Red Horse Corporation homepage screenshot
 ---
 
-We partnered with Redhorse Corp. to revamp their website, giving it a modern and professional look to attract top talent.
+Government contractor Redhorse Corp. needed a new website for their rapidly growing company. We refreshed their site to look more modern and professional, which helped them attract the best job candidates.
