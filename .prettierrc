@@ -1,22 +1,17 @@
 {
-  "bracketSpacing": true,
   "overrides": [
     {
-      "files": ".*rc",
+      "files": [".*", "*.json", "*.md", "*.toml", "*.yml"],
       "options": {
-        "parser": "json"
+        "useTabs": false
+      }
+    },
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
       }
     }
   ],
-  "printWidth": 80,
-  "semi": true,
-  "singleQuote": true,
-  "tabWidth": 2,
-  "importOrder": [
-    "<THIRD_PARTY_MODULES>",
-    "^@/components/(.*)$",
-    "^@/lib/(.*)$",
-    "^@/utils/(.*)$",
-    "^[./]"
-  ]
+  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"]
 }

@@ -1,0 +1,35 @@
+---
+import BaseFooter from "@/components/BaseFooter.astro";
+import BaseHead from "@/components/BaseHead.astro";
+import BaseHeader from "@/components/BaseHeader.astro";
+import ThemeSwitcher from "@/components/ThemeSwitcher.astro";
+
+import "../styles/global.css";
+
+const { ...head } = Astro.props;
+---
+
+<html
+  lang="en"
+  class="dark h-full scroll-smooth selection:bg-teal-100 selection:text-neutral-800"
+>
+  <head>
+    <BaseHead {...head} />
+  </head>
+  <body
+    class="flex min-h-full w-full flex-col bg-background text-foreground antialiased"
+  >
+    <slot name="header">
+      <BaseHeader />
+    </slot>
+    <slot name="main">
+      <main id="main" class="flex-1">
+        <slot />
+      </main>
+    </slot>
+    <slot name="footer">
+      <BaseFooter />
+    </slot>
+    <ThemeSwitcher is:raw />
+  </body>
+</html>
