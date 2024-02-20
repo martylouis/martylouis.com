@@ -1,10 +1,10 @@
-import tailwind from "@astrojs/tailwind";
-import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
-import m2dx from "astro-m2dx";
 import react from "@astrojs/react";
-import config from "./src/data/config";
+import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
+import m2dx from "astro-m2dx";
+import { defineConfig } from "astro/config";
+import config from "./src/data/config";
 const m2dxOptions = {
   exportComponents: true,
   autoImports: true,
