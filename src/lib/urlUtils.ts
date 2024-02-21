@@ -1,16 +1,5 @@
-import config from "@/data/config";
-import type { Paths, PermalinkType } from "@/types";
-
-const TRAILING_SLASH = config.site.trailingSlash || false;
-const SITE_URL = new URL(config.site.url || "https://example.com");
-const PATHS: Paths = config.site.paths || {
-  base: "/",
-  page: "/",
-  post: "posts",
-  project: "projects",
-  service: "services",
-  tag: "tags",
-};
+import { metadata, permalinkPaths, trailingSlash } from "@/site.config";
+import type { PermalinkType } from "@/types";
 
 /**
  * Trims the specified string by removing leading and trailing characters.
@@ -40,7 +29,7 @@ export const trimSlash = (s: string): string => trim(s, "/");
  */
 const createPath = (...params: string[]): string => {
   const paths = params.map(trimSlash).filter(Boolean).join("/");
-  return `/${paths}${TRAILING_SLASH && paths ? "/" : ""}`;
+  return `/${paths}${trailingSlash && paths ? "/" : ""}`;
 };
 
 /**
@@ -49,7 +38,7 @@ const createPath = (...params: string[]): string => {
  * @returns The definitive permalink.
  */
 const definitivePermalink = (permalink: string): string =>
-  createPath(PATHS.base, permalink);
+  createPath(permalinkPaths.base, permalink);
 
 /**
  * Generates a permalink based on the provided slug and type.
@@ -68,38 +57,9 @@ export const getPermalink = (
     return slug;
   }
 
-  const permalink = createPath(PATHS[type], slug);
+  const permalink = createPath(permalinkPaths[type], slug);
 
   return definitivePermalink(permalink);
-};
-
-/**
- * Formats URL based on given path and trailingSlash parameter.
- * It removes a trailing slash if the URL has query parameters regardless of the trailingSlash parameter.
- *
- * @param path - The specific path to add to the base URL SITE_URL, defaults to empty string.
- * @param trailingSlash - A flag to determine if URL should end with a slash, defaults to true.
- * @returns Formatted URL as string.
- */
-export const getCanonicalURL = (
-  path = "",
-  trailingSlash: boolean = TRAILING_SLASH,
-): string | URL => {
-  const url: URL = new URL(path, SITE_URL);
-  const hasQueryParams: boolean = Boolean(url.search);
-
-  if (hasQueryParams && url.pathname.endsWith("/")) {
-    // Remove the trailing slash from the pathname
-    url.pathname = url.pathname.slice(0, -1);
-  } else if (trailingSlash !== url.pathname.endsWith("/")) {
-    // Ensure the pathname has a trailing slash only if trailingSlash argument is true
-    url.pathname = trailingSlash
-      ? `${url.pathname}/`
-      : url.pathname.slice(0, -1);
-  }
-
-  // Return the URL
-  return url.toString();
 };
 
 /**
@@ -107,7 +67,9 @@ export const getCanonicalURL = (
  *
  * @returns The home URL.
  */
-export const getHomeURL = (): string => getPermalink("/");
+export const getHomeURL = (): string => {
+  return getPermalink(metadata.siteURL);
+};
 
 /**
  * Generates a project URL based on the provided slug.
