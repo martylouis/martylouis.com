@@ -6,7 +6,7 @@ import ThemeSwitcher from "@/components/ThemeSwitcher.astro";
 
 import "../styles/global.css";
 
-const { ...head } = Astro.props;
+const { title, description, ...meta } = Astro.props;
 ---
 
 <html
@@ -14,7 +14,7 @@ const { ...head } = Astro.props;
   class="dark h-full scroll-smooth selection:bg-teal-100 selection:text-neutral-800"
 >
   <head>
-    <BaseHead {...head} />
+    <BaseHead {title} {description} {...meta} />
   </head>
   <body
     class="flex min-h-full w-full flex-col bg-background text-foreground antialiased"
