@@ -5,10 +5,9 @@ import { ModeToggle } from "@/components/ModeToggle";
 import ProjectCard from "@/components/ProjectCard.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { projectEntries } from "@/lib/entries";
-import { metadata } from "@/site.config";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import martylouis from "../assets/img/martylouis.jpg";
+import marty from "../assets/img/marty.jpg";
 
 const meta = {
   title: "Marty Thierry - Web Designer & Developer",
@@ -26,11 +25,7 @@ const content = {
   <Landmark as="header" slot="header" class="mt-8 md:mt-32">
     <div class="flex w-full justify-between gap-6 md:items-center">
       <div class="flex flex-wrap items-center gap-4">
-        <Image
-          src={martylouis}
-          alt="Marty Louis"
-          class="size-16 rounded-full"
-        />
+        <Image src={marty} alt="Marty Louis" class="size-16 rounded-full" />
         <div>
           <h1>Marty Thierry (martylouis)</h1>
           <p class="text-sm text-zinc-600 dark:text-zinc-400">
