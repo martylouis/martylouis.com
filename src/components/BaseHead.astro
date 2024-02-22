@@ -1,6 +1,6 @@
 ---
 import { metadata, TRAILING_SLASH } from "@/site.config";
-import { generateNormalizedUrl } from "@/lib/utils";
+import { getNormalizedUrl } from "@/lib/utils";
 
 type Props = {
   title: string | undefined;
@@ -16,7 +16,7 @@ const {
   title,
   description,
   image,
-  canonicalURL = generateNormalizedUrl(
+  canonicalURL = getNormalizedUrl(
     Astro.url.pathname,
     Astro.site,
     TRAILING_SLASH,

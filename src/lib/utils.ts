@@ -49,35 +49,38 @@ export const trim = (string = "", character?: string): string => {
 export const trimSlash = (string: string): string => trim(string, "/");
 
 /**
- * Generate a full, normalized URL from a provided URL string, with optional base URL and a preference for a trailing slash.
+ * Generates a full normalized URL for a given path, with optional base URL and a preference for a trailing slash.
  *
- * @param {string} inputUrl - The URL string to be processed and normalized.
- * @param {URL} [optionalBaseUrl] - An optional base URL that the input URL will be relative to.
- * @param {boolean} [appendTrailingSlash=false] - If true, the pathname in the generated URL will end with a trailing slash. Default is false.
- * @returns {string} - A string representation of the fully processed, normalized URL.
+ * @param {string} path - The URL path string to be processed and normalized.
+ * @param {URL} base - An optional base URL that the input URL will be relative to.
+ * @param {boolean} trailingSlash - If true, the pathname in the generated URL will end with a trailing slash. Default is false.
+ * @returns The canonical URL as a string or URL object.
  *
  * @example
  * // returns "https://example.com/path"
- * generateNormalizedUrl("https://example.com/path/?query=param", new URL("https://example.com"), false);
+ * getNormalizedUrl("path", new URL("https://example.com"), false);
+ * // returns "https://example.com/path/"
+ * getNormalizedUrl("path", new URL("https://example.com"), true);
  */
-export const generateNormalizedUrl = (
-  inputUrl: string,
-  optionalBaseUrl?: URL,
-  appendTrailingSlash: boolean = false,
+export const getNormalizedUrl = (
+  path: string = "",
+  base?: URL,
+  trailingSlash: boolean = false,
 ): string => {
-  const processedUrl = new URL(
-    inputUrl,
-    optionalBaseUrl?.toString().replace(/\/$/, ""),
-  );
+  // Generate the full URL from the path and base URL
+  const url: string = String(new URL(path, base));
 
-  if (
-    (processedUrl.search && processedUrl.pathname.endsWith("/")) ||
-    appendTrailingSlash !== processedUrl.pathname.endsWith("/")
-  ) {
-    processedUrl.pathname =
-      processedUrl.pathname.replace(/\/$/, "") +
-      (appendTrailingSlash ? "/" : "");
+  // Check if trailingSlash is set to false and the URL ends with a slash
+  if (path && trailingSlash === false && url.endsWith("/")) {
+    // Remove the trailing slash from the URL
+    return url.slice(0, -1);
+  }
+  // Check if trailingSlash is set to true and the URL does not end with a slash
+  else if (path && trailingSlash === true && !url.endsWith("/")) {
+    // Add a trailing slash to the URL
+    return url + "/";
   }
 
-  return processedUrl.toString();
+  // Return the URL as is if no modifications are needed
+  return url.toString();
 };
