@@ -14,6 +14,7 @@ const m2dxOptions = {
 // https://astro.build/config
 export default defineConfig({
   site: metadata.siteURL,
+  trailingSlash: "never",
   integrations: [
     tailwind({
       applyBaseStyles: false,
