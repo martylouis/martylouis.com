@@ -15,6 +15,10 @@ export const getHomeURL = (): string => {
  *
  * @param slug - The slug to be included in the URL.
  * @returns The generated project URL.
+ *
+ * @example
+ * // returns "/project/slug"
+ * getProjectURL("slug");
  */
 export const getProjectURL = (slug: string): string => {
   return getPermalink(slug, "project");
@@ -25,6 +29,10 @@ export const getProjectURL = (slug: string): string => {
  *
  * @param slug - The slug to be included in the URL.
  * @returns The generated post URL.
+ *
+ * @example
+ * // returns "/blog/slug"
+ * getPostURL("slug");
  */
 export const getPostURL = (slug: string): string => {
   return getPermalink(slug, "post");

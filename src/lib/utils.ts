@@ -6,6 +6,10 @@ import { twMerge } from "tailwind-merge";
  * Returns a string of concatenated class names based on the input values.
  * @param inputs - An array of class names or class name objects.
  * @returns A string of concatenated class names.
+ *
+ * @example
+ * // returns "bg-black text-white text-sm"
+ * cn("bg-black", "text-white", { "text-sm": true });
  */
 export const cn = (...inputs: ClassValue[]): string => {
   return twMerge(cx(inputs));
