@@ -1,0 +1,36 @@
+{
+  "name": "martylouis.com",
+  "url": "https://martylouis.com",
+  "title": "Marty Thierry - Web Designer and Frontend Developer - martylouis.com",
+  "description": "👋 Hey I’m Marty, a web designer and developer based in Destin, FL.",
+  "image": {
+    "url": "https://martylouis.com/images/banner.jpg",
+    "width": 1200,
+    "height": 627,
+    "alt": "Let's build something great together!"
+  },
+  "author": {
+    "name": "Marty Thierry",
+    "email": "hello@martylouis.com",
+    "image": {
+      "url": "https://martylouis.com/images/marty.jpg",
+      "width": 1024,
+      "height": 1024
+    },
+    "url": "https://martylouis.com/about",
+    "github": "https://github.com/martylouis",
+    "twitter": "https://twitter.com/martylouis",
+    "linkedin": "https://www.linkedin.com/in/martylouis/",
+    "instagram": "https://www.instagram.com/martylouis/",
+    "spotify": "https://open.spotify.com/user/martylouis",
+    "bluesky": "https://bluesky.martylouis.com"
+  },
+  "twitter": {
+    "site": "@martylouis",
+    "creator": "@martylouis"
+  },
+  "github": {
+    "user": "martylouis",
+    "repo": "martylouis.com"
+  }
+}

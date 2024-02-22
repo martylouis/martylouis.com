@@ -1,5 +1,5 @@
 ---
-import { metadata, TRAILING_SLASH } from "@/site.config";
+import * as META from "@/metadata.json";
 import { getNormalizedUrl } from "@/lib/utils";
 
 type Props = {
@@ -16,11 +16,7 @@ const {
   title,
   description,
   image,
-  canonicalURL = getNormalizedUrl(
-    Astro.url.pathname,
-    Astro.site,
-    TRAILING_SLASH,
-  ),
+  canonicalURL = getNormalizedUrl(Astro.url.pathname, Astro.site, false),
 } = Astro.props;
 
 if (!title) {
@@ -40,28 +36,25 @@ if (!image) {
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+<meta name="generator" content={Astro.generator} />
 
-<title>{`${title} - ${metadata.name}`}</title>
-<meta name="description" content={description || metadata.description} />
+<title>{`${title} - ${META.name}`}</title>
+<meta name="description" content={description || META.description} />
 
 <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-<meta name="generator" content={Astro.generator} />
 
 {/* Open Graph Meta */}
 <meta property="og:type" content="website" />
-<meta property="og:title" content={title || metadata.title} />
-<meta property="og:description" content={description || metadata.description} />
+<meta property="og:title" content={title || META.title} />
+<meta property="og:description" content={description || META.description} />
 <meta property="og:url" content={canonicalURL} />
 
 {/* Twitter Meta */}
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content={metadata.twitter} />
-<meta name="twitter:creator" content={metadata.twitter} />
-<meta name="twitter:title" content={title || metadata.title} />
-<meta
-  name="twitter:description"
-  content={description || metadata.description}
-/>
+<meta name="twitter:site" content={META.twitter.site} />
+<meta name="twitter:creator" content={META.twitter.creator} />
+<meta name="twitter:title" content={title || META.title} />
+<meta name="twitter:description" content={description || META.description} />
 {
   image && (
     <>
@@ -71,6 +64,6 @@ if (!image) {
   )
 }
 
-<meta name="author" content={metadata.author.name} />
+<meta name="author" content={META.author.name} />
 
 <link rel="canonical" href={canonicalURL} />
