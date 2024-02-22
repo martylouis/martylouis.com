@@ -1,10 +1,10 @@
 ---
-import config from "@/data/config";
-import { getCanonicalURL } from "@/lib/urlUtils";
+import * as META from "@/metadata.json";
+import { getNormalizedUrl } from "@/lib/utils";
 
 type Props = {
-  title?: string;
-  description?: string;
+  title: string | undefined;
+  description: string | undefined;
   image?: {
     src: string;
     alt: string;
@@ -16,40 +16,45 @@ const {
   title,
   description,
   image,
-  canonicalURL = getCanonicalURL(Astro.url.pathname.toString()),
+  canonicalURL = getNormalizedUrl(Astro.url.pathname, Astro.site, false),
 } = Astro.props;
 
-// console.log("canonicalURL:", canonicalURL);
+if (!title) {
+  throw new Error("Title is required for SEO");
+}
+
+if (!description) {
+  throw new Error("Description is required for SEO");
+}
+
+// throw warning if image is not provided
+if (!image) {
+  console.warn("Image is not provided for SEO");
+}
 ---
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+<meta name="generator" content={Astro.generator} />
 
-<title>{title || config.site.title}</title>
-<meta name="description" content={description || config.site.description} />
+<title>{`${title} - ${META.name}`}</title>
+<meta name="description" content={description || META.description} />
 
 <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-<meta name="generator" content={Astro.generator} />
 
 {/* Open Graph Meta */}
 <meta property="og:type" content="website" />
-<meta property="og:title" content={title || config.site.title} />
-<meta
-  property="og:description"
-  content={description || config.site.description}
-/>
+<meta property="og:title" content={title || META.title} />
+<meta property="og:description" content={description || META.description} />
 <meta property="og:url" content={canonicalURL} />
 
 {/* Twitter Meta */}
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content={config.site.twitter} />
-<meta name="twitter:creator" content={config.site.twitter} />
-<meta name="twitter:title" content={title || config.site.title} />
-<meta
-  name="twitter:description"
-  content={description || config.site.description}
-/>
+<meta name="twitter:site" content={META.twitter.site} />
+<meta name="twitter:creator" content={META.twitter.creator} />
+<meta name="twitter:title" content={title || META.title} />
+<meta name="twitter:description" content={description || META.description} />
 {
   image && (
     <>
@@ -59,6 +64,6 @@ const {
   )
 }
 
-<meta name="author" content="Marty Thierry" />
+<meta name="author" content={META.author.name} />
 
 <link rel="canonical" href={canonicalURL} />

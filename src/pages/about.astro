@@ -1,0 +1,15 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const meta = {
+  title: "About Marty",
+  description:
+    "👋 Hey I’m Marty, a web designer and developer based in Destin, FL.",
+};
+---
+
+<BaseLayout {...meta}>
+  <div class="container">
+    <h1 set:text={meta.title} />
+  </div>
+</BaseLayout>

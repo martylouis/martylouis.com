@@ -10,17 +10,8 @@ export const permalinkTypeSchema = z.union([
 export type PermalinkType = z.infer<typeof permalinkTypeSchema>;
 
 export const permalinkSchema = z.string().url();
-export type Permalink = z.infer<typeof permalinkSchema>;
 
-export const pathsSchema = z.object({
-  base: z.string(),
-  page: z.string(),
-  post: z.string(),
-  project: z.string(),
-  service: z.string(),
-  tag: z.string(),
-});
-export type Paths = z.infer<typeof pathsSchema>;
+export type Permalink = z.infer<typeof permalinkSchema>;
 
 export const dateSchema = z.coerce.date();
 export type Date = z.infer<typeof dateSchema>;
@@ -45,3 +36,9 @@ export const projectSchema = z
   .merge(entrySchema);
 
 export type Project = z.infer<typeof projectSchema>;
+
+export type SocialLink = {
+  id: string;
+  name: string;
+  url: string;
+};
