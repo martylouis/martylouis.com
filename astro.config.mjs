@@ -4,7 +4,6 @@ import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
 import m2dx from "astro-m2dx";
 import { defineConfig } from "astro/config";
-import { metadata } from "./src/site.config";
 
 const m2dxOptions = {
   exportComponents: true,
@@ -13,7 +12,7 @@ const m2dxOptions = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: metadata.siteURL,
+  site: "https://martylouis.com",
   trailingSlash: "never",
   integrations: [
     tailwind({

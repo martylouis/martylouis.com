@@ -52,7 +52,7 @@ export const trimSlash = (string: string): string => trim(string, "/");
  * Generates a full normalized URL for a given path, with optional base URL and a preference for a trailing slash.
  *
  * @param {string} path - The URL path string to be processed and normalized.
- * @param {URL} base - An optional base URL that the input URL will be relative to.
+ * @param {string|URL} base - An optional base URL that the input URL will be relative to.
  * @param {boolean} trailingSlash - If true, the pathname in the generated URL will end with a trailing slash. Default is false.
  * @returns The canonical URL as a string or URL object.
  *
@@ -64,7 +64,7 @@ export const trimSlash = (string: string): string => trim(string, "/");
  */
 export const getNormalizedUrl = (
   path: string = "",
-  base?: URL,
+  base?: string | URL,
   trailingSlash: boolean = false,
 ): string => {
   // Generate the full URL from the path and base URL

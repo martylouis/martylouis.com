@@ -1,4 +1,3 @@
-import { metadata } from "@/site.config";
 import { getPermalink } from "@/lib/permalinks";
 
 /**
@@ -7,7 +6,7 @@ import { getPermalink } from "@/lib/permalinks";
  * @returns The home URL.
  */
 export const getHomeURL = (): string => {
-  return getPermalink(metadata.siteURL);
+  return getPermalink("/");
 };
 
 /**
