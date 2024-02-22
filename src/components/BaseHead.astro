@@ -1,6 +1,6 @@
 ---
-import { metadata, trailingSlash } from "@/site.config";
-import { generateNormalizedUrl } from "@/lib/urlsUtils";
+import { metadata, TRAILING_SLASH } from "@/site.config";
+import { generateNormalizedUrl } from "@/lib/utils";
 
 type Props = {
   title: string | undefined;
@@ -19,7 +19,7 @@ const {
   canonicalURL = generateNormalizedUrl(
     Astro.url.pathname,
     Astro.site,
-    trailingSlash,
+    TRAILING_SLASH,
   ),
 } = Astro.props;
 

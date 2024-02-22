@@ -13,16 +13,6 @@ export const permalinkSchema = z.string().url();
 
 export type Permalink = z.infer<typeof permalinkSchema>;
 
-export const permalinkPathsSchema = z.object({
-  base: z.string(),
-  page: z.string(),
-  post: z.string(),
-  project: z.string(),
-  service: z.string(),
-  tag: z.string(),
-});
-export type PermalinkPaths = z.infer<typeof permalinkPathsSchema>;
-
 export const dateSchema = z.coerce.date();
 export type Date = z.infer<typeof dateSchema>;
 
