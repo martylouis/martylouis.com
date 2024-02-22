@@ -1,6 +1,6 @@
 ---
-import { metadata } from "@/site.config";
-import { getCanonicalURL } from "@/lib/getCanonicalURL";
+import { metadata, trailingSlash } from "@/site.config";
+import { generateNormalizedUrl } from "@/lib/urlsUtils";
 
 type Props = {
   title: string | undefined;
@@ -16,7 +16,11 @@ const {
   title,
   description,
   image,
-  canonicalURL = getCanonicalURL(Astro.url.pathname, Astro.site, false),
+  canonicalURL = generateNormalizedUrl(
+    Astro.url.pathname,
+    Astro.site,
+    trailingSlash,
+  ),
 } = Astro.props;
 
 if (!title) {
