@@ -5,6 +5,7 @@ import { ModeToggle } from "@/components/ModeToggle";
 import ProjectCard from "@/components/ProjectCard.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { projectEntries } from "@/lib/entries";
+import { metadata } from "@/site.config";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import martylouis from "../assets/img/martylouis.jpg";
@@ -13,6 +14,7 @@ const meta = {
   title: "Marty Thierry - Web Designer & Developer",
   description:
     "👋 Hey I’m Marty, a web designer and developer based in Destin, FL.",
+  canonicalURL: metadata.siteURL,
 };
 
 const content = {

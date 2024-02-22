@@ -1,9 +1,7 @@
 import type { PermalinkPaths, SocialLink } from "@/types";
 
 export const trailingSlash = false;
-
-export const siteURL = "https://www.martylouis.com";
-
+export const siteURL = "https://martylouis.com";
 export const siteURLDev = "http://localhost:4321";
 
 export const metadata = {
