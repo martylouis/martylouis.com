@@ -16,7 +16,7 @@ const {
   title,
   description,
   image,
-  canonicalURL = getNormalizedUrl(Astro.url.pathname, Astro.site, false),
+  canonicalURL = getNormalizedUrl(Astro.url.pathname, Astro.site, true),
 } = Astro.props;
 
 if (!title) {
