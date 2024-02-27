@@ -12,8 +12,8 @@ const m2dxOptions = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://martylouis.com",
-  trailingSlash: "never",
+  site: "https://martylouis.com/",
+  trailingSlash: "always",
   integrations: [
     tailwind({
       applyBaseStyles: false,
