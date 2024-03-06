@@ -31,6 +31,11 @@
     --ring: hsl(0, 0%, 3.9%);
 
     --radius: 0.5rem;
+
+    --lightmode-scale: 1;
+    --darkmode-scale: 0;
+    --lightmode-rotate: 0deg;
+    --darkmode-rotate: 90deg;
   }
 
   .dark {
@@ -61,6 +66,11 @@
     --border: hsl(0, 0%, 14.9%);
     --input: hsl(0, 0%, 14.9%);
     --ring: hsl(0, 0%, 83.1%);
+
+    --lightmode-scale: 0;
+    --darkmode-scale: 1;
+    --lightmode-rotate: -90deg;
+    --darkmode-rotate: 0deg;
   }
 }
 
@@ -95,6 +105,11 @@
     --color-ring: var(--ring);
 
     --radius: var(--radius);
+
+    --scale-lightmode: var(--lightmode-scale);
+    --scale-darkmode: var(--darkmode-scale);
+    --rotate-lightmode: var(--lightmode-rotate);
+    --rotate-darkmode: var(--darkmode-rotate);
   }
 }
 
