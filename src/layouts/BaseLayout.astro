@@ -19,17 +19,19 @@ const { title, description, ...meta } = Astro.props;
   <body
     class="bg-background text-foreground flex min-h-full w-full flex-col antialiased"
   >
-    <slot name="header">
-      <BaseHeader />
-    </slot>
-    <slot name="main">
-      <main id="main" class="flex-1">
-        <slot />
-      </main>
-    </slot>
-    <slot name="footer">
-      <BaseFooter />
-    </slot>
+    <div class="mx-auto max-w-xl px-4">
+      <slot name="header">
+        <BaseHeader />
+      </slot>
+      <slot name="main">
+        <main id="main" class="flex-1">
+          <slot />
+        </main>
+      </slot>
+      <slot name="footer">
+        <BaseFooter />
+      </slot>
+    </div>
     <ThemeSwitcher is:raw />
   </body>
 </html>
