@@ -22,26 +22,37 @@ const content = {
 ---
 
 <BaseLayout {...meta}>
-  <Landmark as="header" slot="header" class="mt-8 md:mt-32">
-    <div class="flex w-full justify-between gap-6 md:items-center">
-      <div class="flex flex-wrap items-center gap-4">
-        <Image src={marty} alt="Marty Louis" class="size-16 rounded-full" />
+  <header slot="header">
+    <div class="mt-8">
+      <div class="flex w-full justify-between gap-6 md:mt-16 md:items-center">
         <div>
+          <div
+            class="ring-offset-background ring-border size-20 overflow-hidden rounded-full ring-1 ring-offset-4"
+          >
+            <Image src={marty} alt="Marty Louis" class="" />
+          </div>
+        </div>
+        <div class="mr-auto">
           <h1>Marty Thierry (martylouis)</h1>
           <p class="text-sm text-zinc-600 dark:text-zinc-400">
             Web Designer & Developer
           </p>
         </div>
+        <div>
+          <ModeToggle client:load />
+        </div>
       </div>
-      <ModeToggle client:load />
     </div>
-  </Landmark>
-  <Landmark>
-    <p class="mt-6 text-base" set:text={content.lead} />
+  </header>
 
-    <div class="mt-6 flex gap-4">
+  <section>
+    <p
+      class="my-8 text-xl font-semibold tracking-tight"
+      set:text={content.lead}
+    />
+    <div class="flex gap-4">
       <ButtonLink target="_blank" href="mailto:hello@martylouis.com">
-        <span><Icon name="email" class="-ml-1 mr-1.5 size-4" /></span>Contact Me
+        <span><Icon name="email" class="mr-1.5 -ml-1 size-4" /></span>Contact Me
       </ButtonLink>
       <div class="flex gap-2">
         <ButtonLink
@@ -76,11 +87,17 @@ const content = {
         </ButtonLink>
       </div>
     </div>
-  </Landmark>
-  <Landmark block="lg" width="lg">
-    <!-- <h2>Projects</h2> -->
-    <div class="mt-8 grid gap-x-10 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+  </section>
+
+  <section>
+    <div class="mt-24 mb-16 flex items-center gap-3">
+      <h2 class="text-foreground/50 text-3xl font-medium tracking-tight">
+        Work
+      </h2>
+      <div aria-hidden class="bg-border h-[1px] flex-1"></div>
+    </div>
+    <div class="flex flex-col gap-y-16">
       {projectEntries.map(({ entry }) => <ProjectCard {entry} />)}
     </div>
-  </Landmark>
+  </section>
 </BaseLayout>

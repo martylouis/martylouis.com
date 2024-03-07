@@ -1,5 +1,6 @@
 ---
 import ButtonLink from "@/components/ButtonLink.astro";
+import { cn } from "@/lib/utils";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { Image } from "astro:assets";
 
@@ -9,28 +10,45 @@ const { Content } = await entry.render();
 ---
 
 <div {...props}>
-  {
-    image && (
-      <Image
-        src={image.src}
-        alt={image.alt}
-        class="rounded-lg border-2 border-border"
-      />
-    )
-  }
-  <div class="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1">
-    <div class="flex items-center gap-2">
-      <h3 class="text-lg font-bold" set:text={title} />
+  <div class="mb-4">
+    <h3 class="flex text-xl font-bold">
       {
-        url && (
-          <ButtonLink href={url} size="iconSm" variant="outline">
-            <ArrowTopRightIcon className="size-4" />
-          </ButtonLink>
+        url ? (
+          <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            class="hover:bg-accent -ml-2 inline-block rounded px-2 transition-all duration-150 ease-in will-change-transform hover:scale-[1.025] hover:ease-out"
+          >
+            <span class="inline-block">{title}</span>
+            <ArrowTopRightIcon className="size-5 inline-block" />
+          </a>
+        ) : (
+          <Fragment set:text={title} />
         )
       }
-    </div>
-    <div class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+    </h3>
+
+    <div class="text-foreground/75 my-2">
       <Content />
+    </div>
+  </div>
+
+  <!-- Project Image -->
+  <div class="bg-zinc-500/10">
+    <div class="overflow-hidden pt-8 px-8">
+      <div class="shadow">
+        {
+          image && (
+            <Image
+              src={image.src}
+              alt={image.alt}
+              class="bg-border ring-border block aspect-[5/4] w-full rounded-t-2xl object-cover object-top ring-4"
+              width={600}
+            />
+          )
+        }
+      </div>
     </div>
   </div>
 </div>

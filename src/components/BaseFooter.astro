@@ -1,18 +1,18 @@
+---
+const thisYear = new Date().getFullYear();
+
+const data = {
+  copyright: `&copy; ${thisYear} Marty Louis LLC. Except where otherwise noted, content on this site is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.`,
+};
+---
+
 <footer id="contentinfo" slot="footer">
-  <!-- TODO: add Policies Page -->
-  <div class="container">
-    <div
-      class="prose prose-zinc prose-sm dark:prose-invert mx-auto border-t py-12"
-    >
-      <p>
-        &copy; {new Date().getFullYear()} Marty Louis LLC. Except where otherwise
-        noted, content on this site is licensed under <a
-          href="https://creativecommons.org/licenses/by/4.0/"
-          target="_blank"
-        >
-          CC BY 4.0</a
-        >.
-      </p>
-    </div>
+  <div
+    class="border-t-border mt-24 border-t border-r-0 border-b-0 border-l-0 py-16"
+  >
+    <p
+      class="text-sm dark:text-zinc-400 [&>a]:underline"
+      set:html={data.copyright}
+    />
   </div>
 </footer>
