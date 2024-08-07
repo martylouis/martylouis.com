@@ -7,8 +7,9 @@ import { projectEntries } from "@/lib/entries";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import marty from "../assets/img/marty.jpg";
+import Layout from "@/components/Layout.astro";
 
-const meta = {
+const metadata: Metadata = {
   title: "Marty Thierry - Web Designer & Developer",
   description:
     "👋 Hey I’m Marty, a web designer and developer based in Destin, FL.",
@@ -20,6 +21,10 @@ const content = {
 };
 ---
 
+<Layout {...metadata}>page</Layout>
+
+{
+  /*
 <BaseLayout {...meta}>
   <header slot="header">
     <div class="mt-8">
@@ -100,3 +105,6 @@ const content = {
     </div>
   </section>
 </BaseLayout>
+ -->
+*/
+}
