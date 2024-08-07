@@ -2,7 +2,6 @@
 import Footer from "@/components/Footer.astro";
 import Metadata from "@/components/Metadata.astro";
 import { Header } from "@/components/Header";
-import ThemeSwitcher from "@/components/ThemeSwitcher.astro";
 import "@/styles/global.css";
 
 const { title, description, ...meta } = Astro.props;
@@ -12,7 +11,7 @@ const { title, description, ...meta } = Astro.props;
   <head>
     <Metadata {title} {description} {...meta} />
   </head>
-  <body class="flex h-full bg-zinc-50 dark:bg-black">
+  <body class="bg-background flex h-full">
     <div aria-hidden="true" class="fixed inset-0 flex justify-center sm:px-8">
       <div class="flex w-full max-w-7xl lg:px-8">
         <div
@@ -22,10 +21,35 @@ const { title, description, ...meta } = Astro.props;
       </div>
     </div>
     <div class="relative flex w-full flex-col">
-      <Header />
+      <Header client:load />
       <main class="flex-auto"><slot /></main>
       <Footer />
     </div>
-    <ThemeSwitcher is:raw />
+    <script is:inline>
+      const getThemePreference = () => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
+        }
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+      };
+      const isDark = getThemePreference() === "dark";
+      document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+      if (typeof localStorage !== "undefined") {
+        const observer = new MutationObserver(() => {
+          const isDark = document.documentElement.classList.contains("dark");
+          localStorage.setItem("theme", isDark ? "dark" : "light");
+        });
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ["class"],
+        });
+      }
+    </script>
   </body>
 </html>

@@ -16,7 +16,7 @@ import * as React from "react";
 
 type ThemeState = "light" | "dark" | "system";
 
-export const ModeToggle: React.FC = () => {
+export const ThemeToggle: React.FC = () => {
   const [theme, setThemeState] = React.useState<ThemeState>("light");
 
   const toggleTheme = (selectedTheme: ThemeState) => {
@@ -61,8 +61,8 @@ export const ModeToggle: React.FC = () => {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="items-center" size="sm">
           <span className="relative">
-            <SunIcon className="absolute size-5 rotate-lightmode scale-lightmode transition-transform duration-500" />
-            <MoonIcon className="size-5 rotate-darkmode scale-darkmode transition-transform duration-500" />
+            <SunIcon className="rotate-lightmode scale-lightmode absolute size-5 transition-transform duration-500" />
+            <MoonIcon className="rotate-darkmode scale-darkmode size-5 transition-transform duration-500" />
           </span>
           <span className="sr-only">Toggle theme</span>
           <CaretDownIcon className="-mr-0.5 ml-1 size-3" />
