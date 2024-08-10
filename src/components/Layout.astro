@@ -3,8 +3,12 @@ import Footer from "@/components/Footer.astro";
 import { Header } from "@/components/Header";
 import Metadata from "@/components/Metadata.astro";
 import "@/styles/global.css";
+import marty from "@/assets/img/marty.jpg";
+import { isHomePage } from "@/lib/utils";
 
 const { title, description, ...meta } = Astro.props;
+
+const isHome = isHomePage(new URL(Astro.request.url).pathname.toString());
 ---
 
 <html lang="en" class="h-full scroll-smooth antialiased">
@@ -22,8 +26,10 @@ const { title, description, ...meta } = Astro.props;
       </div>
     </div>
     <div class="relative flex w-full flex-col">
-      <Header client:load />
-      <main class="flex-auto"><slot /></main>
+      <Header avatarSrc={marty.src} isHomePage={isHome} client:load />
+      <main class="flex-auto">
+        <slot />
+      </main>
       <Footer />
     </div>
     <script src="../scripts/theme-switcher.ts"></script>
