@@ -1,11 +1,5 @@
 ---
-import ButtonLink from "@/components/ButtonLink.astro";
-import ProjectCard from "@/components/ProjectCard.astro";
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import { projectEntries } from "@/lib/entries";
-import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
-import marty from "../assets/img/marty.jpg";
+import { Container } from "@/components/Container";
 import Layout from "@/components/Layout.astro";
 
 const metadata: Metadata = {
@@ -14,96 +8,14 @@ const metadata: Metadata = {
     "👋 Hey I’m Marty, a web designer and developer based in Destin, FL.",
   canonicalURL: "https://martylouis.com/",
 };
-
-const content = {
-  lead: "👋 Hey, I'm Marty. I’m a web designer, developer, writer and creator. I’m based in sunny Destin, Florida but work remotely with people all over the world.",
-};
 ---
 
-<Layout {...metadata}>page</Layout>
-
-{
-  /*
-<BaseLayout {...meta}>
-  <header slot="header">
-    <div class="mt-8">
-      <div class="flex w-full justify-between gap-6 md:mt-16 md:items-center">
-        <div>
-          <div
-            class="ring-offset-background ring-border size-20 overflow-hidden rounded-full ring-1 ring-offset-4"
-          >
-            <Image src={marty} alt="Marty Louis" class="" />
-          </div>
-        </div>
-        <div class="mr-auto">
-          <h1>Marty Thierry (martylouis)</h1>
-          <p class="text-sm text-zinc-600 dark:text-zinc-400">
-            Web Designer & Developer
-          </p>
-        </div>
-        <div>
-          <ModeToggle client:load />
-        </div>
-      </div>
+<Layout {...metadata}>
+  <Container>
+    <div
+      class="h-[1000px] w-full rounded-2xl ring-[0.5px] dark:bg-zinc-800/90 dark:ring-zinc-300/20"
+    >
+      <div></div>
     </div>
-  </header>
-
-  <section>
-    <p
-      class="my-8 text-xl font-semibold tracking-tight"
-      set:text={content.lead}
-    />
-    <div class="flex gap-4">
-      <ButtonLink target="_blank" href="mailto:hello@martylouis.com">
-        <span><Icon name="email" class="mr-1.5 -ml-1 size-4" /></span>Contact Me
-      </ButtonLink>
-      <div class="flex gap-2">
-        <ButtonLink
-          size="icon"
-          variant="ghost"
-          href="https://github.com/martylouis"
-          target="_blank"
-          rel="noreferrer"
-          title="Follow @martylouis on GitHub"
-        >
-          <Icon name="github" class="size-5" />
-        </ButtonLink>
-        <ButtonLink
-          size="icon"
-          variant="ghost"
-          href="https://twitter.com/martylouis"
-          target="_blank"
-          rel="noreferrer"
-          title="Follow @martylouis on Twitter"
-        >
-          <Icon name="twitter" class="size-5" />
-        </ButtonLink>
-        <ButtonLink
-          size="icon"
-          variant="ghost"
-          href="https://www.linkedin.com/in/martylouis/"
-          target="_blank"
-          rel="noreferrer"
-          title="Follow @martylouis on LinkedIn"
-        >
-          <Icon name="linkedin" class="size-5" />
-        </ButtonLink>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="mt-24 mb-16 flex items-center gap-3">
-      <h2 class="text-foreground/50 text-3xl font-medium tracking-tight">
-        Work
-      </h2>
-      <div aria-hidden class="bg-border h-[1px] flex-1"></div>
-    </div>
-    <div class="flex flex-col gap-y-16">
-      {projectEntries.map(({ entry }) => <ProjectCard {entry} />)}
-    </div>
-  </section>
-</BaseLayout>
- -->
-*/
-}
+  </Container>
+</Layout>
