@@ -16,7 +16,7 @@ const isHome = isHomePage(new URL(Astro.request.url).pathname.toString());
     <Metadata {title} {description} {...meta} />
     <script src="../scripts/theme-prefs.ts"></script>
   </head>
-  <body class="flex h-full bg-zinc-50 dark:bg-black">
+  <body class="flex min-h-full bg-zinc-50 dark:bg-black">
     <div aria-hidden="true" class="fixed inset-0 flex justify-center sm:px-8">
       <div aria-hidden="true" class="flex w-full max-w-7xl lg:px-8">
         <div
