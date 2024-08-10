@@ -1,3 +1,4 @@
+import type { AstroGlobal } from "astro";
 import { cx } from "class-variance-authority";
 import type { ClassValue } from "class-variance-authority/types";
 import { twMerge } from "tailwind-merge";
@@ -83,4 +84,31 @@ export const getNormalizedUrl = (
 
   // Return the URL as is if no modifications are needed
   return url.toString();
+};
+
+/**
+ * Checks if the provided URL is the current page.
+ *
+ * @param href - The URL to be checked.
+ * @param currentPath - The current page URL.
+ * @returns The result of the comparison.
+ */
+export const isCurrentPage = (
+  href: string | URL | undefined | null,
+  currentPath: AstroGlobal["request"]["url"],
+): boolean => {
+  if (!href || href === undefined) return false;
+  return currentPath === href;
+};
+
+/**
+ * Checks if the the current page URL is the homepage.
+ *
+ * @param currentPath - The current page URL.
+ * @returns The result of the comparison.
+ */
+export const isHomePage = (
+  currentPath: AstroGlobal["request"]["url"],
+): boolean => {
+  return currentPath === "/";
 };
