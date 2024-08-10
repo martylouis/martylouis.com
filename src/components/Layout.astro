@@ -1,7 +1,7 @@
 ---
 import Footer from "@/components/Footer.astro";
-import Metadata from "@/components/Metadata.astro";
 import { Header } from "@/components/Header";
+import Metadata from "@/components/Metadata.astro";
 import "@/styles/global.css";
 
 const { title, description, ...meta } = Astro.props;
@@ -11,10 +11,11 @@ const { title, description, ...meta } = Astro.props;
   <head>
     <Metadata {title} {description} {...meta} />
   </head>
-  <body class="bg-background flex h-full">
+  <body class="flex h-full bg-zinc-50 dark:bg-black">
     <div aria-hidden="true" class="fixed inset-0 flex justify-center sm:px-8">
-      <div class="flex w-full max-w-7xl lg:px-8">
+      <div aria-hidden="true" class="flex w-full max-w-7xl lg:px-8">
         <div
+          aria-hidden="true"
           class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"
         >
         </div>
@@ -25,31 +26,6 @@ const { title, description, ...meta } = Astro.props;
       <main class="flex-auto"><slot /></main>
       <Footer />
     </div>
-    <script is:inline>
-      const getThemePreference = () => {
-        if (
-          typeof localStorage !== "undefined" &&
-          localStorage.getItem("theme")
-        ) {
-          return localStorage.getItem("theme");
-        }
-        return window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light";
-      };
-      const isDark = getThemePreference() === "dark";
-      document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-
-      if (typeof localStorage !== "undefined") {
-        const observer = new MutationObserver(() => {
-          const isDark = document.documentElement.classList.contains("dark");
-          localStorage.setItem("theme", isDark ? "dark" : "light");
-        });
-        observer.observe(document.documentElement, {
-          attributes: true,
-          attributeFilter: ["class"],
-        });
-      }
-    </script>
+    <script src="../scripts/theme-switcher.ts"></script>
   </body>
 </html>
