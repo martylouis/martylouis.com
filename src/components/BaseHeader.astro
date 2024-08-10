@@ -1,6 +1,6 @@
 ---
 import Landmark from "@/components/Landmark.astro";
-import { ModeToggle } from "@/components/ModeToggle";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { getHomeURL } from "@/lib/helpers";
 import { Icon } from "astro-icon/components";
 ---
@@ -9,7 +9,7 @@ import { Icon } from "astro-icon/components";
   <div class="flex w-full items-center gap-4">
     <div class="flex flex-1 gap-10 self-center">
       <a href={getHomeURL()} class="mr-auto flex items-center gap-4">
-        <Icon name="martylouis-logo" class="size-10 text-foreground" />
+        <Icon name="martylouis-logo" class="text-foreground size-10" />
         <span class="font-semibold max-md:hidden">martylouis</span>
       </a>
     </div>
@@ -21,9 +21,9 @@ import { Icon } from "astro-icon/components";
           <a class="inline-flex" href={getPermalink('contact')}>Contact</a>
         </nav>
       </div> -->
-    <div class="flex items-center justify-end gap-2 divide-x divide-border">
+    <div class="divide-border flex items-center justify-end gap-2 divide-x">
       <div class="pl-4">
-        <ModeToggle client:load />
+        <ThemeToggle client:load />
       </div>
     </div>
   </div>
