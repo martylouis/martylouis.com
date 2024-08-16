@@ -1,6 +1,8 @@
 ---
+import ButtonLink from "@/components/ButtonLink.astro";
 import { Container } from "@/components/Container";
 import Layout from "@/components/Layout.astro";
+import { Icon } from "astro-icon/components";
 
 const metadata: Metadata = {
   title: "Marty Thierry - Web Designer & Developer",
@@ -11,11 +13,50 @@ const metadata: Metadata = {
 ---
 
 <Layout {...metadata}>
-  <Container>
-    <div
-      class="h-[1000px] w-full rounded-2xl ring-[0.5px] dark:bg-zinc-800/90 dark:ring-zinc-300/20"
-    >
-      <div></div>
+  <Container className="mt-9">
+    <div class="max-w-2xl">
+      <h1
+        class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100"
+      >
+        Web Designer, UX Developer
+      </h1>
+      <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+        I’m Marty, a web designer and developer based in Destin, Florida. I’m
+        the owner of Marty Louis Co, where I help businesses create easy-to-use
+        and functional websites.
+      </p>
+      <div class="mt-6 flex gap-6 text-zinc-600 dark:text-zinc-400">
+        <ButtonLink
+          size="icon"
+          variant="ghost"
+          href="https://github.com/martylouis"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Follow on GitHub"
+        >
+          <Icon name="github" class="size-6" />
+        </ButtonLink>
+        <ButtonLink
+          size="icon"
+          variant="ghost"
+          href="https://twitter.com/martylouis"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Follow on Twitter"
+        >
+          <Icon name="twitter" class="size-6" />
+        </ButtonLink>
+        <ButtonLink
+          size="icon"
+          variant="ghost"
+          href="https://www.linkedin.com/in/martylouis/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Follow on LinkedIn"
+        >
+          <Icon name="linkedin" class="size-6" />
+        </ButtonLink>
+      </div>
     </div>
   </Container>
 </Layout>
