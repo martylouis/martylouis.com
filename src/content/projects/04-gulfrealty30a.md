@@ -3,7 +3,7 @@ title: Gulf Realty 30A
 description: dolore aute reprehenderit deserunt aliquip est consequat duis ex labore pariatur velit dolor exercitation duis duis excepteur fugiat fugiat non consequat mollit
 url: https://gulfrealty30a.com
 image:
-  src: /src/assets/img/gulfrealty30a.jpg
+  src: /src/images/gulfrealty30a.jpg
   alt: gulfrealty30a.com homepage screenshot
 ---
 

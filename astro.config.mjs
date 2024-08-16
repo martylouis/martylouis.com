@@ -26,7 +26,7 @@ export default defineConfig({
       include: {
         "radix-icons": ["*"],
       },
-      iconDir: "./src/assets/svg",
+      iconDir: "./src/icons",
     }),
     tailwind(),
   ],

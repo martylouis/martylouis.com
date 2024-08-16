@@ -3,7 +3,7 @@ title: Red Horse Corporation
 description: We partnered with Redhorse Corp. to revamp their website, giving it a modern and professional look to attract top talent.
 url: https://redhorsecorp.com
 image:
-  src: /src/assets/img/redhorsecorp.jpg
+  src: /src/images/redhorsecorp.jpg
   alt: Red Horse Corporation homepage screenshot
 ---
 

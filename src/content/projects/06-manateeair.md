@@ -4,7 +4,7 @@ description: dolore aute reprehenderit deserunt aliquip est consequat duis ex la
 order: 4
 url: https://manateeair.com
 image:
-  src: /src/assets/img/manateeair.jpg
+  src: /src/images/manateeair.jpg
   alt: manateeair.com homepage screenshot
 ---
 
