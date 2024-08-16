@@ -1,8 +1,8 @@
-import { useEffect, useRef } from "react";
 import { Container } from "@/components/Container";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { MobileNav } from "@/components/react/MobileNav";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
+import { useEffect, useRef } from "react";
 
 function NavItem({
   href,
