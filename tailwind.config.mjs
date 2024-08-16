@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import typographyStyles from "./src/lib/typography";
 
 /** @type {import('tailwindcss').Config} */
