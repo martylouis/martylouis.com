@@ -1,4 +1,4 @@
-import { Container } from "@/components/Container";
+import { Container } from "@/components/Container";";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
 import { useEffect, useRef } from "react";
