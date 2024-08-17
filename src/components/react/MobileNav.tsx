@@ -1,12 +1,15 @@
 import {
   Drawer,
+  DrawerClose,
   DrawerContent,
+  DrawerDescription,
   DrawerHandle,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { cn } from "@/lib/utils";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import { PanelTopOpenIcon } from "lucide-react";
 
 function MobileNav({
@@ -24,20 +27,21 @@ function MobileNav({
           />
         </DrawerTrigger>
         <DrawerContent>
-          <DrawerHeader className="text-left">
-            <DrawerTitle className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
-              Navigation
-            </DrawerTitle>
+          <DrawerHeader>
+            <DrawerClose>Close</DrawerClose>
+            <VisuallyHidden.Root>
+              <DrawerTitle className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+                Navigation
+              </DrawerTitle>
+              <DrawerDescription>Mobile navigation menu</DrawerDescription>
+            </VisuallyHidden.Root>
           </DrawerHeader>
-          <nav className="my-4 px-4">
+          <nav className="px-8">
             <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
               {children}
             </ul>
           </nav>
-          {/* <DrawerFooter>
-            <DrawerClose>Close</DrawerClose>
-          </DrawerFooter> */}
-          <DrawerHandle className="mb-4" />
+          <DrawerHandle className="my-8" />
         </DrawerContent>
       </Drawer>
     </div>
@@ -55,7 +59,13 @@ function MobileNavItem({
 }) {
   return (
     <li>
-      <a href={href} className={cn("block py-2", className)}>
+      <a
+        href={href}
+        className={cn(
+          "block border-b border-zinc-100 py-4 dark:border-zinc-100/5",
+          className,
+        )}
+      >
         {children}
       </a>
     </li>

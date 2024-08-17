@@ -15,14 +15,13 @@ function DesktopNav({
 
 function DesktopNavItem({
   href,
+  isActive = false,
   children,
 }: {
   href: string;
+  isActive: boolean;
   children: React.ReactNode;
 }) {
-  // let isActive = usePathname() === href;
-  const isActive = false;
-
   return (
     <li>
       <a

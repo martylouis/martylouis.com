@@ -1,8 +1,5 @@
 import { Container } from "@/components/Container";
-import { DesktopNav, DesktopNavItem } from "@/components/react/DesktopNav";
-import { MobileNav, MobileNavItem } from "@/components/react/MobileNav";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import siteNav, { type NavItem } from "@/data/site.nav";
 import { cn } from "@/lib/utils";
 import { useEffect, useRef } from "react";
 
@@ -59,9 +56,11 @@ function Avatar({
 export function Header({
   avatarSrc = "",
   isHomePage = false,
+  children,
 }: {
   avatarSrc?: string;
   isHomePage?: boolean;
+  children: React.ReactNode;
 }) {
   const headerRef = useRef<React.ElementRef<"div">>(null);
   const avatarRef = useRef<React.ElementRef<"div">>(null);
@@ -238,22 +237,7 @@ export function Header({
                   </AvatarContainer>
                 )}
               </div>
-              <div className="flex flex-1 justify-end md:justify-center">
-                <MobileNav>
-                  {siteNav.headerMobile.map(({ href, text }: NavItem) => (
-                    <MobileNavItem key={href} href={href}>
-                      {text}
-                    </MobileNavItem>
-                  ))}
-                </MobileNav>
-                <DesktopNav className="pointer-events-auto">
-                  {siteNav.headerDesktop.map(({ href, text }: NavItem) => (
-                    <DesktopNavItem key={href} href={href}>
-                      {text}
-                    </DesktopNavItem>
-                  ))}
-                </DesktopNav>
-              </div>
+              {children}
               <div className="flex justify-end md:flex-1">
                 <div className="pointer-events-auto">
                   <ThemeToggle />

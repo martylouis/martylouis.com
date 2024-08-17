@@ -2,6 +2,7 @@
 import BaseHead, { type Props as HeadProps } from "@/components/BaseHead.astro";
 import Footer from "@/components/Footer.astro";
 import { Header } from "@/components/Header";
+import Nav from "@/components/Nav.astro";
 import PageBackground from "@/components/PageBackground.astro";
 import marty from "@/images/marty.jpg";
 import { isHomePage } from "@/lib/utils";
@@ -24,7 +25,9 @@ const isHome = isHomePage(new URL(Astro.request.url).pathname.toString());
   >
     <PageBackground />
     <div class="relative flex w-full flex-col">
-      <Header avatarSrc={marty.src} isHomePage={isHome} client:load />
+      <Header avatarSrc={marty.src} isHomePage={isHome} client:load>
+        <Nav />
+      </Header>
       <main class="flex-auto">
         <slot />
       </main>
