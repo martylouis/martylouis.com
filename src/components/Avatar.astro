@@ -1,0 +1,23 @@
+---
+import { cn } from "@/lib/utils"
+import type { HTMLAttributes } from "astro/types"
+
+export type Props = HTMLAttributes<"a"> & {
+  src: string
+  alt: string
+  large?: boolean
+}
+
+const { src, alt, large, ...props } = Astro.props
+---
+
+<a href={props.href} class={cn(props.class, "pointer-events-auto")} {...props}>
+  <img
+    src={src}
+    alt={alt}
+    class={cn(
+      "rounded-full bg-zinc-100 object-cover dark:bg-zinc-800",
+      large ? "size-16" : "size-9",
+    )}
+  />
+</a>

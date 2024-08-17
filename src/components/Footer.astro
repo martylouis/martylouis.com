@@ -1,6 +1,7 @@
 ---
 import { ContainerInner, ContainerOuter } from "@/components/Container"
 import siteNav, { type NavItem } from "@/data/site.nav"
+import { isCurrentPage } from "@/lib/utils"
 ---
 
 <footer class="mt-32 flex-none">
@@ -16,13 +17,18 @@ import siteNav, { type NavItem } from "@/data/site.nav"
             class="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200"
           >
             {
-              siteNav.footer.map(({ href, text }: NavItem) => (
-                <a
-                  {href}
-                  class="transition hover:text-teal-500 dark:hover:text-teal-400"
-                  set:html={text}
-                />
-              ))
+              siteNav.footer.map(({ href, text }: NavItem) => {
+                const isCurrent = isCurrentPage(href, Astro.url.pathname)
+
+                return (
+                  <a
+                    {href}
+                    class="transition hover:text-teal-500 dark:hover:text-teal-400"
+                    set:html={text}
+                    aria-current={isCurrent ? "page" : undefined}
+                  />
+                )
+              })
             }
           </div>
           <p

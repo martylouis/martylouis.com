@@ -50,21 +50,22 @@ function HeaderMobileNav({
 
 function HeaderMobileNavItem({
   href,
-  className,
   children,
+  ...props
 }: {
   href: string
   className?: string
   children: React.ReactNode
-}) {
+} & React.ComponentPropsWithoutRef<"a">) {
   return (
     <li>
       <a
         href={href}
         className={cn(
           "block border-b border-zinc-100 py-4 dark:border-zinc-100/5",
-          className,
+          props.className,
         )}
+        {...props}
       >
         {children}
       </a>

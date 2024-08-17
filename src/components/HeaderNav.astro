@@ -14,17 +14,21 @@ import { isCurrentPage } from "@/lib/utils"
 <div class="flex flex-1 justify-end md:justify-center">
   <HeaderMobileNav client:load>
     {
-      siteNav.headerMobile.map(({ href, text }: NavItem) => (
-        <HeaderMobileNavItem href={href}>{text}</HeaderMobileNavItem>
-      ))
+      siteNav.headerMobile.map(({ href, text }: NavItem) => {
+        return <HeaderMobileNavItem href={href}>{text}</HeaderMobileNavItem>
+      })
     }
   </HeaderMobileNav>
   <HeaderDesktopNav className="pointer-events-auto hidden md:block">
     {
       siteNav.headerDesktop.map(({ href, text }: NavItem) => {
-        const isActive = isCurrentPage(href, Astro.url.pathname)
+        const isCurrent = isCurrentPage(href, Astro.url.pathname)
         return (
-          <HeaderDesktopNavItem isActive={isActive} href={href}>
+          <HeaderDesktopNavItem
+            isCurrent={isCurrent}
+            href={href}
+            aria-current={isCurrent ? "page" : undefined}
+          >
             {text}
           </HeaderDesktopNavItem>
         )
