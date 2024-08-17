@@ -22,6 +22,7 @@ const siteNav: SiteNav = {
     { href: "/uses/", text: "Uses" },
   ],
   footer: [
+    { href: "/", text: "Home" },
     { href: "/about/", text: "About" },
     { href: "/projects/", text: "Projects" },
     { href: "/uses/", text: "Uses" },
