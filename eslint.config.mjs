@@ -1,20 +1,21 @@
-import { FlatCompat } from "@eslint/eslintrc";
-import js from "@eslint/js";
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
-import parser from "astro-eslint-parser";
-import tailwindcss from "eslint-plugin-tailwindcss";
-import globals from "globals";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { FlatCompat } from "@eslint/eslintrc"
+import js from "@eslint/js"
+import typescriptEslint from "@typescript-eslint/eslint-plugin"
+import tsParser from "@typescript-eslint/parser"
+import parser from "astro-eslint-parser"
+import astroPlugin from "eslint-plugin-astro"
+import tailwindcss from "eslint-plugin-tailwindcss"
+import globals from "globals"
+import path from "node:path"
+import { fileURLToPath } from "node:url"
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 const compat = new FlatCompat({
   baseDirectory: __dirname,
   recommendedConfig: js.configs.recommended,
   allConfig: js.configs.all,
-});
+})
 
 export default [
   {
@@ -100,13 +101,13 @@ export default [
   {
     files: ["**/*.astro"],
     // Enable this plugin
-    plugins: ["astro"],
-    env: {
-      // Enables global variables available in Astro components.
-      node: true,
-      "astro/astro": true,
-      es2020: true,
-    },
+    plugins: astroPlugin,
+    // env: {
+    //   // Enables global variables available in Astro components.
+    //   node: true,
+    //   "astro/astro": true,
+    //   es2020: true,
+    // },
 
     languageOptions: {
       parser: parser,
@@ -134,10 +135,10 @@ export default [
     // Define the configuration for `<script>` tag when using `client-side-ts` processor.
     // Script in `<script>` is assigned a virtual file name with the `.ts` extension.
     files: ["**/*.astro/*.ts", "*.astro/*.ts"],
-    env: {
-      browser: true,
-      es2020: true,
-    },
+    // env: {
+    //   browser: true,
+    //   es2020: true,
+    // },
     parser: "@typescript-eslint/parser",
     parserOptions: {
       sourceType: "module",
@@ -152,4 +153,4 @@ export default [
       "prettier/prettier": "off",
     },
   },
-];
+]
