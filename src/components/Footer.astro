@@ -1,11 +1,12 @@
 ---
 import { ContainerInner, ContainerOuter } from "@/components/Container";
+import siteNav, { type NavItem } from "@/data/site.nav";
 ---
 
 <footer class="mt-32 flex-none">
   <ContainerOuter>
     <div
-      class="border-t border-t-zinc-100 pt-10 pb-16 dark:border-t-zinc-700/40"
+      class="border-t border-t-zinc-100 pb-16 pt-10 dark:border-t-zinc-700/40"
     >
       <ContainerInner>
         <div
@@ -14,21 +15,15 @@ import { ContainerInner, ContainerOuter } from "@/components/Container";
           <div
             class="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200"
           >
-            <a
-              href="/about/"
-              class="transition hover:text-teal-500 dark:hover:text-teal-400"
-              >About</a
-            >
-            <a
-              href="/projects/"
-              class="transition hover:text-teal-500 dark:hover:text-teal-400"
-              >Projects</a
-            >
-            <a
-              href="/uses/"
-              class="transition hover:text-teal-500 dark:hover:text-teal-400"
-              >Uses</a
-            >
+            {
+              siteNav.footer.map(({ href, text }: NavItem) => (
+                <a
+                  {href}
+                  class="transition hover:text-teal-500 dark:hover:text-teal-400"
+                  set:html={text}
+                />
+              ))
+            }
           </div>
           <p
             class="text-balance text-center text-sm text-zinc-400 dark:text-zinc-500"
