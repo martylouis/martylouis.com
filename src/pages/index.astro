@@ -1,29 +1,27 @@
 ---
 import ButtonLink from "@/components/ButtonLink.astro";
 import { Container } from "@/components/Container";
-import Layout from "@/components/Layout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
-
-const metadata: Metadata = {
-  title: "Marty Thierry - Web Designer & Developer",
-  description:
-    "👋 Hey I’m Marty, a web designer and developer based in Destin, FL.",
-  canonicalURL: "https://martylouis.com/",
-};
 ---
 
-<Layout {...metadata}>
+<BaseLayout
+  image={{
+    src: "/images/og/martylouis.jpg",
+    alt: "Let's make your website better",
+  }}
+>
   <Container className="mt-9">
     <div class="max-w-2xl">
       <h1
         class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100"
       >
-        Web Designer, UX Developer
+        UX Designer & Developer
       </h1>
       <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-        I’m Marty, a web designer and developer based in Destin, Florida. I’m
-        the owner of Marty Louis Co, where I help businesses create easy-to-use
-        and functional websites.
+        I’m Marty, a UX designer and developer based in Destin, Florida. I’m the
+        owner of Marty Louis Co, where I help businesses create easy-to-use and
+        functional apps and websites.
       </p>
       <div class="mt-6 flex gap-6 text-zinc-600 dark:text-zinc-400">
         <ButtonLink
@@ -59,4 +57,4 @@ const metadata: Metadata = {
       </div>
     </div>
   </Container>
-</Layout>
+</BaseLayout>

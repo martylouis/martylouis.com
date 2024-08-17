@@ -1,23 +1,30 @@
 ---
-import * as META from "@/metadata.json";
-import { getNormalizedUrl } from "@/lib/utils";
+import SEO from "@/components/SEO.astro";
+import siteConfig from "@/data/site.config";
+import smartypants from "smartypants";
 
-type Props = {
-  title: string | undefined;
-  description: string | undefined;
-  image?: {
-    src: string;
-    alt: string;
-  } | null;
-  canonicalURL?: URL | string | null;
+export type Props = {
+  title?: string;
+  description?: string;
+  image?: { src: string; alt: string };
+  canonicalURL?: URL | null;
+  pageType?: "website" | "article";
 };
 
 const {
-  title,
-  description,
-  image,
-  canonicalURL = getNormalizedUrl(Astro.url.pathname, Astro.site, true),
+  description = siteConfig.description,
+  image = siteConfig.image,
+  canonicalURL = new URL(Astro.request.url, Astro.site),
+  pageType = "website",
 } = Astro.props;
+
+const title = [Astro.props.title, siteConfig.name].filter(Boolean).join(" | ");
+const resolvedImage = {
+  src: new URL(image.src, Astro.site).toString(),
+  alt: image.alt,
+};
+
+const twitterHandle = "martylouis";
 
 if (!title) {
   throw new Error("Title is required for SEO");
@@ -26,44 +33,25 @@ if (!title) {
 if (!description) {
   throw new Error("Description is required for SEO");
 }
-
-// throw warning if image is not provided
-if (!image) {
-  console.warn("Image is not provided for SEO");
-}
 ---
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title set:html={smartypants(title, 1)} />
 <meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content="#0d9488" />
 
-<title>{`${title} - ${META.name}`}</title>
-<meta name="description" content={description || META.description} />
+<!-- TODO: Add adaptive icon https://web.dev/articles/building/an-adaptive-favicon <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+<!-- TODO: Add mask icon <link rel="mask-icon" href="/favicon.svg" color="#8D46E7" /> -->
+<!-- TODO: Add Sitemap <link rel="sitemap" href="/sitemap-index.xml" /> -->
+<!-- TODO: Add RSS <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="RSS" /> -->
 
-<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-
-{/* Open Graph Meta */}
-<meta property="og:type" content="website" />
-<meta property="og:title" content={title || META.title} />
-<meta property="og:description" content={description || META.description} />
-<meta property="og:url" content={canonicalURL} />
-
-{/* Twitter Meta */}
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content={META.twitter.site} />
-<meta name="twitter:creator" content={META.twitter.creator} />
-<meta name="twitter:title" content={title || META.title} />
-<meta name="twitter:description" content={description || META.description} />
-{
-  image && (
-    <>
-      <meta name="twitter:image" content={image.src} />
-      <meta name="twitter:image:alt" content={image.alt} />
-    </>
-  )
-}
-
-<meta name="author" content={META.author.name} />
-
-<link rel="canonical" href={canonicalURL} />
+<SEO
+  name={siteConfig.name}
+  title={title}
+  description={description}
+  image={resolvedImage}
+  twitter={{ handle: twitterHandle }}
+  og={{ type: pageType }}
+  canonicalURL={canonicalURL}
+/>
