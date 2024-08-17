@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 function DesktopNav({
   children,
@@ -10,7 +10,7 @@ function DesktopNav({
         {children}
       </ul>
     </nav>
-  );
+  )
 }
 
 function DesktopNavItem({
@@ -18,9 +18,9 @@ function DesktopNavItem({
   isActive = false,
   children,
 }: {
-  href: string;
-  isActive: boolean;
-  children: React.ReactNode;
+  href: string
+  isActive: boolean
+  children: React.ReactNode
 }) {
   return (
     <li>
@@ -39,7 +39,7 @@ function DesktopNavItem({
         )}
       </a>
     </li>
-  );
+  )
 }
 
-export { DesktopNav, DesktopNavItem };
+export { DesktopNav, DesktopNavItem }

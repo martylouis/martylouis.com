@@ -1,4 +1,4 @@
-import { getPermalink } from "@/lib/permalinks";
+import { getPermalink } from "@/lib/permalinks"
 
 /**
  * Returns the home URL of the site.
@@ -6,8 +6,8 @@ import { getPermalink } from "@/lib/permalinks";
  * @returns The home URL.
  */
 export const getHomeURL = (): string => {
-  return getPermalink("/");
-};
+  return getPermalink("/")
+}
 
 /**
  * Generates a project URL based on the provided slug.
@@ -20,8 +20,8 @@ export const getHomeURL = (): string => {
  * getProjectURL("slug");
  */
 export const getProjectURL = (slug: string): string => {
-  return getPermalink(slug, "project");
-};
+  return getPermalink(slug, "project")
+}
 
 /**
  * Generates a post URL based on the provided slug.
@@ -34,5 +34,5 @@ export const getProjectURL = (slug: string): string => {
  * getPostURL("slug");
  */
 export const getPostURL = (slug: string): string => {
-  return getPermalink(slug, "post");
-};
+  return getPermalink(slug, "post")
+}

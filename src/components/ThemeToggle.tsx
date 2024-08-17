@@ -1,13 +1,13 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { cn } from "@/lib/utils";
-import { CheckIcon, MoonStarIcon, SunIcon } from "lucide-react";
-import * as React from "react";
+} from "@/components/ui/dropdown-menu"
+import { cn } from "@/lib/utils"
+import { CheckIcon, MoonStarIcon, SunIcon } from "lucide-react"
+import * as React from "react"
 
 const themes = [
   {
@@ -22,29 +22,29 @@ const themes = [
     mode: "system",
     name: "System",
   },
-] as const;
+] as const
 
-type ThemeMode = (typeof themes)[number]["mode"];
+type ThemeMode = (typeof themes)[number]["mode"]
 
 export const ThemeToggle: React.FC = () => {
-  const [themeMode, setThemeState] = React.useState<ThemeMode>("light");
+  const [themeMode, setThemeState] = React.useState<ThemeMode>("light")
 
   const toggleTheme = (selectedTheme: ThemeMode) => {
-    setThemeState(selectedTheme);
-  };
+    setThemeState(selectedTheme)
+  }
 
   React.useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark");
-    setThemeState(isDarkMode ? "dark" : "light");
-  }, []);
+    const isDarkMode = document.documentElement.classList.contains("dark")
+    setThemeState(isDarkMode ? "dark" : "light")
+  }, [])
 
   React.useEffect(() => {
     const isDark =
       themeMode === "dark" ||
       (themeMode === "system" &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches);
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-  }, [themeMode]);
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    document.documentElement.classList[isDark ? "add" : "remove"]("dark")
+  }, [themeMode])
 
   return (
     <DropdownMenu>
@@ -87,5 +87,5 @@ export const ThemeToggle: React.FC = () => {
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
-  );
-};
+  )
+}

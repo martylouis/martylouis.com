@@ -1,22 +1,22 @@
 export type SocialLink = {
-  platform: string;
-  href: string;
-  me?: string;
-  text: string;
-  icon: string;
-  footerOnly?: boolean;
-};
+  platform: string
+  href: string
+  me?: string
+  text: string
+  icon: string
+  footerOnly?: boolean
+}
 
 export type SiteConfig = {
-  name: string;
-  title: string;
-  description: string;
+  name: string
+  title: string
+  description: string
   image: {
-    src: string;
-    alt: string;
-  };
-  socialLinks: SocialLink[];
-};
+    src: string
+    alt: string
+  }
+  socialLinks: SocialLink[]
+}
 
 const siteConfig: SiteConfig = {
   name: "Marty Louis | UX Designer & Developer",
@@ -50,6 +50,6 @@ const siteConfig: SiteConfig = {
       icon: "social/linkedin",
     },
   ],
-};
+}
 
-export default siteConfig;
+export default siteConfig

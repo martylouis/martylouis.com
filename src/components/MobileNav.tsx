@@ -7,10 +7,10 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer";
-import { cn } from "@/lib/utils";
-import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
-import { PanelTopOpenIcon } from "lucide-react";
+} from "@/components/ui/drawer"
+import { cn } from "@/lib/utils"
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden"
+import { PanelTopOpenIcon } from "lucide-react"
 
 function MobileNav({
   children,
@@ -45,7 +45,7 @@ function MobileNav({
         </DrawerContent>
       </Drawer>
     </div>
-  );
+  )
 }
 
 function MobileNavItem({
@@ -53,9 +53,9 @@ function MobileNavItem({
   className,
   children,
 }: {
-  href: string;
-  className?: string;
-  children: React.ReactNode;
+  href: string
+  className?: string
+  children: React.ReactNode
 }) {
   return (
     <li>
@@ -69,7 +69,7 @@ function MobileNavItem({
         {children}
       </a>
     </li>
-  );
+  )
 }
 
-export { MobileNav, MobileNavItem };
+export { MobileNav, MobileNavItem }

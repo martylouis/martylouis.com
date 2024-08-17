@@ -1,9 +1,9 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection } from "astro:content"
 
 const projects = await getCollection("projects", ({ data }) => {
-  return data.draft !== true;
-});
+  return data.draft !== true
+})
 ---
 
 <ol class="flex w-full flex-col gap-4">

@@ -1,4 +1,4 @@
-import { getCollection } from "astro:content";
+import { getCollection } from "astro:content"
 
 export const projectEntries = (await getCollection("projects"))
   .filter((entry) => !entry.data.draft)
@@ -7,5 +7,5 @@ export const projectEntries = (await getCollection("projects"))
   .map((entry) => {
     return {
       entry,
-    };
-  });
+    }
+  })

@@ -1,13 +1,13 @@
 export type NavItem = {
-  href: string;
-  text: string;
-};
+  href: string
+  text: string
+}
 
 export type SiteNav = {
-  headerDesktop: NavItem[];
-  headerMobile: NavItem[];
-  footer: NavItem[];
-};
+  headerDesktop: NavItem[]
+  headerMobile: NavItem[]
+  footer: NavItem[]
+}
 
 const siteNav: SiteNav = {
   headerDesktop: [
@@ -27,6 +27,6 @@ const siteNav: SiteNav = {
     { href: "/projects/", text: "Projects" },
     { href: "/uses/", text: "Uses" },
   ],
-};
+}
 
-export default siteNav;
+export default siteNav

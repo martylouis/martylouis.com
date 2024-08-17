@@ -1,5 +1,5 @@
-import { trimSlash } from "@/lib/utils";
-import type { PermalinkType } from "@/types";
+import { trimSlash } from "@/lib/utils"
+import type { PermalinkType } from "@/types"
 
 const PATHS = {
   base: "/",
@@ -8,7 +8,7 @@ const PATHS = {
   post: "blog",
   tag: "tags",
   service: "services",
-};
+}
 
 /**
  * Creates a path by concatenating the provided parameters.
@@ -28,9 +28,9 @@ const createPath = (
   trailingSlash: boolean = false,
   ...params: string[]
 ): string => {
-  const paths = params.map(trimSlash).filter(Boolean).join("/");
-  return `/${paths}${trailingSlash && paths ? "/" : ""}`;
-};
+  const paths = params.map(trimSlash).filter(Boolean).join("/")
+  return `/${paths}${trailingSlash && paths ? "/" : ""}`
+}
 
 /**
  * Generates a definitive permalink by combining the base pathname and the provided permalink.
@@ -49,7 +49,7 @@ const createPath = (
 const definitivePermalink = (
   permalink: string,
   trailingSlash: boolean = false,
-): string => createPath(trailingSlash, PATHS.base, permalink);
+): string => createPath(trailingSlash, PATHS.base, permalink)
 
 /**
  * Generates a permalink based on the provided slug and type.
@@ -71,13 +71,13 @@ export const getPermalink = (
   type: PermalinkType = "page",
   trailingSlash: boolean = false,
 ): string => {
-  const prefixes = ["http", "tel:", "mailto:", "#", "?", "&", "="];
+  const prefixes = ["http", "tel:", "mailto:", "#", "?", "&", "="]
 
   if (prefixes.some((prefix) => slug.startsWith(prefix))) {
-    return slug;
+    return slug
   }
 
-  const permalink = createPath(trailingSlash, PATHS[type], slug);
+  const permalink = createPath(trailingSlash, PATHS[type], slug)
 
-  return definitivePermalink(permalink, trailingSlash);
-};
+  return definitivePermalink(permalink, trailingSlash)
+}

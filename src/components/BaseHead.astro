@@ -1,37 +1,37 @@
 ---
-import SEO from "@/components/SEO.astro";
-import siteConfig from "@/data/site.config";
-import smartypants from "smartypants";
+import SEO from "@/components/SEO.astro"
+import siteConfig from "@/data/site.config"
+import smartypants from "smartypants"
 
 export type Props = {
-  title?: string;
-  description?: string;
-  image?: { src: string; alt: string };
-  canonicalURL?: URL | null;
-  pageType?: "website" | "article";
-};
+  title?: string
+  description?: string
+  image?: { src: string; alt: string }
+  canonicalURL?: URL | null
+  pageType?: "website" | "article"
+}
 
 const {
   description = siteConfig.description,
   image = siteConfig.image,
   canonicalURL = new URL(Astro.request.url, Astro.site),
   pageType = "website",
-} = Astro.props;
+} = Astro.props
 
-const title = [Astro.props.title, siteConfig.name].filter(Boolean).join(" | ");
+const title = [Astro.props.title, siteConfig.name].filter(Boolean).join(" | ")
 const resolvedImage = {
   src: new URL(image.src, Astro.site).toString(),
   alt: image.alt,
-};
+}
 
-const twitterHandle = "martylouis";
+const twitterHandle = "martylouis"
 
 if (!title) {
-  throw new Error("Title is required for SEO");
+  throw new Error("Title is required for SEO")
 }
 
 if (!description) {
-  throw new Error("Description is required for SEO");
+  throw new Error("Description is required for SEO")
 }
 ---
 
