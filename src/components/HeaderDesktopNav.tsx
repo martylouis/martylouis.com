@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils"
 
-function DesktopNav({
+function HeaderDesktopNav({
   children,
   ...props
 }: { children: React.ReactNode } & React.ComponentPropsWithoutRef<"nav">) {
@@ -13,7 +13,7 @@ function DesktopNav({
   )
 }
 
-function DesktopNavItem({
+function HeaderDesktopNavItem({
   href,
   isActive = false,
   children,
@@ -42,4 +42,4 @@ function DesktopNavItem({
   )
 }
 
-export { DesktopNav, DesktopNavItem }
+export { HeaderDesktopNav, HeaderDesktopNavItem }

@@ -1,0 +1,34 @@
+---
+import {
+  HeaderDesktopNav,
+  HeaderDesktopNavItem,
+} from "@/components/HeaderDesktopNav"
+import {
+  HeaderMobileNav,
+  HeaderMobileNavItem,
+} from "@/components/HeaderMobileNav"
+import siteNav, { type NavItem } from "@/data/site.nav"
+import { isCurrentPage } from "@/lib/utils"
+---
+
+<div class="flex flex-1 justify-end md:justify-center">
+  <HeaderMobileNav client:load>
+    {
+      siteNav.headerMobile.map(({ href, text }: NavItem) => (
+        <HeaderMobileNavItem href={href}>{text}</HeaderMobileNavItem>
+      ))
+    }
+  </HeaderMobileNav>
+  <HeaderDesktopNav className="pointer-events-auto hidden md:block">
+    {
+      siteNav.headerDesktop.map(({ href, text }: NavItem) => {
+        const isActive = isCurrentPage(href, Astro.url.pathname)
+        return (
+          <HeaderDesktopNavItem isActive={isActive} href={href}>
+            {text}
+          </HeaderDesktopNavItem>
+        )
+      })
+    }
+  </HeaderDesktopNav>
+</div>

@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils"
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden"
 import { PanelTopOpenIcon } from "lucide-react"
 
-function MobileNav({
+function HeaderMobileNav({
   children,
   ...props
 }: { children: React.ReactNode } & React.ComponentPropsWithoutRef<"div">) {
@@ -48,7 +48,7 @@ function MobileNav({
   )
 }
 
-function MobileNavItem({
+function HeaderMobileNavItem({
   href,
   className,
   children,
@@ -72,4 +72,4 @@ function MobileNavItem({
   )
 }
 
-export { MobileNav, MobileNavItem }
+export { HeaderMobileNav, HeaderMobileNavItem }
