@@ -1,18 +1,18 @@
 ---
 import ButtonLink from "@/components/ButtonLink.astro";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import ProjectCard from "@/components/ProjectCard.astro";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { projectEntries } from "@/lib/entries";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+
 import marty from "@/images/marty.jpg";
 
-const meta = {
+const seo = {
   title: "Marty Thierry - Web Designer & Developer",
   description:
     "👋 Hey I’m Marty, a web designer and developer based in Destin, FL.",
-  canonicalURL: "https://martylouis.com/",
 };
 
 const content = {
@@ -20,7 +20,7 @@ const content = {
 };
 ---
 
-<BaseLayout {...meta}>
+<BaseLayout {...seo}>
   <header slot="header">
     <div class="mt-8">
       <div class="flex w-full justify-between gap-6 md:mt-16 md:items-center">

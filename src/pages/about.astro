@@ -1,15 +1,13 @@
 ---
 import { Container } from "@/components/Container";
-import Layout from "@/components/Layout.astro";
-
-const metadata: Metadata = {
-  title: "Marty Thierry - Web Designer & Developer",
-  description:
-    "👋 Hey I’m Marty, a web designer and developer based in Destin, FL.",
-  canonicalURL: "https://martylouis.com/about/",
-};
+import BaseLayout from "@/components/layouts/BaseLayout.astro";
 ---
 
-<Layout {...metadata}>
-  <Container>About page</Container>
-</Layout>
+<BaseLayout
+  title="About"
+  description="Learn more about Marty Louis Co and how I can help you."
+>
+  <Container className="my-20">
+    <p>About page</p>
+  </Container>
+</BaseLayout>
