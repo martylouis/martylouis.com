@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/unbound-method */
 import type { PluginUtils } from "tailwindcss/types/config"
 
 export default function typographyStyles({ theme }: PluginUtils) {
