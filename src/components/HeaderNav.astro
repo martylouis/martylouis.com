@@ -12,7 +12,7 @@ import { isCurrentPage } from "@/lib/utils"
 ---
 
 <div class="flex flex-1 justify-end md:justify-center">
-  <HeaderMobileNav client:load>
+  <HeaderMobileNav client:only="react">
     {
       siteNav.headerMobile.map(({ href, text }: NavItem) => {
         return <HeaderMobileNavItem href={href}>{text}</HeaderMobileNavItem>
