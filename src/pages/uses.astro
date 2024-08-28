@@ -1,12 +1,14 @@
 ---
 import { Container } from "@/components/Container"
 import PageHeader from "@/components/PageHeader.astro"
+import { Section } from "@/components/Section"
+
 import BaseLayout from "@/layouts/BaseLayout.astro"
 
 const content = {
-  title: "Software designer, founder, and amateur astronaut.",
+  title: "Software I use, gadgets I love, and other things I recommend.",
   intro:
-    "I’m Marty, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.",
+    "I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I’m being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff.",
 }
 ---
 
@@ -15,5 +17,26 @@ const content = {
   description="Learn more about the tools and software I use."
 >
   <PageHeader title={content.title} intro={content.intro} />
-  <Container> asdf </Container>
+  <Container className="mt-16 sm:mt-20">
+    <div class="space-y-20">
+      <Section title="Workstation">
+        <ul role="list">
+          <li>MacBook Pro (16-inch, 2019)</li>
+          <li>LG UltraFine 5K Display</li>
+          <li>Keychron K2 Mechanical Keyboard</li>
+          <li>Logitech MX Master 3 Mouse</li>
+          <li>Twelve South Curve Stand</li>
+        </ul>
+      </Section>
+      <Section title="Workstation">
+        <ul role="list">
+          <li>MacBook Pro (16-inch, 2019)</li>
+          <li>LG UltraFine 5K Display</li>
+          <li>Keychron K2 Mechanical Keyboard</li>
+          <li>Logitech MX Master 3 Mouse</li>
+          <li>Twelve South Curve Stand</li>
+        </ul>
+      </Section>
+    </div>
+  </Container>
 </BaseLayout>
