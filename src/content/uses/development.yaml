@@ -1,0 +1,9 @@
+title: Development
+description: A list of tools and software I use for development.
+items:
+  - title: Visual Studio Code
+    description: Code editor redefined and optimized for building and debugging modern web and cloud applications.
+    url: https://code.visualstudio.com/
+  - title: iTerm2
+    description: A replacement for Terminal and the successor to iTerm.
+    url: https://iterm2.com/

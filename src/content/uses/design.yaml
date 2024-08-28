@@ -1,0 +1,13 @@
+title: Design
+description: A list of tools and software I use for design.
+items:
+  - title: Figma
+    description: A collaborative interface design tool.
+    url: https://www.figma.com/
+  - title: tldraw
+    description: A simple tool for creating illustrations.
+    url: https://tldraw.com/
+    thing: thing
+  - title: Adobe Creative Cloud
+    description: A collection of 20+ desktop and mobile apps and services for photography, design, video, web, UX, and more.
+    url: https://www.adobe.com/creativecloud.html

@@ -2,41 +2,39 @@
 import { Container } from "@/components/Container"
 import PageHeader from "@/components/PageHeader.astro"
 import { Section } from "@/components/Section"
-
+import { Card } from "@/components/ui/card"
 import BaseLayout from "@/layouts/BaseLayout.astro"
+import { getCollection } from "astro:content"
 
 const content = {
   title: "Software I use, gadgets I love, and other things I recommend.",
   intro:
     "I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I’m being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff.",
 }
+
+const usesCollection = await getCollection("uses")
 ---
 
-<BaseLayout
-  title="Uses"
-  description="Learn more about the tools and software I use."
->
+<BaseLayout title="Uses" description="The tools and software I use.">
   <PageHeader title={content.title} intro={content.intro} />
   <Container className="mt-16 sm:mt-20">
     <div class="space-y-20">
-      <Section title="Workstation">
-        <ul role="list">
-          <li>MacBook Pro (16-inch, 2019)</li>
-          <li>LG UltraFine 5K Display</li>
-          <li>Keychron K2 Mechanical Keyboard</li>
-          <li>Logitech MX Master 3 Mouse</li>
-          <li>Twelve South Curve Stand</li>
-        </ul>
-      </Section>
-      <Section title="Workstation">
-        <ul role="list">
-          <li>MacBook Pro (16-inch, 2019)</li>
-          <li>LG UltraFine 5K Display</li>
-          <li>Keychron K2 Mechanical Keyboard</li>
-          <li>Logitech MX Master 3 Mouse</li>
-          <li>Twelve South Curve Stand</li>
-        </ul>
-      </Section>
+      {
+        usesCollection.map((collection) => (
+          <Section title={collection.data.title}>
+            <ul role="list" class="space-y-16">
+              {collection.data.items.map((item) => (
+                <Card as="li">
+                  <Card.Title as="h3" href={item.url}>
+                    {item.title}
+                  </Card.Title>
+                  <Card.Description>{item.description}</Card.Description>
+                </Card>
+              ))}
+            </ul>
+          </Section>
+        ))
+      }
     </div>
   </Container>
 </BaseLayout>

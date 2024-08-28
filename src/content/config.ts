@@ -30,7 +30,23 @@ const projects = defineCollection({
       .merge(entrySchema),
 })
 
+const uses = defineCollection({
+  type: "data",
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    items: z.array(
+      z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        url: z.string().url().optional(),
+      }),
+    ),
+  }),
+})
+
 export const collections = {
   projects,
   pages,
+  uses,
 }
