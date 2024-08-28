@@ -1,6 +1,7 @@
 ---
 import ButtonLink from "@/components/ButtonLink.astro"
 import { Container } from "@/components/Container"
+import siteConfig from "@/data/site.config"
 import BaseLayout from "@/layouts/BaseLayout.astro"
 
 import { Icon } from "astro-icon/components"
@@ -25,36 +26,31 @@ import { Icon } from "astro-icon/components"
         functional apps and websites.
       </p>
       <div class="mt-6 flex gap-6 text-zinc-600 dark:text-zinc-400">
-        <ButtonLink
-          size="icon"
-          variant="ghost"
-          href="https://github.com/martylouis"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Follow on GitHub"
-        >
-          <Icon name="github" class="size-6" />
-        </ButtonLink>
-        <ButtonLink
-          size="icon"
-          variant="ghost"
-          href="https://twitter.com/martylouis"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Follow on Twitter"
-        >
-          <Icon name="twitter" class="size-6" />
-        </ButtonLink>
-        <ButtonLink
-          size="icon"
-          variant="ghost"
-          href="https://www.linkedin.com/in/martylouis/"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Follow on LinkedIn"
-        >
-          <Icon name="linkedin" class="size-6" />
-        </ButtonLink>
+        {
+          siteConfig.socialLinks.map((link) => (
+            <li class="flex">
+              <a
+                href={link.href}
+                class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+              >
+                <ButtonLink
+                  size="icon"
+                  variant="ghost"
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={link.text}
+                  class="group"
+                >
+                  <Icon
+                    name={link.icon}
+                    class="size-6 flex-none text-zinc-500 transition group-hover:text-teal-500"
+                  />
+                </ButtonLink>
+              </a>
+            </li>
+          ))
+        }
       </div>
     </div>
   </Container>
