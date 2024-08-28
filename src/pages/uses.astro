@@ -1,13 +1,19 @@
 ---
 import { Container } from "@/components/Container"
+import PageHeader from "@/components/PageHeader.astro"
 import BaseLayout from "@/layouts/BaseLayout.astro"
+
+const content = {
+  title: "Software designer, founder, and amateur astronaut.",
+  intro:
+    "I’m Marty, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.",
+}
 ---
 
 <BaseLayout
   title="Uses"
   description="Learn more about the tools and software I use."
 >
-  <Container className="my-20">
-    <p>Uses page</p>
-  </Container>
+  <PageHeader title={content.title} intro={content.intro} />
+  <Container> asdf </Container>
 </BaseLayout>
