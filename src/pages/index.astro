@@ -1,6 +1,6 @@
 ---
-import ButtonLink from "@/components/ButtonLink.astro"
 import { Container } from "@/components/Container"
+import { ButtonLink } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import siteConfig from "@/data/site.config"
 import BaseLayout from "@/layouts/BaseLayout.astro"
@@ -37,7 +37,7 @@ import { Icon } from "astro-icon/components"
                 target="_blank"
                 rel="noreferrer"
                 aria-label={link.text}
-                class="group"
+                className="group"
               >
                 <Icon
                   name={link.icon}
@@ -55,6 +55,30 @@ import { Icon } from "astro-icon/components"
       class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2"
     >
       <div class="flex flex-col gap-16">
+        <Card as="article">
+          <Card.Title href="/about">Title</Card.Title>
+          <Card.Eyebrow as="time" dateTime="2024-08-28" decorate>
+            {formatDate("2024-08-28")}
+          </Card.Eyebrow>
+          <Card.Description>
+            I’m Marty, a UX designer and developer based in Destin, Florida. I’m
+            the owner of Marty Louis Co, where I help businesses create
+            easy-to-use and functional apps and websites.
+          </Card.Description>
+          <Card.Cta>Read article</Card.Cta>
+        </Card>
+        <Card as="article">
+          <Card.Title href="/about">Title</Card.Title>
+          <Card.Eyebrow as="time" dateTime="2024-08-28" decorate>
+            {formatDate("2024-08-28")}
+          </Card.Eyebrow>
+          <Card.Description>
+            I’m Marty, a UX designer and developer based in Destin, Florida. I’m
+            the owner of Marty Louis Co, where I help businesses create
+            easy-to-use and functional apps and websites.
+          </Card.Description>
+          <Card.Cta>Read article</Card.Cta>
+        </Card>
         <Card as="article">
           <Card.Title href="/about">Title</Card.Title>
           <Card.Eyebrow as="time" dateTime="2024-08-28" decorate>

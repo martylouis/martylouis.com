@@ -7,7 +7,7 @@ function ChevronRightIcon(props: React.ComponentPropsWithoutRef<"svg">) {
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
         d="M6.75 5.75 9.25 8l-2.5 2.25"
-        strokeWidth="1.5"
+        strokeWidth="1"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -88,7 +88,7 @@ Card.Cta = function CardCta({ children }: { children: React.ReactNode }) {
       className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500 transition-colors group-hover:text-teal-600 dark:group-hover:text-teal-400"
     >
       {children}
-      <ChevronRightIcon className="ml-1 size-4 stroke-current" />
+      <ChevronRightIcon className="ml-0.5 size-6 stroke-current" />
     </div>
   )
 }
