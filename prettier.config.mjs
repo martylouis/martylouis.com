@@ -19,6 +19,7 @@ const config = {
     },
   ],
   semi: false,
+  singleQuote: false,
   trailingComma: 'es5',
 }
 
