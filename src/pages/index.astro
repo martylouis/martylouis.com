@@ -22,7 +22,7 @@ const content = {
   }}
 >
   <PageHeader class="mt-9 sm:mt-9" title={content.title} intro={content.intro}>
-    <div class="mt-6 flex gap-6 text-zinc-600 dark:text-zinc-400">
+    <ul role="list" class="mt-6 flex gap-6 text-zinc-600 dark:text-zinc-400">
       {
         siteConfig.socialLinks.map((link) => (
           <li class="flex">
@@ -43,7 +43,7 @@ const content = {
           </li>
         ))
       }
-    </div>
+    </ul>
   </PageHeader>
   <Container className="mt-24 md:mt-28">
     <div
