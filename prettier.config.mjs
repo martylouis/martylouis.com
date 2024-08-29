@@ -3,24 +3,24 @@
  * @type {import("prettier").Config}
  */
 const config = {
-  plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
+  plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   overrides: [
     {
-      files: ['.*', '*.json', '*.md', '*.toml', '*.yml'],
+      files: [".*", "*.json", "*.md", "*.toml", "*.yml"],
       options: {
         useTabs: false,
       },
     },
     {
-      files: '*.astro',
+      files: "*.astro",
       options: {
-        parser: 'astro',
+        parser: "astro",
       },
     },
   ],
   semi: false,
   singleQuote: false,
-  trailingComma: 'es5',
+  trailingComma: "all",
 }
 
 export default config
