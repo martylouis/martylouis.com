@@ -31,7 +31,7 @@
     "ui:diff": "pnpm dlx shadcn-ui diff"
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.1.4",
+    "@astrojs/mdx": "^3.1.5",
     "@astrojs/react": "^3.6.2",
     "@astrojs/tailwind": "^5.1.0",
     "@iconify-json/radix-icons": "^1.1.15",
@@ -41,7 +41,7 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-visually-hidden": "^1.1.0",
     "@tailwindcss/vite": "4.0.0-alpha.3",
-    "astro": "^4.14.5",
+    "astro": "^4.15.1",
     "astro-icon": "^1.1.1",
     "astro-m2dx": "^0.7.16",
     "class-variance-authority": "^0.7.0",
@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.3",
-    "@astrojs/partytown": "^2.1.1",
+    "@astrojs/partytown": "^2.1.2",
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.9.1",
     "@tailwindcss/forms": "^0.5.7",
