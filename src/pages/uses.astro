@@ -22,13 +22,18 @@ const usesCollection = await getCollection("uses")
       {
         usesCollection.map((collection) => (
           <Section title={collection.data.title}>
-            <ul role="list" class="space-y-16">
+            <ul role="list" class="space-y-12">
               {collection.data.items.map((item) => (
                 <Card as="li">
+                  {/* <div class="relative z-10 mb-6 flex size-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                    <div class="size-8" />
+                  </div> */}
                   <Card.Title as="h3" href={item.url}>
                     {item.title}
                   </Card.Title>
-                  <Card.Description>{item.description}</Card.Description>
+                  {item.description && (
+                    <Card.Description>{item.description}</Card.Description>
+                  )}
                 </Card>
               ))}
             </ul>

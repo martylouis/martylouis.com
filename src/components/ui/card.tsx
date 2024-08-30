@@ -40,10 +40,10 @@ Card.Link = function CardLink({
 }: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   return (
     <>
-      <div className="absolute -inset-4 z-0 scale-90 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-4 sm:rounded-2xl dark:bg-zinc-800/50" />
+      <div className="absolute -inset-6 z-0 scale-90 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-[2.5rem] dark:bg-zinc-800/50" />
       <a {...props}>
         <span
-          className="absolute -inset-4 z-20 sm:-inset-x-4 sm:rounded-2xl"
+          className="absolute -inset-4 z-20 sm:-inset-x-4 sm:rounded"
           aria-hidden
         />
         <span className="relative z-10">{children}</span>
@@ -58,7 +58,7 @@ Card.Title = function CardTitle<T extends React.ElementType = "h2">({
   children,
 }: Omit<React.ComponentPropsWithoutRef<T>, "as" | "href"> & {
   as?: T
-  href?: string
+  href?: string | undefined
 }) {
   const Component = as ?? "h2"
 
@@ -110,7 +110,7 @@ Card.Eyebrow = function CardEyebrow<T extends React.ElementType = "p">({
       className={cn(
         className,
         "relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500",
-        decorate && "pl-3.5",
+        decorate && "pl-3.5"
       )}
       {...props}
     >
