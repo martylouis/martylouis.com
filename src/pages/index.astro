@@ -1,102 +1,96 @@
 ---
-import ButtonLink from "@/components/ButtonLink.astro";
-import { ModeToggle } from "@/components/ModeToggle";
-import ProjectCard from "@/components/ProjectCard.astro";
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import { projectEntries } from "@/lib/entries";
-import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
-import marty from "../assets/img/marty.jpg";
-
-const meta = {
-  title: "Marty Thierry - Web Designer & Developer",
-  description:
-    "👋 Hey I’m Marty, a web designer and developer based in Destin, FL.",
-  canonicalURL: "https://martylouis.com/",
-};
+import { Container } from "@/components/Container"
+import PageHeader from "@/components/PageHeader.astro"
+import { ButtonLink } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import siteConfig from "@/data/site.config"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import { formatDate } from "@/lib/formatDate"
+import { Icon } from "astro-icon/components"
 
 const content = {
-  lead: "👋 Hey, I'm Marty. I’m a web designer, developer, writer and creator. I’m based in sunny Destin, Florida but work remotely with people all over the world.",
-};
+  title: "UX Designer & Developer",
+  intro:
+    "I’m Marty, a UX designer and developer based in Destin, Florida. I’m the owner of Marty Louis Co, where I help businesses create easy-to-use and functional apps and websites.",
+}
 ---
 
-<BaseLayout {...meta}>
-  <header slot="header">
-    <div class="mt-8">
-      <div class="flex w-full justify-between gap-6 md:mt-16 md:items-center">
-        <div>
-          <div
-            class="ring-offset-background ring-border size-20 overflow-hidden rounded-full ring-1 ring-offset-4"
-          >
-            <Image src={marty} alt="Marty Louis" class="" />
-          </div>
-        </div>
-        <div class="mr-auto">
-          <h1>Marty Thierry (martylouis)</h1>
-          <p class="text-sm text-zinc-600 dark:text-zinc-400">
-            Web Designer & Developer
-          </p>
-        </div>
-        <div>
-          <ModeToggle client:load />
-        </div>
+<BaseLayout
+  image={{
+    src: "/images/og/martylouis.jpg",
+    alt: "Let's make your website better",
+  }}
+>
+  <PageHeader class="mt-9 sm:mt-9" title={content.title} intro={content.intro}>
+    <ul role="list" class="mt-6 flex gap-6 text-zinc-600 dark:text-zinc-400">
+      {
+        siteConfig.socialLinks.map((link) => (
+          <li class="flex">
+            <ButtonLink
+              size="icon"
+              variant="ghost"
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={link.text}
+              className="group"
+            >
+              <Icon
+                name={link.icon}
+                class="size-6 flex-none text-zinc-500 transition group-hover:text-teal-500"
+              />
+            </ButtonLink>
+          </li>
+        ))
+      }
+    </ul>
+  </PageHeader>
+  <Container className="mt-24 md:mt-28">
+    <div
+      class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2"
+    >
+      <div class="flex flex-col gap-16">
+        <Card as="article">
+          <Card.Title href="/about">Title</Card.Title>
+          <Card.Eyebrow as="time" dateTime="2024-08-28" decorate>
+            {formatDate("2024-08-28")}
+          </Card.Eyebrow>
+          <Card.Description>
+            I’m Marty, a UX designer and developer based in Destin, Florida. I’m
+            the owner of Marty Louis Co, where I help businesses create
+            easy-to-use and functional apps and websites.
+          </Card.Description>
+          <Card.Cta>Read article</Card.Cta>
+        </Card>
+        <Card as="article">
+          <Card.Title href="/about">Title</Card.Title>
+          <Card.Eyebrow as="time" dateTime="2024-08-28" decorate>
+            {formatDate("2024-08-28")}
+          </Card.Eyebrow>
+          <Card.Description>
+            I’m Marty, a UX designer and developer based in Destin, Florida. I’m
+            the owner of Marty Louis Co, where I help businesses create
+            easy-to-use and functional apps and websites.
+          </Card.Description>
+          <Card.Cta>Read article</Card.Cta>
+        </Card>
+        <Card as="article">
+          <Card.Title href="/about">Title</Card.Title>
+          <Card.Eyebrow as="time" dateTime="2024-08-28" decorate>
+            {formatDate("2024-08-28")}
+          </Card.Eyebrow>
+          <Card.Description>
+            I’m Marty, a UX designer and developer based in Destin, Florida. I’m
+            the owner of Marty Louis Co, where I help businesses create
+            easy-to-use and functional apps and websites.
+          </Card.Description>
+          <Card.Cta>Read article</Card.Cta>
+        </Card>
+      </div>
+      <div class="space-y-10 lg:pl-16 xl:pl-24">
+        <h3>Newsletter</h3>
+        <h3>Resume</h3>
       </div>
     </div>
-  </header>
-
-  <section>
-    <p
-      class="my-8 text-xl font-semibold tracking-tight"
-      set:text={content.lead}
-    />
-    <div class="flex gap-4">
-      <ButtonLink target="_blank" href="mailto:hello@martylouis.com">
-        <span><Icon name="email" class="mr-1.5 -ml-1 size-4" /></span>Contact Me
-      </ButtonLink>
-      <div class="flex gap-2">
-        <ButtonLink
-          size="icon"
-          variant="ghost"
-          href="https://github.com/martylouis"
-          target="_blank"
-          rel="noreferrer"
-          title="Follow @martylouis on GitHub"
-        >
-          <Icon name="github" class="size-5" />
-        </ButtonLink>
-        <ButtonLink
-          size="icon"
-          variant="ghost"
-          href="https://twitter.com/martylouis"
-          target="_blank"
-          rel="noreferrer"
-          title="Follow @martylouis on Twitter"
-        >
-          <Icon name="twitter" class="size-5" />
-        </ButtonLink>
-        <ButtonLink
-          size="icon"
-          variant="ghost"
-          href="https://www.linkedin.com/in/martylouis/"
-          target="_blank"
-          rel="noreferrer"
-          title="Follow @martylouis on LinkedIn"
-        >
-          <Icon name="linkedin" class="size-5" />
-        </ButtonLink>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="mt-24 mb-16 flex items-center gap-3">
-      <h2 class="text-foreground/50 text-3xl font-medium tracking-tight">
-        Work
-      </h2>
-      <div aria-hidden class="bg-border h-[1px] flex-1"></div>
-    </div>
-    <div class="flex flex-col gap-y-16">
-      {projectEntries.map(({ entry }) => <ProjectCard {entry} />)}
-    </div>
-  </section>
+  </Container>
 </BaseLayout>

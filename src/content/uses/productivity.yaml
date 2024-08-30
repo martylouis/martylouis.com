@@ -1,0 +1,30 @@
+title: Productivity
+description: A list of tools and software I use for productivity.
+items:
+  - title: 1Password
+    description: A password manager that keeps you safe online.
+    url: https://1password.com/
+  - title: Raycast
+    description: An app for macOS that supercharges your command bar.
+    url: https://raycast.com/
+  - title: Arc
+    description: A modern, privacy-focused, and extensible web browser.
+    url: https://arc.net/
+  - title: Notion
+    description: An all-in-one workspace for your notes, tasks, wikis, and databases.
+    url: https://www.notion.so/
+  - title: Things 3
+    description: A task manager that helps you organize your life.
+    url: https://culturedcode.com/things/
+  - title: Bear
+    description: A beautiful, flexible writing app for crafting notes and prose.
+    url: https://bear.app/
+  - title: Fantastical
+    description: A calendar app with natural language event creation, a beautiful calendar, and more.
+    url: https://flexibits.com/fantastical
+  - title: Mimestream
+    description: A native macOS email client for Gmail.
+    url: https://mimestream.com/
+  - title: CleanShot X
+    description: A powerful and flexible screen capture tool.
+    url: https://cleanshot.com/

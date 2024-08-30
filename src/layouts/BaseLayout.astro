@@ -1,37 +1,31 @@
 ---
-import BaseFooter from "@/components/BaseFooter.astro";
-import BaseHead from "@/components/BaseHead.astro";
-import BaseHeader from "@/components/BaseHeader.astro";
-import ThemeSwitcher from "@/components/ThemeSwitcher.astro";
+import BaseHead, { type Props as HeadProps } from "@/components/BaseHead.astro"
+import BaseHeader from "@/components/BaseHeader.astro"
+import Footer from "@/components/Footer.astro"
+import PageBackground from "@/components/PageBackground.astro"
 
-import "../styles/global.css";
+import "@/styles/global.css"
 
-const { title, description, ...meta } = Astro.props;
+export type Props = HeadProps
+
+const { ...head } = Astro.props
 ---
 
-<html
-  lang="en"
-  class="dark h-full scroll-smooth selection:bg-teal-100 selection:text-neutral-800"
->
+<html lang="en" class="h-full scroll-smooth antialiased">
   <head>
-    <BaseHead {title} {description} {...meta} />
+    <BaseHead {...head} />
+    <script src="@/scripts/theme-prefs.ts"></script>
   </head>
   <body
-    class="bg-background text-foreground flex min-h-full w-full flex-col antialiased"
+    class="flex min-h-full bg-amber-50 text-zinc-600 dark:bg-black dark:text-zinc-400"
   >
-    <div class="mx-auto max-w-xl px-4">
-      <slot name="header">
-        <BaseHeader />
-      </slot>
-      <slot name="main">
-        <main id="main" class="flex-1">
-          <slot />
-        </main>
-      </slot>
-      <slot name="footer">
-        <BaseFooter />
-      </slot>
+    <div class="relative flex w-full flex-col">
+      <BaseHeader />
+      <main class="flex-auto">
+        <slot />
+      </main>
+      <Footer />
     </div>
-    <ThemeSwitcher is:raw />
+    <PageBackground />
   </body>
 </html>

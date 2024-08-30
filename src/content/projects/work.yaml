@@ -1,0 +1,72 @@
+- id: "01"
+  title: Evans Tire & Auto
+  slug: evanstire
+  description: Eddie Valenzuela, Jenny Mendoza, and the Mancuso Media team partnered with Evans Tire & Auto, a chain of tire shops in San Diego, CA, to create a tailored WordPress website. The site featured locations, promotions, services, and custom integrations. We built a custom WordPress site to meet their requirements.
+  url: https://evanstire.com
+  image:
+    src: /src/images/evanstire.jpg
+    alt: evanstire.com homepage screenshot
+
+- id: "02"
+  title: Charger Enterprises
+  url: https://chargerenterprises.com
+  image:
+    src: /src/images/chargerenterprises.jpg
+    alt: chargerenterprises.com homepage screenshot
+
+- id: "03"
+  title: Guardian Mobile Marine
+  image:
+    src: /src/images/guardianmobilemarine.jpg
+    alt: guardianmobilemarine.com homepage screenshot
+
+- id: "04"
+  title: Gulf Realty 30A
+  description: Brooks Wade launched Gulf Realty 30A, his real estate brokerage, as the market in Northwest Florida was booming. We designed and built a website, integrated it with his IDX platform, and created a logo, signage, and business collateral to promote the business.
+  url: https://gulfrealty30a.com
+  image:
+    src: /src/images/gulfrealty30a.jpg
+    alt: gulfrealty30a.com homepage screenshot
+
+- id: "05"
+  title: Redhorse Corporation
+  description: We partnered with Redhorse Corp. to revamp their website, giving it a modern and professional look to attract top talent.
+  url: https://redhorsecorp.com
+  image:
+    src: /src/images/redhorsecorp.jpg
+    alt: Redhorse Corporation homepage screenshot
+
+- id: "06"
+  title: Manatee Heating & Air
+  description: Lisa Kelly and her team had been stuck with the same small, static website for years. They desired a revamp and needed a way to collect leads. We collaborated with Lisa to develop a new website with a professional design, easy to update, and custom forms to capture each lead tailored to her customers’ needs.
+  url: https://manateeair.com
+  image:
+    src: /src/images/manateeair.jpg
+    alt: manateeair.com homepage screenshot
+
+- id: "07"
+  title: Wattsware
+  description: Brandon Watts, a PR technology expert, needed an update for his startup company website. To achieve this quickly, we set up a WordPress site and customized it.
+  image:
+    src: /src/images/wattsware.jpg
+    alt: Wattsware.com homepage screenshot
+
+- id: "08"
+  title: BeachnAround
+  image:
+    src: /src/images/beachnaround.jpg
+    alt: BeachnAround
+
+- id: "09"
+  title: Coastal States Renovations
+  url: https://coastalstatesreno.com
+  image:
+    src: /src/images/coastalstatesreno.jpg
+    alt: coastalstatesreno.com
+
+- id: "10"
+  title: Evolv Claims
+  url: https://evolvclaims.com
+  image:
+    src: /src/images/evolvclaims.jpg
+    alt: EvolvClaims.com

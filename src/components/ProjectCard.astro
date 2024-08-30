@@ -1,10 +1,10 @@
 ---
-import { ArrowTopRightIcon } from "@radix-ui/react-icons";
-import { Image } from "astro:assets";
+import { ArrowTopRightIcon } from "@radix-ui/react-icons"
+import { Image } from "astro:assets"
 
-const { entry, ...props } = Astro.props;
-const { title, url, image } = entry.data;
-const { Content } = await entry.render();
+const { entry, ...props } = Astro.props
+const { title, url, image } = entry.data
+const { Content } = await entry.render()
 ---
 
 <div {...props}>

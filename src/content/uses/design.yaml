@@ -1,0 +1,12 @@
+title: Design
+description: A list of tools and software I use for design.
+items:
+  - title: Figma
+    description: A collaborative interface design tool.
+    url: https://www.figma.com/
+  - title: tldraw
+    description: A simple tool for creating illustrations.
+    url: https://tldraw.com/
+  - title: Affinity Designer
+    description: A professional graphic design software.
+    url: https://affinity.serif.com/en-us/designer/
