@@ -3,6 +3,7 @@ import BaseHead, { type Props as HeadProps } from "@/components/BaseHead.astro"
 import BaseHeader from "@/components/BaseHeader.astro"
 import Footer from "@/components/Footer.astro"
 import PageBackground from "@/components/PageBackground.astro"
+
 import "@/styles/global.css"
 
 export type Props = HeadProps
@@ -18,7 +19,6 @@ const { ...head } = Astro.props
   <body
     class="flex min-h-full bg-zinc-50 text-zinc-600 dark:bg-black dark:text-zinc-400"
   >
-    <PageBackground />
     <div class="relative flex w-full flex-col">
       <BaseHeader />
       <main class="flex-auto">
@@ -26,5 +26,6 @@ const { ...head } = Astro.props
       </main>
       <Footer />
     </div>
+    <PageBackground />
   </body>
 </html>
