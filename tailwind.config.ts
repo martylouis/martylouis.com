@@ -1,9 +1,8 @@
+// @ts-ignore
 import typographyPlugin from "@tailwindcss/typography"
-import type { Config } from "tailwindcss"
-
 import typographyStyles from "./src/config/typography"
 
-const config: Config = {
+const config = {
   darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
