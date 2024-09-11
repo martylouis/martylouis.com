@@ -1,13 +1,13 @@
-import { useId } from "react"
+import { useId } from 'react'
 
-function Section({
+export function Section({
   title,
   children,
 }: {
   title: string
   children: React.ReactNode
 }) {
-  const id = useId()
+  let id = useId()
 
   return (
     <section
@@ -26,5 +26,3 @@ function Section({
     </section>
   )
 }
-
-export { Section }

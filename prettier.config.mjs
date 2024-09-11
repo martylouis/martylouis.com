@@ -1,9 +1,9 @@
 /**
  * @see https://prettier.io/docs/en/configuration.html
- * @type {import("prettier").Config}
+ * @type {import('prettier').Config & import('prettier-plugin-tailwindcss').PluginOptions}
  */
 const config = {
-  plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+  plugins: ["prettier-plugin-tailwindcss"],
   overrides: [
     {
       files: [".*", "*.json", "*.md", "*.toml", "*.yml"],
@@ -11,16 +11,10 @@ const config = {
         useTabs: false,
       },
     },
-    {
-      files: "*.astro",
-      options: {
-        parser: "astro",
-      },
-    },
   ],
   semi: false,
   singleQuote: false,
   trailingComma: "all",
-}
+};
 
-export default config
+export default config;
