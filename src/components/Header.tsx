@@ -1,20 +1,19 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { useTheme } from "next-themes"
 import {
   Popover,
-  PopoverButton,
   PopoverBackdrop,
+  PopoverButton,
   PopoverPanel,
 } from "@headlessui/react"
 import clsx from "clsx"
+import { useTheme } from "next-themes"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { useEffect, useRef, useState } from "react"
 
+import { CldImage } from "@/components/cld-image"
 import { Container } from "@/components/Container"
-import avatarImage from "@/images/avatar.jpg"
 
 function CloseIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
@@ -233,10 +232,12 @@ function Avatar({
       className={clsx(className, "pointer-events-auto")}
       {...props}
     >
-      <Image
-        src={avatarImage}
-        alt=""
-        sizes={large ? "4rem" : "2.25rem"}
+      <CldImage
+        src="marty-profile"
+        width={64}
+        height={64}
+        alt="Marty Thierry Profile"
+        // sizes={large ? "4rem" : "2.25rem"}
         className={clsx(
           "rounded-full bg-zinc-100 object-cover dark:bg-zinc-800",
           large ? "h-16 w-16" : "h-9 w-9",
