@@ -1,16 +1,16 @@
-import { type Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import clsx from 'clsx'
+import { type Metadata } from "next"
+import Image from "next/image"
+import Link from "next/link"
+import clsx from "clsx"
 
-import { Container } from '@/components/Container'
+import { Container } from "@/components/Container"
 import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
   XIcon,
-} from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait.jpg'
+} from "@/components/SocialIcons"
+import portraitImage from "@/images/portrait.jpg"
 
 function SocialLink({
   className,
@@ -24,7 +24,7 @@ function SocialLink({
   children: React.ReactNode
 }) {
   return (
-    <li className={clsx(className, 'flex')}>
+    <li className={clsx(className, "flex")}>
       <Link
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
@@ -36,7 +36,7 @@ function SocialLink({
   )
 }
 
-function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function MailIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
@@ -48,9 +48,9 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 }
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: "About",
   description:
-    'I’m Spencer Sharp. I live in New York City, where I design the future.',
+    "I’m Spencer Sharp. I live in New York City, where I design the future.",
 }
 
 export default function About() {

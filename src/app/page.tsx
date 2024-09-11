@@ -1,29 +1,29 @@
-import Image, { type ImageProps } from 'next/image'
-import Link from 'next/link'
-import clsx from 'clsx'
+import Image, { type ImageProps } from "next/image"
+import Link from "next/link"
+import clsx from "clsx"
 
-import { Button } from '@/components/Button'
-import { Card } from '@/components/Card'
-import { Container } from '@/components/Container'
+import { Button } from "@/components/Button"
+import { Card } from "@/components/Card"
+import { Container } from "@/components/Container"
 import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
   XIcon,
-} from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
-import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
-import { formatDate } from '@/lib/formatDate'
+} from "@/components/SocialIcons"
+import logoAirbnb from "@/images/logos/airbnb.svg"
+import logoFacebook from "@/images/logos/facebook.svg"
+import logoPlanetaria from "@/images/logos/planetaria.svg"
+import logoStarbucks from "@/images/logos/starbucks.svg"
+import image1 from "@/images/photos/image-1.jpg"
+import image2 from "@/images/photos/image-2.jpg"
+import image3 from "@/images/photos/image-3.jpg"
+import image4 from "@/images/photos/image-4.jpg"
+import image5 from "@/images/photos/image-5.jpg"
+import { type ArticleWithSlug, getAllArticles } from "@/lib/articles"
+import { formatDate } from "@/lib/formatDate"
 
-function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function MailIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -46,7 +46,7 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function BriefcaseIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -69,7 +69,7 @@ function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function ArrowDownIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
@@ -129,7 +129,7 @@ function Newsletter() {
           placeholder="Email address"
           aria-label="Email address"
           required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 sm:text-sm dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10"
+          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white py-[calc(theme(spacing.2)-1px)] px-3 shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 focus:outline-none sm:text-sm dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10"
         />
         <Button type="submit" className="ml-4 flex-none">
           Join
@@ -142,23 +142,23 @@ function Newsletter() {
 interface Role {
   company: string
   title: string
-  logo: ImageProps['src']
+  logo: ImageProps["src"]
   start: string | { label: string; dateTime: string }
   end: string | { label: string; dateTime: string }
 }
 
 function Role({ role }: { role: Role }) {
   let startLabel =
-    typeof role.start === 'string' ? role.start : role.start.label
+    typeof role.start === "string" ? role.start : role.start.label
   let startDate =
-    typeof role.start === 'string' ? role.start : role.start.dateTime
+    typeof role.start === "string" ? role.start : role.start.dateTime
 
-  let endLabel = typeof role.end === 'string' ? role.end : role.end.label
-  let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
+  let endLabel = typeof role.end === "string" ? role.end : role.end.label
+  let endDate = typeof role.end === "string" ? role.end : role.end.dateTime
 
   return (
     <li className="flex gap-4">
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
@@ -175,8 +175,8 @@ function Role({ role }: { role: Role }) {
           className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
           aria-label={`${startLabel} until ${endLabel}`}
         >
-          <time dateTime={startDate}>{startLabel}</time>{' '}
-          <span aria-hidden="true">—</span>{' '}
+          <time dateTime={startDate}>{startLabel}</time>{" "}
+          <span aria-hidden="true">—</span>{" "}
           <time dateTime={endDate}>{endLabel}</time>
         </dd>
       </dl>
@@ -187,35 +187,35 @@ function Role({ role }: { role: Role }) {
 function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
+      company: "Planetaria",
+      title: "CEO",
       logo: logoPlanetaria,
-      start: '2019',
+      start: "2019",
       end: {
-        label: 'Present',
+        label: "Present",
         dateTime: new Date().getFullYear().toString(),
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
+      company: "Airbnb",
+      title: "Product Designer",
       logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
+      start: "2014",
+      end: "2019",
     },
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
+      company: "Facebook",
+      title: "iOS Software Engineer",
       logo: logoFacebook,
-      start: '2011',
-      end: '2014',
+      start: "2011",
+      end: "2014",
     },
     {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
+      company: "Starbucks",
+      title: "Shift Supervisor",
       logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      start: "2008",
+      end: "2011",
     },
   ]
 
@@ -239,7 +239,7 @@ function Resume() {
 }
 
 function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+  let rotations = ["rotate-2", "-rotate-2", "rotate-2", "rotate-2", "-rotate-2"]
 
   return (
     <div className="mt-16 sm:mt-20">
@@ -248,7 +248,7 @@ function Photos() {
           <div
             key={image.src}
             className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
+              "relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800",
               rotations[imageIndex % rotations.length],
             )}
           >

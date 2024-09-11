@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import clsx from 'clsx'
+import Link from "next/link"
+import clsx from "clsx"
 
-function ChevronRightIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function ChevronRightIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
@@ -14,19 +14,19 @@ function ChevronRightIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export function Card<T extends React.ElementType = 'div'>({
+export function Card<T extends React.ElementType = "div">({
   as,
   className,
   children,
-}: Omit<React.ComponentPropsWithoutRef<T>, 'as' | 'className'> & {
+}: Omit<React.ComponentPropsWithoutRef<T>, "as" | "className"> & {
   as?: T
   className?: string
 }) {
-  let Component = as ?? 'div'
+  let Component = as ?? "div"
 
   return (
     <Component
-      className={clsx(className, 'group relative flex flex-col items-start')}
+      className={clsx(className, "group relative flex flex-col items-start")}
     >
       {children}
     </Component>
@@ -48,15 +48,15 @@ Card.Link = function CardLink({
   )
 }
 
-Card.Title = function CardTitle<T extends React.ElementType = 'h2'>({
+Card.Title = function CardTitle<T extends React.ElementType = "h2">({
   as,
   href,
   children,
-}: Omit<React.ComponentPropsWithoutRef<T>, 'as' | 'href'> & {
+}: Omit<React.ComponentPropsWithoutRef<T>, "as" | "href"> & {
   as?: T
   href?: string
 }) {
-  let Component = as ?? 'h2'
+  let Component = as ?? "h2"
 
   return (
     <Component className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
@@ -89,24 +89,24 @@ Card.Cta = function CardCta({ children }: { children: React.ReactNode }) {
   )
 }
 
-Card.Eyebrow = function CardEyebrow<T extends React.ElementType = 'p'>({
+Card.Eyebrow = function CardEyebrow<T extends React.ElementType = "p">({
   as,
   decorate = false,
   className,
   children,
   ...props
-}: Omit<React.ComponentPropsWithoutRef<T>, 'as' | 'decorate'> & {
+}: Omit<React.ComponentPropsWithoutRef<T>, "as" | "decorate"> & {
   as?: T
   decorate?: boolean
 }) {
-  let Component = as ?? 'p'
+  let Component = as ?? "p"
 
   return (
     <Component
       className={clsx(
         className,
-        'relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500',
-        decorate && 'pl-3.5',
+        "relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500",
+        decorate && "pl-3.5",
       )}
       {...props}
     >

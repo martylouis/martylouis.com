@@ -1,6 +1,6 @@
-import { Card } from '@/components/Card'
-import { Section } from '@/components/Section'
-import { SimpleLayout } from '@/components/SimpleLayout'
+import { Card } from "@/components/Card"
+import { Section } from "@/components/Section"
+import { SimpleLayout } from "@/components/SimpleLayout"
 
 function ToolsSection({
   children,
@@ -35,8 +35,8 @@ function Tool({
 }
 
 export const metadata = {
-  title: 'Uses',
-  description: 'Software I use, gadgets I love, and other things I recommend.',
+  title: "Uses",
+  description: "Software I use, gadgets I love, and other things I recommend.",
 }
 
 export default function Uses() {
