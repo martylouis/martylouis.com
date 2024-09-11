@@ -61,7 +61,6 @@ packages/email/public
 
 # Storybook
 storybook-static
-tailwind.css
 
 # Supabase
 .branches

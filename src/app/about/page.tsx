@@ -3,7 +3,7 @@ import { type Metadata } from "next"
 import Link from "next/link"
 
 import { CldImage } from "@/components/cld-image"
-import { Container } from "@/components/container"
+import { Container } from "@/components/ui/container"
 import {
   GitHubIcon,
   InstagramIcon,

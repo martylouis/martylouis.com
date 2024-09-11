@@ -1,7 +1,7 @@
 import { type Metadata } from "next"
 import Image from "next/image"
 
-import { Card } from "@/components/card"
+import { Card } from "@/components/ui/card"
 import { SimpleLayout } from "@/components/simple-layout"
 import logoAnimaginary from "@/images/logos/animaginary.svg"
 import logoCosmos from "@/images/logos/cosmos.svg"

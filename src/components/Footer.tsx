@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import { ContainerInner, ContainerOuter } from "@/components/container"
+import { ContainerInner, ContainerOuter } from "@/components/ui/container"
 
 function NavLink({
   href,

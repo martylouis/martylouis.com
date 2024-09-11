@@ -4,8 +4,8 @@ import { useContext } from "react"
 import { useRouter } from "next/navigation"
 
 import { AppContext } from "@/app/providers"
-import { Container } from "@/components/container"
-import { Prose } from "@/components/prose"
+import { Container } from "@/components/ui/container"
+import { Prose } from "@/components/ui/prose"
 import { type ArticleWithSlug } from "@/lib/articles"
 import { formatDate } from "@/lib/formatDate"
 
