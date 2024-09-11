@@ -3,13 +3,13 @@ import { type Metadata } from "next"
 import Link from "next/link"
 
 import { CldImage } from "@/components/cld-image"
-import { Container } from "@/components/Container"
+import { Container } from "@/components/container"
 import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
   XIcon,
-} from "@/components/SocialIcons"
+} from "@/components/social-icons"
 
 function SocialLink({
   className,

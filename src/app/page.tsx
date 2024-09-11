@@ -2,15 +2,15 @@ import Image, { type ImageProps } from "next/image"
 import Link from "next/link"
 import clsx from "clsx"
 
-import { Button } from "@/components/Button"
-import { Card } from "@/components/Card"
-import { Container } from "@/components/Container"
+import { Button } from "@/components/button"
+import { Card } from "@/components/card"
+import { Container } from "@/components/container"
 import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
   XIcon,
-} from "@/components/SocialIcons"
+} from "@/components/social-icons"
 import logoAirbnb from "@/images/logos/airbnb.svg"
 import logoFacebook from "@/images/logos/facebook.svg"
 import logoPlanetaria from "@/images/logos/planetaria.svg"

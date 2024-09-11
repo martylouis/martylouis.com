@@ -13,7 +13,7 @@ import { usePathname } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 
 import { CldImage } from "@/components/cld-image"
-import { Container } from "@/components/Container"
+import { Container } from "@/components/container"
 
 function CloseIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (

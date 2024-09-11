@@ -1,6 +1,6 @@
-import { Card } from "@/components/Card"
-import { Section } from "@/components/Section"
-import { SimpleLayout } from "@/components/SimpleLayout"
+import { Card } from "@/components/card"
+import { Section } from "@/components/section"
+import { SimpleLayout } from "@/components/simple-layout"
 
 function ToolsSection({
   children,
