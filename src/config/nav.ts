@@ -1,10 +1,10 @@
 import Link from "next/link"
 
-export interface NavItem extends React.ComponentPropsWithoutRef<typeof Link> {
+export interface NavLink extends React.ComponentPropsWithoutRef<typeof Link> {
   text?: string
 }
 
-export const navConfig: NavItem[] = [
+export const navConfig: NavLink[] = [
   { href: "/about", text: "About" },
   { href: "/projects", text: "Projects" },
   { href: "/blog", text: "Blog" },
