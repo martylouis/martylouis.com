@@ -5,7 +5,7 @@ import { NavLink } from "@/components/nav-link"
 import { ContainerInner, ContainerOuter } from "@/components/ui/container"
 import { navConfig } from "@/config/nav"
 
-export function Footer() {
+export function SiteFooter() {
   return (
     <footer className="mt-32 flex-none">
       <ContainerOuter>

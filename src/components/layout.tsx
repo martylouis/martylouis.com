@@ -1,5 +1,5 @@
-import { Footer } from "@/components/footer"
-import { Header } from "@/components/header"
+import { SiteFooter } from "@/components/site-footer"
+import { SiteHeader } from "@/components/site-header"
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,9 +10,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </div>
       <div className="relative flex w-full flex-col">
-        <Header />
+        <SiteHeader />
         <main className="flex-auto">{children}</main>
-        <Footer />
+        <SiteFooter />
       </div>
     </>
   )

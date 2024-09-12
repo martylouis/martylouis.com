@@ -227,7 +227,7 @@ function Avatar({
   )
 }
 
-export function Header() {
+export function SiteHeader() {
   let isHomePage = usePathname() === "/"
 
   let headerRef = useRef<React.ElementRef<"div">>(null)
