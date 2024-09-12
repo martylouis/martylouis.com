@@ -1,7 +1,7 @@
 import { type Metadata } from "next"
 
-import { Card } from "@/components/ui/card"
 import { SimpleLayout } from "@/components/simple-layout"
+import { Card } from "@/components/ui/card"
 import { type ArticleWithSlug, getAllArticles } from "@/lib/articles"
 import { formatDate } from "@/lib/formatDate"
 
@@ -9,9 +9,7 @@ function Article({ article }: { article: ArticleWithSlug }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
-        <Card.Title href={`/articles/${article.slug}`}>
-          {article.title}
-        </Card.Title>
+        <Card.Title href={`/blog/${article.slug}`}>{article.title}</Card.Title>
         <Card.Eyebrow
           as="time"
           dateTime={article.date}
@@ -35,12 +33,12 @@ function Article({ article }: { article: ArticleWithSlug }) {
 }
 
 export const metadata: Metadata = {
-  title: "Articles",
+  title: "Blog",
   description:
     "All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order.",
 }
 
-export default async function ArticlesIndex() {
+export default async function BlogIndexPage() {
   let articles = await getAllArticles()
 
   return (
