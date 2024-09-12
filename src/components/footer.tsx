@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import { NavLink } from "@/components/nav-link"
@@ -20,14 +21,38 @@ export function Footer() {
                   )
                 })}
               </div>
-              <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Spencer Sharp. All rights
-                reserved.
-              </p>
+              <CreativeCommonsLicence />
             </div>
           </ContainerInner>
         </div>
       </ContainerOuter>
     </footer>
+  )
+}
+
+function CreativeCommonsLicence() {
+  return (
+    <p className="flex-shrink text-balance text-center text-sm font-medium text-zinc-500 sm:text-right dark:text-zinc-400">
+      &copy; {new Date().getFullYear()}{" "}
+      <span property="dct:title">Marty Louis LLC</span>. Licensed by{" "}
+      <a
+        href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"
+        target="_blank"
+        rel="license noopener noreferrer"
+        className="inline-flex underline decoration-zinc-200 underline-offset-2 transition-[text-underline-offset,color] hover:text-teal-500 hover:underline-offset-4 dark:decoration-zinc-500 dark:hover:decoration-teal-400"
+      >
+        CC BY 4.0
+        <img
+          className="ml-2 h-5 align-text-bottom"
+          src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
+          alt=""
+        />
+        <img
+          className="ml-1 h-5 align-text-bottom"
+          src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+          alt=""
+        />
+      </a>
+    </p>
   )
 }
