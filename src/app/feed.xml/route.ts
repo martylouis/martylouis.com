@@ -1,6 +1,7 @@
 import assert from "assert"
 import * as cheerio from "cheerio"
 import { Feed } from "feed"
+import { siteConfig } from "@/config/site"
 
 export async function GET(req: Request) {
   let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
@@ -9,10 +10,7 @@ export async function GET(req: Request) {
     throw Error("Missing NEXT_PUBLIC_SITE_URL environment variable")
   }
 
-  let author = {
-    name: "Marty Thierry",
-    email: "marty@martylouis.com",
-  }
+  let { author } = siteConfig
 
   let feed = new Feed({
     title: author.name,

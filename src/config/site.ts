@@ -19,6 +19,10 @@ export interface SiteConfig {
     src: string
     alt: string
   }
+  author: {
+    name: string
+    email: string
+  }
   socialLinks: SocialLink[]
 }
 
@@ -32,6 +36,10 @@ export const siteConfig = {
   image: {
     src: "/images/og/martylouis.jpg",
     alt: "Let's make your website better",
+  },
+  author: {
+    name: "Marty Thierry",
+    email: "marty@martylouis.com",
   },
   socialLinks: [
     {
