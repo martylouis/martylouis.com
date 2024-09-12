@@ -10,6 +10,8 @@ import {
   LinkedInIcon,
   XIcon,
 } from "@/components/social-icons"
+import { get } from "http"
+import { getCldBlurDataURL } from "@/lib/getCldBlurDataURL"
 
 function SocialLink({
   className,
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
     "I’m Spencer Sharp. I live in New York City, where I design the future.",
 }
 
-export default function About() {
+export default async function About() {
   return (
     <Container className="mt-16 sm:mt-32">
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -61,10 +63,12 @@ export default function About() {
             <CldImage
               src="marty-profile"
               alt="Marty Thierry Profile"
-              width={320}
-              height={320}
+              width={256}
+              height={256}
               sizes="(min-width: 1024px) 32rem, 20rem"
               className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+              blurDataURL={await getCldBlurDataURL("marty-profile")}
+              placeholder="blur"
             />
           </div>
         </div>
