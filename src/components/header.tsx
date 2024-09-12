@@ -13,8 +13,9 @@ import { usePathname } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 
 import { CldImage } from "@/components/cld-image"
+import { NavLink } from "@/components/nav-link"
 import { Container } from "@/components/ui/container"
-import { navConfig, type NavLink } from "@/config/nav"
+import { navConfig } from "@/config/nav"
 
 function CloseIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
@@ -133,25 +134,14 @@ function MobileNavigation(
   )
 }
 
-function NavLink({ href, children }: NavLink) {
+function DesktopNavLinkHighlight({ href }: { href: string }) {
   let isCurrentPath = usePathname() === href
-
   return (
-    <Link
-      href={href}
-      className={clsx(
-        "relative block py-2 px-3 transition",
-        isCurrentPath
-          ? "text-teal-500 dark:text-teal-400"
-          : "hover:text-teal-500 dark:hover:text-teal-400",
-      )}
-      aria-current={isCurrentPath ? "page" : undefined}
-    >
-      {children}
+    <>
       {isCurrentPath && (
         <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0" />
       )}
-    </Link>
+    </>
   )
 }
 
@@ -161,7 +151,13 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<"nav">) {
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 ring-1 shadow-lg shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
         {navConfig.map((item) => (
           <li key={item.text}>
-            <NavLink href={item.href}>{item.text}</NavLink>
+            <NavLink
+              className="relative block py-2 px-3 aria-[current=page]:text-teal-500 aria-[current=page]:dark:text-teal-400"
+              href={item.href}
+            >
+              {item.text}
+              <DesktopNavLinkHighlight href={item.href.toString()} />
+            </NavLink>
           </li>
         ))}
       </ul>

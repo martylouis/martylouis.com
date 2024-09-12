@@ -1,8 +1,4 @@
-import Link from "next/link"
-
-export interface NavLink extends React.ComponentPropsWithoutRef<typeof Link> {
-  text?: string
-}
+import { NavLink } from "@/components/nav-link"
 
 export const navConfig: NavLink[] = [
   { href: "/about", text: "About" },
