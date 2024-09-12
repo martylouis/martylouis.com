@@ -14,6 +14,7 @@ import { useEffect, useRef, useState } from "react"
 
 import { CldImage } from "@/components/cld-image"
 import { Container } from "@/components/ui/container"
+import { navConfig, type NavItem } from "@/config/nav"
 
 function CloseIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
@@ -132,14 +133,8 @@ function MobileNavigation(
   )
 }
 
-function NavItem({
-  href,
-  children,
-}: {
-  href: string
-  children: React.ReactNode
-}) {
-  let isActive = usePathname() === href
+function NavItem({ href, children }: NavItem) {
+  let isCurrentPath = usePathname() === href
 
   return (
     <li>
@@ -147,13 +142,14 @@ function NavItem({
         href={href}
         className={clsx(
           "relative block py-2 px-3 transition",
-          isActive
+          isCurrentPath
             ? "text-teal-500 dark:text-teal-400"
             : "hover:text-teal-500 dark:hover:text-teal-400",
         )}
+        aria-current={isCurrentPath ? "page" : undefined}
       >
         {children}
-        {isActive && (
+        {isCurrentPath && (
           <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0" />
         )}
       </Link>
@@ -165,11 +161,11 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<"nav">) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 ring-1 shadow-lg shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <NavItem href="/about">About</NavItem>
-        <NavItem href="/articles">Articles</NavItem>
-        <NavItem href="/projects">Projects</NavItem>
-        <NavItem href="/speaking">Speaking</NavItem>
-        <NavItem href="/uses">Uses</NavItem>
+        {navConfig.map((item) => (
+          <NavItem key={item.text} href={item.href}>
+            {item.text}
+          </NavItem>
+        ))}
       </ul>
     </nav>
   )
