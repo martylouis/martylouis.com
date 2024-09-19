@@ -3,14 +3,13 @@ import { type Metadata } from "next"
 import Link from "next/link"
 
 import { CldImage } from "@/components/cld-image"
-import { Container } from "@/components/ui/container"
 import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
   XIcon,
 } from "@/components/social-icons"
-import { get } from "http"
+import { Container } from "@/components/ui/container"
 import { getCldBlurDataURL } from "@/lib/getCldBlurDataURL"
 
 function SocialLink({
