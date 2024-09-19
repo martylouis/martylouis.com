@@ -32,7 +32,7 @@
     "fast-glob": "^3.2.11",
     "feed": "^4.2.2",
     "lucide-react": "^0.438.0",
-    "next": "14.2.7",
+    "next": "14.2.12",
     "next-cloudinary": "^6.12.0",
     "next-themes": "^0.3.0",
     "react": "^18",
@@ -44,7 +44,6 @@
     "tailwind-merge": "^2.5.2",
     "tailwindcss": "4.0.0-alpha.23",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.3.3",
     "vaul": "^0.9.1"
   },
   "devDependencies": {
@@ -54,11 +53,11 @@
     "@types/react-dom": "^18",
     "@types/webpack-env": "^1.18.5",
     "eslint": "^8",
-    "eslint-config-next": "14.2.7",
+    "eslint-config-next": "14.2.12",
     "eslint-config-prettier": "^9.1.0",
     "postcss": "^8",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
-    "sharp": "0.33.1"
+    "typescript": "5.6.2"
   }
 }
