@@ -1,4 +1,3 @@
-// @ts-ignore
 import typographyPlugin from "@tailwindcss/typography"
 import typographyStyles from "./src/config/typography"
 

@@ -1,5 +1,8 @@
-// @ts-ignore
-export default function typographyStyles({ theme }) {
+export default function typographyStyles({
+  theme,
+}: {
+  theme: (arg: string) => string
+}) {
   return {
     invert: {
       css: {
