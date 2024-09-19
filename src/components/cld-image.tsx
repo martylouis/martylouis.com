@@ -3,7 +3,7 @@
 import { CldImage as CldImageBase, type CldImageProps } from "next-cloudinary"
 
 export function CldImage(props: CldImageProps) {
-  let cldFolder = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_FOLDER
+  const cldFolder = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_FOLDER
 
   if (cldFolder) {
     props = {

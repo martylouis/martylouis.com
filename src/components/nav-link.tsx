@@ -7,7 +7,7 @@ export interface NavLink extends React.ComponentPropsWithoutRef<typeof Link> {
 }
 
 export function NavLink({ href, className, children }: NavLink) {
-  let isCurrentPath = usePathname() === href
+  const isCurrentPath = usePathname() === href
   return (
     <Link
       href={href}
