@@ -32,9 +32,7 @@ const content = {
       />
       <div class="mr-2">
         <p><span class="font-bold">Marty Thierry</span></p>
-        <p class="text-xs text-zinc-800 dark:text-zinc-300">
-          UX/UI Designer & Developer
-        </p>
+        <p class="text-foreground/75 text-xs">UX/UI Designer & Developer</p>
       </div>
     </div>
     <div class="my-16 flex flex-col items-center gap-6 text-center">
@@ -49,7 +47,7 @@ const content = {
         className="text-4xl tracking-tight"
         text={content.lead}
       />
-      <p set:text={content.hook} />
+      <p class="text-foreground/80" set:text={content.hook} />
       <div class="flex gap-4">
         <ButtonLink target="_blank" href="https://cal.com/martylouis/30min">
           <Icon name="calendar-plus" class="mr-1.5 -ml-1 size-4" />Schedule a
@@ -60,7 +58,7 @@ const content = {
   </div>
 
   <div>
-    <div class="flex flex-col gap-y-16">
+    <div class="flex flex-col gap-y-8">
       {projectEntries.map(({ entry }) => <ProjectCard {entry} />)}
     </div>
   </div>

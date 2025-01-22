@@ -8,18 +8,24 @@ const { Content } = await entry.render();
 ---
 
 <div {...props}>
+  {
+    image && (
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width={800}
+        class="ring-offset-background ring-border mb-4 aspect-[5/3] w-full shrink-0 overflow-hidden rounded-sm object-cover object-top ring-1 ring-offset-1"
+      />
+    )
+  }
+
   <div class="mb-4">
-    <h3 class="flex text-xl font-bold">
+    <h3 class="flex font-bold">
       {
         url ? (
-          <a
-            href={url}
-            target="_blank"
-            rel="noreferrer"
-            class="hover:bg-accent -ml-2 inline-block rounded px-2 transition-all duration-150 ease-in will-change-transform hover:scale-[1.025] hover:ease-out"
-          >
+          <a href={url} target="_blank" rel="noreferrer" class="">
             <span class="inline-block">{title}</span>
-            <ArrowTopRightIcon className="size-5 inline-block" />
+            <ArrowTopRightIcon className="size-4 inline-block" />
           </a>
         ) : (
           <Fragment set:text={title} />
@@ -29,24 +35,6 @@ const { Content } = await entry.render();
 
     <div class="text-foreground/75 my-2">
       <Content />
-    </div>
-  </div>
-
-  <!-- Project Image -->
-  <div class="bg-zinc-500/10">
-    <div class="overflow-hidden pt-8 px-8">
-      <div class="shadow">
-        {
-          image && (
-            <Image
-              src={image.src}
-              alt={image.alt}
-              class="bg-border ring-border block aspect-[5/4] w-full rounded-t-2xl object-cover object-top ring-4"
-              width={600}
-            />
-          )
-        }
-      </div>
     </div>
   </div>
 </div>
