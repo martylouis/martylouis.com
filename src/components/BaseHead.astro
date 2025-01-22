@@ -2,7 +2,7 @@
 import * as META from "@/metadata.json";
 import { getNormalizedUrl } from "@/lib/utils";
 
-type Props = {
+type BaseHeadProps = {
   title: string | undefined;
   description: string | undefined;
   image?: {
@@ -17,7 +17,7 @@ const {
   description,
   image,
   canonicalURL = getNormalizedUrl(Astro.url.pathname, Astro.site, true),
-} = Astro.props;
+} = Astro.props as BaseHeadProps;
 
 if (!title) {
   throw new Error("Title is required for SEO");

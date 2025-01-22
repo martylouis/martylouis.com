@@ -19,7 +19,9 @@ export function CalPopup({
         hideEventTypeDetails: false,
         layout: "month_view",
       });
-    })();
+    })().catch((error) => {
+      console.error("Failed to initialize Cal.com:", error);
+    });
   }, []);
   return (
     <Button
