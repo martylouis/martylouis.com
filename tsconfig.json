@@ -1,13 +1,13 @@
 {
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": ".",
     "jsx": "react-jsx",
     "jsxImportSource": "react",
+    "verbatimModuleSyntax": true,
     "paths": {
-      "@/*": ["*"]
+      "@/*": ["src/*"]
     }
   },
-  "exclude": ["node_modules", "dist", "src/components/ui"],
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"]
+  "exclude": ["node_modules", "dist"]
 }
