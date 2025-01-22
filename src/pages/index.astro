@@ -1,12 +1,12 @@
 ---
 import marty from "@/assets/img/marty.jpg";
-import ButtonLink from "@/components/ButtonLink.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
+import { CalPopup } from "@/components/ui/cal-popup";
+import { TextEffect } from "@/components/ui/text-effect";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { projectEntries } from "@/lib/entries";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import { TextEffect } from "@/components/ui/text-effect";
 
 const meta = {
   title: "Marty Thierry - Web Designer & Developer",
@@ -51,9 +51,10 @@ const content = {
     />
     <p class="text-foreground/80" set:text={content.hook} />
     <div class="flex gap-4">
-      <ButtonLink target="_blank" href="https://cal.com/martylouis/30min">
-        <Icon name="calendar-plus" class="mr-1.5 -ml-1 size-4" />Schedule a Chat
-      </ButtonLink>
+      <CalPopup client:load>
+        <Icon name="calendar-plus" class="mr-1.5 -ml-1 size-4" />Book a
+        Discovery Call
+      </CalPopup>
     </div>
   </div>
 
