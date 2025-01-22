@@ -20,7 +20,7 @@ const { Content } = await entry.render();
   }
 
   <div class="mb-4">
-    <h3 class="flex font-bold">
+    <p class="flex font-bold">
       {
         url ? (
           <a href={url} target="_blank" rel="noreferrer" class="">
@@ -31,7 +31,7 @@ const { Content } = await entry.render();
           <Fragment set:text={title} />
         )
       }
-    </h3>
+    </p>
 
     <div class="text-foreground/75 my-2">
       <Content />

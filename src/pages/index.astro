@@ -21,7 +21,7 @@ const content = {
 ---
 
 <BaseLayout {...meta}>
-  <div slot="header">
+  <header slot="header" role="banner">
     <div class="my-16 mx-auto flex max-w-max items-center justify-center gap-3">
       <Image
         src={marty}
@@ -35,25 +35,25 @@ const content = {
         <p class="text-foreground/75 text-xs">UX/UI Designer & Developer</p>
       </div>
     </div>
-    <div class="my-16 flex flex-col items-center gap-6 text-center">
-      <TextEffect
-        preset="fade-in-blur"
-        per="word"
-        speedReveal={1.1}
-        speedSegment={0.75}
-        delay={0.25}
-        client:load
-        as="h1"
-        className="text-4xl tracking-tight"
-        text={content.lead}
-      />
-      <p class="text-foreground/80" set:text={content.hook} />
-      <div class="flex gap-4">
-        <ButtonLink target="_blank" href="https://cal.com/martylouis/30min">
-          <Icon name="calendar-plus" class="mr-1.5 -ml-1 size-4" />Schedule a
-          Chat
-        </ButtonLink>
-      </div>
+  </header>
+
+  <div class="my-16 flex flex-col items-center gap-6 text-center">
+    <TextEffect
+      preset="fade-in-blur"
+      per="word"
+      speedReveal={1.1}
+      speedSegment={0.75}
+      delay={0.25}
+      client:load
+      as="h1"
+      className="text-4xl tracking-tight"
+      text={content.lead}
+    />
+    <p class="text-foreground/80" set:text={content.hook} />
+    <div class="flex gap-4">
+      <ButtonLink target="_blank" href="https://cal.com/martylouis/30min">
+        <Icon name="calendar-plus" class="mr-1.5 -ml-1 size-4" />Schedule a Chat
+      </ButtonLink>
     </div>
   </div>
 
