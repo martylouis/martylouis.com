@@ -4,19 +4,19 @@ import BaseHead from '@/components/BaseHead.astro';
 import BaseHeader from '@/components/BaseHeader.astro';
 import ThemeSwitcher from '@/components/ThemeSwitcher.astro';
 
-import '../styles/global.css';
+import '@/styles/global.css';
 
 const { title, description, ...meta } = Astro.props;
 ---
 
-<html lang="en" class="dark h-full scroll-smooth">
+<html lang="en" class="h-full scroll-smooth">
   <head>
     <BaseHead {title} {description} {...meta} />
   </head>
   <body
     class="bg-background text-foreground flex min-h-full w-full flex-col antialiased"
   >
-    <div class="mx-auto max-w-xl px-4">
+    <div class="flex flex-col mx-auto max-w-xl px-4">
       <slot name="header">
         <BaseHeader />
       </slot>
