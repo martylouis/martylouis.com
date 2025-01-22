@@ -1,6 +1,6 @@
-import { getCalApi } from "@calcom/embed-react";
-import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { getCalApi } from '@calcom/embed-react';
+import { useEffect } from 'react';
+import { Button } from '@/components/ui/button';
 
 export function CalPopup({
   children,
@@ -10,17 +10,17 @@ export function CalPopup({
 }) {
   useEffect(() => {
     (async function () {
-      const cal = await getCalApi({ namespace: "discovery" });
-      cal("ui", {
+      const cal = await getCalApi({ namespace: 'discovery' });
+      cal('ui', {
         cssVarsPerTheme: {
-          light: { "cal-brand": "#292929" },
-          dark: { "cal-brand": "#fafafa" },
+          light: { 'cal-brand': '#292929' },
+          dark: { 'cal-brand': '#fafafa' },
         },
         hideEventTypeDetails: false,
-        layout: "month_view",
+        layout: 'month_view',
       });
     })().catch((error) => {
-      console.error("Failed to initialize Cal.com:", error);
+      console.error('Failed to initialize Cal.com:', error);
     });
   }, []);
   return (

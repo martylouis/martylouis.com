@@ -1,6 +1,6 @@
 ---
-import * as META from "@/metadata.json";
-import { getNormalizedUrl } from "@/lib/utils";
+import * as META from '@/metadata.json';
+import { getNormalizedUrl } from '@/lib/utils';
 
 type BaseHeadProps = {
   title: string | undefined;
@@ -20,16 +20,16 @@ const {
 } = Astro.props as BaseHeadProps;
 
 if (!title) {
-  throw new Error("Title is required for SEO");
+  throw new Error('Title is required for SEO');
 }
 
 if (!description) {
-  throw new Error("Description is required for SEO");
+  throw new Error('Description is required for SEO');
 }
 
 // throw warning if image is not provided
 if (!image) {
-  console.warn("Image is not provided for SEO");
+  console.warn('Image is not provided for SEO');
 }
 ---
 

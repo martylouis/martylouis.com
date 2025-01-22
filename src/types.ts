@@ -1,11 +1,11 @@
-import { z } from "astro:content";
+import { z } from 'astro:content';
 
 export const permalinkTypeSchema = z.union([
-  z.literal("page"),
-  z.literal("post"),
-  z.literal("project"),
-  z.literal("service"),
-  z.literal("tag"),
+  z.literal('page'),
+  z.literal('post'),
+  z.literal('project'),
+  z.literal('service'),
+  z.literal('tag'),
 ]);
 export type PermalinkType = z.infer<typeof permalinkTypeSchema>;
 

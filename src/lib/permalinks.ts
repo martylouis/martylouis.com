@@ -1,13 +1,13 @@
-import { trimSlash } from "@/lib/utils";
-import type { PermalinkType } from "@/types";
+import { trimSlash } from '@/lib/utils';
+import type { PermalinkType } from '@/types';
 
 const PATHS = {
-  base: "/",
-  page: "/",
-  project: "projects",
-  post: "blog",
-  tag: "tags",
-  service: "services",
+  base: '/',
+  page: '/',
+  project: 'projects',
+  post: 'blog',
+  tag: 'tags',
+  service: 'services',
 };
 
 /**
@@ -28,8 +28,8 @@ const createPath = (
   trailingSlash: boolean = false,
   ...params: string[]
 ): string => {
-  const paths = params.map(trimSlash).filter(Boolean).join("/");
-  return `/${paths}${trailingSlash && paths ? "/" : ""}`;
+  const paths = params.map(trimSlash).filter(Boolean).join('/');
+  return `/${paths}${trailingSlash && paths ? '/' : ''}`;
 };
 
 /**
@@ -48,7 +48,7 @@ const createPath = (
  */
 const definitivePermalink = (
   permalink: string,
-  trailingSlash: boolean = false,
+  trailingSlash: boolean = false
 ): string => createPath(trailingSlash, PATHS.base, permalink);
 
 /**
@@ -67,11 +67,11 @@ const definitivePermalink = (
  * getPermalink("slug", "post", true);
  */
 export const getPermalink = (
-  slug: string = "",
-  type: PermalinkType = "page",
-  trailingSlash: boolean = false,
+  slug: string = '',
+  type: PermalinkType = 'page',
+  trailingSlash: boolean = false
 ): string => {
-  const prefixes = ["http", "tel:", "mailto:", "#", "?", "&", "="];
+  const prefixes = ['http', 'tel:', 'mailto:', '#', '?', '&', '='];
 
   if (prefixes.some((prefix) => slug.startsWith(prefix))) {
     return slug;

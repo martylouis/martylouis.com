@@ -1,5 +1,5 @@
-import { pageSchema } from "@/types";
-import { defineCollection, z } from "astro:content";
+import { pageSchema } from '@/types';
+import { defineCollection, z } from 'astro:content';
 
 const entrySchema = z.object({
   title: z.string().max(70),
@@ -10,12 +10,12 @@ const entrySchema = z.object({
 });
 
 const pages = defineCollection({
-  type: "content",
+  type: 'content',
   schema: pageSchema,
 });
 
 const projects = defineCollection({
-  type: "content",
+  type: 'content',
   schema: ({ image }) =>
     z
       .object({
