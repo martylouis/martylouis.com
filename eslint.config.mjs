@@ -59,6 +59,7 @@ export default [
           fixStyle: 'inline-type-imports',
         },
       ],
+      '@typescript-eslint/consistent-type-exports': 'error',
 
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-floating-promises': 'warn',
