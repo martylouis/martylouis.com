@@ -159,7 +159,6 @@ const AnimationComponent: React.FC<{
 AnimationComponent.displayName = "AnimationComponent";
 
 const splitText = (text: string, per: "line" | "word" | "char") => {
-  console.log(text);
   if (per === "line") return text.split("\n");
   return text.split(/(\s+)/);
 };
