@@ -9,10 +9,7 @@ import "../styles/global.css";
 const { title, description, ...meta } = Astro.props;
 ---
 
-<html
-  lang="en"
-  class="dark h-full scroll-smooth selection:bg-teal-100 selection:text-neutral-800"
->
+<html lang="en" class="dark h-full scroll-smooth">
   <head>
     <BaseHead {title} {description} {...meta} />
   </head>
