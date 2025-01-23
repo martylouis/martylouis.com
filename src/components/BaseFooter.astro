@@ -1,6 +1,6 @@
 ---
 import ButtonLink from '@/components/ButtonLink.astro';
-import { ModeToggle } from '@/components/ModeToggle';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { Icon } from 'astro-icon/components';
 
 const thisYear = new Date().getFullYear();
@@ -44,7 +44,7 @@ const data = {
         <Icon name="linkedin" class="size-5" />
       </ButtonLink>
       <div class="ml-auto">
-        <ModeToggle client:load />
+        <ThemeToggle client:only="react" />
       </div>
     </div>
     <p

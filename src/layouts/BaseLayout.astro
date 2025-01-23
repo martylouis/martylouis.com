@@ -2,7 +2,7 @@
 import BaseFooter from '@/components/BaseFooter.astro';
 import BaseHead from '@/components/BaseHead.astro';
 import BaseHeader from '@/components/BaseHeader.astro';
-import ThemeSwitcher from '@/components/ThemeSwitcher.astro';
+import Themes from 'astro-themes';
 
 import '@/styles/global.css';
 
@@ -13,6 +13,7 @@ const { title, description, ...meta } = Astro.props;
   <head>
     <BaseHead {title} {description} {...meta} />
   </head>
+  <Themes />
   <body
     class="bg-background text-foreground flex min-h-full w-full flex-col antialiased"
   >
@@ -29,6 +30,5 @@ const { title, description, ...meta } = Astro.props;
         <BaseFooter />
       </slot>
     </div>
-    <ThemeSwitcher is:raw />
   </body>
 </html>
