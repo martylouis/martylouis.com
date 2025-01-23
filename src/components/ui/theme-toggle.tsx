@@ -1,7 +1,7 @@
 import { dispatch, subscribe, unsubscribe } from '@/lib/events';
 import { cn } from '@/lib/utils';
 import * as ThemeTogglePrimitive from '@radix-ui/react-radio-group';
-import { MoonStar as Moon, Sun } from 'lucide-react';
+import { Monitor, MoonStar as Moon, Sun } from 'lucide-react';
 import { motion } from 'motion/react';
 import React, { useEffect, useState } from 'react';
 
@@ -18,9 +18,12 @@ export const ThemeToggle: React.FC = () => {
   };
 
   useEffect(() => {
-    const dataTheme =
-      document.documentElement.attributes.getNamedItem('data-theme')?.value;
-    setTheme(dataTheme);
+    const storedTheme = localStorage.getItem('theme');
+    if (!storedTheme) {
+      setTheme('system');
+    } else {
+      setTheme(storedTheme);
+    }
   }, []);
 
   useEffect(() => {
@@ -35,6 +38,9 @@ export const ThemeToggle: React.FC = () => {
     <ThemeToggleRadioGroup value={theme} onValueChange={handleThemeChange}>
       <ThemeToggleGroupItem value="light">
         <Sun className="size-full" strokeWidth={1.5} />
+      </ThemeToggleGroupItem>
+      <ThemeToggleGroupItem value="system">
+        <Monitor className="size-full" strokeWidth={1.5} />
       </ThemeToggleGroupItem>
       <ThemeToggleGroupItem value="dark">
         <Moon className="size-full" strokeWidth={1.5} />
@@ -65,7 +71,7 @@ const ThemeToggleGroupItem = React.forwardRef<
     <ThemeTogglePrimitive.Item
       ref={ref}
       className={cn(
-        ['size-7 rounded-full text-gray-500 hover:text-gray-1000'],
+        ['size-7 rounded-full text-gray-600 dark:text-gray-200'],
         [
           'grid grid-cols-1 grid-rows-1 place-items-center *:col-span-full *:row-span-full',
         ],
@@ -74,7 +80,7 @@ const ThemeToggleGroupItem = React.forwardRef<
           'focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
         ],
         [
-          'data-[state=checked]:text-gray-900 data-[state=checked]:hover:text-gray-900',
+          'data-[state=checked]:text-gray-100 dark:data-[state=checked]:text-gray-900',
         ],
         className
       )}
@@ -84,7 +90,7 @@ const ThemeToggleGroupItem = React.forwardRef<
         <motion.div
           layoutId="themeToggleIndicator"
           transition={{ duration: 0.2 }}
-          className="size-full rounded-full bg-gray-300 p-1"
+          className="size-full rounded-full bg-gray-900 dark:bg-gray-100"
         />
       </ThemeTogglePrimitive.Indicator>
       <div className="relative z-10 p-1">{children}</div>
