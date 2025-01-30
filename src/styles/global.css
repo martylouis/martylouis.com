@@ -1,35 +1,37 @@
 @import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+@plugin 'tailwindcss-animate';
 
 @variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 :root {
-  --background: hsl(0, 0%, 100%);
-  --foreground: hsl(0, 0%, 3.9%);
+  --background: var(--color-white);
+  --foreground: var(--color-zinc-950);
 
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(0, 0%, 3.9%);
+  --card: var(--color-gray-50);
+  --card-foreground: var(--color-zinc-950);
 
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(0, 0%, 3.9%);
+  --popover: var(--color-white);
+  --popover-foreground: var(--color-zinc-950);
 
-  --primary: hsl(0, 0%, 9%);
-  --primary-foreground: hsl(0, 0%, 98%);
+  --primary: var(--color-zinc-950);
+  --primary-foreground: var(--color-zinc-50);
 
-  --secondary: hsl(0, 0%, 96.1%);
-  --secondary-foreground: hsl(0, 0%, 9%);
+  --secondary: var(--color-zinc-100);
+  --secondary-foreground: var(--color-zinc-900);
 
-  --muted: hsl(0, 0%, 96.1%);
-  --muted-foreground: hsl(0, 0%, 45.1%);
+  --muted: var(--color-zinc-100);
+  --muted-foreground: var(--color-zinc-500);
 
-  --accent: hsl(0, 0%, 96.1%);
-  --accent-foreground: hsl(0, 0%, 9%);
+  --accent: var(--color-zinc-100);
+  --accent-foreground: var(--color-zinc-900);
 
-  --destructive: hsl(0, 84.2%, 60.2%);
-  --destructive-foreground: hsl(0, 0%, 98%);
+  --destructive: var(--color-zinc-400);
+  --destructive-foreground: var(--color-zinc-50);
 
-  --border: hsl(0, 0%, 89.8%);
-  --input: hsl(0, 0%, 89.8%);
-  --ring: hsl(0, 0%, 3.9%);
+  --border: var(--color-zinc-200);
+  --input: var(--color-zinc-200);
+  --ring: var(--color-zinc-950);
 
   --radius: 0.5rem;
 
@@ -40,33 +42,33 @@
 }
 
 [data-theme='dark'] {
-  --background: hsl(0, 0%, 3.9%);
-  --foreground: hsl(0, 0%, 98%);
+  --background: var(--color-zinc-950);
+  --foreground: var(--color-zinc-50);
 
-  --card: hsl(0, 0%, 3.9%);
-  --card-foreground: hsl(0, 0%, 98%);
+  --card: var(--color-zinc-900);
+  --card-foreground: var(--color-zinc-50);
 
-  --popover: hsl(0, 0%, 3.9%);
-  --popover-foreground: hsl(0, 0%, 98%);
+  --popover: var(--color-zinc-50);
+  --popover-foreground: var(--color-zinc-950);
 
-  --primary: hsl(0, 0%, 98%);
-  --primary-foreground: hsl(0, 0%, 9%);
+  --primary: var(--color-zinc-50);
+  --primary-foreground: var(--color-zinc-900);
 
-  --secondary: hsl(0, 0%, 14.9%);
-  --secondary-foreground: hsl(0, 0%, 98%);
+  --secondary: var(--color-zinc-800);
+  --secondary-foreground: var(--color-zinc-950);
 
-  --muted: hsl(0, 0%, 14.9%);
-  --muted-foreground: hsl(0, 0%, 63.9%);
+  --muted: var(--color-zinc-800);
+  --muted-foreground: oklch(72% 0 0);
 
-  --accent: hsl(0, 0%, 14.9%);
-  --accent-foreground: hsl(0, 0%, 98%);
+  --accent: var(--color-zinc-800);
+  --accent-foreground: var(--color-zinc-950);
 
-  --destructive: hsl(0, 62.8%, 30.6%);
-  --destructive-foreground: hsl(0, 0%, 98%);
+  --destructive: oklch(40% 0.1 26);
+  --destructive-foreground: var(--color-zinc-950);
 
-  --border: hsl(0, 0%, 14.9%);
-  --input: hsl(0, 0%, 14.9%);
-  --ring: hsl(0, 0%, 83.1%);
+  --border: var(--color-zinc-800);
+  --input: var(--color-zinc-800);
+  --ring: var(--color-zinc-300);
 
   --lightmode-scale: 0;
   --darkmode-scale: 1;
