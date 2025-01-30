@@ -1,0 +1,32 @@
+---
+import { projectEntries } from '@/lib/entries';
+import { Image } from 'astro:assets';
+---
+
+<section
+  class="flex max-w-7xl mx-auto flex-col gap-x-2 gap-y-8 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+>
+  {
+    projectEntries.map(({ entry }) => {
+      const { theme, image } = entry.data;
+
+      return (
+        <article class="flex flex-col gap-4 overflow-none">
+          <div
+            style={`--theme-color: ${theme}`}
+            class="bg-(--theme-color) aspect-square w-full overflow-hidden border px-4 pt-4 rounded-lg"
+          >
+            {image && (
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={600}
+                class="shadow-2xl rounded-sm"
+              />
+            )}
+          </div>
+        </article>
+      );
+    })
+  }
+</section>

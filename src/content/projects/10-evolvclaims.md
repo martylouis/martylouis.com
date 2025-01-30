@@ -5,4 +5,5 @@ url: https://evolvclaims.com
 image:
   src: /src/assets/img/evolvclaims.jpg
   alt: EvolvClaims.com
+theme: '#04ade9'
 ---

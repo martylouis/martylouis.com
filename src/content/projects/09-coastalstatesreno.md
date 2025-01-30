@@ -5,4 +5,5 @@ url: https://coastalstatesreno.com
 image:
   src: /src/assets/img/coastalstatesreno.jpg
   alt: coastalstatesreno.com
+theme: '#9fa8b2'
 ---

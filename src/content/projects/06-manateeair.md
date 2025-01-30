@@ -6,6 +6,7 @@ url: https://manateeair.com
 image:
   src: /src/assets/img/manateeair.jpg
   alt: manateeair.com homepage screenshot
+theme: '#bec9d5'
 ---
 
 Lisa Kelly and her team had been stuck with the same small, static website for years. They desired a revamp and needed a way to collect leads. We collaborated with Lisa to develop a new website with a professional design, easy to update, and custom forms to capture each lead tailored to her customers' needs.

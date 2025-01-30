@@ -26,6 +26,7 @@ const projects = defineCollection({
           })
           .optional(),
         url: z.string().url().optional(),
+        theme: z.string().optional(),
       })
       .merge(entrySchema),
 });

@@ -1,30 +1,20 @@
 ---
-import Landmark from '@/components/Landmark.astro';
-import { ModeToggle } from '@/components/ModeToggle';
-import { getHomeURL } from '@/lib/helpers';
-import { Icon } from 'astro-icon/components';
+import marty from '@/assets/img/marty.jpg';
+import { Image } from 'astro:assets';
 ---
 
-<Landmark slot="header" as="header" id="banner">
-  <div class="flex w-full items-center gap-4">
-    <div class="flex flex-1 gap-10 self-center">
-      <a href={getHomeURL()} class="mr-auto flex items-center gap-4">
-        <Icon name="martylouis-logo" class="size-10 text-foreground" />
-        <span class="font-semibold max-md:hidden">martylouis</span>
-      </a>
-    </div>
-    <!-- <div aria-hidden="true" class="hidden flex-1 items-center justify-center">
-        <nav class="flex gap-6">
-          <a class="inline-flex" href={getPermalink('services')}>Services</a>
-          <a class="inline-flex" href={getPermalink('projects')}>Projects</a>
-          <a class="inline-flex" href={getPermalink('blog')}>Blog</a>
-          <a class="inline-flex" href={getPermalink('contact')}>Contact</a>
-        </nav>
-      </div> -->
-    <div class="flex items-center justify-end gap-2 divide-x divide-border">
-      <div class="pl-4">
-        <ModeToggle client:load />
-      </div>
+<header slot="header" role="banner">
+  <div class="my-16 mx-auto flex max-w-max items-center justify-center gap-3">
+    <Image
+      src={marty}
+      alt="Marty Louis"
+      width={96}
+      loading="eager"
+      class="ring-offset-background ring-border size-12 shrink-0 overflow-hidden rounded-full ring-1 ring-offset-1"
+    />
+    <div class="mr-2">
+      <p><span class="font-bold">Marty Thierry</span></p>
+      <p class="text-foreground/75 text-xs">Web Designer & Developer</p>
     </div>
   </div>
-</Landmark>
+</header>

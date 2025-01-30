@@ -1,12 +1,9 @@
 ---
-import marty from '@/assets/img/marty.jpg';
-import ProjectCard from '@/components/ProjectCard.astro';
+import Projects from '@/components/Projects.astro';
 import { CalPopup } from '@/components/ui/cal-popup';
 import { TextEffect } from '@/components/ui/text-effect';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { projectEntries } from '@/lib/entries';
 import { Icon } from 'astro-icon/components';
-import { Image } from 'astro:assets';
 
 const meta = {
   title: 'Marty Thierry - Web Designer & Developer',
@@ -15,29 +12,15 @@ const meta = {
 };
 
 const content = {
-  lead: 'Professional UI/UX Design Without the Agency Overhead',
+  lead: 'Professional Web Design Without the Agency Overhead',
   hook: 'Direct designer access, faster turnaround times, and predictable pricing to keep your projects moving.',
 };
 ---
 
 <BaseLayout {...meta}>
-  <header slot="header" role="banner">
-    <div class="my-16 mx-auto flex max-w-max items-center justify-center gap-3">
-      <Image
-        src={marty}
-        alt="Marty Louis"
-        width={96}
-        loading="eager"
-        class="ring-offset-background ring-border size-12 shrink-0 overflow-hidden rounded-full ring-1 ring-offset-1"
-      />
-      <div class="mr-2">
-        <p><span class="font-bold">Marty Thierry</span></p>
-        <p class="text-foreground/75 text-xs">UX/UI Designer & Developer</p>
-      </div>
-    </div>
-  </header>
-
-  <div class="mb-20 flex flex-col items-center gap-6 text-center">
+  <div
+    class="mb-20 flex flex-col items-center gap-6 text-center max-w-xl mx-auto w-full"
+  >
     <TextEffect
       preset="fade-in-blur"
       per="word"
@@ -49,7 +32,7 @@ const content = {
       className="text-4xl tracking-tight"
       text={content.lead}
     />
-    <p class="text-foreground/80" set:text={content.hook} />
+    <p set:text={content.hook} />
     <div class="flex gap-4">
       <CalPopup client:load>
         <Icon name="calendar-plus" class="mr-1.5 -ml-1 size-4" />Book a
@@ -58,9 +41,5 @@ const content = {
     </div>
   </div>
 
-  <div>
-    <div class="flex flex-col gap-y-8">
-      {projectEntries.map(({ entry }) => <ProjectCard {entry} />)}
-    </div>
-  </div>
+  <Projects />
 </BaseLayout>
