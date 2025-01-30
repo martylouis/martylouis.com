@@ -26,7 +26,7 @@
   --accent: var(--color-zinc-100);
   --accent-foreground: var(--color-zinc-900);
 
-  --destructive: var(--color-zinc-400);
+  --destructive: oklch(63.68% 0.2078 25.33);
   --destructive-foreground: var(--color-zinc-50);
 
   --border: var(--color-zinc-200);
@@ -61,9 +61,9 @@
   --muted-foreground: oklch(72% 0 0);
 
   --accent: var(--color-zinc-800);
-  --accent-foreground: var(--color-zinc-950);
+  --accent-foreground: var(--color-zinc-50);
 
-  --destructive: oklch(40% 0.1 26);
+  --destructive: oklch(39.59% 0.1331 25.72);
   --destructive-foreground: var(--color-zinc-950);
 
   --border: var(--color-zinc-800);
