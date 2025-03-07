@@ -1,6 +1,5 @@
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
-// import tailwind from "@astrojs/tailwind";
 import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
 import m2dx from 'astro-m2dx';
@@ -15,9 +14,6 @@ const m2dxOptions = {
 export default defineConfig({
   site: 'https://martylouis.com/',
   integrations: [
-    // tailwind({
-    //   applyBaseStyles: false,
-    // }),
     mdx({
       remarkPlugins: [[m2dx, m2dxOptions]],
       extendDefaultPlugins: true,
