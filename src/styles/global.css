@@ -118,7 +118,6 @@
 }
 
 body {
-  transform: translateZ(0);
   transition:
     background-color 0.2s cubic-bezier(0, 0.19, 0, 0.99),
     color 0.2s cubic-bezier(0, 0.19, 0, 0.99);
