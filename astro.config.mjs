@@ -20,9 +20,6 @@ export default defineConfig({
     }),
     react(),
     icon({
-      include: {
-        'radix-icons': ['*'],
-      },
       iconDir: './src/assets/svg',
     }),
   ],

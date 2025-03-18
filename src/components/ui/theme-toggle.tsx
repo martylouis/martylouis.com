@@ -49,27 +49,25 @@ export const ThemeToggle: React.FC = () => {
   );
 };
 
-export const ThemeToggleRadioGroup = React.forwardRef<
-  React.ComponentRef<typeof ThemeTogglePrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof ThemeTogglePrimitive.Root>
->(({ ...props }, ref) => {
+export const ThemeToggleRadioGroup = ({
+  ...props
+}: React.ComponentProps<typeof ThemeTogglePrimitive.Root>) => {
   return (
     <ThemeTogglePrimitive.Root
+      data-slot="theme-toggle"
       className="flex max-w-[max-content] gap-2 rounded-full border border-border p-0.5"
       {...props}
-      ref={ref}
     />
   );
-});
-ThemeToggle.displayName = ThemeTogglePrimitive.Root.displayName;
+};
 
-const ThemeToggleGroupItem = React.forwardRef<
-  React.ComponentRef<typeof ThemeTogglePrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof ThemeTogglePrimitive.Item>
->(({ className, children, ...props }, ref) => {
+const ThemeToggleGroupItem = ({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof ThemeTogglePrimitive.Item>) => {
   return (
     <ThemeTogglePrimitive.Item
-      ref={ref}
       className={cn(
         ['size-7 rounded-full text-gray-600 dark:text-gray-200'],
         [
@@ -84,6 +82,7 @@ const ThemeToggleGroupItem = React.forwardRef<
         ],
         className
       )}
+      data-slot="theme-toggle-item"
       {...props}
     >
       <ThemeTogglePrimitive.Indicator asChild>
@@ -96,5 +95,4 @@ const ThemeToggleGroupItem = React.forwardRef<
       <div className="relative z-10 p-1">{children}</div>
     </ThemeTogglePrimitive.Item>
   );
-});
-ThemeToggleGroupItem.displayName = ThemeTogglePrimitive.Item.displayName;
+};
