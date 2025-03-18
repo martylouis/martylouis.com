@@ -1,19 +1,20 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## 1.0.0 (2025-03-18)
 
-## [1.1.0] - 2025-03-18
+### Features
 
-### Added
+* **changelog:** add changelog ([#38](https://github.com/martylouis/martylouis.com/issues/38)) ([80a7271](https://github.com/martylouis/martylouis.com/commit/80a72714653b655d7062bbb865fdd3a325650b52))
+* update to tailwind v4 ([#29](https://github.com/martylouis/martylouis.com/issues/29)) ([2fc781c](https://github.com/martylouis/martylouis.com/commit/2fc781c1bac1b50b245e70d635339b2ff2cbde7d))
 
-- Implemented modern changelog system using standard-version
-- Added changelog automation scripts to package.json
-- Created GitHub workflow for enforcing changelog updates on PRs
+### Bug Fixes
+* update canonical urls ([#28](https://github.com/martylouis/martylouis.com/issues/28)) ([8ba28db](https://github.com/martylouis/martylouis.com/commit/8ba28dbe900fcacae139c48e4c2344160d6e6894))
 
-## [1.0.0] - 2023-11-01
+
+
+## 0.0.1 (2023-11-01)
 
 ### Initial Release
 
