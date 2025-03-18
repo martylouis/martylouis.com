@@ -30,7 +30,12 @@
     "toolbar:disable": "astro preferences disable devToolbar",
     "toolbar:enable": "astro preferences enable devToolbar",
     "ui:add": "pnpm dlx shadcn-ui add",
-    "ui:diff": "pnpm dlx shadcn-ui diff"
+    "ui:diff": "pnpm dlx shadcn-ui diff",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major",
+    "release:patch": "standard-version --release-as patch",
+    "release:dry-run": "standard-version --dry-run"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.0",
@@ -85,6 +90,7 @@
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.10",
+    "standard-version": "^9.5.0",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.26.1"
   },
