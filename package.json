@@ -36,7 +36,8 @@
     "release:major": "standard-version --release-as major",
     "release:patch": "standard-version --release-as patch",
     "release:dry-run": "standard-version --dry-run",
-    "release:preview": "standard-version --dry-run --no-verify"
+    "release:preview": "standard-version --dry-run --no-verify",
+    "release:from-date": "node scripts/release-from-date.js"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.0",
