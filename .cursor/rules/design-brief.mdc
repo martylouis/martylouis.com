@@ -1,0 +1,106 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Design Brief: Minimalist Product Designer Portfolio Website
+
+## 1. Goal & Audience
+
+### Primary Objective
+A sophisticated, minimalist portfolio website that effectively showcases the work and expertise of a product designer while communicating their professional identity and design philosophy.
+
+### Target Audience
+- **Primary:** Potential clients and employers in technology, software development, and design industries
+- **Secondary:** Fellow designers, creative professionals, and design enthusiasts
+- **Tertiary:** Students and individuals interested in design services or courses
+
+## 2. Strategy & Tone
+
+### Brand Positioning
+Position the designer as a thoughtful professional who builds meaningful relationships by aligning work with clients' values and goals, specializing in innovative and scalable solutions across software development, architecture, and cutting-edge technology.
+
+### Tone & Voice
+- **Characteristics:** Sophisticated, confident, direct, authentic
+- **Communication style:** Concise and impactful statements that demonstrate expertise without unnecessary embellishment
+- **Personality:** Professional yet approachable, with a focus on meaningful connections
+
+### User Experience Goals
+- Present a cohesive narrative of the designer's expertise and approach
+- Facilitate easy exploration of portfolio work
+- Create clear pathways for potential clients to initiate contact
+- Establish credibility through thoughtful content organization and visual refinement
+
+## 3. Design Principles
+
+### 1. Refined Minimalism
+**Description:** Embrace negative space and stripped-back design elements to create a sophisticated, uncluttered experience.
+**Application:** Clean backgrounds with high contrast elements, minimal UI components, and focused content presentation across all color modes.
+
+### 2. Content-Focused Hierarchy
+**Description:** Prioritize the designer's work, philosophy, and expertise above decorative elements.
+**Application:** Large, impactful imagery, concise headlines, and strategic use of space to direct attention.
+
+### 3. Sophisticated Contrast
+**Description:** Use appropriate contrast between elements to create visual interest and guide the user's eye.
+**Application:** Thoughtful color schemes for each mode (dark, light, and system) that maintain readability and visual impact.
+
+### 4. Intentional Typography
+**Description:** Typography that balances professionalism with personality.
+**Application:** Clean, modern sans-serif fonts with careful attention to hierarchy, spacing, and readability across all color modes.
+
+### 5. Narrative Progression
+**Description:** Guide users through a deliberate sequence that tells the designer's professional story.
+**Application:** Strategic organization of content from introduction to featured work to philosophy to contact options.
+
+## 4. Requirements & Constraints
+
+### Technical Requirements
+- Responsive design optimized for all device sizes
+- Fast loading times with optimized images
+- Accessibility compliance for all users (WCAG 2.1 AA standards)
+- SEO optimization for professional visibility
+- **Color Mode Support:** Dark mode, light mode, and system preference detection
+
+### Content Sections
+1. **Hero/Introduction:** Personal introduction with professional photo and concise value proposition
+2. **Featured Work:** Gallery of selected portfolio projects with visual emphasis
+3. **Design Philosophy:** Statement on approach to client relationships and work process
+4. **Blog/Reflections:** Thought leadership content demonstrating expertise
+5. **Services/Process:** Breakdown of design process (Strategy, Execution, Launch)
+6. **Contact/Connect:** Multiple channels for communication and connection
+7. **Navigation & Resources:** Intuitive site navigation and relevant resources
+
+### Visual Identity
+- **Color Palette:** 
+  - **Dark Mode:** Black background with white/light gray text and minimal accent colors
+  - **Light Mode:** White/off-white background with dark gray/black text and complementary accent colors
+  - **System Mode:** Adapts based on user's system preferences
+- **Typography:** Modern sans-serif fonts with clear hierarchy
+- **Imagery:** High-quality, curated portfolio images with consistent treatment
+
+### Color Mode Implementation
+- Seamless transitions between color modes
+- Persistent user preference settings
+- Consistent brand experience across all modes
+- Appropriate image treatments for each mode
+- Maintained readability and contrast ratios in all modes
+
+## 5. User Flows & Interactions
+
+### Primary User Paths
+1. **Portfolio Exploration:** Home → Featured Work → Individual Project Details → Contact
+2. **Service Understanding:** Home → Design Philosophy → Services/Process → Contact
+3. **Professional Background:** Home → About → Blog/Reflections → Connect on Social Media
+
+### Interactive Elements
+- Subtle hover states for clickable elements
+- "Let's talk" prominent call-to-action button
+- Gallery navigation for featured work and reflections
+- Social media and professional platform connections
+- Time/location indicator for personal touch
+- **Color Mode Toggle:** Easily accessible control to switch between dark, light, and system modes
+
+## 6. Implementation Notes
+
+The design should maintain a balance between artistic expression and functional usability across all color modes, ensuring that the designer's personality and work remain the focal point while providing an intuitive experience for potential clients and collaborators. Color mode implementation should be thoughtful and enhance the user experience rather than simply inverting colors, with careful consideration for readability, visual hierarchy, and brand consistency in each mode.
