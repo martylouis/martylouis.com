@@ -3,6 +3,8 @@ import BaseFooter from '@/components/BaseFooter.astro';
 import BaseHead from '@/components/BaseHead.astro';
 import BaseHeader from '@/components/BaseHeader.astro';
 import Themes from 'astro-themes';
+import { Sidebar } from '@/components/ui/sidebar';
+import { MobileNav } from '@/components/ui/mobile-nav';
 
 import '../styles/global.css';
 
@@ -15,12 +17,61 @@ const { title, description, ...meta } = Astro.props;
     <Themes />
   </head>
   <body
-    class="bg-background text-foreground flex min-h-full w-full flex-col antialiased px-4 md:px-8"
+    class="bg-background text-foreground flex min-h-full w-full flex-col antialiased"
   >
-    <BaseHeader />
-    <main role="main" class="flex-1">
-      <slot />
-    </main>
-    <BaseFooter />
+    <div class="flex min-h-screen">
+      <div id="sidebar-container">
+        <Sidebar client:load />
+      </div>
+      <div id="mobile-nav-container">
+        <MobileNav client:load />
+      </div>
+      <div class="flex-1 pl-0 md:pl-64 transition-all duration-300">
+        <div class="h-16 md:h-0"><!-- Spacer for mobile nav --></div>
+        <BaseHeader />
+        <main role="main" class="flex-1 px-4 md:px-8">
+          <slot />
+        </main>
+        <BaseFooter />
+      </div>
+    </div>
   </body>
 </html>
+
+<script>
+  const sidebarState = {
+    isMobileOpen: false,
+    toggle() {
+      this.isMobileOpen = !this.isMobileOpen;
+      this.updateComponents();
+    },
+    close() {
+      this.isMobileOpen = false;
+      this.updateComponents();
+    },
+    updateComponents() {
+      // Update sidebar
+      const sidebarEvent = new CustomEvent('updateSidebarState', {
+        detail: { isMobileOpen: this.isMobileOpen },
+      });
+      document.dispatchEvent(sidebarEvent);
+
+      // Update mobile nav
+      const navEvent = new CustomEvent('updateNavState', {
+        detail: { isMobileOpen: this.isMobileOpen },
+      });
+      document.dispatchEvent(navEvent);
+    },
+  };
+
+  // Initialize event listeners
+  document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('toggleSidebar', () => {
+      sidebarState.toggle();
+    });
+
+    document.addEventListener('closeSidebar', () => {
+      sidebarState.close();
+    });
+  });
+</script>
