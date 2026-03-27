@@ -5,6 +5,8 @@ import icon from 'astro-icon';
 import m2dx from 'astro-m2dx';
 import { defineConfig } from 'astro/config';
 
+import vercel from '@astrojs/vercel';
+
 const m2dxOptions = {
   exportComponents: true,
   autoImports: true,
@@ -13,6 +15,7 @@ const m2dxOptions = {
 // https://astro.build/config
 export default defineConfig({
   site: 'https://martylouis.com/',
+
   integrations: [
     mdx({
       remarkPlugins: [[m2dx, m2dxOptions]],
@@ -23,7 +26,10 @@ export default defineConfig({
       iconDir: './src/assets/svg',
     }),
   ],
+
   vite: {
     plugins: [tailwindcss()],
   },
+
+  adapter: vercel(),
 });

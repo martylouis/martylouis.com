@@ -1,4 +1,4 @@
-import { z } from 'astro:content';
+import { z } from 'astro/zod';
 
 export const permalinkTypeSchema = z.union([
   z.literal('page'),
@@ -9,7 +9,7 @@ export const permalinkTypeSchema = z.union([
 ]);
 export type PermalinkType = z.infer<typeof permalinkTypeSchema>;
 
-export const permalinkSchema = z.string().url();
+export const permalinkSchema = z.url();
 
 export type Permalink = z.infer<typeof permalinkSchema>;
 
@@ -31,9 +31,9 @@ export const pageSchema = entrySchema;
 export const projectSchema = z
   .object({
     order: z.number(),
-    url: z.string().url().optional(),
+    url: z.url().optional(),
   })
-  .merge(entrySchema);
+  .extend(entrySchema.shape);
 
 export type Project = z.infer<typeof projectSchema>;
 
