@@ -42,7 +42,6 @@
     "@tailwindcss/vite": "4.1.18",
     "astro": "^6.1.1",
     "astro-icon": "^1.1.5",
-    "astro-m2dx": "^0.7.16",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.562.0",
