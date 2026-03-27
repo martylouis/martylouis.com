@@ -1,5 +1,6 @@
 import { pageSchema } from '@/types';
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 
 const entrySchema = z.object({
@@ -26,10 +27,10 @@ const projects = defineCollection({
             alt: z.string(),
           })
           .optional(),
-        url: z.string().url().optional(),
+        url: z.url().optional(),
         theme: z.string().optional(),
       })
-      .merge(entrySchema),
+      .extend(entrySchema.shape),
 });
 
 export const collections = {
