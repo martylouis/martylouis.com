@@ -210,3 +210,57 @@ function greet(name: string) {
   return `Hello, ${name}!`;
 }
 ```
+
+### Line Highlighting
+
+Highlight specific lines by adding line numbers in curly braces after the language: `tsx {2,4}`.
+
+```tsx {2,4}
+function add(a: number, b: number) {
+  const result = a + b;
+  console.log(result);
+  return result;
+}
+```
+
+### Word Highlighting
+
+Highlight specific words by wrapping them in slashes after the language: `` ```tsx /result/ ``.
+
+```tsx /result/
+function add(a: number, b: number) {
+  const result = a + b;
+  console.log(result);
+  return result;
+}
+```
+
+### Diff Lines
+
+Use `// [!code ++]` and `// [!code --]` to mark added and removed lines.
+
+```tsx
+function greet(name: string) {
+  return `Hello, ${name}!`; // [!code --]
+  return `Hey there, ${name}!`; // [!code ++]
+}
+```
+
+### Bash
+
+Bash blocks show `$` instead of line numbers.
+
+```bash
+pnpm dev
+pnpm build
+pnpm check
+```
+
+### No Line Numbers
+
+Add `no-lines` to the meta string to hide line numbers: `` ```tsx no-lines ``.
+
+```tsx no-lines
+const greeting = "Hello, world!";
+console.log(greeting);
+```
