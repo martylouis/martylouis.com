@@ -1,0 +1,318 @@
+---
+title: Style Guide
+description: Design tokens, typography, and component reference for martylouis.com.
+draft: false
+---
+
+import { Button } from '@/components/ui/button';
+import ButtonLink from '@/components/ButtonLink.astro';
+
+# Style Guide
+
+Design tokens, typography, and component reference for this site.
+
+---
+
+## Colors
+
+Semantic color tokens that adapt to light and dark themes. Toggle the theme to see both modes.
+
+### Surfaces
+
+<div class="not-prose grid grid-cols-2 gap-4 my-8 sm:grid-cols-3">
+  <div class="flex flex-col gap-1.5">
+    <div
+      class="h-16 rounded-md border"
+      style="background-color: var(--background)"
+    ></div>
+    <span class="text-xs font-mono text-muted-foreground">--background</span>
+  </div>
+  <div class="flex flex-col gap-1.5">
+    <div
+      class="h-16 rounded-md border"
+      style="background-color: var(--card)"
+    ></div>
+    <span class="text-xs font-mono text-muted-foreground">--card</span>
+  </div>
+  <div class="flex flex-col gap-1.5">
+    <div
+      class="h-16 rounded-md border"
+      style="background-color: var(--popover)"
+    ></div>
+    <span class="text-xs font-mono text-muted-foreground">--popover</span>
+  </div>
+</div>
+
+### Interactive
+
+<div class="not-prose grid grid-cols-2 gap-4 my-8 sm:grid-cols-3 md:grid-cols-4">
+  <div class="flex flex-col gap-1.5">
+    <div
+      class="flex h-16 items-end rounded-md border p-2"
+      style="background-color: var(--primary)"
+    >
+      <span class="text-xs font-mono" style="color: var(--primary-foreground)">
+        foreground
+      </span>
+    </div>
+    <span class="text-xs font-mono text-muted-foreground">--primary</span>
+  </div>
+  <div class="flex flex-col gap-1.5">
+    <div
+      class="flex h-16 items-end rounded-md border p-2"
+      style="background-color: var(--secondary)"
+    >
+      <span
+        class="text-xs font-mono"
+        style="color: var(--secondary-foreground)"
+      >
+        foreground
+      </span>
+    </div>
+    <span class="text-xs font-mono text-muted-foreground">--secondary</span>
+  </div>
+  <div class="flex flex-col gap-1.5">
+    <div
+      class="flex h-16 items-end rounded-md border p-2"
+      style="background-color: var(--accent)"
+    >
+      <span class="text-xs font-mono" style="color: var(--accent-foreground)">
+        foreground
+      </span>
+    </div>
+    <span class="text-xs font-mono text-muted-foreground">--accent</span>
+  </div>
+  <div class="flex flex-col gap-1.5">
+    <div
+      class="flex h-16 items-end rounded-md border p-2"
+      style="background-color: var(--destructive)"
+    >
+      <span
+        class="text-xs font-mono"
+        style="color: var(--destructive-foreground)"
+      >
+        foreground
+      </span>
+    </div>
+    <span class="text-xs font-mono text-muted-foreground">--destructive</span>
+  </div>
+</div>
+
+### Utility
+
+<div class="not-prose grid grid-cols-2 gap-4 my-8 sm:grid-cols-3 md:grid-cols-4">
+  <div class="flex flex-col gap-1.5">
+    <div
+      class="flex h-16 items-end rounded-md border p-2"
+      style="background-color: var(--muted)"
+    >
+      <span class="text-xs font-mono" style="color: var(--muted-foreground)">
+        foreground
+      </span>
+    </div>
+    <span class="text-xs font-mono text-muted-foreground">--muted</span>
+  </div>
+  <div class="flex flex-col gap-1.5">
+    <div
+      class="h-16 rounded-md border"
+      style="background-color: var(--border)"
+    ></div>
+    <span class="text-xs font-mono text-muted-foreground">--border</span>
+  </div>
+  <div class="flex flex-col gap-1.5">
+    <div
+      class="h-16 rounded-md border"
+      style="background-color: var(--input)"
+    ></div>
+    <span class="text-xs font-mono text-muted-foreground">--input</span>
+  </div>
+  <div class="flex flex-col gap-1.5">
+    <div
+      class="h-16 rounded-md border"
+      style="background-color: var(--ring)"
+    ></div>
+    <span class="text-xs font-mono text-muted-foreground">--ring</span>
+  </div>
+</div>
+
+### Foreground
+
+<div class="not-prose grid grid-cols-2 gap-4 my-8 sm:grid-cols-3">
+  <div class="flex flex-col gap-1.5">
+    <div class="flex h-16 items-center justify-center rounded-md border">
+      <span class="text-sm font-medium" style="color: var(--foreground)">
+        Foreground
+      </span>
+    </div>
+    <span class="text-xs font-mono text-muted-foreground">--foreground</span>
+  </div>
+  <div class="flex flex-col gap-1.5">
+    <div class="flex h-16 items-center justify-center rounded-md border">
+      <span class="text-sm font-medium" style="color: var(--muted-foreground)">
+        Muted
+      </span>
+    </div>
+    <span class="text-xs font-mono text-muted-foreground">
+      --muted-foreground
+    </span>
+  </div>
+</div>
+
+### Radius
+
+<div class="not-prose flex gap-6 my-8 items-end">
+  <div class="flex flex-col items-center gap-1.5">
+    <div
+      class="size-16 border-2 border-foreground"
+      style="border-radius: var(--radius)"
+    ></div>
+    <span class="text-xs font-mono text-muted-foreground">--radius</span>
+    <span class="text-xs text-muted-foreground">0.5rem</span>
+  </div>
+</div>
+
+---
+
+## Typography
+
+The site uses the system font stack via Tailwind CSS defaults. No custom web fonts are loaded. Prose styling is provided by `@tailwindcss/typography`.
+
+### Headings
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+### Body Text
+
+Regular paragraph text demonstrates the base body style. **Bold text** and _italic text_ are styled by the typography plugin. [Inline links](#) use the default prose link style with underline.
+
+> Blockquotes appear like this. They can be used for callouts, quotes, or emphasis.
+
+### Lists
+
+- Unordered list item one
+- Unordered list item two
+- Unordered list item three
+
+1. Ordered list item one
+2. Ordered list item two
+3. Ordered list item three
+
+### Code
+
+Inline `code` uses a monospace font with subtle background styling.
+
+```tsx
+// Fenced code block
+function greet(name: string) {
+  return `Hello, ${name}!`;
+}
+```
+
+---
+
+## Components
+
+### Button
+
+Six variants with three sizes. Uses `class-variance-authority` for variant management.
+
+#### Variants
+
+<div class="not-prose flex flex-wrap gap-3 my-6">
+  <Button>Default</Button>
+  <Button variant="secondary">Secondary</Button>
+  <Button variant="destructive">Destructive</Button>
+  <Button variant="outline">Outline</Button>
+  <Button variant="ghost">Ghost</Button>
+  <Button variant="link">Link</Button>
+</div>
+
+```tsx
+import { Button } from '@/components/ui/button';
+
+<Button variant="default">Default</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="destructive">Destructive</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="link">Link</Button>
+```
+
+#### Sizes
+
+<div class="not-prose flex flex-wrap items-center gap-3 my-6">
+  <Button size="sm">Small</Button>
+  <Button size="default">Default</Button>
+  <Button size="lg">Large</Button>
+</div>
+
+```tsx
+<Button size="sm">Small</Button>
+<Button size="default">Default</Button>
+<Button size="lg">Large</Button>
+```
+
+### ButtonLink
+
+Astro component that renders an `<a>` tag with button styling. Accepts the same `variant` and `size` props as Button.
+
+<div class="not-prose flex flex-wrap gap-3 my-6">
+  <ButtonLink href="#">Default Link</ButtonLink>
+  <ButtonLink href="#" variant="outline">
+    Outline Link
+  </ButtonLink>
+  <ButtonLink href="#" variant="secondary">
+    Secondary Link
+  </ButtonLink>
+  <ButtonLink href="#" variant="ghost">
+    Ghost Link
+  </ButtonLink>
+</div>
+
+```astro
+import ButtonLink from '@/components/ButtonLink.astro';
+
+<ButtonLink href="/about" variant="default">Default Link</ButtonLink>
+<ButtonLink href="/about" variant="outline">Outline Link</ButtonLink>
+```
+
+### TextEffect
+
+Animated text reveal component using `motion/react`. Requires a `client:` directive for hydration.
+
+**Presets:** `blur`, `fade-in-blur`, `scale`, `fade`, `slide`
+
+**Segmentation:** `per="word"` (default), `per="char"`, `per="line"`
+
+| Prop           | Type         | Default  | Description                             |
+| -------------- | ------------ | -------- | --------------------------------------- |
+| `text`         | `string`     | —        | Text content to animate                 |
+| `preset`       | `PresetType` | `"fade"` | Animation preset                        |
+| `per`          | `PerType`    | `"word"` | Split text by word, character, or line  |
+| `as`           | `string`     | `"p"`    | HTML element to render as               |
+| `delay`        | `number`     | `0`      | Delay before animation starts (seconds) |
+| `speedReveal`  | `number`     | `1`      | Stagger speed multiplier                |
+| `speedSegment` | `number`     | `1`      | Individual segment animation speed      |
+| `trigger`      | `boolean`    | `true`   | Whether to trigger the animation        |
+
+```astro
+import {TextEffect} from '@/components/ui/text-effect';
+
+<TextEffect
+  client:load
+  preset="fade-in-blur"
+  per="word"
+  speedReveal={1.1}
+  speedSegment={0.75}
+  delay={0.25}
+  as="h1"
+  className="text-4xl tracking-tight"
+  text="Your heading text here"
+/>
+```
