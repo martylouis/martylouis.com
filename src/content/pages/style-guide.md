@@ -278,3 +278,17 @@ Add `no-lines` to the meta string to hide line numbers: `` ```tsx no-lines ``.
 const greeting = "Hello, world!";
 console.log(greeting);
 ```
+
+---
+
+## Tables
+
+Markdown tables are styled by the typography plugin.
+
+| Feature        | Status | Notes                          |
+| -------------- | ------ | ------------------------------ |
+| Dark mode      | ✓      | Toggle in site header          |
+| Code blocks    | ✓      | Shiki with custom transformers |
+| MDX support    | ✓      | Via `@astrojs/mdx`             |
+| RSS feed       | —      | Planned                        |
+| Search         | —      | Not yet implemented            |
