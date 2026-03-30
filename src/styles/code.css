@@ -107,3 +107,67 @@ pre code .line.diff.add {
 pre code .line.diff.add::before {
   --diff-symbol: '+\00a0';
 }
+
+/* ---- Code block header (title + copy button) ---- */
+pre:has(.code-header) {
+  padding-block-start: 0;
+}
+
+pre .code-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.375rem 0.5rem 0.25rem;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: var(--text-xs);
+  line-height: 1;
+  user-select: none;
+}
+
+/* ---- Title tab ---- */
+pre .code-title {
+  margin-right: auto;
+  padding: 0.25rem 0.625rem;
+  color: var(--muted-foreground);
+  background-color: var(--muted);
+  border-radius: calc(var(--radius) - 0.25rem);
+  font-weight: 500;
+}
+
+/* ---- Copy button ---- */
+pre .code-copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  color: var(--muted-foreground);
+  background: transparent;
+  border: none;
+  border-radius: calc(var(--radius) - 0.25rem);
+  cursor: pointer;
+  transition:
+    color 0.15s,
+    background-color 0.15s;
+  flex-shrink: 0;
+}
+
+pre .code-copy:hover {
+  color: var(--foreground);
+  background-color: var(--muted);
+}
+
+pre .code-copy .check-icon {
+  display: none;
+}
+
+pre .code-copy.copied .copy-icon {
+  display: none;
+}
+
+pre .code-copy.copied .check-icon {
+  display: block;
+  color: #5ecc71;
+}

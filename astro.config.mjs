@@ -5,6 +5,10 @@ import {
   transformerMetaWordHighlight,
   transformerNotationDiff,
 } from '@shikijs/transformers';
+import {
+  transformerCopyButton,
+  transformerTitle,
+} from './src/lib/shiki-transformers';
 import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
 import { defineConfig } from 'astro/config';
@@ -27,6 +31,8 @@ export default defineConfig({
         transformerNotationDiff(),
         transformerMetaHighlight(),
         transformerMetaWordHighlight(),
+        transformerTitle(),
+        transformerCopyButton(),
         {
           name: 'no-lines',
           pre(node) {

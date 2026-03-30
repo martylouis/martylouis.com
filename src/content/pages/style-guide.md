@@ -256,6 +256,20 @@ pnpm build
 pnpm check
 ```
 
+### Title / Filename
+
+Add `title="filename"` to the meta string to show a tab-style title: `` ```ts title="astro.config.mjs" ``.
+
+```ts title="astro.config.mjs"
+export default defineConfig({
+  site: 'https://martylouis.com/',
+});
+```
+
+### Copy Button
+
+Every code block includes a copy button in the top-right corner. Click it to copy the code to your clipboard.
+
 ### No Line Numbers
 
 Add `no-lines` to the meta string to hide line numbers: `` ```tsx no-lines ``.

@@ -22,5 +22,24 @@ const { title, description, ...meta } = Astro.props;
       <slot />
     </main>
     <BaseFooter />
+    <script>
+      document.addEventListener('click', (e) => {
+        const button = (e.target as HTMLElement).closest('.code-copy');
+        if (!button) return;
+
+        const pre = button.closest('pre');
+        if (!pre) return;
+
+        const code = pre.querySelector('code');
+        if (!code) return;
+
+        const text = code.textContent?.replace(/\n$/, '') || '';
+
+        navigator.clipboard.writeText(text).then(() => {
+          button.classList.add('copied');
+          setTimeout(() => button.classList.remove('copied'), 2000);
+        });
+      });
+    </script>
   </body>
 </html>
