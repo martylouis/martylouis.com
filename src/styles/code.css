@@ -15,8 +15,6 @@
 
 /* ---- Code blocks (<pre>) ---- */
 pre {
-  --pre-bg: var(--background);
-  padding-block: 0.5rem;
   padding-inline: 0;
   font-size: var(--text-xs);
   line-height: 0;
@@ -72,7 +70,12 @@ pre[data-no-lines] .line::before {
 }
 
 pre[data-no-lines] {
-  padding-inline: 1rem;
+  padding-inline: 0;
+
+  > code {
+    padding-inline: 1rem;
+    display: inline-block;
+  }
 }
 
 /* ---- Highlighted lines ---- */
@@ -116,22 +119,20 @@ pre:has(.code-header) {
 pre .code-header {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  /*justify-content: flex-end;*/
   gap: 0.5rem;
-  padding: 0.375rem 0.5rem 0.25rem;
-  font-family: var(--font-mono, ui-monospace, monospace);
+  padding: 0.375rem 0.5rem 0.25rem 1rem;
+  font-family: var(--font-sans, ui-sans-serif);
   font-size: var(--text-xs);
   line-height: 1;
   user-select: none;
+  @apply border-b mb-2;
 }
 
 /* ---- Title tab ---- */
 pre .code-title {
   margin-right: auto;
-  padding: 0.25rem 0.625rem;
   color: var(--muted-foreground);
-  background-color: var(--muted);
-  border-radius: calc(var(--radius) - 0.25rem);
   font-weight: 500;
 }
 
@@ -169,5 +170,5 @@ pre .code-copy.copied .copy-icon {
 
 pre .code-copy.copied .check-icon {
   display: block;
-  color: #5ecc71;
+  color: var(--color-primary);
 }

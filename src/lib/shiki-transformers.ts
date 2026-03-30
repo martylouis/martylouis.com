@@ -4,7 +4,7 @@ import type { Element } from 'hast';
 // unhoisted @shikijs/types. The `pre` hook signature matches ShikiTransformer.
 type Transformer = {
   name: string;
-  pre: (this: { options: { meta?: { __raw?: string } } }, node: Element) => void;
+  pre: (this: { options: { lang?: string; meta?: { __raw?: string } } }, node: Element) => void;
 };
 
 function findOrCreateHeader(node: Element): Element {
@@ -34,9 +34,9 @@ export function transformerTitle(): Transformer {
     pre(node) {
       const meta = this.options.meta?.__raw || '';
       const match = meta.match(/title="([^"]+)"/);
-      if (!match) return;
+      const title = match?.[1] || this.options.lang || '';
+      if (!title) return;
 
-      const title = match[1];
       node.properties['data-title'] = title;
 
       const titleEl: Element = {
