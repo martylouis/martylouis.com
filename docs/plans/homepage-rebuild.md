@@ -49,6 +49,7 @@ Define a `notes` content collection in `content.config.ts` with a Zod schema tha
 Add a `noteEntries` helper in `src/lib/entries.ts` following the `projectEntries` pattern — filter out drafts, sort by `created_at` descending.
 
 Create 2 seed notes in `src/content/notes/`:
+
 - 1 short-form note (~2–3 sentences, `format: short`)
 - 1 long-form note (~3–4 paragraphs with a `description` excerpt, `format: long`)
 
