@@ -130,6 +130,13 @@ Semantic color tokens that adapt to light and dark themes. Toggle the theme to s
     ></div>
     <span class="text-xs font-mono text-muted-foreground">--ring</span>
   </div>
+  <div class="flex flex-col gap-1.5">
+    <div
+      class="h-16 rounded-md border"
+      style="background-color: var(--pre-background)"
+    ></div>
+    <span class="text-xs font-mono text-muted-foreground">--pre-background</span>
+  </div>
 </div>
 
 ### Foreground
@@ -152,6 +159,40 @@ Semantic color tokens that adapt to light and dark themes. Toggle the theme to s
     <span class="text-xs font-mono text-muted-foreground">
       --muted-foreground
     </span>
+  </div>
+</div>
+
+### Code
+
+Colors used in code block syntax highlighting. These are fixed values (not adaptive CSS variables).
+
+<div class="not-prose grid grid-cols-2 gap-4 my-8 sm:grid-cols-3">
+  <div class="flex flex-col gap-1.5">
+    <div
+      class="flex h-16 items-end rounded-md border p-2"
+      style="background-color: #08c0ef"
+    >
+      <span class="text-xs font-mono" style="color: oklch(0.145 0 0)">Highlight</span>
+    </div>
+    <span class="text-xs font-mono text-muted-foreground">#08c0ef</span>
+  </div>
+  <div class="flex flex-col gap-1.5">
+    <div
+      class="flex h-16 items-end rounded-md border p-2"
+      style="background-color: #5ecc71"
+    >
+      <span class="text-xs font-mono" style="color: oklch(0.145 0 0)">Diff Add</span>
+    </div>
+    <span class="text-xs font-mono text-muted-foreground">#5ecc71</span>
+  </div>
+  <div class="flex flex-col gap-1.5">
+    <div
+      class="flex h-16 items-end rounded-md border p-2"
+      style="background-color: #ff6762"
+    >
+      <span class="text-xs font-mono" style="color: oklch(0.985 0 0)">Diff Remove</span>
+    </div>
+    <span class="text-xs font-mono text-muted-foreground">#ff6762</span>
   </div>
 </div>
 
