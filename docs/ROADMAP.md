@@ -1,10 +1,10 @@
-## v1.2
+## v1.1
 
 - [x] Update Astro to v6
 - [x] Create a md style guide for reference
 - [x] use `github-light` in light theme mode, and github-dark in dark mode
 
-## v1.3 Style Guide
+## v1.2 Style Guide
 
 ### Update code blocks
 
@@ -12,13 +12,18 @@
 
 ### Add Astro font integration
 
-- [ ] Add [IA Writer Quattro](https://fontsource.org/fonts/ia-writer-quattro) for `sans-serif` font
-- [ ] Add [Crimson Pro](https://fontsource.org/fonts/crimson-pro) for `display` font
+- [x] Add Geist
+- [x] Add Geist Mono
+- [x] Add [Crimson Pro](https://fontsource.org/fonts/crimson-pro) for `display` font
 
-## v1.4
+## v1.3
 
 - [ ] Add a "View in markdown" routing and button at top
 - [ ] Add llm.txt at root
+
+```plaintext
+Design a personal website for Marty Louis.  
+```
 
 ## v1.5
 

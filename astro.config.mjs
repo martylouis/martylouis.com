@@ -11,7 +11,7 @@ import {
 } from './src/lib/shiki-transformers';
 import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 import rehypeExternalLinks from 'rehype-external-links';
 
 import vercel from '@astrojs/vercel';
@@ -58,4 +58,25 @@ export default defineConfig({
   },
 
   adapter: vercel(),
+
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: 'Geist',
+      cssVariable: '--font-sans',
+      fallbacks: ['sans-serif'],
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: 'Crimson Pro',
+      cssVariable: '--font-serif',
+      fallbacks: ['serif'],
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: 'Geist Mono',
+      cssVariable: '--font-mono',
+      fallbacks: ['monospace'],
+    },
+  ],
 });
