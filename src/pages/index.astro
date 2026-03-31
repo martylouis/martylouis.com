@@ -4,6 +4,7 @@ import NotesTeaser from '@/components/NotesTeaser.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import marty from '@/assets/img/marty.jpg';
+import { IconArrowRight } from '@tabler/icons-react';
 
 const meta = {
   title: 'Marty Thierry - Designer & Developer',
@@ -20,18 +21,23 @@ const meta = {
       alt="Marty Louis"
       width={128}
       loading="eager"
-      class="ring-offset-background ring-border size-16 shrink-0 overflow-hidden rounded-full ring-1 ring-offset-1"
+      class="ring-offset-background ring-border size-16 shrink-0 overflow-hidden rounded-full ring-1 ring-offset-2"
     />
     <h1
-      class="font-serif text-4xl md:text-6xl leading-tight tracking-tight text-balance"
+      class="font-serif text-4xl md:text-5xl leading-tight tracking-tight text-balance"
     >
       Hey, I’m Marty.
     </h1>
-    <p class="text-muted-foreground text-pretty">
+    <p class="text-foreground text-pretty">
       I'm a designer and developer based on the Gulf Coast of Florida. I help
       small businesses and startups build websites that are simple, fast, and
       easy to maintain.
     </p>
+    <div class="flex gap-2">
+      <ButtonLink href="/style-guide" variant="outline">
+        View Style Guide <IconArrowRight data-icon="inline-end" />
+      </ButtonLink>
+    </div>
   </section>
 
   <NotesTeaser />

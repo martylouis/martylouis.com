@@ -19,12 +19,12 @@ const { title, description, ...meta } = Astro.props;
     <Font cssVariable="--font-mono" preload />
   </head>
   <body
-    class="bg-background text-foreground flex min-h-full w-full flex-col antialiased pt-8 md:pt-16"
+    class="bg-background overscroll-none text-foreground flex min-h-full w-full flex-col antialiased pt-8 md:pt-16"
   >
-    <main role="main" class="container max-w-2xl mx-auto py-16 px-8">
+    <main role="main" class="container py-16">
       <slot />
     </main>
-    <!-- <BaseFooter /> -->
+    <BaseFooter />
     <script>
       document.addEventListener('click', (e) => {
         const button = (e.target as HTMLElement).closest('.code-copy');
