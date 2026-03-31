@@ -15,12 +15,7 @@
 
 /* ---- Code blocks (<pre>) ---- */
 pre {
-  padding-inline: 0;
-  font-size: var(--text-xs);
-  line-height: 0;
-  background-color: var(--pre-bg) !important;
-  border-radius: calc(var(--radius) + 0.25rem);
-  border: 1px solid var(--border);
+  @apply shadow-md border border-border/50 text-xs/0 px-0 rounded-(--radius) bg-(--pre-bg)!;
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
 }
@@ -126,7 +121,7 @@ pre .code-header {
   font-size: var(--text-xs);
   line-height: 1;
   user-select: none;
-  @apply border-b mb-2;
+  @apply border-b border-border/50 mb-2;
 }
 
 /* ---- Title tab ---- */
