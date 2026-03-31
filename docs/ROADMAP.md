@@ -4,7 +4,7 @@
 - [x] Create a md style guide for reference
 - [x] use `github-light` in light theme mode, and github-dark in dark mode
 
-## v1.2 Style Guide
+## v1.2 Styles
 
 ### Update code blocks
 
@@ -19,11 +19,7 @@
 ## v1.3
 
 - [ ] Add a "View in markdown" routing and button at top
-- [ ] Add llm.txt at root
-
-```plaintext
-Design a personal website for Marty Louis.  
-```
+- [ ] Add `llm.txt` at root
 
 ## v1.5
 

@@ -172,7 +172,13 @@ Semantic color tokens that adapt to light and dark themes. Toggle the theme to s
 
 ## Typography
 
-The site uses the system font stack via Tailwind CSS defaults. No custom web fonts are loaded. Prose styling is provided by `@tailwindcss/typography`.
+Custom web fonts are loaded via Astro's font API. Prose styling is provided by `@tailwindcss/typography`.
+
+| Variable | Font | Fallback |
+| -------------- | ------------- | ----------- |
+| `--font-sans` | Inter (Fontsource) | sans-serif |
+| `--font-serif` | Crimson Pro (Fontsource) | serif |
+| `--font-mono` | Roboto Mono (Google) | monospace |
 
 ### Headings
 

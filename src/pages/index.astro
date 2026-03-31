@@ -1,7 +1,9 @@
 ---
-import Hero from '@/components/Hero.astro';
+import ButtonLink from '@/components/ButtonLink.astro';
 import NotesTeaser from '@/components/NotesTeaser.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import marty from '@/assets/img/marty.jpg';
 
 const meta = {
   title: 'Marty Thierry - Designer & Developer',
@@ -12,6 +14,25 @@ const meta = {
 ---
 
 <BaseLayout {...meta}>
-  <Hero />
+  <section class="space-y-4">
+    <Image
+      src={marty}
+      alt="Marty Louis"
+      width={128}
+      loading="eager"
+      class="ring-offset-background ring-border size-16 shrink-0 overflow-hidden rounded-full ring-1 ring-offset-1"
+    />
+    <h1
+      class="font-serif text-4xl md:text-6xl leading-tight tracking-tight text-balance"
+    >
+      Hey, I’m Marty.
+    </h1>
+    <p class="text-muted-foreground text-pretty">
+      I'm a designer and developer based on the Gulf Coast of Florida. I help
+      small businesses and startups build websites that are simple, fast, and
+      easy to maintain.
+    </p>
+  </section>
+
   <NotesTeaser />
 </BaseLayout>

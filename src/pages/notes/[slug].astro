@@ -20,7 +20,7 @@ const { Content } = await render(note);
   title={note.data.title}
   description={note.data.description ?? `${note.data.title} — martylouis.com`}
 >
-  <article class="prose dark:prose-invert mx-auto w-full max-w-2xl py-12">
+  <article class="prose dark:prose-invert">
     <header class="not-prose mb-8">
       <h1 class="text-3xl tracking-tight mb-2">{note.data.title}</h1>
       <time
