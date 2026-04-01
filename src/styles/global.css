@@ -132,14 +132,13 @@
   }
 }
 
-body {
+/*body {
   transition:
     background-color 0.2s cubic-bezier(0, 0.19, 0, 0.99),
     color 0.2s cubic-bezier(0, 0.19, 0, 0.99);
   transition-property: background-color, color;
-}
+}*/
 
 @utility container {
-  margin-inline: auto;
-  padding-inline: 2rem;
+  @apply max-w-2xl px-4 mx-auto;
 }

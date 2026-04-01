@@ -1,9 +1,53 @@
 import { dispatch, subscribe, unsubscribe } from '@/lib/events';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import * as ThemeTogglePrimitive from '@radix-ui/react-radio-group';
+import { IconPercentage50 } from '@tabler/icons-react';
 import { Monitor, MoonStar as Moon, Sun } from 'lucide-react';
 import { motion } from 'motion/react';
 import React, { useEffect, useState } from 'react';
+
+export const ThemeToggleButton: React.FC = () => {
+  const [theme, setTheme] = useState<string>('system');
+
+  useEffect(() => {
+    const stored = localStorage.getItem('theme');
+    setTheme(stored ?? 'system');
+  }, []);
+
+  useEffect(() => {
+    subscribe('set-theme', () => setTheme(theme));
+    return () => {
+      unsubscribe('set-theme', () => setTheme(theme));
+    };
+  }, [theme]);
+
+  const handleClick = () => {
+    let next: string;
+    if (theme === 'system') {
+      const systemIsDark = window.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches;
+      next = systemIsDark ? 'light' : 'dark';
+    } else {
+      next = theme === 'light' ? 'dark' : 'light';
+    }
+    dispatch('set-theme', next);
+    setTheme(next);
+  };
+
+  return (
+    <Button
+      variant="ghost"
+      size="icon"
+      onClick={handleClick}
+      aria-label="Toggle theme"
+      className="active:not-aria-[haspopup]:translate-y-0 hover:cursor-pointer"
+    >
+      <IconPercentage50 />
+    </Button>
+  );
+};
 
 export const ThemeToggle: React.FC = () => {
   const [theme, setTheme] = useState<string | undefined>(undefined);

@@ -1,18 +1,23 @@
 ---
-import ButtonLink from '@/components/ButtonLink.astro';
-import { ThemeToggle } from '@/components/ui/theme-toggle';
+import { ButtonLink } from '@/components/ui/button';
+import {
+  IconBrandLinkedin,
+  IconBrandLinkedinFilled,
+} from '@tabler/icons-react';
 import { Icon } from 'astro-icon/components';
 
 const thisYear = new Date().getFullYear();
 
 const data = {
-  copyright: `&copy; ${thisYear} Marty Louis LLC. Except where otherwise noted, content on this site is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.`,
+  copyright: `&copy; ${thisYear} <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.`,
 };
 ---
 
-<footer role="contentinfo" slot="footer" class="container mx-auto">
-  <div class="border-t-border border-t mt-16 py-16">
-    <div class="mb-4 flex gap-2">
+<footer role="contentinfo" slot="footer" class="container">
+  <div class="border-t border-border pb-4 w-full"></div>
+  <div class="flex items-center justify-between">
+    <p class="text-sm text-muted-foreground" set:html={data.copyright} />
+    <div class="flex gap-1">
       <ButtonLink
         size="icon"
         variant="ghost"
@@ -43,13 +48,6 @@ const data = {
       >
         <Icon name="linkedin" class="size-5" />
       </ButtonLink>
-      <div class="ml-auto">
-        <ThemeToggle client:load />
-      </div>
     </div>
-    <p
-      class="text-sm dark:text-zinc-400 [&>a]:underline"
-      set:html={data.copyright}
-    />
   </div>
 </footer>

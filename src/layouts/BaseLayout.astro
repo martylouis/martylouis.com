@@ -19,8 +19,9 @@ const { title, description, ...meta } = Astro.props;
     <Font cssVariable="--font-mono" preload />
   </head>
   <body
-    class="bg-background overscroll-none text-foreground flex min-h-full w-full flex-col antialiased pt-8 md:pt-16"
+    class="bg-background overscroll-none text-foreground flex min-h-full w-full flex-col antialiased"
   >
+    <BaseHeader />
     <main role="main" class="container py-16">
       <slot />
     </main>

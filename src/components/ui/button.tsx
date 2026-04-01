@@ -67,11 +67,9 @@ function ButtonLink({
       data-slot="button-link"
       data-variant={variant}
       data-size={size}
-      className={buttonVariants({ variant, size, className })}
+      className={cn(buttonVariants({ variant, size, className }))}
       {...props}
-    >
-      Login
-    </a>
+    />
   );
 }
 

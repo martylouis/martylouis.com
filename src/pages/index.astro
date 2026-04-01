@@ -1,5 +1,5 @@
 ---
-import ButtonLink from '@/components/ButtonLink.astro';
+import { ButtonLink } from '@/components/ui/button';
 import NotesTeaser from '@/components/NotesTeaser.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
@@ -34,7 +34,7 @@ const meta = {
       easy to maintain.
     </p>
     <div class="flex gap-2">
-      <ButtonLink href="/style-guide" variant="outline">
+      <ButtonLink href="/style-guide">
         View Style Guide <IconArrowRight data-icon="inline-end" />
       </ButtonLink>
     </div>
