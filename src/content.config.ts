@@ -16,6 +16,17 @@ const pages = defineCollection({
   schema: pageSchema,
 });
 
+const notes = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/notes' }),
+  schema: z
+    .object({
+      format: z.enum(['short', 'long']).default('short'),
+      tags: z.array(z.string()).optional(),
+    })
+    .extend(entrySchema.shape)
+    .extend({ created_at: z.coerce.date() }),
+});
+
 const projects = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/projects' }),
   schema: ({ image }) =>
@@ -34,6 +45,7 @@ const projects = defineCollection({
 });
 
 export const collections = {
+  notes,
   projects,
   pages,
 };

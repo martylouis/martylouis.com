@@ -1,0 +1,36 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages', ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+  });
+  return pages.map((page) => ({
+    params: { slug: page.id },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+---
+
+<BaseLayout
+  title={page.data.title}
+  description={page.data.description ?? `${page.data.title} — martylouis.com`}
+>
+  <article
+    class="prose dark:prose-invert mx-auto prose-h1:font-serif prose-h1:text-5xl prose-h1:font-medium prose-h1:tracking-tight"
+  >
+    <div class="not-prose mb-8">
+      <a
+        href={`/${page.id}.md`}
+        class="text-sm text-muted-foreground hover:text-foreground"
+      >
+        View as Markdown
+      </a>
+    </div>
+    <Content />
+  </article>
+</BaseLayout>

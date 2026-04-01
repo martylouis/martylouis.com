@@ -1,0 +1,48 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes', ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+  });
+  return notes.map((note) => ({
+    params: { slug: note.id },
+    props: { note },
+  }));
+}
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+---
+
+<BaseLayout
+  title={note.data.title}
+  description={note.data.description ?? `${note.data.title} — martylouis.com`}
+>
+  <article class="prose dark:prose-invert">
+    <header class="not-prose mb-8">
+      <h1 class="text-3xl tracking-tight mb-2">{note.data.title}</h1>
+      <div class="flex items-center gap-3 text-sm text-muted-foreground">
+        <time datetime={note.data.created_at.toISOString()}>
+          {
+            note.data.created_at.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+              timeZone: 'UTC',
+            })
+          }
+        </time>
+        <span aria-hidden="true">&middot;</span>
+        <a
+          href={`/notes/${note.id}.md`}
+          class="hover:text-foreground"
+        >
+          View as Markdown
+        </a>
+      </div>
+    </header>
+    <Content />
+  </article>
+</BaseLayout>
