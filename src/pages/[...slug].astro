@@ -23,6 +23,14 @@ const { Content } = await render(page);
   <article
     class="prose dark:prose-invert mx-auto prose-h1:font-serif prose-h1:text-5xl prose-h1:font-medium prose-h1:tracking-tight"
   >
+    <div class="not-prose mb-8">
+      <a
+        href={`/${page.id}.md`}
+        class="text-sm text-muted-foreground hover:text-foreground"
+      >
+        View as Markdown
+      </a>
+    </div>
     <Content />
   </article>
 </BaseLayout>
