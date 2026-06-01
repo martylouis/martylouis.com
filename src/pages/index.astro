@@ -1,45 +1,44 @@
 ---
-import Projects from '@/components/Projects.astro';
-import { CalPopup } from '@/components/ui/cal-popup';
-import { TextEffect } from '@/components/ui/text-effect';
+import { ButtonLink } from '@/components/ui/button';
+import NotesTeaser from '@/components/NotesTeaser.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import marty from '@/assets/img/marty.jpg';
+import { IconArrowRight } from '@tabler/icons-react';
 
 const meta = {
-  title: 'Marty Thierry - Web Designer & Developer',
-  description: 'Professional UI/UX Design Without the Agency Overhead',
+  title: 'Marty Thierry - Designer & Developer',
+  description:
+    'I help small businesses and startups build websites that are simple, fast, and easy to maintain.',
   canonicalURL: 'https://martylouis.com/',
-};
-
-const content = {
-  lead: 'Professional Web Design Without the Agency Overhead',
-  hook: 'Direct designer access, faster turnaround times, and predictable pricing to keep your projects moving.',
 };
 ---
 
 <BaseLayout {...meta}>
-  <div
-    class="mb-20 flex flex-col items-center gap-6 text-center max-w-xl mx-auto w-full"
-  >
-    <TextEffect
-      preset="fade-in-blur"
-      per="word"
-      speedReveal={1.1}
-      speedSegment={0.75}
-      delay={0.25}
-      client:load
-      as="h1"
-      className="text-4xl tracking-tight"
-      text={content.lead}
+  <section class="space-y-4">
+    <Image
+      src={marty}
+      alt="Marty Louis"
+      width={128}
+      loading="eager"
+      class="ring-offset-background ring-border size-16 shrink-0 overflow-hidden rounded-full ring-1 ring-offset-2"
     />
-    <p set:text={content.hook} />
-    <div class="flex gap-4">
-      <CalPopup client:load>
-        <Icon name="calendar-plus" class="mr-1.5 -ml-1 size-4" />Book a
-        Discovery Call
-      </CalPopup>
+    <h1
+      class="font-serif text-4xl md:text-5xl leading-tight tracking-tight text-balance"
+    >
+      Hey, I’m Marty.
+    </h1>
+    <p class="text-foreground text-pretty">
+      I'm a designer and developer based on the Gulf Coast of Florida. I help
+      small businesses and startups build websites that are simple, fast, and
+      easy to maintain.
+    </p>
+    <div class="flex gap-2">
+      <ButtonLink href="/style-guide">
+        View Style Guide <IconArrowRight data-icon="inline-end" />
+      </ButtonLink>
     </div>
-  </div>
+  </section>
 
-  <Projects />
+  <NotesTeaser />
 </BaseLayout>

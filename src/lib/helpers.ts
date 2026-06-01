@@ -1,5 +1,15 @@
 import { getPermalink } from '@/lib/permalinks';
 
+export function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit',
+    weekday: 'short',
+    timeZone: 'UTC',
+  });
+}
+
 /**
  * Returns the home URL of the site.
  *

@@ -25,7 +25,7 @@ Personal website of Marty Thierry built with Astro 5, React 19, Tailwind CSS v4,
 - **Styles** in `src/styles/global.css` — Tailwind v4 with CSS custom properties for theming; dark mode uses custom variant `@variant dark (&:where([data-theme=dark], [data-theme=dark] *))` (not class-based)
 - **Animations** — `motion` (Framer Motion) for React component animations
 - **Icons** — `astro-icon` with SVGs in `src/assets/svg/`
-- **MDX** — Uses `astro-m2dx` for auto-imports and component exports in MDX files
+- **MDX** — `@astrojs/mdx` integration available for `.mdx` content files
 
 ## Key Conventions
 

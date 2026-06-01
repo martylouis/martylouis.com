@@ -1,0 +1,54 @@
+---
+import { noteEntries } from '@/lib/entries';
+import { render } from 'astro:content';
+import {
+  NoteCard,
+  NoteCardContent,
+  NoteCardDescription,
+  NoteCardTime,
+  NoteCardTitle,
+} from './note-card';
+
+const notes = noteEntries.slice(0, 5);
+
+const notesWithContent = await Promise.all(
+  notes.map(async (note) => {
+    const { Content } = await render(note);
+    return { note, Content };
+  })
+);
+---
+
+<section class="mt-16">
+  <h2
+    class="text-sm font-medium text-muted-foreground uppercase tracking-widest mb-8"
+  >
+    Notes
+  </h2>
+  <div class="flex flex-col gap-10">
+    {
+      notesWithContent.map(({ note, Content }) => {
+        const isShort = note.data.format === 'short';
+        return (
+          <NoteCard>
+            <NoteCardTime date={note.data.created_at} />
+            <NoteCardTitle href={isShort ? undefined : `/notes/${note.id}/`}>
+              {note.data.title}
+            </NoteCardTitle>
+            {isShort ? (
+              <NoteCardContent>
+                <Content />
+              </NoteCardContent>
+            ) : (
+              note.data.description && (
+                <NoteCardDescription>
+                  {note.data.description}
+                </NoteCardDescription>
+              )
+            )}
+          </NoteCard>
+        );
+      })
+    }
+  </div>
+</section>

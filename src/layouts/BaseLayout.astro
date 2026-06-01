@@ -3,6 +3,7 @@ import BaseFooter from '@/components/BaseFooter.astro';
 import BaseHead from '@/components/BaseHead.astro';
 import BaseHeader from '@/components/BaseHeader.astro';
 import Themes from 'astro-themes';
+import Font from 'astro/components/Font.astro';
 
 import '../styles/global.css';
 
@@ -13,14 +14,36 @@ const { title, description, ...meta } = Astro.props;
   <head>
     <BaseHead {title} {description} {...meta} />
     <Themes />
+    <Font cssVariable="--font-sans" preload />
+    <Font cssVariable="--font-serif" preload />
+    <Font cssVariable="--font-mono" preload />
   </head>
   <body
-    class="bg-background text-foreground flex min-h-full w-full flex-col antialiased px-4 md:px-8"
+    class="bg-background overscroll-none text-foreground flex min-h-full w-full flex-col antialiased"
   >
     <BaseHeader />
-    <main role="main" class="flex-1">
+    <main role="main" class="container py-16">
       <slot />
     </main>
     <BaseFooter />
+    <script>
+      document.addEventListener('click', (e) => {
+        const button = (e.target as HTMLElement).closest('.code-copy');
+        if (!button) return;
+
+        const pre = button.closest('pre');
+        if (!pre) return;
+
+        const code = pre.querySelector('code');
+        if (!code) return;
+
+        const text = code.textContent?.replace(/\n$/, '') || '';
+
+        navigator.clipboard.writeText(text).then(() => {
+          button.classList.add('copied');
+          setTimeout(() => button.classList.remove('copied'), 2000);
+        });
+      });
+    </script>
   </body>
 </html>
